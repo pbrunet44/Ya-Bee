@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimaryLight"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".InitialBid">
+
+    <TextView
+        android:id="@+id/tvMakeInitialBid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:text="@string/make_bid"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tvListingName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="20sp"
+        android:text="[Listing Name Here]"/>
+
+    <ImageView
+        android:id="@+id/imgDefault"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:src="@mipmap/ic_computer_networking"
+         />
+
+    <Button
+        android:id="@+id/btnUploadImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="50dp"
+        android:background = "@drawable/rounded_button"
+        android:text="@string/upload_image"
+        android:textColor="@color/colorTextPrimary"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etBidPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:textColorHint="@color/colorTextSecondary"
+        android:hint="@string/bid_price"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:textColorHint="@color/colorTextSecondary"
+        android:hint="@string/description" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="50dp"
+        android:background = "@drawable/rounded_button"
+        android:text="@string/submit"
+        android:onClick="goBackToViewPost"
+        android:textColor="@color/colorTextPrimary"
+        android:textStyle="bold" />
+
+</LinearLayout>

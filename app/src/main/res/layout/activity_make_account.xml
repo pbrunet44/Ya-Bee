@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight"
+    android:orientation="vertical"
+    tools:context=".MakeAccount"
+    >
+
+    <TextView
+        android:id="@+id/letsGetStartedText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's get started!"
+        android:textColor="#212121"
+        android:textSize="30sp"
+        android:textStyle=""
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <EditText
+        android:id="@+id/nameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:textColor="#212121"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <EditText
+        android:id="@+id/emailText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:textColor="#212121"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <EditText
+        android:id="@+id/usernameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:inputType="text"
+        android:textColor="#212121"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <EditText
+        android:id="@+id/passwordText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textWebPassword"
+        android:textColor="#212121"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <Button
+        android:id="@+id/signUpButtonText"
+        android:text="Finish"
+        android:textColor="#212121"
+        android:background="@drawable/rounded_button"
+        android:layout_width="300dp"
+        android:onClick="goToMyProfile"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        />
+
+</LinearLayout>
