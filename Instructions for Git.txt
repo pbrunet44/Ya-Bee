@@ -1,0 +1,11 @@
+This document's intended use is to explain how to add, commit, push and pull changes from Git.
+
+
+1. Clone the repository into an empty directory, preferably on your desktop, using the command "git clone https://github.com/pbrunet44/Ya-Bee.git"
+2. Before doing any work whatsoever, ensure you pull changes from Git, using the command "git pull"
+3. Next, start working on your task/project, and once done, add those changes using the command "git add ." This will add modified files into the staging area.
+4. Now commit those changes, with the command "git commit -m "<message>"". Here, <message> is just a message informing us of the changes you've made to the files.
+5. Finally, you can push to the appropriate branch, using "git push <branch>". Please do not push anything to the master branch unless it's been previously discussed.
+
+--MERGE CONFLICTS--
+These will probably happen sometime in the future. I still haven't figured out a way we will deal with them, but I will fill this out when I do!
