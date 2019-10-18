@@ -58,7 +58,6 @@
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
         android:text="Make Offer"
-        android:onClick="goToMakeBid"
         android:textSize="18sp"
         android:textColor="#212121"
         android:layout_marginLeft="20dp"

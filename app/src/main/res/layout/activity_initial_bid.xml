@@ -81,7 +81,6 @@
         android:layout_marginRight="50dp"
         android:background = "@drawable/rounded_button"
         android:text="@string/submit"
-        android:onClick="goBackToViewPost"
         android:textColor="@color/colorTextPrimary"
         android:textStyle="bold" />
 

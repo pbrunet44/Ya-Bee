@@ -60,7 +60,6 @@
         android:layout_height="40dp"
         android:background="@drawable/rounded_button"
         android:text="Create a listing"
-        android:onClick="goToMakeAPost"
         android:textSize="22sp"
         android:textColor="#212121"
         />
@@ -71,7 +70,6 @@
         android:layout_height="40dp"
         android:background="@drawable/rounded_button"
         android:text="Buying"
-        android:onClick="goToProductsBuying"
         android:textSize="22sp"
         android:textColor="#212121"
         />
@@ -81,7 +79,6 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/rounded_button"
-        android:onClick="goToProductsSelling"
         android:text="Selling"
         android:textSize="22sp"
         android:textColor="#212121"

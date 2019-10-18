@@ -58,7 +58,6 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="goToViewPost"
                 android:src="@mipmap/ic_computer_networking"
                 />
 
@@ -101,7 +100,6 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="goToViewPost"
                 android:src="@mipmap/ic_computer_networking"
                 />
 
@@ -143,7 +141,6 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="goToViewPost"
                 android:src="@mipmap/ic_computer_networking"
                 />
 
@@ -185,7 +182,6 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="goToViewPost"
                 android:src="@mipmap/ic_computer_networking"
                 />
 

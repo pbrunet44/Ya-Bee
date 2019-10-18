@@ -35,7 +35,6 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="Make Post"
-            android:onClick="goToMakePost"
             android:textStyle="bold"/>
 
         <TextView

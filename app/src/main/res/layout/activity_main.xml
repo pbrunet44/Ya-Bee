@@ -27,7 +27,6 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_button"
-            android:onClick="goToSignUp"
             android:text="Sign up"
             android:textColor="@color/colorTextPrimary"
             android:textStyle="bold"/>
@@ -42,7 +41,6 @@
             android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_button"
-            android:onClick="goToLogin"
             android:text="Login"
             android:textColor="@color/colorTextPrimary"
             android:textStyle="bold"/>
@@ -76,7 +74,6 @@
             android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_button"
-            android:onClick="goToBrowse"
             android:text="@string/go"
             android:textColor="@color/colorTextPrimary"
             android:textStyle="bold" />
@@ -104,7 +101,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="goToBrowse"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <ImageView

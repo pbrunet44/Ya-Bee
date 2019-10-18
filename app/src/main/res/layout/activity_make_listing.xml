@@ -187,7 +187,6 @@
         android:layout_marginBottom="89dp"
         android:background="@drawable/rounded_button"
         android:textColor="#212121"
-        android:onClick="goBackToListOfPosts"
         android:text="Add Listing" />
 
     <TextView
