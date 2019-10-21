@@ -9,3 +9,5 @@ This document's intended use is to explain how to add, commit, push and pull cha
 
 --MERGE CONFLICTS--
 These will probably happen sometime in the future. I still haven't figured out a way we will deal with them, but I will fill this out when I do!
+
+--james/jim---
