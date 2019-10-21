@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffecb3"
+    android:orientation="vertical"
+    tools:context=".ViewPost">
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remaining Time: 24:00:00"
+        android:textSize="16sp"
+        android:textColor="#212121"
+        android:layout_gravity="end"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="325dp"
+        android:maxHeight="250dp"
+        android:background="@mipmap/ic_computer_networking_foreground"
+        android:scaleType="center"
+         />
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#212121"
+        android:textSize="22sp"
+        android:text="Computer Networking: A Top-Down Approach by James F. Kurose and Keith W. Ross (2012 Harcover Version)"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#757575"
+        android:textSize="20sp"
+        android:text="Current price: $60.00"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+    <View
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:id="@+id/BidButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:text="Make Offer"
+        android:textSize="18sp"
+        android:textColor="#212121"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+    <Button
+        android:id="@+id/interestedButton"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:text="Interested?"
+        android:textSize="18sp"
+        android:textColor="#212121"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
+
+
+</LinearLayout>

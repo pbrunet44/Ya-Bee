@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffecb3"
+    android:orientation="vertical"
+    tools:context=".Login">
+
+    <TextView
+        android:id="@+id/helloText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="30sp"
+        android:textStyle=""
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"/>
+
+    <EditText
+        android:id="@+id/emailOrUsernameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="E-mail or username"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="20sp"
+        android:inputType="text"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/passwordLoginText"
+        android:hint="Password"
+        android:textSize="20sp"
+        android:inputType="numberPassword"
+        android:textColor="@color/colorTextSecondary"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorTextPrimary"
+        android:id="@+id/signInButtonText"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/rounded_button"
+        android:textStyle="bold"
+        android:text="Sign in"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#3366bb"
+        android:autoLink="all"
+        android:text="Create an account"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:id="@+id/createAnAccountText"
+        />
+</LinearLayout>
