@@ -37,27 +37,29 @@ public class MakeListing extends AppCompatActivity {
                 String category = ((TextView)findViewById(R.id.categoryDropdown)).getText().toString();
                 String maxPrice = ((TextView)findViewById(R.id.yourPrice)).getText().toString();
                 String auctionDuration = ((TextView)findViewById(R.id.durationOfAuction)).getText().toString();
-
+                // make a new post object from Post class
+                //Post newPost = new Post(title, Double.parseDouble(maxPrice), description, Integer.parseInt(auctionDuration), null, category);
+                // first get instance and reference of database
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("message");
+                DatabaseReference myRef = database.getReference();
+                // now store post info into the database
+                myRef = database.getReference().child("title");
+                myRef.setValue("title");
 
-
-                myRef.setValue("Hello, World!");
-
+                // now testing to see if we can read from the database
                 myRef.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        String value = dataSnapshot.getValue(String.class);
-                        Log.d("MESSAGE", "Title is: " + value);
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        String postInfo = dataSnapshot.getValue(String.class);
+                        Log.d("MESSAGE:", "Please print something: " + postInfo.toString());
                     }
 
                     @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        Log.d("MESSAGE", "Failed to read the title:" + databaseError.toException());
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Log.w("MESSAGE:", databaseError.toException());
                     }
                 });
-
-
             }
         });
     }
