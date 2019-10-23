@@ -41,10 +41,9 @@ public class MakeListing extends AppCompatActivity {
                 //Post newPost = new Post(title, Double.parseDouble(maxPrice), description, Integer.parseInt(auctionDuration), null, category);
                 // first get instance and reference of database
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference();
+                DatabaseReference myRef = database.getReference("message");
                 // now store post info into the database
-                myRef = database.getReference().child("title");
-                myRef.setValue("title");
+                myRef.child("title").setValue("Nikes");
 
                 // now testing to see if we can read from the database
                 myRef.addValueEventListener(new ValueEventListener() {
