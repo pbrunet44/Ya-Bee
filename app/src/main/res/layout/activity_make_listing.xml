@@ -82,7 +82,7 @@
         android:text="Category"
         android:textSize="24sp" />
 
-    <Spinner
+    <EditText
         android:id="@+id/categoryDropdown"
         android:layout_width="166dp"
         android:layout_height="35dp"
@@ -106,6 +106,19 @@
         android:textSize="24sp" />
 
 
+    <EditText
+        android:id="@+id/durationOfAuction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="70dp"
+        android:hint="days"
+        android:inputType="number"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/days"
@@ -176,7 +189,7 @@
         android:text="upload photo&#10;(optional)" />
 
     <Button
-        android:id="@+id/postMalone"
+        android:id="@+id/collectPostInfo"
         android:layout_width="136dp"
         android:layout_height="60dp"
         android:layout_alignParentEnd="true"
@@ -189,18 +202,18 @@
         android:textColor="#212121"
         android:text="Add Listing" />
 
-    <TextView
-        android:id="@+id/headerKinda"
-        android:layout_width="270dp"
-        android:layout_height="54dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:textColor="#212121"
-        android:layout_marginTop="3dp"
-        android:text="Make a Listing!"
-        android:textSize="30sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/headerKinda"-->
+<!--        android:layout_width="270dp"-->
+<!--        android:layout_height="54dp"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentLeft="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:textColor="#212121"-->
+<!--        android:layout_marginTop="3dp"-->
+<!--        android:text="Make a Listing"-->
+<!--        android:textSize="30sp" />-->
 
 </RelativeLayout>

@@ -1,0 +1,68 @@
+[33mcommit 2eef30a307c7fbbac28f812389f259c7d1125ca8[m[33m ([m[1;36mHEAD -> [m[1;32msprint1[m[33m, [m[1;31morigin/prototypes-master[m[33m, [m[1;32mprototypes-master[m[33m)[m
+Author: Kirsty <kirstyalexandra.nguegang471@myci.csuci.edu>
+Date:   Fri Oct 18 08:52:45 2019 -0700
+
+    Removed onclicks as it makes the files unreusable, we will use onClick listeners in the Java files instead.
+
+[33mcommit d07bf7a37802c54660ecbdf650a3effb187b2107[m
+Author: Kirsty <kirstyalexandra.nguegang471@myci.csuci.edu>
+Date:   Thu Oct 17 19:55:24 2019 -0700
+
+    I fucking hate GIT
+
+[33mcommit 523cfd70cc2d5c50fe3cbb309247be6e4db1f891[m
+Author: Kirsty <kirstyalexandra.nguegang471@myci.csuci.edu>
+Date:   Thu Oct 17 19:38:17 2019 -0700
+
+    Thanks Keith you're a degenerate! :)
+
+[33mcommit 932e5019c75befd2beae21e1ff90870d4026ea5a[m
+Author: Kirsty <kirstyalexandra.nguegang471@myci.csuci.edu>
+Date:   Thu Oct 17 19:34:26 2019 -0700
+
+    Doing it shouldn't absolve guilt
+
+[33mcommit a49a278bbc650ce09f3ea948e579406606941d9e[m
+Author: Kirsty <kirstyalexandra.nguegang471@myci.csuci.edu>
+Date:   Thu Oct 17 19:30:00 2019 -0700
+
+    I CAN FEEL IT CALLIN IN THE AIR TONIGHT...OH LAUWWWWWWWD
+
+[33mcommit 3173c1f2b69535c0a4f8d2982a01d3ab25d912ba[m[33m ([m[1;32mmaster[m[33m)[m
+Author: kirstyalexandra <36051713+kirstyalexandra@users.noreply.github.com>
+Date:   Wed Oct 9 14:00:14 2019 -0700
+
+    Delete TESTING.txt
+
+[33mcommit 2a37cecf89a3e1545f1ff4dd600d839a4b72469f[m
+Merge: ca7eb03 55e6f71
+Author: kirstyalexandra <36051713+kirstyalexandra@users.noreply.github.com>
+Date:   Wed Oct 9 13:59:08 2019 -0700
+
+    Merge pull request #1 from pbrunet44/prototypes
+    
+    Create TESTING.txt
+
+[33mcommit 55e6f71427ab778d2a8a24f7fe34ea28ce87c4d8[m
+Author: Kirsty <kirstyalexandra.nguegang471@myci.csuci.edu>
+Date:   Wed Oct 9 13:55:39 2019 -0700
+
+    Create TESTING.txt
+
+[33mcommit ca7eb03d0cffb289abf52c6182b69508ab01e19f[m
+Author: pbrunet44 <46230748+pbrunet44@users.noreply.github.com>
+Date:   Sun Sep 29 15:38:31 2019 -0700
+
+    Update README.md
+
+[33mcommit 08aeffcb30adbe2610159e9777037a7156b6afe6[m
+Author: pbrunet44 <46230748+pbrunet44@users.noreply.github.com>
+Date:   Wed Sep 25 14:09:52 2019 -0700
+
+    Update README.md
+
+[33mcommit ef04f6430bd904c6195591efc4fa386a7137567d[m
+Author: pbrunet44 <46230748+pbrunet44@users.noreply.github.com>
+Date:   Wed Sep 25 14:08:03 2019 -0700
+
+    Initial commit

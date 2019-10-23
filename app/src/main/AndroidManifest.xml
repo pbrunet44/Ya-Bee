@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.yabeeprototypes">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,49 +12,51 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".browse_temp"></activity>
-        <activity
-            android:name=".ViewPost"
-            android:parentActivityName=".Browse"></activity>
-        <activity
-            android:name=".Profile"
-            android:label="My Profile"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity
-            android:name=".MakeListing"
-            android:parentActivityName=".ItemsBuying"></activity>
-        <activity
-            android:name=".MakeAccount"
-            android:label="Create an account"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity
-            android:name=".Login"
-            android:label="Login"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity
-            android:name=".ItemsSelling"
-            android:label="Items I&apos;m selling"
-            android:parentActivityName=".Profile"></activity>
-        <activity
-            android:name=".ItemsBuying"
-            android:label="Items I&apos;m buying"
-            android:parentActivityName=".Profile"></activity>
-        <activity
-            android:name=".InitialBid"
-            android:label="Make initial bid"
-            android:parentActivityName=".ViewPost"></activity>
-        <activity
-            android:name=".Browse"
-            android:label="Search"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".AuctionResult" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".BidAccept">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".browse_temp" />
+        <activity
+            android:name=".ViewPost"
+            android:parentActivityName=".Browse" />
+        <activity
+            android:name=".Profile"
+            android:label="My Profile"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MakeListing"
+            android:parentActivityName=".ItemsBuying">
+        </activity>
+        <activity
+            android:name=".MakeAccount"
+            android:label="Create an account"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Login"
+            android:label="Login"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ItemsSelling"
+            android:label="Items I&apos;m selling"
+            android:parentActivityName=".Profile" />
+        <activity
+            android:name=".ItemsBuying"
+            android:label="Items I&apos;m buying"
+            android:parentActivityName=".Profile" />
+        <activity
+            android:name=".InitialBid"
+            android:label="Make initial bid"
+            android:parentActivityName=".ViewPost" />
+        <activity
+            android:name=".Browse"
+            android:label="Search"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".AuctionResult" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

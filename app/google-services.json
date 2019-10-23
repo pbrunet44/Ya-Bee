@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "366174119390",
+    "firebase_url": "https://ya-bee.firebaseio.com",
+    "project_id": "ya-bee",
+    "storage_bucket": "ya-bee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366174119390:android:f131345fefaf9ce66fa94f",
+        "android_client_info": {
+          "package_name": "com.example.yabeeprototypes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "366174119390-a4f1j74imo5n5oh6jat0nqfcmujg896p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.yabeeprototypes",
+            "certificate_hash": "42283814a1b9b7644484bd7fcdba01a6c86e6685"
+          }
+        },
+        {
+          "client_id": "366174119390-o0cj1h3973tf3lrjndpn4ocbdjjd0ql2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7ersTqpfd1ITgHEb7_cFt3WemWZKmFTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "366174119390-o0cj1h3973tf3lrjndpn4ocbdjjd0ql2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
