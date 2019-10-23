@@ -39,9 +39,10 @@ public class MakeListing extends AppCompatActivity {
                 String auctionDuration = ((TextView)findViewById(R.id.durationOfAuction)).getText().toString();
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("testing");
+                DatabaseReference myRef = database.getReference("message");
 
-                myRef.setValue(title);
+
+                myRef.setValue("Hello, World!");
 
                 myRef.addValueEventListener(new ValueEventListener() {
                     @Override
