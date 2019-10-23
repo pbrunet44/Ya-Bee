@@ -38,25 +38,27 @@ public class MakeListing extends AppCompatActivity {
                 String maxPrice = ((TextView)findViewById(R.id.yourPrice)).getText().toString();
                 String auctionDuration = ((TextView)findViewById(R.id.durationOfAuction)).getText().toString();
                 // make a new post object from Post class
-                //Post newPost = new Post(title, Double.parseDouble(maxPrice), description, Integer.parseInt(auctionDuration), null, category);
+                
                 // first get instance and reference of database
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference myRef = database.getReference("message");
-                // now store post info into the database
-                myRef.child("title").setValue("Nikes");
 
-                // now testing to see if we can read from the database
+                myRef.setValue("Hello, World!");
+
+                // Read from the database
                 myRef.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                        String postInfo = dataSnapshot.getValue(String.class);
-                        Log.d("MESSAGE:", "Please print something: " + postInfo.toString());
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        // This method is called once with the initial value and again
+                        // whenever data at this location is updated.
+                        String value = dataSnapshot.getValue(String.class);
+                        Log.d("MSG:", "Value is: " + value);
                     }
 
                     @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Log.w("MESSAGE:", databaseError.toException());
+                    public void onCancelled(DatabaseError error) {
+                        // Failed to read value
+                        Log.w("MSG:", "Failed to read value.", error.toException());
                     }
                 });
             }
