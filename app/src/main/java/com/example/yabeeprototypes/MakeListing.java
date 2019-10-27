@@ -5,23 +5,41 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class MakeListing extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_listing);
+        Button makePost = findViewById(R.id.collectPostInfo);
+        makePost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // collect post info from button click
+                // probably must check for validation and require them to fill out all of these
+                String title = ((TextView)findViewById(R.id.titleEntry)).getText().toString();
+                String description = ((TextView)findViewById(R.id.descEntry)).getText().toString();
+                String category = ((TextView)findViewById(R.id.categoryDropdown)).getText().toString();
+                double maxPrice = Double.parseDouble(((TextView)findViewById(R.id.yourPrice)).getText().toString());
+                int auctionLength = Integer.parseInt(((TextView)findViewById(R.id.durationOfAuction)).getText().toString());
 
-        // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("hasta");
+                Post post = new Post(title, maxPrice, description, auctionLength, null, category);
+                DatabaseHelper database = new DatabaseHelper();
+                database.writeNewPost(post);
+                // will take care of image url later
 
-        myRef.setValue("La Vista!");
+
+            }
+        });
+
     }
 
 }

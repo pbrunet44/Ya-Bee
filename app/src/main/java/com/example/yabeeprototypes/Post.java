@@ -9,6 +9,11 @@ public class Post {
     public String imageUrl; // will deal with this later
     public String category;
 
+    public Post()
+    {
+        super(); // filler, will change this later
+    }
+
     public Post(String title, double maxPrice, String description, int auctionLength, String imageUrl, String category)
     {
         this.title = title;
