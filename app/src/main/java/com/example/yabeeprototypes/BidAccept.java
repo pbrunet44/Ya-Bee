@@ -49,6 +49,7 @@ public class BidAccept extends AppCompatActivity {
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             if(e2.getX() > e1.getX()) {
                 //left to right swipe
+
                 Intent intense = new Intent(BidAccept.this, ItemsBuying.class);
                 Toast.makeText(getApplicationContext(), "Bid Accepted", Toast.LENGTH_LONG).show();
                 startActivity(intense);
@@ -56,6 +57,7 @@ public class BidAccept extends AppCompatActivity {
 
             else if(e2.getX() < e1.getX()) {
                 //right to left
+
                 Intent intents = new Intent(BidAccept.this, ItemsBuying.class);
                 Toast.makeText(getApplicationContext(), "Bid Declined", Toast.LENGTH_LONG).show();
                 startActivity(intents);
