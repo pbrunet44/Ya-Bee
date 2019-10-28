@@ -12,8 +12,6 @@ import android.widget.TextView;
 import com.google.firebase.database.DatabaseReference;
 
 public class MakeListing extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +29,9 @@ public class MakeListing extends AppCompatActivity {
                 double maxPrice = Double.parseDouble(((TextView)findViewById(R.id.yourPrice)).getText().toString());
                 int auctionLength = Integer.parseInt(((TextView)findViewById(R.id.durationOfAuction)).getText().toString());
 
-                Post post = new Post(title, maxPrice, description, auctionLength, null, category);
+                Post post = new Post(title, maxPrice, description, auctionLength, null, category); // will take care of image url later that's why it's null
                 DatabaseHelper database = new DatabaseHelper();
                 database.writeNewPost(post);
-                // will take care of image url later
-
-
             }
         });
 

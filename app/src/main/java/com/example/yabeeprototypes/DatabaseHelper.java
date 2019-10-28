@@ -1,7 +1,14 @@
 package com.example.yabeeprototypes;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class DatabaseHelper {
 
@@ -11,12 +18,12 @@ public class DatabaseHelper {
     public DatabaseHelper()
     {
         this.database = FirebaseDatabase.getInstance();
+        this.databaseReference = this.database.getReference(); // need to take into account bids...
     }
 
     public void writeNewPost(Post post)
     {
-        this.databaseReference = this.database.getReference("Posts"); // need to take into account bids...
-        this.databaseReference.setValue(post);
+        this.databaseReference.child("Posts").child(post.title).setValue(post);
     }
 
     public Post readPostInformation()
@@ -28,16 +35,10 @@ public class DatabaseHelper {
         return post;
     }
 
-    public MakeBid getLowestBid()
-    {
-        // simply return lowest bid from database
-        MakeBid bid = new MakeBid();
-        return bid;
-    }
-
-    public void setLowestBid()
-    {
+    public void updateLowestBid(String path, Bid bid) {
         // update lowest bid in the database
+        this.databaseReference = this.database.getReference(path);
+        this.databaseReference.child(path).setValue(bid);
     }
 
 

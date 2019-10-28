@@ -1,11 +1,14 @@
 package com.example.yabeeprototypes;
 
+import android.provider.ContactsContract;
+
 public class Post {
 
     public String title;
     public double maxPrice;
     public String description;
     public int auctionLength;
+    private Bid lowestBid;
     public String imageUrl; // will deal with this later
     public String category;
 
@@ -24,10 +27,13 @@ public class Post {
         this.category = category;
     }
 
-    public String toString()
+    public void setLowestBid(Bid lowestBid)
     {
-        return String.format("%s\n %f\n %s\n %d\n %s\n %s\n", this.title, this.maxPrice, this.description,
-                this.auctionLength, this.imageUrl, this.category);
+        this.lowestBid = lowestBid;
+        // now update in database
+        DatabaseHelper database = new DatabaseHelper();
+        String path = "Posts/this.title/lowestBid".replace("this.title", this.title);
+        database.updateLowestBid(path, this.lowestBid);
     }
 
 }
