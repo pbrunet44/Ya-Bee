@@ -45,7 +45,7 @@ public class DatabaseHelper {
 
     public void writeNewPost(Post post)
     {
-        this.databaseReference.child("Posts").child(post.title).setValue(post);
+        this.databaseReference.child("Posts").child(post.id).setValue(post);
     }
 
     public Post readPostInformation()

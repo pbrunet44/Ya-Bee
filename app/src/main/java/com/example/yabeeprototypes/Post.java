@@ -11,14 +11,14 @@ public class Post {
     private Bid lowestBid;
     public String imageUrl; // will deal with this later
     public String category;
-    //public String id;
+    public String id;
 
     public Post()
     {
         super(); // filler, will change this later
     }
 
-    public Post(String title, double maxPrice, String description, int auctionLength, String imageUrl, String category)
+    public Post(String title, double maxPrice, String description, int auctionLength, String imageUrl, String category, String id)
     {
         this.title = title;
         this.maxPrice = maxPrice;
@@ -26,7 +26,7 @@ public class Post {
         this.auctionLength = auctionLength;
         this.imageUrl = imageUrl;
         this.category = category;
-        //this.id =
+        this.id = id;
     }
 
     public void setLowestBid(Bid lowestBid)
