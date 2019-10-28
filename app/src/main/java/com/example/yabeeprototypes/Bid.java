@@ -2,15 +2,17 @@ package com.example.yabeeprototypes;
 
 public class Bid
 {
+    public String name;
     public double price = 0.00;
     public String description;
     public String imageURL;
 
-    public void setBid(double price, String description, String imageURL)
+    public void setBid(String name, double price, String description, String imageURL)
     {
         this.price = price;
         this.description = description;
         this.imageURL = imageURL;
+        this.name = name;
     }
 
     public boolean verifyBid(Bid lowestbid, int bid)
