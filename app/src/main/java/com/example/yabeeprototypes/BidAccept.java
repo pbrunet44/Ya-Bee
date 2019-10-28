@@ -59,8 +59,8 @@ public class BidAccept extends AppCompatActivity {
                 Intent intents = new Intent(BidAccept.this, ItemsBuying.class);
                 Toast.makeText(getApplicationContext(), "Bid Declined", Toast.LENGTH_LONG).show();
                 startActivity(intents);
-
             }
+            //buttons don't do anything lol
             return true;
         }
     }
