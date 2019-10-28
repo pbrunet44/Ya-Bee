@@ -6,13 +6,15 @@ public class Bid
     public double price = 0.00;
     public String description;
     public String imageURL;
+    public String id; //this is to ensure all bids have a unique id
 
-    public void setBid(String name, double price, String description, String imageURL)
+    public void setBid(String name, double price, String description, String imageURL, String id)
     {
         this.price = price;
         this.description = description;
         this.imageURL = imageURL;
         this.name = name;
+        this.id = id;
     }
 
     public boolean verifyBid(Bid lowestbid, int bid)
