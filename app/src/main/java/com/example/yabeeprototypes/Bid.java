@@ -5,6 +5,7 @@ public class Bid
     public double price = 0.00;
     public String description;
     public String imageURL;
+    //public String id;
 
     public void setBid(double price, String description, String imageURL)
     {
