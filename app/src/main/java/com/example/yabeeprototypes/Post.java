@@ -11,6 +11,7 @@ public class Post {
     private Bid lowestBid;
     public String imageUrl; // will deal with this later
     public String category;
+    //public String id;
 
     public Post()
     {
@@ -25,6 +26,7 @@ public class Post {
         this.auctionLength = auctionLength;
         this.imageUrl = imageUrl;
         this.category = category;
+        //this.id =
     }
 
     public void setLowestBid(Bid lowestBid)

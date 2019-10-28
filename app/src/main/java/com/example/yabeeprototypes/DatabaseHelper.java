@@ -16,11 +16,31 @@ public class DatabaseHelper {
 
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
+    //private ArrayList<Post> posts;
 
     public DatabaseHelper()
     {
         this.database = FirebaseDatabase.getInstance();
         this.databaseReference = this.database.getReference(); // need to take into account bids...
+        //this.posts = new ArrayList<Post>();
+        databaseReference.child("Posts").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //Post checkPost = dataSnapshot.child("Bike").getValue(Post.class);
+                //System.out.println(checkPost.title);
+                for (DataSnapshot child:dataSnapshot.getChildren()) {
+                    Post readPost = child.getValue(Post.class);
+                    System.out.println(readPost.title + ", " + readPost.description);
+                    //posts.add(readPost);
+                }
+                System.out.println("WE GOT HERE BOIS!");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void writeNewPost(Post post)
@@ -43,9 +63,28 @@ public class DatabaseHelper {
         this.databaseReference.child(path).setValue(bid);
     }
 
-    /*public void getPost(Post post)
+//    public void queryPost(String title)
+//    {
+//        com.google.firebase.database.Query query = this.databaseReference.child("Posts").orderByChild("title").equalTo(title);
+//        query.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                for (DataSnapshot data:dataSnapshot.getChildren()){
+//                    Post post = data.getValue(Post.class);
+//                    System.out.println(post.title + ", " + post.description);
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                Log.e("DatabaseHelper", "onCancelled", databaseError.toException());
+//            }
+//        });
+//    }
+
+    public void getPost(Post post)
     {
-        this.databaseReference.child("Posts").child(post.title).addListenerForSingleValueEvent(new ValueEventListener() {
+        this.databaseReference.child("Posts").child(post.title).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Post readPost = dataSnapshot.getValue(Post.class);
@@ -58,7 +97,7 @@ public class DatabaseHelper {
             }
         });
 
-    }*/
+    }
 
 
 
