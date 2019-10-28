@@ -32,8 +32,8 @@ public class MakeListing extends AppCompatActivity {
                 Post post = new Post(title, maxPrice, description, auctionLength, null, category, Long.toString(System.nanoTime())); // will take care of image url later that's why it's null
                 DatabaseHelper database = new DatabaseHelper();
                 database.writeNewPost(post);
-                //database.queryPost(post.title);
-                //database.getPost(post);
+
+
             }
         });
 

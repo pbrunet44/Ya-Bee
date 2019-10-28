@@ -1,5 +1,6 @@
 package com.example.yabeeprototypes;
 
+import android.renderscript.Sampler;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -23,38 +24,57 @@ public class DatabaseHelper {
         this.database = FirebaseDatabase.getInstance();
         this.databaseReference = this.database.getReference(); // need to take into account bids...
         //this.posts = new ArrayList<Post>();
-        databaseReference.child("Posts").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                //Post checkPost = dataSnapshot.child("Bike").getValue(Post.class);
-                //System.out.println(checkPost.title);
-                for (DataSnapshot child:dataSnapshot.getChildren()) {
-                    Post readPost = child.getValue(Post.class);
-                    System.out.println(readPost.title + ", " + readPost.description);
-                    //posts.add(readPost);
-                }
-                System.out.println("WE GOT HERE BOIS!");
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+//        databaseReference.child("Posts").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                //Post checkPost = dataSnapshot.child("Bike").getValue(Post.class);
+//                //System.out.println(checkPost.title);
+//                for (DataSnapshot child:dataSnapshot.getChildren()) {
+//                    Post readPost = child.getValue(Post.class);
+//                    System.out.println(readPost.title + ", " + readPost.description);
+//                    //posts.add(readPost);
+//                }
+//                System.out.println("WE GOT HERE BOIS!");
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
     }
 
     public void writeNewPost(Post post)
     {
         this.databaseReference.child("Posts").child(post.id).setValue(post);
+        readPostInformation();
     }
 
-    public Post readPostInformation()
+    public void readPostInformation()
     {
         Post post = new Post();
-        // need to work on retrieving information from the database in appropriate structure
-        // also i need to take into account as to whether i am looking for a specific post's information
-        // so i need to change the signature of this method to accept a parameter
-        return post;
+        this.databaseReference = this.database.getReference().child("Posts").child("10107998789100");
+        System.out.println("Before listener!!");
+        ValueEventListener val = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    Post post = dataSnapshot.getValue(Post.class);
+                    System.out.println("Inside listener!");
+                }
+                else
+                {
+                    System.out.println("DATABASE: The value is null!");
+                }
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println(databaseError.toString());
+            }
+        };
+        System.out.println("Outside of listener!!");
+        this.databaseReference.addValueEventListener(val);
     }
 
     public void updateLowestBid(String path, Bid bid) {
