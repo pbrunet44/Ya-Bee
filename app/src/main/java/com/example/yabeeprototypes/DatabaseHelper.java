@@ -1,5 +1,7 @@
 package com.example.yabeeprototypes;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -40,6 +42,23 @@ public class DatabaseHelper {
         this.databaseReference = this.database.getReference(path);
         this.databaseReference.child(path).setValue(bid);
     }
+
+    /*public void getPost(Post post)
+    {
+        this.databaseReference.child("Posts").child(post.title).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Post readPost = dataSnapshot.getValue(Post.class);
+                System.out.println(readPost.title);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("DatabaseHelper", "onCancelled", databaseError.toException());
+            }
+        });
+
+    }*/
 
 
 
