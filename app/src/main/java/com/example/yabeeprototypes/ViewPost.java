@@ -14,6 +14,7 @@ public class ViewPost extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_post);
         // this is needed to send post information
+        // view post should also display the post's id, to make it easier to retrieve post information
         Button createBid = (Button)findViewById(R.id.BidButton);
         createBid.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -21,6 +22,9 @@ public class ViewPost extends AppCompatActivity {
                 Intent intent = new Intent(ViewPost.this, InitialBid.class);
                 startActivity(intent);
             }
+
+            // after sending post information, the lowest bid on the screen has to be changed
+            // so we must set the lowest bid price on the screen to the post's lowestbid e.g. with setText, etc.
         });
     }
 

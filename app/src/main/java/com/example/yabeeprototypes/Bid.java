@@ -15,16 +15,4 @@ public class Bid
         this.id = id;
     }
 
-    public boolean verifyBid(Bid newBid, Post post)
-    {
-        // compare current bid to the lowest bid in the auction
-        // if it is lower, allow bid i.e. let lowest bid become current price and return true
-        // else refuse, and prompt user to enter an appropriate bid and return false;
-        boolean accept = false;
-        if (Double.compare(newBid.price, post.lowestBid.price) > 0)
-            accept = true; // if lowest bid > bid, accept
-        // anything else will not be accepted
-        return accept;
-    }
-
 }
