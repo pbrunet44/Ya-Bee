@@ -1,17 +1,12 @@
 package com.example.yabeeprototypes;
 
-import android.renderscript.Sampler;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +20,7 @@ public class DatabaseHelper {
     public DatabaseHelper()
     {
         this.database = FirebaseDatabase.getInstance();
-        this.databaseReference = this.database.getReference(); // need to take into account bids...
+        this.databaseReference = this.database.getReference();
         this.posts = new ArrayList<>(); //Holds current state of database
         this.databaseReference.child("Posts").addValueEventListener(postListener); //Updates current state of database
     }

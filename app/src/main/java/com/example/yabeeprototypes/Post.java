@@ -8,15 +8,10 @@ public class Post {
     public double maxPrice;
     public String description;
     public int auctionLength;
-    private Bid lowestBid;
+    public Bid lowestBid;
     public String imageUrl; // will deal with this later
     public String category;
     public String id;
-
-    public Post()
-    {
-        super(); // filler, will change this later
-    }
 
     public Post(String title, double maxPrice, String description, int auctionLength, String imageUrl, String category, String id)
     {
@@ -29,6 +24,18 @@ public class Post {
         this.id = id;
     }
 
+    public boolean verifyBid(Bid newBid)
+    {
+        // compare current bid to the lowest bid in the auction
+        // if it is lower, allow bid i.e. let lowest bid become current price and return true
+        // else refuse, and prompt user to enter an appropriate bid and return false;
+        boolean accept = false;
+        if (Double.compare(newBid.price, this.lowestBid.price) < 0)
+            accept = true; // if lowest bid > bid, accept
+        // anything else will not be accepted
+        return accept;
+    }
+
     public void setLowestBid(Bid lowestBid)
     {
         this.lowestBid = lowestBid;
@@ -37,5 +44,7 @@ public class Post {
         String path = "Posts/this.title/lowestBid".replace("this.title", this.title);
         database.updateLowestBid(path, this.lowestBid);
     }
+
+
 
 }

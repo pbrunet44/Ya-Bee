@@ -16,18 +16,21 @@ public class InitialBid extends AppCompatActivity {
         setContentView(R.layout.activity_initial_bid);
 
         // create onClick listener
-        Button submitBid = (Button)findViewById(R.id.btnSubmit);
+        Button submitBid = (Button) findViewById(R.id.btnSubmit);
+        final DatabaseHelper database = new DatabaseHelper();
         submitBid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String imageUrl = null; // null for now, will go back to take into account images
-                String description = ((TextView)findViewById(R.id.etDescription)).getText().toString();
-                double price = Double.parseDouble(((TextView)findViewById(R.id.etBidPrice)).getText().toString());
-
-                // after getting the price, verify if it is currently lower than the post's lowest bid using verifyBid()
-                // if it is, setLowestBid()
+                String description = ((TextView) findViewById(R.id.etDescription)).getText().toString();
+                double price = Double.parseDouble(((TextView) findViewById(R.id.etBidPrice)).getText().toString());
+                Bid bid = new Bid(price, description, imageUrl, Long.toString(System.nanoTime()));
+                // get post from database
+                // verify new bid's price with verifyBid()
+                // if verifyBid returns true,
+                    // call setLowestBid
+                // else prompt user to input a valid bid
             }
         });
     }
-
 }
