@@ -37,7 +37,7 @@ public class DatabaseHelper {
 
     /**
      * Queries the database for a post with the provided ID
-      * @param id the ID string of the target post
+     * @param id the ID string of the target post
      * @return the target Post object
      */
     public Post getPostByID(String id)
