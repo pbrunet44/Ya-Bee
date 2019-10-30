@@ -14,10 +14,15 @@ public class InitialBid extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_bid);
+        final DatabaseHelper database = new DatabaseHelper();
+
+        // getting post id so we can therefore get post information
+        Intent intent = getIntent();
+        String postID = intent.getStringExtra("POST ID");
+        final Post post = database.getPostByID(postID);
 
         // create onClick listener
         Button submitBid = (Button) findViewById(R.id.btnSubmit);
-        final DatabaseHelper database = new DatabaseHelper();
         submitBid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,12 +30,16 @@ public class InitialBid extends AppCompatActivity {
                 String description = ((TextView) findViewById(R.id.etDescription)).getText().toString();
                 double price = Double.parseDouble(((TextView) findViewById(R.id.etBidPrice)).getText().toString());
                 Bid bid = new Bid(price, description, imageUrl, Long.toString(System.nanoTime()));
-                // get post from database
-                // verify new bid's price with verifyBid()
-                // if verifyBid returns true,
-                    // call setLowestBid
-                // else prompt user to input a valid bid
+                if (post.verifyBid(bid))
+                    post.setLowestBid(bid);
+                else
+                {
+                    // prompt a toast telling user to enter a valid bid
+                    System.out.println("ERROR: Please enter a valid bid!");
+                }
             }
         });
+
+
     }
 }

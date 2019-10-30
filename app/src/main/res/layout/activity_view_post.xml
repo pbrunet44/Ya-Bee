@@ -9,6 +9,18 @@
     tools:context=".ViewPost">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/postID"
+        android:text="6066647493300"
+        android:textColor="#212121"
+        android:textSize="16sp"
+        android:layout_gravity="start"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
+    <TextView
         android:id="@+id/timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

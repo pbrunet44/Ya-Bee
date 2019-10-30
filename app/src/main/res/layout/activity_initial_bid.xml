@@ -20,14 +20,14 @@
         android:textColor="@color/colorTextPrimary"
         android:textSize="30sp" />
 
-    <TextView
-        android:id="@+id/tvListingName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="20sp"
-        android:text="[Listing Name Here]"/>
+<!--    <TextView-->
+<!--        android:id="@+id/tvListingName"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:textColor="@color/colorTextPrimary"-->
+<!--        android:textSize="20sp"-->
+<!--        android:text="[Listing Name Here]"/>-->
 
     <ImageView
         android:id="@+id/imgDefault"

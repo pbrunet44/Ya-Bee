@@ -42,6 +42,7 @@ public class Post {
         // now update in database
         DatabaseHelper database = new DatabaseHelper();
         String path = "Posts/this.title/lowestBid".replace("this.title", this.title);
+        path = "Posts/id/lowestBid".replace("id", this.id);
         database.updateLowestBid(path, this.lowestBid);
     }
 
