@@ -22,11 +22,6 @@
         <activity
             android:name=".MakeListing"
             android:parentActivityName=".ItemsBuying">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".MakeAccount"
@@ -53,7 +48,13 @@
             android:label="Search"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".AuctionResult" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
