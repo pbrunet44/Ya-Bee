@@ -2,28 +2,26 @@ package com.example.yabeeprototypes;
 
 public class Bid
 {
-    public String name;
     public double price = 0.00;
     public String description;
     public String imageURL;
     public String id; //this is to ensure all bids have a unique id
 
-    public void setBid(String name, double price, String description, String imageURL, String id)
+    public Bid(double price, String description, String imageURL, String id)
     {
         this.price = price;
         this.description = description;
         this.imageURL = imageURL;
-        this.name = name;
         this.id = id;
     }
 
-    public boolean verifyBid(Bid lowestbid, int bid)
+    public boolean verifyBid(Bid newBid, Post post)
     {
         // compare current bid to the lowest bid in the auction
         // if it is lower, allow bid i.e. let lowest bid become current price and return true
         // else refuse, and prompt user to enter an appropriate bid and return false;
         boolean accept = false;
-        if (Double.compare(lowestbid.price, bid) > 0)
+        if (Double.compare(newBid.price, post.lowestBid.price) > 0)
             accept = true; // if lowest bid > bid, accept
         // anything else will not be accepted
         return accept;

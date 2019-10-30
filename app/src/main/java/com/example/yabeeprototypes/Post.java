@@ -8,15 +8,10 @@ public class Post {
     public double maxPrice;
     public String description;
     public int auctionLength;
-    private Bid lowestBid;
+    public Bid lowestBid;
     public String imageUrl; // will deal with this later
     public String category;
     public String id;
-
-    public Post()
-    {
-        super(); // filler, will change this later
-    }
 
     public Post(String title, double maxPrice, String description, int auctionLength, String imageUrl, String category, String id)
     {
