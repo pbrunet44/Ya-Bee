@@ -29,6 +29,7 @@ public class Post {
         this.id = id;
         this.postDate = postDate;
         this.isExpired = isExpired;
+        startAuctionTimer(); // setting auction timer to start
     }
 
     public boolean verifyBid(Bid newBid)

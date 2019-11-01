@@ -19,7 +19,15 @@ public class ViewPost extends Fragment {
         View view = inflater.inflate(R.layout.activity_view_post, container, false);
         // this is needed to send post information
         // view post should also display the post's id, to make it easier to retrieve post information
+        final String id = ((TextView)view.findViewById(R.id.postID)).getText().toString();
         Button createBid = (Button) view.findViewById(R.id.BidButton);
+
+        DatabaseHelper database = new DatabaseHelper();
+        Post post = database.getPostByID(id);
+
+        TextView timer = (TextView)view.findViewById(R.id.timer); // retrieving timer off the post's page
+        timer.setText(post.getAuctionTimer()); // setting timer to time remaining
+
         createBid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
