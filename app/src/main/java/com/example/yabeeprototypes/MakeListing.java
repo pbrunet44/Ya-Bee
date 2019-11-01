@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class MakeListing extends AppCompatActivity {
 
@@ -33,7 +34,8 @@ public class MakeListing extends AppCompatActivity {
                 int auctionLength = Integer.parseInt(((TextView)findViewById(R.id.durationOfAuction)).getText().toString());
 
                 // will take care of image url later that's why it's null
-                Post post = new Post(title, maxPrice, description, auctionLength, null, category, Long.toString(System.nanoTime()));
+                Date postDate = new Date();
+                Post post = new Post(title, maxPrice, description, auctionLength, null, category, Long.toString(System.nanoTime()), postDate, false);
                 database.writeNewPost(post);
 
             }
