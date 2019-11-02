@@ -54,6 +54,10 @@ public class Post {
         database.updateLowestBid(path, this.lowestBid);
     }
 
+    public Bid getLowestBid() {
+        return lowestBid;
+    }
+
     /**
      * Initializes the auction timer when posts are loaded
      */
@@ -83,5 +87,83 @@ public class Post {
                 + ", Mins: " + Long.toString((this.auctionTimeLeft / 60) % 60));
     }
 
+    public String getTitle() {
+        return title;
+    }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public double getMaxPrice() {
+        return maxPrice;
+    }
+
+    public void setMaxPrice(double maxPrice) {
+        this.maxPrice = maxPrice;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getAuctionLength() {
+        return auctionLength;
+    }
+
+    public void setAuctionLength(int auctionLength) {
+        this.auctionLength = auctionLength;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Date getPostDate() {
+        return postDate;
+    }
+
+    public void setPostDate(Date postDate) {
+        this.postDate = postDate;
+    }
+
+    public long getAuctionTimeLeft() {
+        return auctionTimeLeft;
+    }
+
+    public void setAuctionTimeLeft(long auctionTimeLeft) {
+        this.auctionTimeLeft = auctionTimeLeft;
+    }
+
+    public boolean isExpired() {
+        return isExpired;
+    }
+
+    public void setExpired(boolean expired) {
+        isExpired = expired;
+    }
 }
