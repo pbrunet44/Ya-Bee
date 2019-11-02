@@ -26,18 +26,29 @@ public class ViewPost extends Fragment {
         Post post = database.getPostByID(id);
 
         TextView timer = (TextView)view.findViewById(R.id.timer); // retrieving timer off the post's page
-        timer.setText(post.getAuctionTimer()); // setting timer to time remaining
+        boolean isAuctionOver = false;
+        while (!isAuctionOver)
+        {
+            String result = post.getAuctionTimer();
+            if (!result.equals("AUCTION EXPIRED"))
+                timer.setText(post.getAuctionTimer()); // setting timer to time remaining
+            else
+            {
+                isAuctionOver = true;
+                // go to another screen displaying that you won the auction
+            }
+        }
 
-        createBid.setOnClickListener(new View.OnClickListener() {
+       /* createBid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), InitialBid.class);
                 startActivity(intent);
-            }
+            }*/
 
             // after sending post information, the lowest bid on the screen has to be changed
             // so we must set the lowest bid price on the screen to the post's lowestbid e.g. with setText, etc.
-        });
+       /* });*/
         return view;
 
     }
