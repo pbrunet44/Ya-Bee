@@ -143,13 +143,13 @@ public class Post {
         this.id = id;
     }
 
-    public Date getPostDate() {
+    /*public Date getPostDate() {
         return postDate;
     }
 
     public void setPostDate(Date postDate) {
         this.postDate = postDate;
-    }
+    }*/
 
     public long getAuctionTimeLeft() {
         return auctionTimeLeft;
