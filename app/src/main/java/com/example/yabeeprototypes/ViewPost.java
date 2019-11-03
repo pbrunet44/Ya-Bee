@@ -1,6 +1,7 @@
 
 package com.example.yabeeprototypes;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -32,7 +33,7 @@ public class ViewPost extends Fragment {
             {
                 String result = post.getAuctionTimer();
                 if (!result.equals("AUCTION EXPIRED"))
-                    timer.setText(post.getAuctionTimer()); // setting timer to time remaining
+                    timer.setText(result); // setting timer to time remaining
                 else
                 {
                     isAuctionOver = true;
@@ -48,9 +49,6 @@ public class ViewPost extends Fragment {
                 intent.putExtra("POST ID", id);
                 startActivity(intent);
             }
-
-            // after sending post information, the lowest bid on the screen has to be changed
-            // so we must set the lowest bid price on the screen to the post's lowestbid e.g. with setText, etc.
         });
         return view;
 

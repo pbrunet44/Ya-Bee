@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/postID"
-        android:text="6066647493300"
+        android:text="52854709116560"
         android:textColor="#212121"
         android:textSize="16sp"
         android:layout_gravity="start"
@@ -48,15 +48,28 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         />
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#757575"
-        android:textSize="20sp"
-        android:text="Current price: $60.00"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        />
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current bid:"
+            android:textSize="20sp"
+            android:textColor="#757575"
+            ></TextView>
+        <TextView
+            android:id="@+id/lowestBid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#757575"
+            android:textSize="20sp"
+            android:text="$60.00"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            />
+    </LinearLayout>
     <View
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"

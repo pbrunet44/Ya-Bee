@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MakeBid extends AppCompatActivity {
 
@@ -31,11 +32,17 @@ public class MakeBid extends AppCompatActivity {
                 double price = Double.parseDouble(((TextView) findViewById(R.id.etBidPrice)).getText().toString());
                 Bid bid = new Bid(price, description, imageUrl);
                 if (post.verifyBid(bid))
+                {
                     post.setLowestBid(bid);
+                    // now set the lowest bid on the post's page
+                    String postBid = "$" + bid.price;
+                    TextView lowestBid = ((TextView)findViewById(R.id.lowestBid));
+                    lowestBid.setText(postBid);
+                }
                 else
                 {
                     // prompt a toast telling user to enter a valid bid
-                    System.out.println("ERROR: Please enter a valid bid!");
+                    Toast.makeText(MakeBid.this, "Your bid is too high! Please bid lower.", Toast.LENGTH_SHORT).show();
                 }
             }
         });

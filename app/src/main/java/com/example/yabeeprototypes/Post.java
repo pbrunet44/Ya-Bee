@@ -14,7 +14,6 @@ public class Post {
     public String imageUrl; // will deal with this later
     public String category;
     public String id;
-    // this has to be a long since Firebase does not support Date class objects
     public Date postDate;
     public long auctionTimeLeft;
     public boolean isExpired;
@@ -26,16 +25,16 @@ public class Post {
 
     public Post(String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageUrl, String category, String id, Date postDate, boolean isExpired)
     {
-        this.title = title;
-        this.maxPrice = maxPrice;
-        this.description = description;
-        this.auctionLength = auctionLength;
+        this.setTitle(title);
+        this.setMaxPrice(maxPrice);
+        this.setDescription(description);
+        this.setAuctionLength(auctionLength);
         this.lowestBid = lowestBid;
-        this.imageUrl = imageUrl;
-        this.category = category;
-        this.id = id;
-        this.postDate = postDate;
-        this.isExpired = isExpired;
+        this.setImageUrl(imageUrl);
+        this.setCategory(category);
+        this.setId(id);
+        this.setPostDate(postDate);
+        this.setExpired(isExpired);
         startAuctionTimer(); // setting auction timer to start
     }
 
@@ -56,8 +55,7 @@ public class Post {
         this.lowestBid = lowestBid;
         // now update in database
         DatabaseHelper database = new DatabaseHelper();
-        String path = "Posts/this.title/lowestBid".replace("this.title", this.title);
-        path = "Posts/id/lowestBid".replace("id", this.id);
+        String path = "Posts/id/lowestBid".replace("id", this.id);
         database.updateLowestBid(path, this.lowestBid);
     }
 
@@ -98,7 +96,7 @@ public class Post {
         return title;
     }
 
-    public void setTitle(String title) {
+    private void setTitle(String title) {
         this.title = title;
     }
 
@@ -106,7 +104,7 @@ public class Post {
         return maxPrice;
     }
 
-    public void setMaxPrice(double maxPrice) {
+    private void setMaxPrice(double maxPrice) {
         this.maxPrice = maxPrice;
     }
 
@@ -114,15 +112,19 @@ public class Post {
         return description;
     }
 
-    public void setDescription(String description) {
+    private void setDescription(String description) {
         this.description = description;
     }
+
+    private void setPostDate(Date postDate) {this.postDate = postDate;}
+
+    public Date getPostDate() {return this.postDate;}
 
     public int getAuctionLength() {
         return auctionLength;
     }
 
-    public void setAuctionLength(int auctionLength) {
+    private void setAuctionLength(int auctionLength) {
         this.auctionLength = auctionLength;
     }
 
@@ -130,7 +132,7 @@ public class Post {
         return imageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
+    private void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
 
@@ -138,7 +140,7 @@ public class Post {
         return category;
     }
 
-    public void setCategory(String category) {
+    private void setCategory(String category) {
         this.category = category;
     }
 
@@ -146,7 +148,7 @@ public class Post {
         return id;
     }
 
-    public void setId(String id) {
+    private void setId(String id) {
         this.id = id;
     }
 
@@ -154,7 +156,7 @@ public class Post {
         return postDate;
     }
 
-    public void setPostDate(Date postDate) {
+    private void setPostDate(Date postDate) {
         this.postDate = postDate;
     }*/
 
@@ -162,7 +164,7 @@ public class Post {
         return auctionTimeLeft;
     }
 
-    public void setAuctionTimeLeft(long auctionTimeLeft) {
+    private void setAuctionTimeLeft(long auctionTimeLeft) {
         this.auctionTimeLeft = auctionTimeLeft;
     }
 
@@ -170,7 +172,7 @@ public class Post {
         return isExpired;
     }
 
-    public void setExpired(boolean expired) {
+    private void setExpired(boolean expired) {
         isExpired = expired;
     }
 }

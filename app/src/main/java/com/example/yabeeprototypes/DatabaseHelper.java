@@ -84,9 +84,11 @@ public class DatabaseHelper {
         return results;
     }
 
-
+    /**
+     * Updates a post's lowest bid
+     */
     public void updateLowestBid(String path, Bid bid) {
-        // update lowest bid in the database
+
         this.databaseReference = this.database.getReference(path);
         this.databaseReference.child(path).setValue(bid);
     }
@@ -98,16 +100,13 @@ public class DatabaseHelper {
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
             posts.clear();
-            if(dataSnapshot.exists())
+            for(DataSnapshot snapshot: dataSnapshot.getChildren())
             {
-                //for(DataSnapshot snapshot: dataSnapshot.getChildren())
-                //{
-                    Post post = dataSnapshot.getValue(Post.class);
-                    posts.add(post);
-                    System.out.println(post.title +  ", " + post.description);
-                //}
-                System.out.println("LOCAL ARRAYLIST UPDATED!");
+                Post post = snapshot.getValue(Post.class);
+                posts.add(post);
+                System.out.println(post.title +  ", " + post.description);
             }
+            System.out.println("LOCAL ARRAYLIST UPDATED!");
         }
         @Override
         public void onCancelled(@NonNull DatabaseError databaseError)
