@@ -15,10 +15,17 @@ import java.util.ArrayList;
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
 {
     private ArrayList<Post> posts;
+    PostClicked activity;
+
+    public interface PostClicked
+    {
+        void onPostClicked(int index);
+    }
 
     public PostAdapter (Context context, ArrayList<Post> list)
     {
         posts = list;
+        activity = (PostClicked) context;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder
@@ -40,6 +47,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
                 @Override
                 public void onClick(View v) {
 
+                    activity.onPostClicked(posts.indexOf((Post) v.getTag()));
                 }
             });
         }

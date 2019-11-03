@@ -9,7 +9,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class ItemsSelling extends AppCompatActivity {
+public class ItemsSelling extends AppCompatActivity implements PostAdapter.PostClicked{
 
     RecyclerView recyclerView;
     RecyclerView.Adapter myAdapter;
@@ -46,5 +46,11 @@ public class ItemsSelling extends AppCompatActivity {
         myAdapter = new PostAdapter(this,posts);
 
         recyclerView.setAdapter(myAdapter);
+    }
+
+    @Override
+    public void onPostClicked(int index) {
+
+        //implement action for clicked post
     }
 }
