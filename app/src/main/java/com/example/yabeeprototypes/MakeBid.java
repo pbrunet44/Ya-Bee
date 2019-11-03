@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class InitialBid extends AppCompatActivity {
+public class MakeBid extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

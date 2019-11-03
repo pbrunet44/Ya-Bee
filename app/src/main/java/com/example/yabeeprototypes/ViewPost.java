@@ -2,7 +2,6 @@
 package com.example.yabeeprototypes;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
@@ -45,7 +44,7 @@ public class ViewPost extends Fragment {
         createBid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), InitialBid.class);
+                Intent intent = new Intent(getActivity(), MakeBid.class);
                 intent.putExtra("POST ID", id);
                 startActivity(intent);
             }

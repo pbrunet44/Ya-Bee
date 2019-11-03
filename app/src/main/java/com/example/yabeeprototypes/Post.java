@@ -15,7 +15,7 @@ public class Post {
     public String category;
     public String id;
     // this has to be a long since Firebase does not support Date class objects
-    public long postDate;
+    public Date postDate;
     public long auctionTimeLeft;
     public boolean isExpired;
 
@@ -24,7 +24,7 @@ public class Post {
         super();
     }
 
-    public Post(String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageUrl, String category, String id, long postDate, boolean isExpired)
+    public Post(String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageUrl, String category, String id, Date postDate, boolean isExpired)
     {
         this.title = title;
         this.maxPrice = maxPrice;
@@ -70,8 +70,7 @@ public class Post {
      */
     public void startAuctionTimer()
     {
-        Date d = new Date(this.postDate);
-        Date expireDate = new Date(d.getTime());
+        Date expireDate = new Date(this.postDate.getTime());
         long expireTime = expireDate.getTime();
         expireTime += (MILLISECONDS_PER_DAY * this.auctionLength);
         expireDate.setTime(expireTime);

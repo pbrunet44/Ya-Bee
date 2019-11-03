@@ -40,7 +40,7 @@
             android:label="Items I&apos;m buying"
             android:parentActivityName=".Profile" />
         <activity
-            android:name=".InitialBid"
+            android:name=".MakeBid"
             android:label="Make initial bid"
             android:parentActivityName=".ViewPost" />
         <activity
