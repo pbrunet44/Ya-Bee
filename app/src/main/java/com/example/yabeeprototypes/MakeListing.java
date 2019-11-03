@@ -22,11 +22,13 @@ public class MakeListing extends AppCompatActivity {
         setContentView(R.layout.activity_make_listing);
         Button makePost = findViewById(R.id.collectPostInfo);
         final DatabaseHelper database = new DatabaseHelper();
+
         makePost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // collect post info from button click
                 // probably must check for validation and require them to fill out all of these
+
                 String title = ((TextView)findViewById(R.id.titleEntry)).getText().toString();
                 String description = ((TextView)findViewById(R.id.descEntry)).getText().toString();
                 String category = ((TextView)findViewById(R.id.categoryDropdown)).getText().toString();

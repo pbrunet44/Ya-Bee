@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate((savedInstanceState));
         setContentView(R.layout.fragment_viewpager);
-
         mSectionsStatePagerAdapter = new SectionsStatePagerAdapter(getSupportFragmentManager(), BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         mViewPager = (LockableViewPager) findViewById(R.id.container);
         setupViewPager(mViewPager);

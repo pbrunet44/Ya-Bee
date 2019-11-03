@@ -84,32 +84,6 @@ public class DatabaseHelper {
         return results;
     }
 
-//    public void readPostInformation()
-//    {
-//        Post post = new Post();
-//        this.databaseReference = this.database.getReference().child("Posts").child("10107998789100");
-//        System.out.println("Before listener!!");
-//        ValueEventListener val = new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                if (dataSnapshot.exists()) {
-//                    Post post = dataSnapshot.getValue(Post.class);
-//                    System.out.println("Inside listener!");
-//                }
-//                else
-//                {
-//                    System.out.println("DATABASE: The value is null!");
-//                }
-//
-//            }
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//                System.out.println(databaseError.toString());
-//            }
-//        };
-//        System.out.println("Outside of listener!!");
-//        this.databaseReference.addValueEventListener(val);
-//    }
 
     public void updateLowestBid(String path, Bid bid) {
         // update lowest bid in the database
