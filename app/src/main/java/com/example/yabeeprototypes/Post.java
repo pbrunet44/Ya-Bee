@@ -44,19 +44,18 @@ public class Post {
         // if it is lower, allow bid i.e. let lowest bid become current price and return true
         // else refuse, and prompt user to enter an appropriate bid and return false;
         boolean accept = false;
-        if (Double.compare(newBid.price, this.lowestBid.price) < 0)
+        if (this.lowestBid == null || Double.compare(newBid.price, this.lowestBid.price) < 0)
             accept = true; // if lowest bid > bid, accept
         // anything else will not be accepted
         return accept;
     }
 
-    public void setLowestBid(Bid lowestBid)
+    public void updateNewLowestBid(Bid lowestBid)
     {
         this.lowestBid = lowestBid;
         // now update in database
         DatabaseHelper database = new DatabaseHelper();
-        String path = "Posts/id/lowestBid".replace("id", this.id);
-        database.updateLowestBid(path, this.lowestBid);
+        database.updateLowestBid(this.id, this.lowestBid);
     }
 
     public Bid getLowestBid() {

@@ -7,6 +7,7 @@ public class Bid
     public String imageURL;
     //public String id; //do bids need unique ids since we're only keeping track of the lowest bid?
 
+    public Bid() {}
     public Bid(double price, String description, String imageURL)
     {
         this.price = price;

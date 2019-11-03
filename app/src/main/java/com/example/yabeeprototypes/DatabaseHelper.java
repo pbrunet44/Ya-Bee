@@ -124,10 +124,9 @@ public class DatabaseHelper {
     /**
      * Updates a post's lowest bid
      */
-    public void updateLowestBid(String path, Bid bid) {
+    public void updateLowestBid(String id, Bid bid) {
 
-        this.databaseReference = this.database.getReference(path);
-        this.databaseReference.child(path).setValue(bid);
+        this.databaseReference.child("Posts").child(id).child("lowestBid").setValue(bid);
     }
 
     /**

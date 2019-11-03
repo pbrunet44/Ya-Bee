@@ -23,7 +23,7 @@ import java.util.List;
 public class ViewPost extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_view_post, container, false);
+        final View view = inflater.inflate(R.layout.activity_view_post, container, false);
         // this is needed to send post information
         // view post should also display the post's id, to make it easier to retrieve post information
         final String id = ((TextView)view.findViewById(R.id.postID)).getText().toString();
@@ -66,6 +66,17 @@ public class ViewPost extends Fragment {
             }
         });
 
+        // now get new bid price
+        database.getPosts(new FirebaseCallback() {
+            @Override
+            public void onCallback(List<Post> posts) {
+                Post post = database.getPostByID(id, posts);
+                TextView currBid = view.findViewById(R.id.lowestBid);
+                String newLowestBid = "$" + post.getLowestBid().price;
+                System.out.println("Got new bid price in viewpost: " + newLowestBid);
+                currBid.setText(newLowestBid);
+            }
+        });
 
         return view;
 
