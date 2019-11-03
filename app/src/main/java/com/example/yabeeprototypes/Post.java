@@ -6,17 +6,17 @@ import java.util.Date;
 public class Post {
 
     private final static long MILLISECONDS_PER_DAY = 1000L * 60 * 60 * 24;
-    public String title;
-    public double maxPrice;
-    public String description;
-    public int auctionLength;
-    public Bid lowestBid;
-    public String imageUrl; // will deal with this later
-    public String category;
-    public String id;
-    public Date postDate;
-    public long auctionTimeLeft;
-    public boolean isExpired;
+    private String title;
+    private double maxPrice;
+    private String description;
+    private int auctionLength;
+    private Bid lowestBid;
+    private String imageUrl; // will deal with this later
+    private String category;
+    private String id;
+    private Date postDate;
+    private long auctionTimeLeft;
+    private boolean isExpired;
 
     public Post()
     {
@@ -174,5 +174,10 @@ public class Post {
 
     private void setExpired(boolean expired) {
         isExpired = expired;
+    }
+
+    public String toString()
+    {
+        return String.format("Title: %s\nMax price: %f\n Description: %s\n", this.title, this.maxPrice, this.description);
     }
 }

@@ -14,7 +14,7 @@ import java.util.List;
 public class DatabaseHelper {
 
     private FirebaseDatabase database;
-    private DatabaseReference databaseReference;
+    public DatabaseReference databaseReference;
     private List<Post> posts;
 
     public DatabaseHelper()
@@ -27,24 +27,61 @@ public class DatabaseHelper {
 
     public void writeNewPost(Post post)
     {
-        this.databaseReference.child("Posts").child(post.id).setValue(post);
+        this.databaseReference.child("Posts").child(post.getId()).setValue(post);
     }
 
+    //id the ID string of the target post
     /**
      * Queries the database for a post with the provided ID
-     * @param id the ID string of the target post
+     * @param
      * @return the target Post object
      */
-    public Post getPostByID(String id)
+    /*public Post getPostByID(String id)
     {
         Post result = null;
-        for (Post post:posts) {
+        for (Post post: this.posts) {
             if(post.id.equals(id))
             {
                 result = post;
             }
         }
 
+        return result;
+    }*/
+    public void getPosts(final FirebaseCallback firebaseCallback)
+    {
+        this.databaseReference.child("Posts").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                posts.clear();
+                for(DataSnapshot snapshot: dataSnapshot.getChildren())
+                {
+                    Post post = snapshot.getValue(Post.class);
+                    posts.add(post);
+                    System.out.println(post.getTitle() +  ", " + post.getDescription());
+                }
+                firebaseCallback.onCallback(posts);
+                //System.out.println("Size of list of posts: " + posts.size());
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError)
+            {
+                System.out.println("ERROR: data not read!");
+            }
+        });
+    }
+
+    public Post getPostByID(String id, List<Post> posts)
+    {
+        Post result = null;
+        for (Post p: posts)
+        {
+            if (id.equals(p.getId()))
+            {
+                result = p;
+                break;
+            }
+        }
         return result;
     }
 
@@ -57,7 +94,7 @@ public class DatabaseHelper {
     {
         ArrayList<Post> results = new ArrayList<>();
         for (Post post:posts) {
-            if(post.category.equals(category))
+            if(post.getCategory().equals(category))
             {
                 results.add(post);
             }
@@ -75,7 +112,7 @@ public class DatabaseHelper {
     {
         ArrayList<Post> results = new ArrayList<>();
         for (Post post:posts) {
-            if(post.title.contains(keyword))
+            if(post.getTitle().contains(keyword))
             {
                 results.add(post);
             }
@@ -104,9 +141,9 @@ public class DatabaseHelper {
             {
                 Post post = snapshot.getValue(Post.class);
                 posts.add(post);
-                System.out.println(post.title +  ", " + post.description);
+                System.out.println(post.getTitle() +  ", " + post.getDescription());
             }
-            System.out.println("LOCAL ARRAYLIST UPDATED!");
+            //System.out.println("Size of list of posts: " + posts.size());
         }
         @Override
         public void onCancelled(@NonNull DatabaseError databaseError)

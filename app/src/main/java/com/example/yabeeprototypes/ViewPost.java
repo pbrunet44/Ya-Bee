@@ -13,6 +13,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class ViewPost extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -20,27 +27,35 @@ public class ViewPost extends Fragment {
         // this is needed to send post information
         // view post should also display the post's id, to make it easier to retrieve post information
         final String id = ((TextView)view.findViewById(R.id.postID)).getText().toString();
-        Button createBid = (Button) view.findViewById(R.id.BidButton);
+        final Button createBid = (Button) view.findViewById(R.id.BidButton);
 
-        DatabaseHelper database = new DatabaseHelper();
-        Post post = database.getPostByID(id);
+        final DatabaseHelper database = new DatabaseHelper();
+        final TextView timer = (TextView)view.findViewById(R.id.timer); // retrieving timer off the post's page
 
-        TextView timer = (TextView)view.findViewById(R.id.timer); // retrieving timer off the post's page
-        boolean isAuctionOver = false;
-        if (post != null)
-        {
-            while (!isAuctionOver)
-            {
-                String result = post.getAuctionTimer();
-                if (!result.equals("AUCTION EXPIRED"))
-                    timer.setText(result); // setting timer to time remaining
-                else
+        database.getPosts(new FirebaseCallback() {
+            @Override
+            public void onCallback(List<Post> posts) {
+                // find post with appropriate id
+                System.out.println("Do you even get here?");
+                Post post = database.getPostByID(id, posts);
+                System.out.println(post.toString());
+                boolean isAuctionOver = false;
+                if (post != null)
                 {
-                    isAuctionOver = true;
-                    // go to another screen displaying that you won the auction
+                    /*while (!isAuctionOver)
+                    {*/
+                        String result = post.getAuctionTimer();
+                        if (!result.equals("AUCTION EXPIRED"))
+                            timer.setText(result); // setting timer to time remaining
+                        else
+                        {
+                            isAuctionOver = true;
+                            // go to another screen displaying that you won the auction
+                        }
+                    //}
                 }
             }
-        }
+        });
 
         createBid.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +65,8 @@ public class ViewPost extends Fragment {
                 startActivity(intent);
             }
         });
+
+
         return view;
 
     }
