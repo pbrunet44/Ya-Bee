@@ -29,7 +29,7 @@ public class InitialBid extends AppCompatActivity {
                 String imageUrl = null; // null for now, will go back to take into account images
                 String description = ((TextView) findViewById(R.id.etDescription)).getText().toString();
                 double price = Double.parseDouble(((TextView) findViewById(R.id.etBidPrice)).getText().toString());
-                Bid bid = new Bid(price, description, imageUrl, Long.toString(System.nanoTime()));
+                Bid bid = new Bid(price, description, imageUrl);
                 if (post.verifyBid(bid))
                     post.setLowestBid(bid);
                 else

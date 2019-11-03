@@ -126,17 +126,18 @@ public class DatabaseHelper {
             posts.clear();
             if(dataSnapshot.exists())
             {
-                for(DataSnapshot snapshot: dataSnapshot.getChildren())
-                {
-                    Post post = snapshot.getValue(Post.class);
+                //for(DataSnapshot snapshot: dataSnapshot.getChildren())
+                //{
+                    Post post = dataSnapshot.getValue(Post.class);
                     posts.add(post);
                     System.out.println(post.title +  ", " + post.description);
-                }
+                //}
                 System.out.println("LOCAL ARRAYLIST UPDATED!");
             }
         }
         @Override
-        public void onCancelled(@NonNull DatabaseError databaseError) {
+        public void onCancelled(@NonNull DatabaseError databaseError)
+        {
             System.out.println("ERROR: data not read!");
         }
     };

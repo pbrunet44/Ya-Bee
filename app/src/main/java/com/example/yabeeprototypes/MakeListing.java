@@ -34,8 +34,9 @@ public class MakeListing extends AppCompatActivity {
                 int auctionLength = Integer.parseInt(((TextView)findViewById(R.id.durationOfAuction)).getText().toString());
 
                 // will take care of image url later that's why it's null
-                Date postDate = new Date();
-                Post post = new Post(title, maxPrice, description, auctionLength, null, category, Long.toString(System.nanoTime()), postDate, false);
+                long postDate = new Date().getTime();
+                Bid bid = new Bid(0, "Initial bid", null);
+                Post post = new Post(title, maxPrice, description, auctionLength, bid, null, category, Long.toString(System.nanoTime()), postDate, false);
                 database.writeNewPost(post);
 
             }
