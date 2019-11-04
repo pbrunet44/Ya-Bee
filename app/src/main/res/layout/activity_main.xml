@@ -20,7 +20,8 @@
         android:layout_height="56dp"
         android:layout_gravity="start"
         android:layout_alignParentBottom="true"
-        android:background="#FFFFFC"
+        android:background="@color/backgroundBottomNav"
+        app:itemTextColor="@color/colorTextPrimary"
         app:menu="@menu/bottom_navigation" />
 
 

@@ -18,6 +18,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,8 +74,9 @@ public class ViewPost extends Fragment {
             public void onCallback(List<Post> posts) {
                 Post post = database.getPostByID(id, posts);
                 TextView currBid = view.findViewById(R.id.lowestBid);
-                String newLowestBid = "$" + post.getLowestBid().price;
-                System.out.println("Got new bid price in viewpost: " + newLowestBid);
+                DecimalFormat df = new DecimalFormat("$0.00");
+                String newLowestBid = df.format(post.getLowestBid().price);
+                //System.out.println("Got new bid price in viewpost: " + newLowestBid);
                 currBid.setText(newLowestBid);
             }
         });
