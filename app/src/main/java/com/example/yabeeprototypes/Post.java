@@ -65,7 +65,7 @@ public class Post {
     /**
      * Initializes the auction timer when posts are loaded
      */
-    public void startAuctionTimer()
+    private void startAuctionTimer()
     {
         Date expireDate = new Date(this.postDate.getTime());
         long expireTime = expireDate.getTime();
