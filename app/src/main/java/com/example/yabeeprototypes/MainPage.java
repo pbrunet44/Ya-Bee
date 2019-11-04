@@ -24,12 +24,14 @@ public class MainPage extends Fragment {
 
     private ImageView buzz1;
     private ImageView buzz2;
+    private Button signIn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main_page, container, false);
         buzz1 = (ImageView) view.findViewById(R.id.imgBuzz1);
         buzz2 = (ImageView) view.findViewById(R.id.imgBuzz2);
+        signIn = (Button) view.findViewById(R.id.tvLogin);
         buzz1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +48,13 @@ public class MainPage extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "idk", Toast.LENGTH_SHORT).show();
+            }
+        });
+        signIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Login.class);
+                startActivity(intent);
             }
         });
         return view;
