@@ -33,7 +33,7 @@ public class MainPage extends Fragment {
         buzz1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Hydroflasksksks clicked.", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "Hydroflasksksks clicked.", Toast.LENGTH_SHORT).show();
 
                 ViewPost nextFrag= new ViewPost();
                 getActivity().getSupportFragmentManager().beginTransaction()
