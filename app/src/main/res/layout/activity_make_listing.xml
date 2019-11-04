@@ -85,11 +85,11 @@
     <EditText
         android:id="@+id/categoryDropdown"
         android:layout_width="166dp"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginBottom="200dp" />
+        android:layout_marginBottom="190dp" />
 
     <TextView
         android:id="@+id/auctionLength"
