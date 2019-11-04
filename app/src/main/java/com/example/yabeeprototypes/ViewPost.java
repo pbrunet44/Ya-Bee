@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.os.Handler;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,30 +33,30 @@ public class ViewPost extends Fragment {
         final DatabaseHelper database = new DatabaseHelper();
         final TextView timer = (TextView)view.findViewById(R.id.timer); // retrieving timer off the post's page
 
-        database.getPosts(new FirebaseCallback() {
+        final Handler timerHandler = new Handler();
+        Runnable timerRunnable = new Runnable(){
             @Override
-            public void onCallback(List<Post> posts) {
-                // find post with appropriate id
-                System.out.println("Do you even get here?");
-                Post post = database.getPostByID(id, posts);
-                System.out.println(post.toString());
-                boolean isAuctionOver = false;
-                if (post != null)
-                {
-                    /*while (!isAuctionOver)
-                    {*/
-                        String result = post.getAuctionTimer();
-                        if (!result.equals("AUCTION EXPIRED"))
-                            timer.setText(result); // setting timer to time remaining
-                        else
+            public void run() {
+                database.getPosts(new FirebaseCallback() {
+                    @Override
+                    public void onCallback(List<Post> posts) {
+                        // find post with appropriate id
+                        //System.out.println("Do you even get here?");
+                        Post post = database.getPostByID(id, posts);
+                        //System.out.println(post.toString());
+                        //boolean isAuctionOver = false;
+                        if (post != null)
                         {
-                            isAuctionOver = true;
-                            // go to another screen displaying that you won the auction
+                            post.updateAuctionTimer();
+                            timer.setText(post.getAuctionTimer()); // setting timer to time remaining
                         }
-                    //}
-                }
+                    }
+                });
+                timerHandler.postDelayed(this, 500);
             }
-        });
+        };
+
+        timerRunnable.run();
 
         createBid.setOnClickListener(new View.OnClickListener() {
             @Override

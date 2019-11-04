@@ -36,7 +36,7 @@ public class Post {
         this.setId(id);
         this.setPostDate(postDate);
         this.setExpired(isExpired);
-        startAuctionTimer(); // setting auction timer to start
+        updateAuctionTimer(); // setting auction timer to start
     }
 
     public boolean verifyBid(Bid newBid)
@@ -66,7 +66,7 @@ public class Post {
     /**
      * Initializes the auction timer when posts are loaded
      */
-    private void startAuctionTimer()
+    public void updateAuctionTimer()
     {
         Date expireDate = new Date(this.postDate.getTime());
         long expireTime = expireDate.getTime();
@@ -87,9 +87,9 @@ public class Post {
             this.isExpired = true;
             return "AUCTION EXPIRED";
         }
-        return ("Days: " + Long.toString(this.auctionTimeLeft/60/60/24)
-                + ", Hrs: " + Long.toString((this.auctionTimeLeft / 60 / 60) % 24)
-                + ", Mins: " + Long.toString((this.auctionTimeLeft / 60) % 60));
+        return (String.format("%02d", (this.auctionTimeLeft / 60 / 60))
+                + ":" + String.format("%02d", (this.auctionTimeLeft / 60) % 60)
+                + ":" + String.format("%02d", this.auctionTimeLeft % 60));
     }
 
     public String getTitle() {
