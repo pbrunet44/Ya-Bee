@@ -8,4 +8,5 @@
 <color name="colorTextSecondary">#757575</color>
 <color name="colorDivider">#BDBDBD</color>
     <color name="backgroundBottomNav">#BDBDBD</color>
+    <color name="colorPrimaryLightAlternate">#FFECA5</color>
 </resources>
