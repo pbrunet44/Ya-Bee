@@ -45,7 +45,8 @@ public class MakeBid extends AppCompatActivity {
                         {
                             post.updateNewLowestBid(bid);
                             // go back to view post after submitting bid
-                            getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainer, new ViewPost()).commit();
+                            finish();
+                            //getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainer, new ViewPost()).commit();
                         }
                         else
                         {

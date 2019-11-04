@@ -33,9 +33,15 @@
             android:layout_gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/camera"
+                android:adjustViewBounds="true"
+                android:maxWidth="72dp"
+                android:maxHeight="72dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,10 +57,15 @@
             android:layout_gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/toys"
+                android:adjustViewBounds="true"
+                android:maxWidth="72dp"
+                android:maxHeight="72dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -71,9 +82,14 @@
             android:layout_gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/travel"
+                android:adjustViewBounds="true"
+                android:maxWidth="72dp"
+                android:maxHeight="72dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -112,9 +128,14 @@
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/imgBuzz1"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/ic_computer_networking_foreground"
+                android:adjustViewBounds="true"
+                android:maxWidth="72dp"
+                android:maxHeight="72dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -131,9 +152,14 @@
             android:orientation="vertical">
             <ImageView
                 android:id="@+id/imgBuzz2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/iphonex"
+                android:adjustViewBounds="true"
+                android:maxWidth="72dp"
+                android:maxHeight="72dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -149,9 +175,14 @@
             android:layout_gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/lionel_trains"
+                android:adjustViewBounds="true"
+                android:maxWidth="72dp"
+                android:maxHeight="72dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -189,9 +220,14 @@
             android:layout_gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/ps4"
+                android:adjustViewBounds="true"
+                android:maxWidth="72dp"
+                android:maxHeight="72dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -207,9 +243,14 @@
             android:layout_gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/xboxone"
+                android:adjustViewBounds="true"
+                android:maxWidth="72dp"
+                android:maxHeight="72dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -225,9 +266,14 @@
             android:layout_gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/wii"
+                android:adjustViewBounds="true"
+                android:maxWidth="72dp"
+                android:maxHeight="72dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -264,9 +310,14 @@
             android:layout_gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/adidas"
+                android:adjustViewBounds="true"
+                android:maxWidth="72dp"
+                android:maxHeight="72dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -282,9 +333,14 @@
             android:layout_gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/nike"
+                android:adjustViewBounds="true"
+                android:maxWidth="72dp"
+                android:maxHeight="72dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -300,9 +356,14 @@
             android:layout_gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/reebok"
+                android:adjustViewBounds="true"
+                android:maxWidth="72dp"
+                android:maxHeight="72dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -339,9 +400,14 @@
             android:layout_gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/babyshowerballoons"
+                android:adjustViewBounds="true"
+                android:maxWidth="72dp"
+                android:maxHeight="72dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -357,9 +423,14 @@
             android:layout_gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@drawable/partyfluffyslimes"
+                android:adjustViewBounds="true"
+                android:maxWidth="72dp"
+                android:maxHeight="72dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
