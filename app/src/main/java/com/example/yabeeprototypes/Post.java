@@ -6,6 +6,7 @@ import java.util.Date;
 public class Post {
 
     private final static long MILLISECONDS_PER_DAY = 1000L * 60 * 60 * 24;
+    private final static long MILLISECONDS_PER_MINUTE = 1000L * 60;
     private String title;
     private double maxPrice;
     private String description;
@@ -69,7 +70,7 @@ public class Post {
     {
         Date expireDate = new Date(this.postDate.getTime());
         long expireTime = expireDate.getTime();
-        expireTime += (MILLISECONDS_PER_DAY * this.auctionLength);
+        expireTime += (MILLISECONDS_PER_MINUTE * this.auctionLength);
         expireDate.setTime(expireTime);
         Date currentDate = new Date();
         this.auctionTimeLeft = (expireDate.getTime() - currentDate.getTime()) / 1000; //Convert time left from milliseconds to seconds
