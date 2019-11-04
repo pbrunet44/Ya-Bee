@@ -31,7 +31,7 @@ public class ViewPost extends Fragment {
         final Button createBid = (Button) view.findViewById(R.id.BidButton);
 
         final DatabaseHelper database = new DatabaseHelper();
-        final TextView timer = (TextView)view.findViewById(R.id.timer); // retrieving timer off the post's page
+        final TextView timer = (TextView) view.findViewById(R.id.timer); // retrieving timer off the post's page
 
         final Handler timerHandler = new Handler();
         Runnable timerRunnable = new Runnable(){

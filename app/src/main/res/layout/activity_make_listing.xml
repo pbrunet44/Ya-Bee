@@ -85,11 +85,11 @@
     <EditText
         android:id="@+id/categoryDropdown"
         android:layout_width="166dp"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginBottom="200dp" />
+        android:layout_marginBottom="190dp" />
 
     <TextView
         android:id="@+id/auctionLength"
@@ -113,8 +113,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginBottom="70dp"
         android:hint="minutes"
         android:inputType="number"
@@ -129,9 +129,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="94dp"
         android:layout_marginLeft="94dp"
-        android:textColor="#212121"
         android:layout_marginBottom="83dp"
         android:text="minutes"
+        android:textColor="#FFECB3"
         android:textSize="18sp" />
 
     <TextView
