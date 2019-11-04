@@ -22,8 +22,8 @@ public class Profile extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         makePost = (Button) view.findViewById(R.id.makePost);
-        ImageView deadBee = (ImageView) view.findViewById(R.id.deadBee);
-        deadBee.getDrawable().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
+        /*ImageView deadBee = (ImageView) view.findViewById(R.id.deadBee);
+        deadBee.getDrawable().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);*/
         makePost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

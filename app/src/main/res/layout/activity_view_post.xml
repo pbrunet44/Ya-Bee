@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/postID"
-            android:text="68727674835360"
+            android:text="105594061970180"
             android:visibility="invisible"
             android:textColor="@color/colorTextPrimary"
             android:textSize="16sp"
@@ -48,31 +48,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_marginRight="5dp"
             android:layout_gravity="center"
             android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Current bid:"
-                android:layout_marginRight="5dp"
-                android:textSize="22sp"
-                android:textColor="@color/colorTextPrimary"
-                ></TextView>
             <TextView
                 android:id="@+id/lowestBid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorTextPrimary"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 android:text="$60.00"
 
+                />
+            <View
+                android:layout_width="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorDivider"
                 />
             <TextView
                 android:id="@+id/timer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="24:00:00"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 android:textColor="@color/colorTextPrimary"
                 />
         </LinearLayout>
@@ -100,12 +100,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_button"
-            android:text="♡ E-mail listing?"
+            android:text="♡ Interested"
             android:textSize="18sp"
             android:textColor="@color/colorTextPrimary"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="150dp"
+            />
+        <View
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Item description:"
+            android:textSize="20sp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorTextPrimary"/>
+
+        <TextView
+            android:id="@+id/postDescription"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_marginBottom="100dp"
             />
 
 
