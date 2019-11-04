@@ -1,54 +1,99 @@
 package com.example.yabeeprototypes;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.view.View;
 
-import java.util.concurrent.locks.Lock;
-
-import static androidx.fragment.app.FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT;
-
-
-//This is the Main Activity that adds the Main Page fragment
-
-public class MainActivity extends AppCompatActivity {
-
-    private SectionsStatePagerAdapter mSectionsStatePagerAdapter;
-    private LockableViewPager mViewPager;
+public class MainActivity extends FragmentActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate((savedInstanceState));
-        setContentView(R.layout.fragment_viewpager);
-        mSectionsStatePagerAdapter = new SectionsStatePagerAdapter(getSupportFragmentManager(), BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        mViewPager = (LockableViewPager) findViewById(R.id.container);
-        setupViewPager(mViewPager);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        mViewPager.setSwipeable(LockableViewPager.SwipeDirection.left);
+        // Check that the activity is using the layout version with
+        // the fragment_container FrameLayout
+        if (findViewById(R.id.fragmentContainer) != null) {
+
+            // However, if we're being restored from a previous state,
+            // then we don't need to do anything and should return or else
+            // we could end up with overlapping fragments.
+            if (savedInstanceState != null) {
+                return;
+            }
+
+            // Create a new Fragment to be placed in the activity layout
+            MainPage firstFragment = new MainPage();
+
+            // In case this activity was started with special instructions from an
+            // Intent, pass the Intent's extras to the fragment as arguments
+            firstFragment.setArguments(getIntent().getExtras());
+
+            // Add the fragment to the 'fragment_container' FrameLayout
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragmentContainer, firstFragment).commit();
+        }
     }
-
-    /**
-     * Sets up layout that allows user to swipe left and right through "pages
-     * @param viewPager the ID string of the target post
-     * @return the target Post object
-     */
-    private void setupViewPager(ViewPager viewPager) {
-        SectionsStatePagerAdapter adapter = new SectionsStatePagerAdapter(getSupportFragmentManager(), BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-
-
-
-        //adapter.addFragment((new ClassName(), "FragmentTitle"));
-        adapter.addFragment(new MainPage(), "MainPage");
-        adapter.addFragment(new ViewPost(), "ViewPost");
-
-        viewPager.setAdapter(adapter);
-    }
-
-    public void setViewPager(int fragmentNumber) {
-        mViewPager.setCurrentItem(fragmentNumber);
-    }
-
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_main);
+//    }
 }
+
+//import androidx.appcompat.app.AppCompatActivity;
+//import androidx.viewpager.widget.ViewPager;
+//
+//import android.os.Bundle;
+//
+//import java.util.concurrent.locks.Lock;
+//
+//import static androidx.fragment.app.FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT;
+//
+//
+////This is the Main Activity that adds the Main Page fragment
+//
+//public class MainActivity extends AppCompatActivity {
+//
+//    private SectionsStatePagerAdapter mSectionsStatePagerAdapter;
+//    private LockableViewPager mViewPager;
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate((savedInstanceState));
+//        setContentView(R.layout.fragment_viewpager);
+//        mSectionsStatePagerAdapter = new SectionsStatePagerAdapter(getSupportFragmentManager(), BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+//        mViewPager = (LockableViewPager) findViewById(R.id.container);
+//        setupViewPager(mViewPager);
+//
+//        mViewPager.setSwipeable(LockableViewPager.SwipeDirection.left);
+//    }
+//
+//    /**
+//     * Sets up layout that allows user to swipe left and right through "pages
+//     * @param viewPager the ID string of the target post
+//     * @return the target Post object
+//     */
+//    private void setupViewPager(ViewPager viewPager) {
+//        SectionsStatePagerAdapter adapter = new SectionsStatePagerAdapter(getSupportFragmentManager(), BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+//
+//
+//
+//        //adapter.addFragment((new ClassName(), "FragmentTitle"));
+//        adapter.addFragment(new MainPage(), "MainPage");
+//        adapter.addFragment(new ViewPost(), "ViewPost");
+//
+//        viewPager.setAdapter(adapter);
+//    }
+//
+//    public void setViewPager(int fragmentNumber) {
+//        mViewPager.setCurrentItem(fragmentNumber);
+//    }
+//
+//}
 
 
 //package com.example.yabeeprototypes;
