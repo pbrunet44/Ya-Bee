@@ -29,8 +29,9 @@ public class MainActivity extends FragmentActivity {
                         case R.id.navProfile:
                             selectedFragment = new Profile();
                             break;
+
                     }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
+                    //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
                     return true;
                 }
             };

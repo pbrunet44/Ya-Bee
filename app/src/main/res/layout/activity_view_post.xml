@@ -117,6 +117,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Item description:"
+            android:layout_marginLeft="20sp"
             android:textSize="20sp"
             android:layout_marginBottom="5dp"
             android:textColor="@color/colorTextPrimary"/>
@@ -125,12 +126,10 @@
             android:id="@+id/postDescription"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="20sp"
             android:textSize="20sp"
             android:textColor="@color/colorTextPrimary"
             android:layout_marginBottom="100dp"
             />
-
-
-
     </LinearLayout>
 </ScrollView>

@@ -24,7 +24,7 @@ public class Browse extends AppCompatActivity implements PostAdapter.PostClicked
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browse_search);
 
-        recyclerView = findViewById(R.id.browselist);
+        /*recyclerView = findViewById(R.id.browselist);
         recyclerView.setHasFixedSize(true);
 
         layoutManager = new LinearLayoutManager( this);
@@ -46,14 +46,14 @@ public class Browse extends AppCompatActivity implements PostAdapter.PostClicked
 
         myAdapter = new PostAdapter(this,posts);
 
-        recyclerView.setAdapter(myAdapter);
+        recyclerView.setAdapter(myAdapter);*/
     }
 
-    public void goToViewPost(View view)
+    /*public void goToViewPost(View view)
     {
         Intent intent = new Intent(this, ViewPost.class);
         startActivity(intent);
-    }
+    }*/
 
     @Override
     public void onPostClicked(int index)
