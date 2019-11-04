@@ -32,6 +32,7 @@ public class MainActivity extends FragmentActivity {
 
                     }
                     //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
+                    finish();
                     return true;
                 }
             };
