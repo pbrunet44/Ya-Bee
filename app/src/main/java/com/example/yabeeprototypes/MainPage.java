@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,18 +23,29 @@ public class MainPage extends Fragment {
 
 
     private ImageView buzz1;
+    private ImageView buzz2;
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_main, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_main_page, container, false);
         buzz1 = (ImageView) view.findViewById(R.id.imgBuzz1);
+        buzz2 = (ImageView) view.findViewById(R.id.imgBuzz2);
         buzz1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(getActivity(), "Hydroflasksksks clicked.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Hydroflasksksks clicked.", Toast.LENGTH_SHORT).show();
 
-                ((MainActivity) getActivity()).setViewPager(1); //viewPost is our second fragment
+                ViewPost nextFrag= new ViewPost();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragmentContainer, nextFrag)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+        buzz2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "idk", Toast.LENGTH_SHORT).show();
             }
         });
         return view;
