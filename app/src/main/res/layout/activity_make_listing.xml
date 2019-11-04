@@ -116,7 +116,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginBottom="70dp"
-        android:hint="days"
+        android:hint="minutes"
         android:inputType="number"
         android:textSize="18sp" />
 
@@ -131,7 +131,7 @@
         android:layout_marginLeft="94dp"
         android:textColor="#212121"
         android:layout_marginBottom="83dp"
-        android:text="days"
+        android:text="minutes"
         android:textSize="18sp" />
 
     <TextView
