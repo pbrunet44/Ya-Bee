@@ -124,31 +124,27 @@
 
             <ImageView
                 android:id="@+id/aliveBee1"
-                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:src="@mipmap/ic_yabeereviews"/>
             <ImageView
                 android:id="@+id/aliveBee2"
-                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/ic_yabeereviews"/>
             <ImageView
                 android:id="@+id/aliveBee3"
-                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/ic_yabeereviews"/>
             <ImageView
                 android:id="@+id/aliveBee4"
-                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/ic_yabeereviews"/>
             <ImageView
                 android:id="@+id/deadBee"
-                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/ic_yabeereviews"/>
