@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.yabeeprototypes">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BidAccept">
-        </activity>
+        <activity android:name=".BrowsePage"></activity>
+        <activity android:name=".BidAccept"></activity>
         <activity android:name=".browse_temp" />
         <activity
             android:name=".ViewPost"
@@ -21,8 +23,7 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MakeListing"
-            android:parentActivityName=".ItemsBuying">
-        </activity>
+            android:parentActivityName=".ItemsBuying"></activity>
         <activity
             android:name=".MakeAccount"
             android:label="Create an account"

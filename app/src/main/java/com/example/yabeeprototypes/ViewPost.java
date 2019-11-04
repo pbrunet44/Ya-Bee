@@ -18,6 +18,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +33,7 @@ public class ViewPost extends Fragment {
 
         final DatabaseHelper database = new DatabaseHelper();
         final TextView timer = (TextView) view.findViewById(R.id.timer); // retrieving timer off the post's page
+        final TextView postDescription = (TextView) view.findViewById(R.id.postDescription);
 
         final Handler timerHandler = new Handler();
         Runnable timerRunnable = new Runnable(){
@@ -43,6 +45,7 @@ public class ViewPost extends Fragment {
                         // find post with appropriate id
                         //System.out.println("Do you even get here?");
                         Post post = database.getPostByID(id, posts);
+                        postDescription.setText(post.getDescription());
                         //System.out.println(post.toString());
                         //boolean isAuctionOver = false;
                         if (post != null)
@@ -73,8 +76,13 @@ public class ViewPost extends Fragment {
             public void onCallback(List<Post> posts) {
                 Post post = database.getPostByID(id, posts);
                 TextView currBid = view.findViewById(R.id.lowestBid);
-                String newLowestBid = "$" + post.getLowestBid().price;
-                System.out.println("Got new bid price in viewpost: " + newLowestBid);
+                DecimalFormat df = new DecimalFormat("#.##");
+                String newLowestBid = null;
+                if (post.getLowestBid().price == post.INITIAL_BID_PRICE)
+                    newLowestBid = "Max price: " + "$" + df.format(post.getMaxPrice()) + "\nNo bids yet!";
+                else
+                    newLowestBid = "Current bid: $" + df.format(post.getLowestBid().price);
+                //System.out.println("Got new bid price in viewpost: " + newLowestBid);
                 currBid.setText(newLowestBid);
             }
         });

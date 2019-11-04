@@ -5,6 +5,9 @@ import java.util.Date;
 
 public class Post {
 
+    static final double INITIAL_BID_PRICE = Double.MAX_VALUE;
+    static final String INITIAL_IMAGE = "";
+    static final String INITIAL_DESCRIPTION = "";
     private final static long MILLISECONDS_PER_DAY = 1000L * 60 * 60 * 24;
     private final static long MILLISECONDS_PER_MINUTE = 1000L * 60;
     private String title;
