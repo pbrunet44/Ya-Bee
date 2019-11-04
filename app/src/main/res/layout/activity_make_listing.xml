@@ -131,7 +131,7 @@
         android:layout_marginLeft="94dp"
         android:textColor="#212121"
         android:layout_marginBottom="83dp"
-        android:text="days"
+        android:text="minutes"
         android:textSize="18sp" />
 
     <TextView
