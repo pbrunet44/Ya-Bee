@@ -1,6 +1,8 @@
 package com.example.yabeeprototypes;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,6 +44,8 @@ public class MakeBid extends AppCompatActivity {
                         if (post != null && post.verifyBid(bid))
                         {
                             post.updateNewLowestBid(bid);
+                            // go back to view post after submitting bid
+                            getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainer, new ViewPost()).commit();
                         }
                         else
                         {
