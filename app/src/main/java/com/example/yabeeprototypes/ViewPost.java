@@ -45,6 +45,7 @@ public class ViewPost extends Fragment {
                         // find post with appropriate id
                         //System.out.println("Do you even get here?");
                         Post post = database.getPostByID(id, posts);
+                        System.out.println(post.toString());
                         postDescription.setText(post.getDescription());
                         //System.out.println(post.toString());
                         //boolean isAuctionOver = false;
@@ -75,6 +76,7 @@ public class ViewPost extends Fragment {
             @Override
             public void onCallback(List<Post> posts) {
                 Post post = database.getPostByID(id, posts);
+                System.out.println(post.toString());
                 TextView currBid = view.findViewById(R.id.lowestBid);
                 DecimalFormat df = new DecimalFormat("#.##");
                 String newLowestBid = null;

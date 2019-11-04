@@ -35,13 +35,11 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:src="@mipmap/ic_launcher" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Cameras"
-                android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorTextSecondary"
                 android:gravity="center"/>
@@ -75,12 +73,10 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:src="@mipmap/ic_launcher" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="Travel"
                 android:textSize="20sp"
                 android:textColor="@color/colorTextSecondary"
@@ -118,13 +114,11 @@
                 android:id="@+id/imgBuzz1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:src="@mipmap/ic_launcher" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Textbook"
-                android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorTextSecondary"
                 android:gravity="center"/>
@@ -139,13 +133,11 @@
                 android:id="@+id/imgBuzz2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:src="@mipmap/ic_launcher" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="iPhone X"
-                android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorTextSecondary"
                 android:gravity="center"/>
@@ -159,7 +151,6 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:src="@mipmap/ic_launcher" />
             <TextView
                 android:layout_width="match_parent"
@@ -200,13 +191,11 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:src="@mipmap/ic_launcher" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Sony PS4"
-                android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorTextSecondary"
                 android:gravity="center"/>
@@ -220,13 +209,11 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:src="@mipmap/ic_launcher" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Xbox One"
-                android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorTextSecondary"
                 android:gravity="center"/>
@@ -240,12 +227,10 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:src="@mipmap/ic_launcher" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="Wii"
                 android:textSize="20sp"
                 android:textColor="@color/colorTextSecondary"
@@ -281,13 +266,11 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:src="@mipmap/ic_launcher" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Adidas"
-                android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorTextSecondary"
                 android:gravity="center"/>
@@ -301,13 +284,11 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:src="@mipmap/ic_launcher" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nike"
-                android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorTextSecondary"
                 android:gravity="center"/>
@@ -321,12 +302,10 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:src="@mipmap/ic_launcher" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="Reebok"
                 android:textSize="20sp"
                 android:textColor="@color/colorTextSecondary"
@@ -362,12 +341,10 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:src="@mipmap/ic_launcher" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="Baby Shower Balloons"
                 android:textSize="20sp"
                 android:textColor="@color/colorTextSecondary"
@@ -382,12 +359,10 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:src="@mipmap/ic_launcher" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="Party Fluffy Slimes"
                 android:textSize="20sp"
                 android:textColor="@color/colorTextSecondary"
