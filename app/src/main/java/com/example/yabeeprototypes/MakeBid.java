@@ -6,11 +6,13 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class MakeBid extends AppCompatActivity {
@@ -41,17 +43,20 @@ public class MakeBid extends AppCompatActivity {
                         String description = ((TextView) findViewById(R.id.etDescription)).getText().toString();
                         double price = Double.parseDouble(((TextView) findViewById(R.id.etBidPrice)).getText().toString());
                         Bid bid = new Bid(price, description, imageUrl);
-                        if (post != null && post.verifyBid(bid))
+                        if (post.verifyBid(bid))
                         {
                             post.updateNewLowestBid(bid);
-                            // go back to view post after submitting bid
-                            finish();
-                            //getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainer, new ViewPost()).commit();
+                            finish();// go back to view post after submitting bid
                         }
                         else
                         {
                             // prompt a toast telling user to enter a valid bid
-                            Toast.makeText(MakeBid.this, "Your bid is too high! Please bid lower.", Toast.LENGTH_LONG).show();
+                            DecimalFormat df = new DecimalFormat("#.##");
+                            String currBidPrice = df.format(post.getLowestBid().price);
+                            String toastText = "The current bid is $" + currBidPrice + ". Please bid lower.";
+                            Toast invalidBid = Toast.makeText(getApplicationContext(), toastText, Toast.LENGTH_LONG);
+                            invalidBid.setGravity(Gravity.TOP, 0, 0);
+                            invalidBid.show();
                         }
                     }
 
