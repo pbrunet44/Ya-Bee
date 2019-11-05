@@ -4,9 +4,12 @@ package com.example.yabeeprototypes;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -16,8 +19,9 @@ import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-public class MakeListing extends AppCompatActivity {
+public class MakeListing extends Activity implements AdapterView.OnItemSelectedListener {
     // initial values for bid price, imageurl, initial description respectively
     static final double INITIAL_BID_PRICE = Double.MAX_VALUE;
     static final String INITIAL_IMAGE = "";
@@ -29,11 +33,27 @@ public class MakeListing extends AppCompatActivity {
         Button makePost = findViewById(R.id.collectPostInfo);
         final DatabaseHelper database = new DatabaseHelper();
 
+        Spinner conditionSpinner = (Spinner) findViewById(R.id.itemCondition);
+        // on click listener
+        conditionSpinner.setOnItemSelectedListener(this);
+        // drop down elements
+        List<String> categories = new ArrayList<>();
+        categories.add("New with tags");
+        categories.add("Pre-owned");
+        categories.add("New with defects");
+        categories.add("New without tags");
+        // Create adapter for spinner
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+        // drop down style
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        conditionSpinner.setAdapter(dataAdapter);
+
         makePost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // collect post info from button click
-                // probably must check for validation and require them to fill out all of these
+
+
+
 
                 String title = ((TextView)findViewById(R.id.titleEntry)).getText().toString();
                 String description = ((TextView)findViewById(R.id.descEntry)).getText().toString();
@@ -54,4 +74,17 @@ public class MakeListing extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        // On selecting a spinner item
+        String item = parent.getItemAtPosition(position).toString();
+
+        // For debugging purposes only
+        // Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+    }
+    public void onNothingSelected(AdapterView<?> arg0) {
+        // TODO Auto-generated method stub
+    }
+
 }
+
