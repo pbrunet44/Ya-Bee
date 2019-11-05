@@ -24,6 +24,7 @@ public class BidAccept extends AppCompatActivity {
             "timmy turner commits tax fraud and wishes he gets away with it and does " +
             "timmy turner commits tax fraud and wishes he gets away with it and does " +
             "";
+    // dummy value lol
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

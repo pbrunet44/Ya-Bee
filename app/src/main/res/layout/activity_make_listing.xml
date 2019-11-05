@@ -32,7 +32,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="126dp"
-        android:layout_marginRight="45dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
         android:textColor="#212121"
         android:ems="10"
         android:gravity="start|top"
@@ -63,6 +64,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="233dp"
         android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
         android:textColor="#212121"
         android:ems="10"
         android:gravity="start|top"
@@ -82,6 +84,7 @@
         android:text="Category"
         android:textSize="24sp" />
 
+<!--
     <EditText
         android:id="@+id/categoryDropdown"
         android:layout_width="166dp"
@@ -90,6 +93,15 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="20dp"
         android:layout_marginBottom="190dp" />
+-->
+
+    <Spinner
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="210dp" />
 
     <TextView
         android:id="@+id/auctionLength"
