@@ -1,7 +1,6 @@
 
 package com.example.yabeeprototypes;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -14,18 +13,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.os.Handler;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.ValueEventListener;
-
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ViewPost extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.activity_view_post, container, false);
+        final View view = inflater.inflate(R.layout.fragment_view_post, container, false);
         // this is needed to send post information
         // view post should also display the post's id, to make it easier to retrieve post information
         final String id = ((TextView)view.findViewById(R.id.postID)).getText().toString();
