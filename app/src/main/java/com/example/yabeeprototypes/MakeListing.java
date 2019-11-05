@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,7 +37,7 @@ public class MakeListing extends AppCompatActivity {
 
                 String title = ((TextView)findViewById(R.id.titleEntry)).getText().toString();
                 String description = ((TextView)findViewById(R.id.descEntry)).getText().toString();
-                String category = ((TextView)findViewById(R.id.categoryDropdown)).getText().toString();
+                String category = ((Spinner)findViewById(R.id.categoryDropdown)).getSelectedItem().toString();
                 double maxPrice = Double.parseDouble(((TextView)findViewById(R.id.yourPrice)).getText().toString());
                 int auctionLength = Integer.parseInt(((TextView)findViewById(R.id.durationOfAuction)).getText().toString());
 
