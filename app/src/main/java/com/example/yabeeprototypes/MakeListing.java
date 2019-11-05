@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 
@@ -43,6 +45,9 @@ public class MakeListing extends AppCompatActivity {
                 Post post = new Post(title, maxPrice, description, auctionLength, new Bid(INITIAL_BID_PRICE, INITIAL_DESCRIPTION, INITIAL_IMAGE), INITIAL_IMAGE, category, Long.toString(System.nanoTime()), date, false);
                 database.writeNewPost(post);
 
+                Toast successToast = Toast.makeText(getApplicationContext(), "Successful post creation!", Toast.LENGTH_LONG);
+                successToast.setGravity(Gravity.TOP, 0, 0);
+                successToast.show();
             }
         });
 

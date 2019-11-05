@@ -16,5 +16,11 @@
         android:icon="@drawable/ic_person_black_24dp"
         android:title="@string/Profile"  />
 
+    <item
+        android:id="@+id/navMakeListing"
+        android:icon="@drawable/ic_make_listing"
+        android:title="New Post"
+        />
+
 
 </menu>
