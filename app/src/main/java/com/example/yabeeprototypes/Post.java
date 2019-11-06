@@ -17,6 +17,7 @@ public class Post {
     private Bid lowestBid;
     private String imageUrl; // will deal with this later
     private String category;
+    private String condition;
     private String id;
     private Date postDate;
     private long auctionTimeLeft;
@@ -27,7 +28,7 @@ public class Post {
         super();
     }
 
-    public Post(String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageUrl, String category, String id, Date postDate, boolean isExpired)
+    public Post(String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageUrl, String category, String condition, String id, Date postDate, boolean isExpired)
     {
         this.setTitle(title);
         this.setMaxPrice(maxPrice);
@@ -35,6 +36,7 @@ public class Post {
         this.setAuctionLength(auctionLength);
         this.lowestBid = lowestBid;
         this.setImageUrl(imageUrl);
+        this.setCondition(condition);
         this.setCategory(category);
         this.setId(id);
         this.setPostDate(postDate);
@@ -149,6 +151,15 @@ public class Post {
 
     public String getId() {
         return id;
+    }
+
+    private void setCondition(String condition)
+    {
+        this.condition = condition;
+    }
+    public String getCondition()
+    {
+        return this.condition;
     }
 
     private void setId(String id) {

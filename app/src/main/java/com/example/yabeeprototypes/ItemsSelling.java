@@ -30,18 +30,18 @@ public class ItemsSelling extends AppCompatActivity implements PostAdapter.PostC
         recyclerView.setLayoutManager(layoutManager);
 
         posts = new ArrayList<Post>();
-        posts.add(new Post("Clean Code", 28.50, "description", 2, null,"something", "Books", "1", new Date(), false));
-        posts.add(new Post("Cracking the Coding Interview", 32, "description", 2, null,"something", "Books", "2", new Date(), false));
-        posts.add(new Post("Java Illuminated", 124, "description", 2, null,"something", "Books", "3", new Date(), false));
-        posts.add(new Post("Clean Code", 28.5, "description", 2, null,"something", "Books", "4", new Date(), false));
-        posts.add(new Post("Cracking the Coding Interview", 32, "description", 2, null,"something", "Books", "5", new Date(), false));
-        posts.add(new Post("Java Illuminated", 124, "description", 2, null,"something", "Books", "6", new Date(), false));
-        posts.add(new Post("Clean Code", 28.50, "description", 2, null,"something", "Books", "7", new Date(), false));
-        posts.add(new Post("Cracking the Coding Interview", 32, "description", 2, null,"something", "Books", "8", new Date(), false));
-        posts.add(new Post("Java Illuminated", 124, "description", 2, null,"something", "Books", "9", new Date(), false));
-        posts.add(new Post("Clean Code", 28.5, "description", 2, null,"something", "Books", "10", new Date(), false));
-        posts.add(new Post("Cracking the Coding Interview", 32, "description", 2, null,"something", "Books", "11", new Date(), false));
-        posts.add(new Post("Java Illuminated", 124, "description", 2, null,"something", "Books", "12", new Date(), false));
+        posts.add(new Post("Clean Code", 28.50, "description", 2, null,"something", "Books","New", "1", new Date(), false));
+        posts.add(new Post("Cracking the Coding Interview", 32, "description", 2, null,"something", "Books","New", "2", new Date(), false));
+        posts.add(new Post("Java Illuminated", 124, "description", 2, null,"something", "Books","New", "3", new Date(), false));
+        posts.add(new Post("Clean Code", 28.5, "description", 2, null,"something", "Books","New", "4", new Date(), false));
+        posts.add(new Post("Cracking the Coding Interview", 32, "description", 2, null,"something", "Books","New", "5", new Date(), false));
+        posts.add(new Post("Java Illuminated", 124, "description", 2, null,"something", "Books","New", "6", new Date(), false));
+        posts.add(new Post("Clean Code", 28.50, "description", 2, null,"something", "Books","New", "7", new Date(), false));
+        posts.add(new Post("Cracking the Coding Interview", 32, "description", 2, null,"something", "Books","New", "8", new Date(), false));
+        posts.add(new Post("Java Illuminated", 124, "description", 2, null,"something", "Books","New", "9", new Date(), false));
+        posts.add(new Post("Clean Code", 28.5, "description", 2, null,"something", "Books","New", "10", new Date(), false));
+        posts.add(new Post("Cracking the Coding Interview", 32, "description", 2, null,"something", "Books","New", "11", new Date(), false));
+        posts.add(new Post("Java Illuminated", 124, "description", 2, null,"something", "Books","New", "12", new Date(), false));
 
         myAdapter = new PostAdapter(this,posts);
 
