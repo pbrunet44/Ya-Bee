@@ -93,9 +93,28 @@ public class Post {
             this.isExpired = true;
             return "AUCTION EXPIRED";
         }
-        return (String.format("%02d", (this.auctionTimeLeft / 60 / 60))
+        if(this.auctionTimeLeft > 24 * 60 * 60)
+        {
+            return ("Days: " + String.format("%02d", this.auctionTimeLeft / 24 / 60 / 60)
+                    + "Hours: " + String.format("%02d", (this.auctionTimeLeft / 60 / 60) % 60));
+        }
+        else if(this.auctionTimeLeft > 60 * 60)
+        {
+            return ("Hours: " + String.format("%02d", this.auctionTimeLeft / 60 / 60)
+                    + "Minutes: " + String.format("%02d", (this.auctionTimeLeft / 60) % 60));
+        }
+        else if(this.auctionTimeLeft > 60)
+        {
+            return ("Minutes: " + String.format("%02d", this.auctionTimeLeft / 60)
+                    + "Seconds: " + String.format("%02d", (this.auctionTimeLeft) % 60));
+        }
+        else
+        {
+            return "Seconds: " + String.format("%02d", this.auctionTimeLeft);
+        }
+        /*return (String.format("%02d", (this.auctionTimeLeft / 60 / 60))
                 + ":" + String.format("%02d", (this.auctionTimeLeft / 60) % 60)
-                + ":" + String.format("%02d", this.auctionTimeLeft % 60));
+                + ":" + String.format("%02d", this.auctionTimeLeft % 60));*/
     }
 
     public String getTitle() {
