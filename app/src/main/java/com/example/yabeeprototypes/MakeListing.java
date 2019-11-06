@@ -1,9 +1,6 @@
 package com.example.yabeeprototypes;
 
 
-import androidx.appcompat.app.AppCompatActivity;
-
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -14,8 +11,6 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 import java.util.Date;

@@ -1,254 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFECB3"
-    tools:context=".MakeListing">
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <Button
+        android:id="@+id/upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:background="@drawable/rounded_button"
+        android:text="upload photo (optional)" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="13dp" />
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="156dp"
-        android:layout_height="37dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="81dp"
         android:layout_marginEnd="20dp"
-        android:textColor="#212121"
+        android:layout_marginRight="20dp"
         android:text="Title of Post"
+        android:textColor="#212121"
         android:textSize="24sp" />
 
     <EditText
         android:id="@+id/titleEntry"
-        android:layout_width="391dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="126dp"
-        android:layout_marginRight="20dp"
         android:layout_marginEnd="20dp"
-        android:textColor="#212121"
+        android:layout_marginRight="20dp"
         android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine" />
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="199dp"
-        android:textColor="#212121"
         android:text="Description"
+        android:textColor="#212121"
         android:textSize="24sp" />
 
     <EditText
         android:id="@+id/descEntry"
-        android:layout_width="349dp"
-        android:layout_height="99dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="233dp"
-        android:layout_marginRight="20dp"
         android:layout_marginEnd="20dp"
-        android:textColor="#212121"
+        android:layout_marginRight="20dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/topPrice"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="19dp"
-        android:layout_marginLeft="19dp"
-        android:layout_marginTop="359dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Max Price:"
+        android:textColor="#212121"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/theDollarSign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#212121"
+            android:text="$"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/yourPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="numberDecimal" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#212121"
+        android:text="Category"
+        android:textSize="24sp" />
+
+    <Spinner
+        android:id="@+id/categoryDropdown"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#212121"
         android:text="Condition"
-        android:textColor="@color/colorTextPrimary"
         android:textSize="24sp" />
 
     <Spinner
         android:id="@+id/itemCondition"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginBottom="304dp" />
+        android:layout_height="39dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp" />
 
     <TextView
-        android:id="@+id/category"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/textView30"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
         android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:textColor="#212121"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="239dp"
-        android:text="Category"
-        android:textSize="24sp" />
-
-<!--
-    <EditText
-        android:id="@+id/categoryDropdown"
-        android:layout_width="166dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="190dp" />
--->
-
-    <Spinner
-        android:id="@+id/categoryDropdown"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="210dp" />
-
-    <TextView
-        android:id="@+id/auctionLength"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:textColor="#212121"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="122dp"
         android:text="Auction Length"
         android:textSize="24sp" />
-
 
     <Spinner
         android:id="@+id/auction_duration"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginBottom="304dp" />
+        android:layout_height="39dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp" />
 
-    <TextView
-        android:id="@+id/days"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="94dp"
-        android:layout_marginLeft="94dp"
-        android:layout_marginBottom="83dp"
-        android:text="minutes"
-        android:textColor="#FFECB3"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/theDollarSIgn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="141dp"
-        android:layout_marginRight="141dp"
-        android:layout_marginBottom="200dp"
-        android:textColor="#212121"
-        android:text="$"
-        android:textSize="24sp" />
-
-    <EditText
-        android:id="@+id/yourPrice"
-        android:layout_width="99dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="41dp"
-        android:layout_marginBottom="188dp"
-        android:textColor="#212121"
-        android:ems="10"
-        android:inputType="numberDecimal" />
-
-    <TextView
-        android:id="@+id/topPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="45dp"
-        android:layout_marginRight="45dp"
-        android:layout_marginBottom="239dp"
-        android:textColor="#212121"
-        android:text="Max Price:"
-        android:textSize="24sp" />
-
-    <Button
-        android:id="@+id/upload"
-        android:layout_width="129dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="40dp"
-        android:textColor="#212121"
-        android:layout_marginRight="40dp"
-        android:background="@drawable/rounded_button"
-        android:text="upload photo&#10;(optional)" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
 
     <Button
         android:id="@+id/collectPostInfo"
-        android:layout_width="136dp"
-        android:layout_height="60dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginBottom="89dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
         android:background="@drawable/rounded_button"
-        android:textColor="#212121"
-        android:text="Add Listing" />
+        android:text="add post" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/headerKinda"-->
-<!--        android:layout_width="270dp"-->
-<!--        android:layout_height="54dp"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentLeft="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_marginStart="20dp"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:textColor="#212121"-->
-<!--        android:layout_marginTop="3dp"-->
-<!--        android:text="Make a Listing"-->
-<!--        android:textSize="30sp" />-->
-
-</RelativeLayout>
+</LinearLayout>
