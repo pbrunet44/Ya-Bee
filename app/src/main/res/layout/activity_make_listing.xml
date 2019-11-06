@@ -12,9 +12,9 @@
     <Button
         android:id="@+id/upload"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginRight="105dp"
         android:background="@drawable/rounded_button"
         android:text="upload photo (optional)" />
 
@@ -43,7 +43,10 @@
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:background="@drawable/rounded_spinner"
+        android:padding="8dp"
+        />
 
     <TextView
         android:id="@+id/description"
@@ -58,18 +61,20 @@
     <EditText
         android:id="@+id/descEntry"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:ems="10"
         android:gravity="start|top"
-        android:inputType="textMultiLine" />
+        android:inputType="textMultiLine"
+        android:background="@drawable/rounded_spinner"
+        android:padding="8dp"/>
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="20dp" />
+        android:layout_height="13dp" />
 
     <TextView
         android:id="@+id/topPrice"
@@ -79,57 +84,75 @@
         android:layout_marginLeft="20dp"
         android:text="Max Price:"
         android:textColor="#212121"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:background="@drawable/rounded_spinner"
+        android:padding="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp">
 
-        <TextView
-            android:id="@+id/theDollarSign"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:textColor="#212121"
-            android:text="$"
-            android:textSize="24sp" />
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/yourPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="numberDecimal" />
+            <TextView
+                android:id="@+id/theDollarSign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-    </LinearLayout>
+                android:text="$"
+                android:textColor="#212121"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/yourPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                />
+
+        </LinearLayout>
+    </RelativeLayout>
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="20dp" />
+        android:layout_height="13dp" />
 
     <TextView
         android:id="@+id/textView28"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:textColor="#212121"
         android:text="Category"
+        android:textColor="#212121"
         android:textSize="24sp" />
 
-    <Spinner
-        android:id="@+id/categoryDropdown"
-        android:layout_width="match_parent"
-        android:layout_height="39dp"
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_spinner"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp" />
+        android:layout_marginRight="20dp">
+
+        <Spinner
+            android:id="@+id/categoryDropdown"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/textView29"
@@ -141,14 +164,21 @@
         android:text="Condition"
         android:textSize="24sp" />
 
-    <Spinner
-        android:id="@+id/itemCondition"
-        android:layout_width="match_parent"
-        android:layout_height="39dp"
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp" />
+        android:layout_marginRight="20dp"
+        android:background="@drawable/rounded_spinner">
+
+        <Spinner
+            android:id="@+id/itemCondition"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+             />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/textView30"
@@ -160,14 +190,21 @@
         android:text="Auction Length"
         android:textSize="24sp" />
 
-    <Spinner
-        android:id="@+id/auction_duration"
-        android:layout_width="match_parent"
-        android:layout_height="39dp"
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp" />
+        android:layout_marginRight="20dp"
+        android:background="@drawable/rounded_spinner">
+
+        <Spinner
+            android:id="@+id/auction_duration"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            />
+    </RelativeLayout>
 
     <Space
         android:layout_width="match_parent"
@@ -181,5 +218,9 @@
         android:layout_marginRight="100dp"
         android:background="@drawable/rounded_button"
         android:text="add post" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
 
 </LinearLayout>

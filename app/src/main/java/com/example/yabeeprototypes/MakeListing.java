@@ -30,32 +30,57 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
         Button makePost = findViewById(R.id.collectPostInfo);
         final DatabaseHelper database = new DatabaseHelper();
 
+        // Spinner for category
+        Spinner categorySpinner = (Spinner) findViewById(R.id.categoryDropdown);
+        categorySpinner.setOnItemSelectedListener(this);
+        // drop down elements
+        List<String> categories = new ArrayList<>();
+        categories.add("Services");
+        categories.add("Textbooks");
+        categories.add("Clothing");
+        categories.add("Shoes");
+        categories.add("Home");
+        categories.add("Furniture");
+        categories.add("Kitchen");
+        categories.add("Electronics");
+        categories.add("Music");
+        categories.add("Movies");
+        categories.add("Books");
+        categories.add("Video Games");
+        categories.add("Toys");
+        categories.add("Sporting Goods");
+        categories.add("School/Office");
+        ArrayAdapter<String> categoryAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, categories);
+        categorySpinner.setAdapter(categoryAdapter);
+
         // Spinner for conditions
         Spinner conditionSpinner = (Spinner) findViewById(R.id.itemCondition);
         // on click listener
         conditionSpinner.setOnItemSelectedListener(this);
         // drop down elements
         List<String> conditions = new ArrayList<>();
-        conditions.add("New with tags");
-        conditions.add("Pre-owned");
-        conditions.add("New with defects");
-        conditions.add("New without tags");
+        conditions.add("New");
+        conditions.add("Used - Like New or Open Box");
+        conditions.add("Used - Very Good");
+        conditions.add("Used - Good");
+        conditions.add("Used - Acceptable");
+        conditions.add("N/A");
         // Create adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, conditions);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, conditions);
         // drop down style
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         conditionSpinner.setAdapter(dataAdapter);
 
         // Spinner for auction duration
-         Spinner auctionLengthSpinner = (Spinner) findViewById(R.id.auction_duration);
-         auctionLengthSpinner.setOnItemSelectedListener(this);
-         // drop down elements
+        Spinner auctionLengthSpinner = (Spinner) findViewById(R.id.auction_duration);
+        auctionLengthSpinner.setOnItemSelectedListener(this);
+        // drop down elements
         List<String> duration = new ArrayList<>();
         duration.add("3 days");
         duration.add("5 days");
         duration.add("7 days");
         duration.add("10 days");
-        ArrayAdapter<String> lengthAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, duration);
+        ArrayAdapter<String> lengthAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, duration);
         auctionLengthSpinner.setAdapter(lengthAdapter);
 
         makePost.setOnClickListener(new View.OnClickListener() {
