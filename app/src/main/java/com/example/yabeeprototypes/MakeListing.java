@@ -3,9 +3,12 @@ package com.example.yabeeprototypes;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,6 +19,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.graphics.drawable.RoundedBitmapDrawable;
+
+import com.google.common.io.ByteArrayDataInput;
+
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -25,6 +33,8 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
     static final double INITIAL_BID_PRICE = Double.MAX_VALUE;
     private final static int RESULT_LOAD_IMAGE = 1;
     static final String INITIAL_IMAGE = "";
+    private Uri imageUri = null;
+    private String imageEncoding = "";
     static final String INITIAL_DESCRIPTION = "";
     String conditionSelected = "";
     String auctionLength = "";
@@ -102,14 +112,20 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
                 String durationOfAuction = ((Spinner)findViewById(R.id.auction_duration)).getSelectedItem().toString();
                 double maxPrice = Double.parseDouble(((TextView)findViewById(R.id.yourPrice)).getText().toString());
                 //int auctionLength = Integer.parseInt(((TextView)findViewById(R.id.durationOfAuction)).getText().toString());
-
                 // will take care of image url later that's why it's null
                 // split auction length string into number + " days"
                 String[] durationArray = durationOfAuction.split(" ");
                 int numOfDays = Integer.parseInt(durationArray[0]);
                 System.out.println("Here's the number of days the auction is going to last:" + numOfDays);
                 Date date = new Date();
-                Post post = new Post(title, maxPrice, description, numOfDays, new Bid(INITIAL_BID_PRICE, INITIAL_DESCRIPTION, INITIAL_IMAGE), INITIAL_IMAGE, category, condition, Long.toString(System.nanoTime()), date, false);
+                if(imageUri != null)
+                {
+                    Bitmap imageBitmap = ((BitmapDrawable) postImage.getDrawable()).getBitmap();
+                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                    imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+                    imageEncoding = Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT);
+                }
+                Post post = new Post(title, maxPrice, description, numOfDays, new Bid(INITIAL_BID_PRICE, INITIAL_DESCRIPTION, INITIAL_IMAGE), imageEncoding, category, condition, Long.toString(System.nanoTime()), date, false);
                 database.writeNewPost(post);
 
                 Toast successToast = Toast.makeText(getApplicationContext(), "Successful post creation!", Toast.LENGTH_LONG);
@@ -134,6 +150,7 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
         if(requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null)
         {
             Uri selectedImage = data.getData();
+            imageUri = selectedImage;
             postImage.setImageURI(selectedImage);
         }
     }

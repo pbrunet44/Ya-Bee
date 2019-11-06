@@ -1,5 +1,4 @@
 package com.example.yabeeprototypes;
-
 import android.provider.ContactsContract;
 import java.util.Date;
 
@@ -15,7 +14,9 @@ public class Post {
     private String description;
     private int auctionLength;
     private Bid lowestBid;
-    private String imageUrl; // will deal with this later
+    private String imageEncoding;
+    //private Bitmap imageBitmap;
+    //private Uri imageUri; // will deal with this later
     private String category;
     private String condition;
     private String id;
@@ -28,14 +29,14 @@ public class Post {
         super();
     }
 
-    public Post(String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageUrl, String category, String condition, String id, Date postDate, boolean isExpired)
+    public Post(String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired)
     {
         this.setTitle(title);
         this.setMaxPrice(maxPrice);
         this.setDescription(description);
         this.setAuctionLength(auctionLength);
         this.lowestBid = lowestBid;
-        this.setImageUrl(imageUrl);
+        this.setImageEncoding(imageEncoding);
         this.setCondition(condition);
         this.setCategory(category);
         this.setId(id);
@@ -133,13 +134,20 @@ public class Post {
         this.auctionLength = auctionLength;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    /*public Uri getImageUri() {
+        return imageUri;
     }
 
-    private void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    private void setImageUri(Uri imageUri) {
+        this.imageUri = imageUri;
     }
+
+    private void setImageBitmap(Bitmap imageBitmap){this.imageBitmap = imageBitmap;}
+
+    public Bitmap getImageBitmap(){return this.imageBitmap;}
+*/
+    private void setImageEncoding(String imageEncoding){this.imageEncoding  = imageEncoding;}
+    public String getImageEncoding(){return this.imageEncoding;}
 
     public String getCategory() {
         return category;
