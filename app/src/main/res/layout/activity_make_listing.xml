@@ -13,8 +13,19 @@
         android:layout_width="match_parent"
         android:layout_height="20dp" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/postImage"
+        android:maxHeight="120dp"
+        android:maxWidth="120dp"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginBottom="10dp"/>
+
     <Button
-        android:id="@+id/upload"
+        android:id="@+id/uploadPostImage"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_marginLeft="105dp"
