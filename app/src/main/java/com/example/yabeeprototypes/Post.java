@@ -76,7 +76,7 @@ public class Post {
     {
         Date expireDate = new Date(this.postDate.getTime());
         long expireTime = expireDate.getTime();
-        expireTime += (MILLISECONDS_PER_MINUTE * this.auctionLength);
+        expireTime += (MILLISECONDS_PER_DAY * this.auctionLength);
         expireDate.setTime(expireTime);
         Date currentDate = new Date();
         this.auctionTimeLeft = (expireDate.getTime() - currentDate.getTime()) / 1000; //Convert time left from milliseconds to seconds
