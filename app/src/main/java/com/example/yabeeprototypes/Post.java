@@ -1,5 +1,4 @@
 package com.example.yabeeprototypes;
-
 import android.provider.ContactsContract;
 import java.util.Date;
 
@@ -15,7 +14,9 @@ public class Post {
     private String description;
     private int auctionLength;
     private Bid lowestBid;
-    private String imageUrl; // will deal with this later
+    private String imageEncoding;
+    //private Bitmap imageBitmap;
+    //private Uri imageUri; // will deal with this later
     private String category;
     private String condition;
     private String id;
@@ -28,14 +29,14 @@ public class Post {
         super();
     }
 
-    public Post(String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageUrl, String category, String condition, String id, Date postDate, boolean isExpired)
+    public Post(String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired)
     {
         this.setTitle(title);
         this.setMaxPrice(maxPrice);
         this.setDescription(description);
         this.setAuctionLength(auctionLength);
         this.lowestBid = lowestBid;
-        this.setImageUrl(imageUrl);
+        this.setImageEncoding(imageEncoding);
         this.setCondition(condition);
         this.setCategory(category);
         this.setId(id);
@@ -75,7 +76,7 @@ public class Post {
     {
         Date expireDate = new Date(this.postDate.getTime());
         long expireTime = expireDate.getTime();
-        expireTime += (MILLISECONDS_PER_MINUTE * this.auctionLength);
+        expireTime += (MILLISECONDS_PER_DAY * this.auctionLength);
         expireDate.setTime(expireTime);
         Date currentDate = new Date();
         this.auctionTimeLeft = (expireDate.getTime() - currentDate.getTime()) / 1000; //Convert time left from milliseconds to seconds
@@ -92,9 +93,28 @@ public class Post {
             this.isExpired = true;
             return "AUCTION EXPIRED";
         }
-        return (String.format("%02d", (this.auctionTimeLeft / 60 / 60))
+        if(this.auctionTimeLeft > 24 * 60 * 60)
+        {
+            return ("Days: " + String.format("%02d", this.auctionTimeLeft / 24 / 60 / 60)
+                    + "Hours: " + String.format("%02d", (this.auctionTimeLeft / 60 / 60) % 60));
+        }
+        else if(this.auctionTimeLeft > 60 * 60)
+        {
+            return ("Hours: " + String.format("%02d", this.auctionTimeLeft / 60 / 60)
+                    + "Minutes: " + String.format("%02d", (this.auctionTimeLeft / 60) % 60));
+        }
+        else if(this.auctionTimeLeft > 60)
+        {
+            return ("Minutes: " + String.format("%02d", this.auctionTimeLeft / 60)
+                    + "Seconds: " + String.format("%02d", (this.auctionTimeLeft) % 60));
+        }
+        else
+        {
+            return "Seconds: " + String.format("%02d", this.auctionTimeLeft);
+        }
+        /*return (String.format("%02d", (this.auctionTimeLeft / 60 / 60))
                 + ":" + String.format("%02d", (this.auctionTimeLeft / 60) % 60)
-                + ":" + String.format("%02d", this.auctionTimeLeft % 60));
+                + ":" + String.format("%02d", this.auctionTimeLeft % 60));*/
     }
 
     public String getTitle() {
@@ -133,13 +153,20 @@ public class Post {
         this.auctionLength = auctionLength;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    /*public Uri getImageUri() {
+        return imageUri;
     }
 
-    private void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    private void setImageUri(Uri imageUri) {
+        this.imageUri = imageUri;
     }
+
+    private void setImageBitmap(Bitmap imageBitmap){this.imageBitmap = imageBitmap;}
+
+    public Bitmap getImageBitmap(){return this.imageBitmap;}
+*/
+    private void setImageEncoding(String imageEncoding){this.imageEncoding  = imageEncoding;}
+    public String getImageEncoding(){return this.imageEncoding;}
 
     public String getCategory() {
         return category;
