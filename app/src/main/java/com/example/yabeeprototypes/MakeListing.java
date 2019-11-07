@@ -21,8 +21,6 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
     static final double INITIAL_BID_PRICE = Double.MAX_VALUE;
     static final String INITIAL_IMAGE = "";
     static final String INITIAL_DESCRIPTION = "";
-    String conditionSelected = "";
-    String auctionLength = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
