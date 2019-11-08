@@ -51,7 +51,7 @@ public class Post {
     }
 
     /**
-     * Decodes the string representing the post's image (stored on Firebase using Bse64 encoding)
+     * Decodes the string representing the post's image (stored on Firebase using Base64 encoding)
      * @return the Bitmap object for the image
      */
     public Bitmap decodeImage()
