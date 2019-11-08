@@ -50,10 +50,12 @@ public class Post {
         updateAuctionTimer(); // setting auction timer to start
     }
 
+    /**
+     * Decodes the string representing the post's image (stored on Firebase using Bse64 encoding)
+     * @return the Bitmap object for the image
+     */
     public Bitmap decodeImage()
     {
-        //ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(this.imageEncoding.getBytes());
-        //System.out.println("BEFORE DECODING:\n" + this.imageEncoding);
         byte[] decoded = Base64.decode(this.imageEncoding.getBytes(), Base64.DEFAULT);
         return BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
 
