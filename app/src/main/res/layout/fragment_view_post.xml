@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/postID"
-            android:text="105594061970180"
+            android:text="1788366850235"
             android:visibility="invisible"
             android:textColor="@color/colorTextPrimary"
             android:textSize="16sp"
@@ -27,20 +27,24 @@
 
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="325dp"
+            android:id="@+id/postImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="325dp"
             android:maxHeight="250dp"
-            android:background="@mipmap/ic_computer_networking_foreground"
-            android:scaleType="center"
+            android:background="@mipmap/ic_launcher"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+
             />
         <TextView
             android:layout_marginTop="20dp"
-            android:id="@+id/title"
+            android:id="@+id/postTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorTextPrimary"
             android:textSize="22sp"
-            android:text="Computer Networking: A Top-Down Approach by James F. Kurose and Keith W. Ross (2012 Harcover Version)"
+            android:text="Loading post title..."
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             />
@@ -114,8 +118,8 @@
             android:background="@android:color/darker_gray"/>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Item description:"
             android:layout_marginLeft="30sp"
             android:textSize="20sp"
@@ -124,12 +128,13 @@
 
         <TextView
             android:id="@+id/postDescription"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="30sp"
             android:textSize="20sp"
             android:textColor="@color/colorTextPrimary"
             android:layout_marginBottom="100dp"
+            android:text="Loading item description..."
             />
     </LinearLayout>
 </ScrollView>

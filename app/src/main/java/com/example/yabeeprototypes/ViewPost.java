@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.os.Handler;
 
@@ -27,7 +28,9 @@ public class ViewPost extends Fragment {
 
         final DatabaseHelper database = new DatabaseHelper();
         final TextView timer = (TextView) view.findViewById(R.id.timer); // retrieving timer off the post's page
+        final TextView postTitle = (TextView) view.findViewById(R.id.postTitle);
         final TextView postDescription = (TextView) view.findViewById(R.id.postDescription);
+        final ImageView postImage = (ImageView) view.findViewById(R.id.postImage);
 
         final Handler timerHandler = new Handler();
         Runnable timerRunnable = new Runnable(){
@@ -40,7 +43,9 @@ public class ViewPost extends Fragment {
                         //System.out.println("Do you even get here?");
                         Post post = database.getPostByID(id, posts);
                         System.out.println(post.toString());
+                        postTitle.setText(post.getTitle());
                         postDescription.setText(post.getDescription());
+                        postImage.setImageBitmap(post.decodeImage());
                         //System.out.println(post.toString());
                         //boolean isAuctionOver = false;
                         if (post != null)

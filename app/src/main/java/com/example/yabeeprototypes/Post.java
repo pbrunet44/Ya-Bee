@@ -1,5 +1,10 @@
 package com.example.yabeeprototypes;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.provider.ContactsContract;
+import android.util.Base64;
+
+import java.io.ByteArrayInputStream;
 import java.util.Date;
 
 public class Post {
@@ -43,6 +48,15 @@ public class Post {
         this.setPostDate(postDate);
         this.setExpired(isExpired);
         updateAuctionTimer(); // setting auction timer to start
+    }
+
+    public Bitmap decodeImage()
+    {
+        //ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(this.imageEncoding.getBytes());
+        //System.out.println("BEFORE DECODING:\n" + this.imageEncoding);
+        byte[] decoded = Base64.decode(this.imageEncoding.getBytes(), Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
+
     }
 
     public boolean verifyBid(Bid newBid)
@@ -95,22 +109,22 @@ public class Post {
         }
         if(this.auctionTimeLeft > 24 * 60 * 60)
         {
-            return ("Days: " + String.format("%02d", this.auctionTimeLeft / 24 / 60 / 60)
-                    + "Hours: " + String.format("%02d", (this.auctionTimeLeft / 60 / 60) % 60));
+            return ("Days: " + Long.toString(this.auctionTimeLeft / 24 / 60 / 60)
+                    + " Hours: " + Long.toString((this.auctionTimeLeft / 60 / 60) % 24));
         }
         else if(this.auctionTimeLeft > 60 * 60)
         {
-            return ("Hours: " + String.format("%02d", this.auctionTimeLeft / 60 / 60)
-                    + "Minutes: " + String.format("%02d", (this.auctionTimeLeft / 60) % 60));
+            return ("Hours: " + Long.toString(this.auctionTimeLeft / 60 / 60)
+                    + " Minutes: " + Long.toString((this.auctionTimeLeft / 60) % 60));
         }
         else if(this.auctionTimeLeft > 60)
         {
-            return ("Minutes: " + String.format("%02d", this.auctionTimeLeft / 60)
-                    + "Seconds: " + String.format("%02d", (this.auctionTimeLeft) % 60));
+            return ("Minutes: " + Long.toString(this.auctionTimeLeft / 60)
+                    + " Seconds: " + Long.toString((this.auctionTimeLeft) % 60));
         }
         else
         {
-            return "Seconds: " + String.format("%02d", this.auctionTimeLeft);
+            return "Seconds: " + Long.toString(this.auctionTimeLeft);
         }
         /*return (String.format("%02d", (this.auctionTimeLeft / 60 / 60))
                 + ":" + String.format("%02d", (this.auctionTimeLeft / 60) % 60)
