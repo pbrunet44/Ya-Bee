@@ -43,7 +43,7 @@ public class DatabaseHelper {
                 {
                     Post post = snapshot.getValue(Post.class);
                     posts.add(post);
-                    System.out.println(post.getTitle() +  ", " + post.getDescription());
+                    //System.out.println(post.getTitle() +  ", " + post.getDescription()); //Commented out since it gets in the way of debugging querying posts
                 }
                 firebaseCallback.onCallback(posts);
             }
