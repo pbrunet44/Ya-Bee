@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".BrowsePage"></activity>
-        <activity android:name=".BidAccept"></activity>
+        <activity android:name=".BidAccept">
+
+        </activity>
         <activity android:name=".browse_temp" />
         <activity
             android:name=".ViewPost"
