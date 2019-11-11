@@ -24,7 +24,7 @@ public class MainActivity extends FragmentActivity {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                     Fragment selectedFragment = null;
-
+                    currentUser = mAuth.getCurrentUser();
                     switch(menuItem.getItemId()) {
                         case R.id.navHome:
                             selectedFragment = new MainPage();
@@ -43,6 +43,7 @@ public class MainActivity extends FragmentActivity {
                             }
                             else // signed in
                             {
+                                System.out.println("The user is signed in. Here is their email: " + currentUser.getEmail());
                                 selectedFragment = new Profile();
                                 getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
                             }
@@ -62,7 +63,6 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
-        currentUser = mAuth.getCurrentUser();
 
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);

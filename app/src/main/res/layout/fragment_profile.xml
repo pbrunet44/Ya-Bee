@@ -22,15 +22,15 @@
             <ImageView
                 android:id="@+id/profilePicture"
                 android:src="@mipmap/ic_launcher_round"
-                android:layout_toStartOf="@+id/profileDescription"
+                android:layout_toStartOf="@+id/profileEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_toLeftOf="@+id/profileDescription"
+                android:layout_toLeftOf="@+id/profileEmail"
                 />
             <TextView
-                android:id="@+id/profileDescription"
+                android:id="@+id/profileEmail"
                 android:layout_marginLeft="5dp"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
                 android:layout_alignParentRight="true"
-                android:layout_below="@id/profileDescription"
+                android:layout_below="@id/profileEmail"
                 android:text="99% positive satisfaction"
                 />
         </RelativeLayout>
