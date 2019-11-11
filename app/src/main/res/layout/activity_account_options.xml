@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffecb3"
+    android:paddingTop="15dp"
+    android:paddingRight="15dp"
+    android:paddingLeft="15dp"
+    tools:context=".AccountOptions"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="40sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textColor="@color/colorTextPrimary"
+        android:layout_marginTop="20dp"
+        android:text="You can use your email to login or create a new account."
+        />
+
+
+    <Button
+        android:id="@+id/createAnAccountButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/rounded_button"
+        android:text="Create an account"
+        />
+    <Button
+        android:id="@+id/signInButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_button"
+        android:text="Sign in"
+        />
+
+</LinearLayout>

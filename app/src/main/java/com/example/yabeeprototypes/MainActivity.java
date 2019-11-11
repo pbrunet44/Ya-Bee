@@ -11,27 +11,42 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends FragmentActivity {
+
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                     Fragment selectedFragment = null;
-
+                    currentUser = mAuth.getCurrentUser();
                     switch(menuItem.getItemId()) {
                         case R.id.navHome:
                             selectedFragment = new MainPage();
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
                             break;
                         case R.id.navSearch:
-                            selectedFragment = new Fragment();
+                            selectedFragment = new Browse();
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
                             break;
                         case R.id.navProfile:
-                            selectedFragment = new Profile();
-                            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
+                            if (currentUser == null) // no one signed in
+                            {
+                                // show account options page
+                                Intent intent = new Intent(getApplicationContext(), AccountOptions.class);
+                                startActivity(intent);
+                            }
+                            else // signed in
+                            {
+                                System.out.println("The user is signed in. Here is their email: " + currentUser.getEmail());
+                                selectedFragment = new Profile();
+                                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
+                            }
                             break;
                         case R.id.navMakeListing:
                             Intent intent = new Intent(getApplicationContext(), MakeListing.class);
@@ -46,6 +61,8 @@ public class MainActivity extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mAuth = FirebaseAuth.getInstance();
 
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);

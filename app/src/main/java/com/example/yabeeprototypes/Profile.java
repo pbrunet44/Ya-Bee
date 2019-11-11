@@ -12,25 +12,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import org.w3c.dom.Text;
 
 public class Profile extends Fragment {
 
     private Button makePost;
+    private FirebaseUser currentUser;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        makePost = (Button) view.findViewById(R.id.makePost);
-        /*ImageView deadBee = (ImageView) view.findViewById(R.id.deadBee);
-        deadBee.getDrawable().setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);*/
-        makePost.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MakeListing.class);
-                startActivity(intent);
-            }
-        });
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        TextView profileEmail = (TextView)view.findViewById(R.id.profileEmail);
+        profileEmail.setText(currentUser.getEmail());
+
+
         return view;
     }
 
