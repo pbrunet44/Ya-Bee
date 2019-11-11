@@ -103,7 +103,7 @@ public class DatabaseHelper {
     {
         ArrayList<Post> results = new ArrayList<>();
         for (Post post:posts) {
-            if(post.getTitle().contains(keyword))
+            if(post.getTitle().toLowerCase().contains(keyword.toLowerCase()))
             {
                 results.add(post);
             }

@@ -58,7 +58,6 @@ public class Post {
     {
         byte[] decoded = Base64.decode(this.imageEncoding.getBytes(), Base64.DEFAULT);
         return BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
-
     }
 
     public boolean verifyBid(Bid newBid)

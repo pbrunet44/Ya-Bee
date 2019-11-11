@@ -8,17 +8,17 @@
     android:orientation="vertical"
     tools:context=".MakeBid">
 
-    <TextView
-        android:id="@+id/tvMakeInitialBid"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:gravity="center"
-        android:text="Make Bid"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="30sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/tvMakeInitialBid"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginRight="10dp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Make Bid"-->
+<!--        android:textColor="@color/colorTextPrimary"-->
+<!--        android:textSize="30sp" />-->
 
 <!--    <TextView-->
 <!--        android:id="@+id/tvListingName"-->
@@ -30,54 +30,85 @@
 <!--        android:text="[Listing Name Here]"/>-->
 
     <ImageView
-        android:id="@+id/imgDefault"
-        android:layout_width="match_parent"
+        android:id="@+id/bidImage"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:src="@mipmap/ic_computer_networking"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:maxHeight="120dp"
+        android:maxWidth="120dp"
+        android:src="@drawable/add_image_icon"
          />
 
     <Button
         android:id="@+id/btnUploadImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="50dp"
-        android:background = "@drawable/rounded_button"
+        android:background="@drawable/rounded_button"
         android:text="@string/upload_image"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:textColor="@color/colorTextPrimary"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/tvBidPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorTextPrimary"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="24sp"
+        android:text="@string/bid_price"
+        />
     <EditText
         android:id="@+id/etBidPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:textColorHint="@color/colorTextSecondary"
-        android:hint="@string/bid_price"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:ems="10"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:padding="8dp"
+        android:textColorHint="@color/colorTextSecondary"
+        android:background="@drawable/rounded_spinner"/>
+
+    <TextView
+        android:id="@+id/tvBidDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/description"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/etDescription"
+        android:id="@+id/etBidDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="8dp"
         android:textColorHint="@color/colorTextSecondary"
-        android:hint="@string/description" />
+        android:background="@drawable/rounded_spinner"/>
 
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="50dp"
         android:background = "@drawable/rounded_button"
         android:text="@string/submit"
