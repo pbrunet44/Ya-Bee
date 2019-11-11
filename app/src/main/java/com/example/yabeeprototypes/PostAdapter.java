@@ -11,11 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
 {
     private ArrayList<Post> posts;
-    PostClicked activity;
+    private PostClicked activity; //made private previously undeclared
 
     public interface PostClicked
     {
@@ -68,7 +69,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
         holder.itemView.setTag(posts.get(position));
 
         holder.tvPostTitle.setText(posts.get(position).getTitle());
-        holder.tvPostCurrentBid.setText(Double.toString(posts.get(position).getLowestBid().price));
+        //holder.tvPostCurrentBid.setText(Double.toString(posts.get(position).getLowestBid().price));
+        holder.tvPostCurrentBid.setText(String.format(Locale.US,"%.2f",posts.get(position).getLowestBid().price));
         holder.tvPostTimeLeft.setText(posts.get(position).getAuctionTimer());
         // holder.tvPostLeader @TODO
         // holder.ivPostImage.setText(posts.get(position).getImageUrl()); @ TODO
