@@ -31,7 +31,7 @@ public class MainActivity extends FragmentActivity {
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
                             break;
                         case R.id.navSearch:
-                            selectedFragment = new Fragment();
+                            selectedFragment = new Browse();
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
                             break;
                         case R.id.navProfile:

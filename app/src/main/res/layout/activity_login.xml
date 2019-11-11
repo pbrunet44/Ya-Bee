@@ -39,7 +39,7 @@
         android:id="@+id/passwordLoginText"
         android:hint="Password"
         android:textSize="20sp"
-        android:inputType="numberPassword"
+        android:inputType="textPassword"
         android:textColor="@color/colorTextSecondary"
         android:layout_marginTop="75dp"
         android:layout_marginLeft="20dp"

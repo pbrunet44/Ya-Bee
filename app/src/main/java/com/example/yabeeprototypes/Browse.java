@@ -1,17 +1,16 @@
 package com.example.yabeeprototypes;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
-import java.util.Date;
 
-public class Browse extends AppCompatActivity implements PostAdapter.PostClicked{
+public class Browse extends Fragment implements PostAdapter.PostClicked{
 
     RecyclerView recyclerView;
     RecyclerView.Adapter myAdapter;
@@ -20,9 +19,8 @@ public class Browse extends AppCompatActivity implements PostAdapter.PostClicked
     ArrayList<Post> posts;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_browse_search);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_browse_search, container, false);
 
         /*recyclerView = findViewById(R.id.browselist);
         recyclerView.setHasFixedSize(true);
@@ -47,6 +45,7 @@ public class Browse extends AppCompatActivity implements PostAdapter.PostClicked
         myAdapter = new PostAdapter(this, posts);
 
         recyclerView.setAdapter(myAdapter);*/
+        return view;
     }
 
     /*public void goToViewPost(View view)
