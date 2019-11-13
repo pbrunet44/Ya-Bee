@@ -70,7 +70,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
 
         holder.tvPostTitle.setText(posts.get(position).getTitle());
         //holder.tvPostCurrentBid.setText(Double.toString(posts.get(position).getLowestBid().price));
-        holder.tvPostCurrentBid.setText(String.format(Locale.US,"%.2f",posts.get(position).getLowestBid().price));
+        /*if(posts.get(position).getLowestBid() != null)
+        {
+            holder.tvPostCurrentBid.setText(String.format(Locale.US, "%.2f", posts.get(position).getLowestBid().price));
+        }*/
+        holder.tvPostCurrentBid.setText(String.format(Locale.US, "%.2f", posts.get(position).getMaxPrice()));
         holder.tvPostTimeLeft.setText(posts.get(position).getAuctionTimer());
         // holder.tvPostLeader @TODO
         // holder.ivPostImage.setText(posts.get(position).getImageUrl()); @ TODO

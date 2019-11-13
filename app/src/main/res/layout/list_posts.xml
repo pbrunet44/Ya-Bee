@@ -57,7 +57,7 @@
                         android:id="@+id/tvPostCurrentBid"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$28.50"
+                        android:text="$15.00"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -90,7 +90,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Leading Bidder!"
-                    android:textColor="@color/colorPrimaryLight"
+                    android:textColor="@color/colorPrimaryLightAlternate"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>

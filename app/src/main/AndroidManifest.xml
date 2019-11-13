@@ -38,13 +38,7 @@
         <activity
             android:name=".ItemsSelling"
             android:label="Items I&apos;m selling"
-            android:parentActivityName=".Profile">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:parentActivityName=".Profile"/>
         <activity
             android:name=".ItemsBuying"
             android:label="Items I&apos;m buying"
@@ -56,7 +50,13 @@
         <activity
             android:name=".Browse"
             android:label="Search"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".AuctionResult" />
         <activity android:name=".MainActivity">
 
