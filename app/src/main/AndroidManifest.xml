@@ -52,11 +52,6 @@
             android:name=".Browse"
             android:label="Search"
             android:parentActivityName=".MainActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".AuctionResult" />
         <activity android:name=".MainActivity">
