@@ -33,25 +33,17 @@ public class Profile extends Fragment {
         TextView profileEmail = (TextView)view.findViewById(R.id.profileEmail);
         profileEmail.setText(currentUser.getEmail());
 
+        Button signOff = (Button) view.findViewById(R.id.signOutButton);
+        signOff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Fragment home = new MainPage();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, home).commit();
+            }
+        });
 
         return view;
     }
 
-//    public void goToProductsSelling(View view)
-//    {
-//        Intent intent = new Intent(this, ItemsSelling.class);
-//        startActivity(intent);
-//    }
-//
-//    public void goToProductsBuying(View view)
-//    {
-//        Intent intent = new Intent(this, ItemsBuying.class);
-//        startActivity(intent);
-//    }
-//
-//    public void goToMakeAPost(View view)
-//    {
-//        Intent intent = new Intent(this, MakeListing.class);
-//        startActivity(intent);
-//    }
 }

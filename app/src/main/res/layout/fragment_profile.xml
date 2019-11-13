@@ -97,6 +97,16 @@
             android:textSize="22sp"
             android:textColor="@color/colorPrimaryDark"
             />
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/signOutButton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/rounded_button"
+            android:text="Sign out"
+            android:textSize="22sp"
+            android:textColor="@color/colorPrimaryDark"
+            />
         <View
             android:layout_marginTop="20dp"
             android:layout_marginBottom="5dp"

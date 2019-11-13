@@ -21,10 +21,10 @@
         android:layout_marginLeft="20dp"/>
 
     <EditText
-        android:id="@+id/emailOrUsernameText"
+        android:id="@+id/loginEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="E-mail or username"
+        android:hint="E-mail"
         android:textColor="@color/colorTextSecondary"
         android:textSize="20sp"
         android:inputType="text"
@@ -47,16 +47,16 @@
         />
 
     <Button
+        android:id="@+id/signInButtonText"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorTextPrimary"
-        android:id="@+id/signInButtonText"
         android:layout_gravity="center"
-        android:textSize="18sp"
         android:layout_marginTop="200dp"
         android:background="@drawable/rounded_button"
-        android:textStyle="bold"
-        android:text="Sign in"/>
+        android:text="Sign in"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 
     <TextView
