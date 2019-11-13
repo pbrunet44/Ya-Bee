@@ -11,7 +11,9 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.Date;
+
 import java.util.List;
+
 
 public class Browse extends Fragment implements PostAdapter.PostClicked{
 
@@ -19,7 +21,14 @@ public class Browse extends Fragment implements PostAdapter.PostClicked{
     //RecyclerView.Adapter myAdapter;
     //RecyclerView.LayoutManager layoutManager;
 
+
+    /*final DatabaseHelper database = new DatabaseHelper();
+    final ArrayList<Post> query = new ArrayList<>();
+    final String title = "Bike";*/
+
+
     //ArrayList<Post> posts;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -28,43 +37,43 @@ public class Browse extends Fragment implements PostAdapter.PostClicked{
         final ArrayList<Post> query = new ArrayList<>();
         final String title = "Bike";
 
+
         database.getPosts(new FirebaseCallback() {
             @Override
             public void onCallback(List<Post> posts) {
                 query.addAll(database.getPostsByTitle(title, posts));
             }
         });
-        for (Post post:query)
-        {
+        for (Post post : query) {
             System.out.println(post.toString());
         }
+
 
         /*for(Post post:query)
         {
             System.out.println(post.getTitle() + ", " + post.getDescription());
         }*/
-        /*recyclerView = (RecyclerView) findViewById(R.id.browselist);
+        /*recyclerView = (RecyclerView) findViewById(R.id.browselist); //view.findViewById
+
         recyclerView.setHasFixedSize(true);
 
-        layoutManager = new LinearLayoutManager( this);
+        layoutManager = new LinearLayoutManager(this.getContext());
         recyclerView.setLayoutManager(layoutManager);
         Bid bid = new Bid(50.0, "description", "");
         posts = new ArrayList<Post>();
         posts.add(new Post("Clean Code", 28.50, "description", 2, bid, "","something", "Books", "1", new Date(), false));
         posts.add(new Post("Cracking the Coding Interview", 32, "description", 2, bid, "","something", "Books", "2", new Date(), false));
         posts.add(new Post("Java Illuminated", 124, "description", 2, bid,"","something", "Books", "3", new Date(), false));
-        posts.add(new Post("Clean Code", 28.5, "description", 2, bid, "","something", "Books", "4", new Date(), false));
+        posts.add(new Post("Clean Code", 28.50, "description", 2, bid, "","something", "Books", "4", new Date(), false));
         posts.add(new Post("Cracking the Coding Interview", 32, "description", 2, bid, "","something", "Books", "5", new Date(), false));
         posts.add(new Post("Java Illuminated", 124, "description", 2, bid,"","something", "Books", "6", new Date(), false));
         posts.add(new Post("Clean Code", 28.50, "description", 2, bid,"","something", "Books", "7", new Date(), false));
         posts.add(new Post("Cracking the Coding Interview", 32, "description", 2, bid, "","something", "Books", "8", new Date(), false));
         posts.add(new Post("Java Illuminated", 124, "description", 2, bid, "","something", "Books", "9", new Date(), false));
-        posts.add(new Post("Clean Code", 28.5, "description", 2, bid, "","something", "Books", "10", new Date(), false));
+        posts.add(new Post("Clean Code", 28.50, "description", 2, bid, "","something", "Books", "10", new Date(), false));
         posts.add(new Post("Cracking the Coding Interview", 32, "description", 2, bid ,"","something", "Books", "11", new Date(), false));
         posts.add(new Post("Java Illuminated", 124, "description", 2, bid, "","something", "Books", "12", new Date(), false));
-
-        myAdapter = new PostAdapter(this, posts);
-
+        myAdapter = new PostAdapter(this.getContext(), posts);
         recyclerView.setAdapter(myAdapter);*/
         return view;
     }
@@ -80,4 +89,5 @@ public class Browse extends Fragment implements PostAdapter.PostClicked{
     {
         //goToViewPost();
     }
+
 }
