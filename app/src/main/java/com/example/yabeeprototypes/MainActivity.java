@@ -34,6 +34,10 @@ public class MainActivity extends FragmentActivity {
                             selectedFragment = new Browse();
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
                             break;
+                        case R.id.navNotifications:
+                            selectedFragment = new Fragment();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
+                            break;
                         case R.id.navProfile:
                             if (currentUser == null) // no one signed in
                             {

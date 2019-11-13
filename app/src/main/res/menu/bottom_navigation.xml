@@ -12,14 +12,21 @@
         android:title="@string/Search" />
 
     <item
+        android:id="@+id/navMakeListing"
+        android:icon="@drawable/ic_make_listing"
+        android:title="New Post"
+        />
+
+
+    <item
         android:id="@+id/navProfile"
         android:icon="@drawable/ic_person_black_24dp"
         android:title="@string/Profile"  />
 
     <item
-        android:id="@+id/navMakeListing"
-        android:icon="@drawable/ic_make_listing"
-        android:title="New Post"
+        android:id="@+id/navNotifications"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="Notifications"
         />
 
 
