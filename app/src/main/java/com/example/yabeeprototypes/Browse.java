@@ -12,23 +12,49 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.Date;
 
+import java.util.List;
+
+
 public class Browse extends Fragment implements PostAdapter.PostClicked{
 
-    RecyclerView recyclerView;
-    RecyclerView.Adapter myAdapter;
-    RecyclerView.LayoutManager layoutManager;
+    //RecyclerView recyclerView;
+    //RecyclerView.Adapter myAdapter;
+    //RecyclerView.LayoutManager layoutManager;
+
 
     /*final DatabaseHelper database = new DatabaseHelper();
     final ArrayList<Post> query = new ArrayList<>();
     final String title = "Bike";*/
 
-    ArrayList<Post> posts;
+
+    //ArrayList<Post> posts;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_browse_search, container, false);
+        final DatabaseHelper database = new DatabaseHelper();
+        final ArrayList<Post> query = new ArrayList<>();
+        final String title = "Bike";
 
-        recyclerView = view.findViewById(R.id.browselist);
+
+        database.getPosts(new FirebaseCallback() {
+            @Override
+            public void onCallback(List<Post> posts) {
+                query.addAll(database.getPostsByTitle(title, posts));
+            }
+        });
+        for (Post post : query) {
+            System.out.println(post.toString());
+        }
+
+
+        /*for(Post post:query)
+        {
+            System.out.println(post.getTitle() + ", " + post.getDescription());
+        }*/
+        /*recyclerView = (RecyclerView) findViewById(R.id.browselist); //view.findViewById
+
         recyclerView.setHasFixedSize(true);
 
         layoutManager = new LinearLayoutManager(this.getContext());
@@ -48,7 +74,7 @@ public class Browse extends Fragment implements PostAdapter.PostClicked{
         posts.add(new Post("Cracking the Coding Interview", 32, "description", 2, bid ,"","something", "Books", "11", new Date(), false));
         posts.add(new Post("Java Illuminated", 124, "description", 2, bid, "","something", "Books", "12", new Date(), false));
         myAdapter = new PostAdapter(this.getContext(), posts);
-        recyclerView.setAdapter(myAdapter);
+        recyclerView.setAdapter(myAdapter);*/
         return view;
     }
 
@@ -63,4 +89,5 @@ public class Browse extends Fragment implements PostAdapter.PostClicked{
     {
         //goToViewPost();
     }
+
 }
