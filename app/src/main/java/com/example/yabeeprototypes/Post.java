@@ -5,6 +5,7 @@ import android.provider.ContactsContract;
 import android.util.Base64;
 
 import java.io.ByteArrayInputStream;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Post {
@@ -16,10 +17,12 @@ public class Post {
     private final static long MILLISECONDS_PER_MINUTE = 1000L * 60;
     private String title;
     private double maxPrice;
+    private User buyer;
     private String description;
     private int auctionLength;
     private Bid lowestBid;
     private String imageEncoding;
+    private ArrayList<Bid> allBids;
     //private Bitmap imageBitmap;
     //private Uri imageUri; // will deal with this later
     private String category;
@@ -34,8 +37,9 @@ public class Post {
         super();
     }
 
-    public Post(String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired)
+    public Post(User buyer, String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired)
     {
+        this.allBids = new ArrayList<>();
         this.setTitle(title);
         this.setMaxPrice(maxPrice);
         this.setDescription(description);
@@ -47,9 +51,23 @@ public class Post {
         this.setId(id);
         this.setPostDate(postDate);
         this.setExpired(isExpired);
+        this.setBuyer(buyer);
         updateAuctionTimer(); // setting auction timer to start
     }
 
+    private void addBidtoList(Bid bid)
+    {
+        this.allBids.add(bid);
+    }
+    private void setBuyer(User buyer)
+    {
+        this.buyer = buyer;
+    }
+
+    public User getBuyer()
+    {
+        return this.buyer;
+    }
     /**
      * Decodes the string representing the post's image (stored on Firebase using Base64 encoding)
      * @return the Bitmap object for the image
