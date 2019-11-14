@@ -38,6 +38,18 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
     static final String INITIAL_DESCRIPTION = "";
 
     ImageView postImage;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (new User().getCurrentUser() == null)
+        {
+            Intent intent = new Intent(MakeListing.this, AccountOptions.class);
+            startActivity(intent);
+        }
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -129,6 +141,8 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
                 Toast successToast = Toast.makeText(getApplicationContext(), "Successful post creation!", Toast.LENGTH_LONG);
                 successToast.setGravity(Gravity.TOP, 0, 0);
                 successToast.show();
+                Intent intent = new Intent(MakeListing.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
