@@ -39,7 +39,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
             super(itemView);
 
             tvPostTitle = itemView.findViewById(R.id.tvPostTitle);
-            tvPostCurrentBid = itemView.findViewById(R.id.tvDescriptionCurrentBid);
+            tvPostCurrentBid = itemView.findViewById(R.id.tvPostCurrentBid);
             tvPostTimeLeft = itemView.findViewById(R.id.tvPostTimeLeft);
             tvPostLeader = itemView.findViewById(R.id.tvPostLeader);
             ivPostImage = itemView.findViewById(R.id.ivPostImage);
