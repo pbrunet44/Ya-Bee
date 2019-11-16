@@ -10,6 +10,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,10 +25,17 @@ public class Login extends AppCompatActivity {
     private EditText email;
     private EditText password;
 
+    private ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_login);
+
+        progressBar = (ProgressBar) findViewById(R.id.loadingCircle);
+        progressBar.setVisibility(View.INVISIBLE);
+
         mAuth = FirebaseAuth.getInstance();
 
         Button signInButtonText = (Button)findViewById(R.id.signInButtonText);
@@ -43,6 +51,7 @@ public class Login extends AppCompatActivity {
 
     public void loginUser(String email, String password)
     {
+        progressBar.setVisibility(View.VISIBLE);
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -53,6 +62,7 @@ public class Login extends AppCompatActivity {
                             Toast toast = Toast.makeText(getApplicationContext(), "Successfully logged in", Toast.LENGTH_LONG);
                             toast.setGravity(Gravity.TOP, 0, 0);
                             toast.show();
+
                             // go to home page
                             Intent intent = new Intent(Login.this, MainActivity.class);
                             startActivity(intent);

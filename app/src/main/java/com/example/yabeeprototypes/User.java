@@ -5,6 +5,7 @@ public class  User {
 
     private String email = null;
     private String uid = null;
+//    private String token;
 
     public User() {}
 
@@ -29,5 +30,13 @@ public class  User {
     public void setUid(String uid) {
         this.uid = uid;
     }
+
+//    public String getToken() {
+//        return token;
+//    }
+//
+//    public void setToken(String token) {
+//        this.token = token;
+//    }
 
 }

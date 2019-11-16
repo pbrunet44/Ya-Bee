@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,6 +29,7 @@ public class MakeAccount extends AppCompatActivity {
     private EditText name;
     private EditText email;
     private EditText password;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +66,6 @@ public class MakeAccount extends AppCompatActivity {
     // create user with email, password
     private void createAccount(String email, String password)
     {
-
         if (validateForm()) {
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -82,6 +83,7 @@ public class MakeAccount extends AppCompatActivity {
                                 Toast accountSuccessToast = Toast.makeText(getApplicationContext(), "Account creation successful.", Toast.LENGTH_SHORT);
                                 accountSuccessToast.show();
                                 finish();
+
                                 // updateUI(user);
                             } else {
                                 String errorMessage = "";
