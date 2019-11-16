@@ -43,6 +43,15 @@ public class Profile extends Fragment {
             }
         });
 
+        makePost = (Button) view.findViewById(R.id.makePost);
+        makePost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), MakeListing.class);
+                startActivity(i);
+            }
+        });
+
         return view;
     }
 

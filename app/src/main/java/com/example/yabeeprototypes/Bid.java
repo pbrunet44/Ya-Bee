@@ -9,6 +9,8 @@ public class Bid
     public double price = 0.00;
     public String description;
     public String imageEncoding;
+    public User seller;
+
     //public String id; //do bids need unique ids since we're only keeping track of the lowest bid?
 
     public Bid() {}
@@ -17,6 +19,7 @@ public class Bid
         this.price = price;
         this.description = description;
         this.imageEncoding = imageEncoding;
+        this.seller = new User();
         //this.id = id;
     }
 

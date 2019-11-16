@@ -53,7 +53,8 @@ public class Login extends AppCompatActivity {
                             toast.setGravity(Gravity.TOP, 0, 0);
                             toast.show();
                             // go to home page
-                            MainPage home = new MainPage();
+                            Intent intent = new Intent(Login.this, MainActivity.class);
+                            startActivity(intent);
                         }
                         else
                         {

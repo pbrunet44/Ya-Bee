@@ -51,17 +51,17 @@ public class BidAccept extends AppCompatActivity {
             if(e2.getX() > e1.getX()) {
                 //left to right swipe
 
-                Intent intense = new Intent(BidAccept.this, ItemsBuying.class);
+                //Intent intense = new Intent(BidAccept.this, ItemsBuying.class);
                 Toast.makeText(getApplicationContext(), "Bid Accepted", Toast.LENGTH_LONG).show();
-                startActivity(intense);
+                //startActivity(intense);
             }
 
             else if(e2.getX() < e1.getX()) {
                 //right to left
 
-                Intent intents = new Intent(BidAccept.this, ItemsBuying.class);
+                //Intent intents = new Intent(BidAccept.this, ItemsBuying.class);
                 Toast.makeText(getApplicationContext(), "Bid Declined", Toast.LENGTH_LONG).show();
-                startActivity(intents);
+                //startActivity(intents);
             }
             //buttons don't do anything lol
             return true;
