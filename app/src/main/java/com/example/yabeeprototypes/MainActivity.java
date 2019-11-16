@@ -31,8 +31,8 @@ public class MainActivity extends FragmentActivity {
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
                             break;
                         case R.id.navSearch:
-                            //selectedFragment = new Browse();
-                            //getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
+                            Intent intent1 = new Intent(getApplicationContext(), SearchBar.class);
+                            startActivity(intent1);
                             break;
                         case R.id.navNotifications:
                             selectedFragment = new Fragment();
@@ -42,6 +42,7 @@ public class MainActivity extends FragmentActivity {
                             if (currentUser == null) // no one signed in
                             {
                                 // show account options page
+                                System.out.println("The user is not signed in. Here is their email: " + currentUser.getEmail());
                                 Intent intent = new Intent(getApplicationContext(), AccountOptions.class);
                                 startActivity(intent);
                             }

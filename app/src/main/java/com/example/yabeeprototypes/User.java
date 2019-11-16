@@ -1,22 +1,33 @@
 package com.example.yabeeprototypes;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
-public class User {
+public class  User {
 
-    private FirebaseAuth mAuth;
-    private FirebaseUser currentUser;
+    private String email = null;
+    private String uid = null;
 
-    public User()
+    public User() {}
+
+    public User(String email, String userID)
     {
-        mAuth = FirebaseAuth.getInstance();
-        currentUser = mAuth.getCurrentUser();
+        setEmail(email);
+        setUid(userID);
     }
 
-    public FirebaseUser getCurrentUser()
-    {
-        return this.currentUser;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
 }

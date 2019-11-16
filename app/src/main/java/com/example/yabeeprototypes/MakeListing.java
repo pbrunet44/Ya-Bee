@@ -22,6 +22,7 @@ import android.widget.Toast;
 import androidx.core.graphics.drawable.RoundedBitmapDrawable;
 
 import com.google.common.io.ByteArrayDataInput;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
     @Override
     protected void onStart() {
         super.onStart();
-        if (new User().getCurrentUser() == null)
+        if (FirebaseAuth.getInstance().getCurrentUser() == null)
         {
             Intent intent = new Intent(MakeListing.this, AccountOptions.class);
             startActivity(intent);
@@ -136,7 +137,7 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
                     imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
                     imageEncoding = Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT);
                 }
-                Post post = new Post(new User(), title, maxPrice, description, numOfDays, new Bid(INITIAL_BID_PRICE, INITIAL_DESCRIPTION, INITIAL_IMAGE), imageEncoding, category, condition, Long.toString(System.nanoTime()), date, false);
+                Post post = new Post(new User(FirebaseAuth.getInstance().getCurrentUser().getEmail(), FirebaseAuth.getInstance().getCurrentUser().getUid()), title, maxPrice, description, numOfDays, new Bid(INITIAL_BID_PRICE, INITIAL_DESCRIPTION, INITIAL_IMAGE), imageEncoding, category, condition, Long.toString(System.nanoTime()), date, false);
                 database.writeNewPost(post);
                 Toast successToast = Toast.makeText(getApplicationContext(), "Successful post creation!", Toast.LENGTH_LONG);
                 successToast.setGravity(Gravity.TOP, 0, 0);

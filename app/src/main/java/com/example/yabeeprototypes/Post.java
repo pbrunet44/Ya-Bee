@@ -4,6 +4,8 @@ import android.graphics.BitmapFactory;
 import android.provider.ContactsContract;
 import android.util.Base64;
 
+import com.google.firebase.database.Exclude;
+
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.Date;
@@ -66,7 +68,7 @@ public class Post {
 
     public User getBuyer()
     {
-        return this.buyer;
+        return buyer;
     }
     /**
      * Decodes the string representing the post's image (stored on Firebase using Base64 encoding)
