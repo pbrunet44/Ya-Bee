@@ -31,14 +31,19 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         final Post myListData = listData[position];
-        holder.textView.setText(listData[position].getTitle());
-        holder.imageView.setImageBitmap(listData[position].decodeImage());
-        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(view.getContext(),"click on item: "+myListData.getDescription(),Toast.LENGTH_LONG).show();
-            }
-        });
+        if (listData[position] != null) {
+            holder.textView.setText(listData[position].getTitle());
+            holder.imageView.setImageBitmap(listData[position].decodeImage());
+            holder.timeLeft.setText(listData[position].getAuctionTimer());
+            holder.condition.setText(listData[position].getCondition());
+            holder.bid.setText(Double.toString(listData[position].getLowestBid().price));
+            holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(view.getContext(), "click on item: " + myListData.getTitle(), Toast.LENGTH_LONG).show();
+                }
+            });
+        }
     }
 
 
@@ -50,11 +55,17 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageView;
         public TextView textView;
+        public TextView condition;
+        public TextView bid;
+        public TextView timeLeft;
         public RelativeLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
             this.imageView = (ImageView) itemView.findViewById(R.id.imageView);
             this.textView = (TextView) itemView.findViewById(R.id.textView);
+            this.condition = (TextView) itemView.findViewById(R.id.condition);
+            this.bid = (TextView) itemView.findViewById(R.id.bidPrice);
+            this.timeLeft = (TextView) itemView.findViewById(R.id.timeLeft);
             relativeLayout = (RelativeLayout)itemView.findViewById(R.id.relativeLayout);
         }
     }
