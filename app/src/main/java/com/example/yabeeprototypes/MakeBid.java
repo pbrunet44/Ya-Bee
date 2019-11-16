@@ -72,6 +72,11 @@ public class MakeBid extends AppCompatActivity {
                     if (post.verifyBid(bid))
                     {
                         post.updateNewLowestBid(bid);
+
+                        //post.getBuyer();
+                        //send a notifcation to buyer that they're post has had a bid submitted
+
+
                         finish();// go back to view post after submitting bid
                     }
                     else
