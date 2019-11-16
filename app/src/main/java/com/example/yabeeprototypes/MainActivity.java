@@ -10,9 +10,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
 public class MainActivity extends FragmentActivity {
 
@@ -42,7 +46,7 @@ public class MainActivity extends FragmentActivity {
                             if (currentUser == null) // no one signed in
                             {
                                 // show account options page
-                                System.out.println("The user is not signed in. Here is their email: " + currentUser.getEmail());
+                                System.out.println("The user is not signed in.");
                                 Intent intent = new Intent(getApplicationContext(), AccountOptions.class);
                                 startActivity(intent);
                             }
@@ -61,6 +65,8 @@ public class MainActivity extends FragmentActivity {
                     return true;
                 }
             };
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -85,5 +91,21 @@ public class MainActivity extends FragmentActivity {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.fragmentContainer, mainPage).commit();
         }
+
+        //Trying to mess with Notifications
+//        FirebaseInstanceId.getInstance().getInstanceId()
+//                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+//                        if(task.isSuccessful()) {
+//                            String token = task.getResult().getToken();
+//                            System.out.println("Token: " + token);
+//                        }
+//                        else {
+//                            System.out.println(task.getException().getMessage());
+//                        }
+//                    }
+//                });
+
     }
 }
