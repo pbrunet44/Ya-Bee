@@ -19,15 +19,14 @@
         />
     <TextView
         android:id="@+id/textView"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="22sp"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="20sp"
         android:text="Title"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="5dp"
         />
     <TextView
         android:id="@+id/condition"
@@ -36,7 +35,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/colorTextSecondary"
         android:text="Condition"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:layout_alignParentRight="true"
         android:layout_below="@id/textView"
         android:layout_marginBottom="15dp"
@@ -47,7 +46,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
+        android:textSize="24sp"
         android:text="Bid price"
         android:layout_alignParentRight="true"
         android:layout_below="@id/condition"
@@ -58,13 +57,25 @@
         android:layout_marginLeft="5dp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="20sp"
         android:text="Time left"
         android:layout_alignParentRight="true"
         android:layout_below="@id/bidPrice"
         android:layout_marginBottom="5dp"
         />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimaryLight"
+        android:src="@android:drawable/arrow_down_float"
+        android:layout_alignParentRight="true"
+        android:id="@+id/item_menu"
+        />
+
+
 </RelativeLayout>
 
 

@@ -35,8 +35,7 @@ public class MainActivity extends FragmentActivity {
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
                             break;
                         case R.id.navSearch:
-                            Intent intent1 = new Intent(getApplicationContext(), SearchBar.class);
-                            startActivity(intent1);
+                            onSearchRequested();
                             break;
                         case R.id.navNotifications:
                             selectedFragment = new Fragment();

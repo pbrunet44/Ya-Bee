@@ -17,6 +17,16 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+        <activity android:name=".Search">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+
+        </activity>
+
         <activity android:name=".SearchResults"></activity>
         <activity android:name=".SearchBar"/>
         <activity android:name=".AccountOptions"></activity>
@@ -40,12 +50,14 @@
             android:label="Make initial bid"
             android:parentActivityName=".ViewPost" />
         <activity android:name=".AuctionResult" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data android:name="android.app.default_searchable"
+                android:value=".Search"/>
         </activity>
     </application>
 

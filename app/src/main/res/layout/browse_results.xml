@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:scrollbars="vertical"
     android:background="@color/colorPrimaryLight"
-    android:id="@+id/recyclerView"
-    tools:context=".SearchResults">
+    android:id="@+id/recyclerView">
 
 </androidx.recyclerview.widget.RecyclerView>

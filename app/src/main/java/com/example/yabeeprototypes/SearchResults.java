@@ -11,13 +11,13 @@ import java.util.List;
 
 public class SearchResults extends AppCompatActivity
 {
-
+    private static int MAX_NUMBER_OF_POSTS = 1000000;
     private Post[] listData;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.browse_results);
-        listData = new Post[20];
+        listData = new Post[MAX_NUMBER_OF_POSTS];
         DatabaseHelper database = new DatabaseHelper();
         database.getPosts(new FirebaseCallback() {
             @Override

@@ -1,9 +1,14 @@
 package com.example.yabeeprototypes;
 
+import android.media.Image;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,6 +58,19 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
                     Toast.makeText(view.getContext(), "click on item: " + myListData.getTitle(), Toast.LENGTH_LONG).show();
                 }
             });
+
+            holder.menu.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    PopupMenu popupMenu = new PopupMenu(v.getContext(), v);
+                    MenuInflater inflater = popupMenu.getMenuInflater();
+                    inflater.inflate(R.menu.item, popupMenu.getMenu());
+                    popupMenu.show();
+                }
+            });
+
+
+
         }
     }
 
@@ -68,6 +86,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
         public TextView condition;
         public TextView bid;
         public TextView timeLeft;
+        public ImageButton menu;
         public RelativeLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
@@ -76,9 +95,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
             this.condition = (TextView) itemView.findViewById(R.id.condition);
             this.bid = (TextView) itemView.findViewById(R.id.bidPrice);
             this.timeLeft = (TextView) itemView.findViewById(R.id.timeLeft);
+            this.menu = (ImageButton) itemView.findViewById(R.id.item_menu);
             relativeLayout = (RelativeLayout)itemView.findViewById(R.id.relativeLayout);
         }
     }
+
 
 
 
