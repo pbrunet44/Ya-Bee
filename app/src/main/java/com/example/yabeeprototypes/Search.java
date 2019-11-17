@@ -3,39 +3,47 @@ package com.example.yabeeprototypes;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Search extends AppCompatActivity
 {
-    private static int MAX_NUMBER_OF_POSTS = 1000000;
     private DatabaseHelper database;
-    private Post[] results;
+    private RecyclerView recyclerView;
+    private String query = "";
+    ArrayList<Post> p ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.browse_results);
+        findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
         database = new DatabaseHelper();
+        final ArrayList<Post> res = new ArrayList<>();
+        p = new ArrayList<>();
+
         // Get the intent, verify the action and get the query
-        results = new Post[MAX_NUMBER_OF_POSTS];
         Intent intent = getIntent();
         if (Intent.ACTION_SEARCH.equals(intent.getAction()))
         {
-            final String query = intent.getStringExtra(SearchManager.QUERY);
-            List<Post> posts;
-            // perform query by calling databasehelper class
+            query = intent.getStringExtra(SearchManager.QUERY);
+             //perform query by calling databasehelper class
             database.getPosts(new FirebaseCallback() {
                 @Override
                 public void onCallback(List<Post> posts) {
@@ -43,23 +51,21 @@ public class Search extends AppCompatActivity
                     int i = 0;
                     for (Post p: posts)
                     {
-                        results[i] = p;
+                        res.add(p);
                         i++;
                     }
+                    recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    recyclerView.setHasFixedSize(true);
+                    PostAdapter adapter = new PostAdapter(res);
+                    recyclerView.setAdapter(adapter);
+                    findViewById(R.id.loadingPanel).setVisibility(View.GONE);
                 }
             });
         }
         else
         {
-            Toast searchToast = Toast.makeText(getApplicationContext(), "Error in search", Toast.LENGTH_LONG);
-            searchToast.setGravity(Gravity.TOP, 0, 0);
-            searchToast.show();
+            Toast.makeText(getApplicationContext(), "Unsuccessful search. Please try again!", Toast.LENGTH_LONG).show();
         }
-
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        PostAdapter adapter = new PostAdapter(results);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(adapter);
     }
 }

@@ -16,13 +16,15 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
 {
-    private Post[] listData;
+    private List<Post> listData;
 
 
-    public PostAdapter(Post[] listData)
+    public PostAdapter(List<Post> listData)
     {
         this.listData = listData;
     }
@@ -37,19 +39,19 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        final Post myListData = listData[position];
-        if (listData[position] != null) {
+        final Post myListData = listData.get(position);
+        if (listData.get(position) != null) {
             String bid = "";
             DecimalFormat df = new DecimalFormat("#.##");
-            holder.textView.setText(listData[position].getTitle());
-            holder.imageView.setImageBitmap(listData[position].decodeImage());
-            holder.timeLeft.setText(listData[position].getAuctionTimer());
-            holder.condition.setText(listData[position].getCondition());
+            holder.textView.setText(listData.get(position).getTitle());
+            holder.imageView.setImageBitmap(listData.get(position).decodeImage());
+            holder.timeLeft.setText(listData.get(position).getAuctionTimer());
+            holder.condition.setText(listData.get(position).getCondition());
 
-            if (listData[position].getLowestBid().price == listData[position].INITIAL_BID_PRICE)
+            if (listData.get(position).getLowestBid().price == listData.get(position).INITIAL_BID_PRICE)
                 bid = "No bids placed yet!";
             else
-                bid = "$" + df.format(listData[position].getLowestBid().price);
+                bid = "$" + df.format(listData.get(position).getLowestBid().price);
 
             holder.bid.setText(bid);
             holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +60,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
                     Toast.makeText(view.getContext(), "click on item: " + myListData.getTitle(), Toast.LENGTH_LONG).show();
                 }
             });
-
             holder.menu.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -68,16 +69,18 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
                     popupMenu.show();
                 }
             });
-
-
-
+        }
+        else
+        {
+            String invalid = "null";
+            holder.textView.setText(invalid);
+            holder.timeLeft.setText(invalid);
+            holder.condition.setText(invalid);
         }
     }
-
-
     @Override
     public int getItemCount() {
-        return listData.length;
+        return listData.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

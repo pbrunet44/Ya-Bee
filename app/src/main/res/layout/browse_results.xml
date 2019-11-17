@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scrollbars="vertical"
-    android:background="@color/colorPrimaryLight"
-    android:id="@+id/recyclerView">
+    android:layout_height="match_parent">
+    <androidx.recyclerview.widget.RecyclerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:background="@color/colorPrimaryLight"
+        android:id="@+id/recyclerView">
+    </androidx.recyclerview.widget.RecyclerView>
 
-</androidx.recyclerview.widget.RecyclerView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:id="@+id/loadingPanel">
+
+        <ProgressBar
+            android:id="@+id/load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:outlineAmbientShadowColor="@color/colorPrimaryLight"
+            android:indeterminate="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/load"
+            android:layout_centerVertical="true"
+            android:text="Searching..."
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>
