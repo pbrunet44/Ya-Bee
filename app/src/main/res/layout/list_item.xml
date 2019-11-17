@@ -1,51 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:background="@drawable/border">
-
+    android:paddingLeft="16dp"
+    android:background="@drawable/border"
+    android:id="@+id/relativeLayout"
+    android:paddingRight="16dp" >
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/profileEmail"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="9dp"
         android:scaleType="centerCrop"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:contentDescription="Icon" />
-
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/textView"
+        />
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_toEndOf="@id/imageView"
-        android:layout_toRightOf="@id/imageView"
-        android:textSize="16sp"/>
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="5dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="22sp"
+        android:text="Title"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="5dp"
+        />
     <TextView
         android:id="@+id/condition"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/textView"
-        android:textSize="14sp"
-        android:layout_toRightOf="@+id/imageView"
+        android:layout_marginLeft="5dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorTextSecondary"
+        android:text="Condition"
+        android:textSize="16sp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/textView"
+        android:layout_marginBottom="15dp"
         />
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
         android:id="@+id/bidPrice"
-        android:textSize="14sp"
-        android:layout_toRightOf="@+id/imageView"
+        android:layout_marginLeft="5dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:text="Bid price"
+        android:layout_alignParentRight="true"
         android:layout_below="@id/condition"
+        android:layout_marginBottom="10dp"
         />
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
         android:id="@+id/timeLeft"
-        android:textSize="14sp"
-        android:layout_toRightOf="@id/imageView"
+        android:layout_marginLeft="5dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:text="Time left"
+        android:layout_alignParentRight="true"
         android:layout_below="@id/bidPrice"
+        android:layout_marginBottom="5dp"
         />
-
 </RelativeLayout>
+
+
+

@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DecimalFormat;
+
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
 {
     private Post[] listData;
@@ -32,11 +34,19 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
     public void onBindViewHolder(ViewHolder holder, int position) {
         final Post myListData = listData[position];
         if (listData[position] != null) {
+            String bid = "";
+            DecimalFormat df = new DecimalFormat("#.##");
             holder.textView.setText(listData[position].getTitle());
             holder.imageView.setImageBitmap(listData[position].decodeImage());
             holder.timeLeft.setText(listData[position].getAuctionTimer());
             holder.condition.setText(listData[position].getCondition());
-            holder.bid.setText(Double.toString(listData[position].getLowestBid().price));
+
+            if (listData[position].getLowestBid().price == listData[position].INITIAL_BID_PRICE)
+                bid = "No bids placed yet!";
+            else
+                bid = "$" + df.format(listData[position].getLowestBid().price);
+
+            holder.bid.setText(bid);
             holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
