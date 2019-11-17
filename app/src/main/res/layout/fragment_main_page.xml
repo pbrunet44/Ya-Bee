@@ -3,344 +3,456 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/colorPrimaryLight"
-    >
 
-
-    <TextView
-        android:id="@+id/tvCategories"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="left"
-        android:text="@string/categories"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="30sp" />
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryLightAlternate"
+        android:orientation="vertical">
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvCategories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryLight"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingTop="20dp"
+            android:text="@string/categories"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="24sp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryLight">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:isScrollContainer="false"
+                android:minWidth="2000dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="72dp"
+                        android:maxHeight="72dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_services" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/services"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="72dp"
+                        android:maxHeight="72dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_textbooks" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/textbooks"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="72dp"
+                        android:maxHeight="72dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_sporting_goods" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Sporting Goods"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="72dp"
+                        android:maxHeight="72dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_videogames" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Video Games"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="72dp"
+                        android:maxHeight="72dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_book" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Books"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="72dp"
+                        android:maxHeight="72dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_movies" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Movies"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="72dp"
+                        android:maxHeight="72dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_music" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Music"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="72dp"
+                        android:maxHeight="72dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_furniture" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Furniture"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="72dp"
+                        android:maxHeight="72dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_kitchen" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Kitchen"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="72dp"
+                        android:maxHeight="72dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_sofa" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/Home"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="72dp"
+                        android:maxHeight="72dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_shoe" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Shoes"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="72dp"
+                        android:maxHeight="72dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_smartphone" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Electronics"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="72dp"
+                        android:maxHeight="72dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_toys" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Toys"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="72dp"
+                        android:maxHeight="72dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_luggage" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Travel"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="20dp"
+            android:background="#000000" />
+
+        <TextView
+            android:id="@+id/tvDailyBuzz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryLight"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/daily_buzz"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="24sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:isScrollContainer="false"
-            android:orientation="horizontal"
-            android:minWidth="2000dp">
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryLight"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/imgBuzz1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:layout_gravity="bottom|left"
                     android:adjustViewBounds="true"
-                    android:maxWidth="72dp"
-                    android:maxHeight="72dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_services" />
+                    android:maxWidth="121dp"
+                    android:maxHeight="121dp"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/ic_computer_networking_foreground" />
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/services"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="72dp"
-                    android:maxHeight="72dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_textbooks" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/textbooks"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="72dp"
-                    android:maxHeight="72dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_sporting_goods" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Sporting Goods"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="72dp"
-                    android:maxHeight="72dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_videogames" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Video Games"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="72dp"
-                    android:maxHeight="72dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_book" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Books"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="72dp"
-                    android:maxHeight="72dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_movies" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Movies"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="72dp"
-                    android:maxHeight="72dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_music" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Music"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="72dp"
-                    android:maxHeight="72dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_furniture" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Furniture"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="72dp"
-                    android:maxHeight="72dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_kitchen" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Kitchen"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="72dp"
-                    android:maxHeight="72dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_sofa" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/Home"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="72dp"
-                    android:maxHeight="72dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_shoe" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Shoes"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="72dp"
-                    android:maxHeight="72dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_smartphone" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Electronics"
+                    android:gravity="left"
+                    android:text="Textbook"
                     android:textColor="@color/colorTextSecondary"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -348,27 +460,120 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="bottom|left"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgBuzz2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|left"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="121dp"
+                    android:maxHeight="121dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/iphonex" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="iPhone X"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
+                    android:layout_gravity="bottom|left"
                     android:adjustViewBounds="true"
-                    android:maxWidth="72dp"
-                    android:maxHeight="72dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_toys" />
+                    android:maxWidth="121dp"
+                    android:maxHeight="121dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/lionel_trains" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Toys"
+                    android:gravity="left"
+                    android:text="Lionel Trains"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="20dp"
+            android:background="#000000" />
+
+        <TextView
+            android:id="@+id/videoGamesMainPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryLight"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingBottom="3dp"
+            android:text="Video Games"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryLight"
+            android:paddingLeft="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/recommended"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryLight"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|left"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="121dp"
+                    android:maxHeight="121dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ps4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Sony PS4"
                     android:textColor="@color/colorTextSecondary"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -376,371 +581,268 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="bottom|left"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:layout_gravity="bottom|left"
                     android:adjustViewBounds="true"
-                    android:maxWidth="72dp"
-                    android:maxHeight="72dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_luggage" />
+                    android:maxWidth="121dp"
+                    android:maxHeight="121dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/xboxone" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Travel"
+                    android:gravity="left"
+                    android:text="Xbox One"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|left"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="121dp"
+                    android:maxHeight="121dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/wii" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Wii"
                     android:textColor="@color/colorTextSecondary"
                     android:textSize="20sp" />
             </LinearLayout>
         </LinearLayout>
-    </HorizontalScrollView>
 
-    <View
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#bdbdbd"/>
-    <TextView
-        android:id="@+id/tvDailyBuzz"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorTextPrimary"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:layout_marginTop="20dp"
-        android:text="@string/daily_buzz" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="20dp"
+            android:background="#000000" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        >
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/brandOutlet"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:id="@+id/imgBuzz1"
+            android:background="@color/colorPrimaryLight"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingBottom="3dp"
+            android:text="The Brand Outlet: HQ for top names"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryLight"
+            android:paddingLeft="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/recommended"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryLight"
+            android:orientation="horizontal">
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_computer_networking_foreground"
-                android:adjustViewBounds="true"
-                android:maxWidth="72dp"
-                android:maxHeight="72dp"
-                android:scaleType="centerCrop"
-                android:layout_gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Textbook"
-                android:textSize="20sp"
-                android:textColor="@color/colorTextSecondary"
-                android:gravity="center"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:id="@+id/imgBuzz2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/iphonex"
-                android:adjustViewBounds="true"
-                android:maxWidth="72dp"
-                android:maxHeight="72dp"
-                android:scaleType="centerCrop"
-                android:layout_gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="iPhone X"
-                android:textSize="20sp"
-                android:textColor="@color/colorTextSecondary"
-                android:gravity="center"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/lionel_trains"
-                android:adjustViewBounds="true"
-                android:maxWidth="72dp"
-                android:maxHeight="72dp"
-                android:scaleType="centerCrop"
-                android:layout_gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:text="Lionel Trains"
-                android:textSize="20sp"
-                android:textColor="@color/colorTextSecondary"
-                android:gravity="center"/>
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|left"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="121dp"
+                    android:maxHeight="121dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/adidas" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Adidas"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|left"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="121dp"
+                    android:maxHeight="121dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/nike" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Nike"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|left"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="121dp"
+                    android:maxHeight="121dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/reebok" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Reebok"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="20dp"
+            android:background="#000000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryLight"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingBottom="3dp"
+            android:text="Party Supplies"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryLight"
+            android:paddingLeft="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/recommended"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="75dp"
+            android:background="@color/colorPrimaryLight"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|left"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="121dp"
+                    android:maxHeight="121dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/babyshowerballoons" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Baby Shower Balloons"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|left"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="121dp"
+                    android:maxHeight="121dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/partyfluffyslimes" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Party Fluffy Slimes"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="20sp" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-    <View
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#bdbdbd"/>
-    <TextView
-        android:id="@+id/videoGamesMainPage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorTextPrimary"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:layout_marginTop="20dp"
-        android:text="Video Games" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        >
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ps4"
-                android:adjustViewBounds="true"
-                android:maxWidth="72dp"
-                android:maxHeight="72dp"
-                android:scaleType="centerCrop"
-                android:layout_gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Sony PS4"
-                android:textSize="20sp"
-                android:textColor="@color/colorTextSecondary"
-                android:gravity="center"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/xboxone"
-                android:adjustViewBounds="true"
-                android:maxWidth="72dp"
-                android:maxHeight="72dp"
-                android:scaleType="centerCrop"
-                android:layout_gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Xbox One"
-                android:textSize="20sp"
-                android:textColor="@color/colorTextSecondary"
-                android:gravity="center"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/wii"
-                android:adjustViewBounds="true"
-                android:maxWidth="72dp"
-                android:maxHeight="72dp"
-                android:scaleType="centerCrop"
-                android:layout_gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Wii"
-                android:textSize="20sp"
-                android:textColor="@color/colorTextSecondary"
-                android:gravity="center"/>
-        </LinearLayout>
-    </LinearLayout>
-    <View
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#bdbdbd"/>
-    <TextView
-        android:id="@+id/brandOutlet"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorTextPrimary"
-        android:gravity="center"
-        android:textSize="28sp"
-        android:layout_marginTop="20dp"
-        android:text="The Brand Outlet: HQ for top names" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        >
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/adidas"
-                android:adjustViewBounds="true"
-                android:maxWidth="72dp"
-                android:maxHeight="72dp"
-                android:scaleType="centerCrop"
-                android:layout_gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Adidas"
-                android:textSize="20sp"
-                android:textColor="@color/colorTextSecondary"
-                android:gravity="center"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/nike"
-                android:adjustViewBounds="true"
-                android:maxWidth="72dp"
-                android:maxHeight="72dp"
-                android:scaleType="centerCrop"
-                android:layout_gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nike"
-                android:textSize="20sp"
-                android:textColor="@color/colorTextSecondary"
-                android:gravity="center"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/reebok"
-                android:adjustViewBounds="true"
-                android:maxWidth="72dp"
-                android:maxHeight="72dp"
-                android:scaleType="centerCrop"
-                android:layout_gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Reebok"
-                android:textSize="20sp"
-                android:textColor="@color/colorTextSecondary"
-                android:gravity="center"/>
-        </LinearLayout>
-    </LinearLayout>
-    <View
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#bdbdbd"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorTextPrimary"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:layout_marginTop="20dp"
-        android:text="Party Supplies" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="75dp"
-        android:orientation="horizontal"
-        >
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/babyshowerballoons"
-                android:adjustViewBounds="true"
-                android:maxWidth="72dp"
-                android:maxHeight="72dp"
-                android:scaleType="centerCrop"
-                android:layout_gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Baby Shower Balloons"
-                android:textSize="20sp"
-                android:textColor="@color/colorTextSecondary"
-                android:gravity="center"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/partyfluffyslimes"
-                android:adjustViewBounds="true"
-                android:maxWidth="72dp"
-                android:maxHeight="72dp"
-                android:scaleType="centerCrop"
-                android:layout_gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Party Fluffy Slimes"
-                android:textSize="20sp"
-                android:textColor="@color/colorTextSecondary"
-                android:gravity="center"/>
-        </LinearLayout>
-    </LinearLayout>
-</LinearLayout>
 </ScrollView>
