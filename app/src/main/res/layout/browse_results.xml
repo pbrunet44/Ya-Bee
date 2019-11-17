@@ -12,6 +12,13 @@
         android:id="@+id/recyclerView">
     </androidx.recyclerview.widget.RecyclerView>
 
+    <FrameLayout
+        android:id="@+id/brosweContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -11,7 +11,28 @@
         android:background="#ffecb3"
         android:orientation="vertical"
         tools:context=".ViewPost">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/loadingPanelforViewPost">
 
+            <ProgressBar
+                android:id="@+id/load"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:outlineAmbientShadowColor="@color/colorPrimaryLight"
+                android:indeterminate="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/load"
+                android:layout_centerVertical="true"
+                android:text="Searching..."
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="18sp"/>
+        </RelativeLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/postID"

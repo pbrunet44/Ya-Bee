@@ -23,10 +23,22 @@ public class ViewPost extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_view_post, container, false);
         // this is needed to send post information
         // view post should also display the post's id, to make it easier to retrieve post information
-        final String id = ((TextView)view.findViewById(R.id.postID)).getText().toString();
+        Bundle b = getArguments();
+        String i = "";
+        if (b != null) {
+            i = getArguments().getString("POST ID");
+            System.out.println(i);
+        }
+        else
+        {
+            System.out.println("ID is null");
+        }
+        final String id = i;
+        System.out.println("I'm in ViewPost, here's the post ID:" + id);
         final Button createBid = (Button) view.findViewById(R.id.BidButton);
 
         final DatabaseHelper database = new DatabaseHelper();
+        view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.VISIBLE);
         final TextView timer = (TextView) view.findViewById(R.id.timer); // retrieving timer off the post's page
         final TextView postTitle = (TextView) view.findViewById(R.id.postTitle);
         final TextView postDescription = (TextView) view.findViewById(R.id.postDescription);
@@ -43,6 +55,7 @@ public class ViewPost extends Fragment {
                         //System.out.println("Do you even get here?");
                         Post post = database.getPostByID(id, posts);
                         System.out.println(post.toString());
+                        view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.GONE);
                         postTitle.setText(post.getTitle());
                         postDescription.setText(post.getDescription());
                         postImage.setImageBitmap(post.decodeImage());

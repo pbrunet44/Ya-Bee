@@ -37,7 +37,7 @@ public class MainPage extends Fragment {
             public void onClick(View v) {
                 //Toast.makeText(getActivity(), "Hydroflasksksks clicked.", Toast.LENGTH_SHORT).show();
 
-                ViewPost nextFrag= new ViewPost();
+                ViewPost nextFrag = new ViewPost();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, nextFrag)
                         .addToBackStack(null)

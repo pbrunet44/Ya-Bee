@@ -1,6 +1,8 @@
 package com.example.yabeeprototypes;
 
+import android.content.Intent;
 import android.media.Image;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.DecimalFormat;
@@ -38,7 +41,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         final Post myListData = listData.get(position);
         if (listData.get(position) != null) {
             String bid = "";
@@ -57,7 +60,15 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
             holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(view.getContext(), "click on item: " + myListData.getTitle(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(view.getContext(), "click on item: " + myListData.getTitle(), Toast.LENGTH_LONG).show();
+                    // start view post activity, send post information
+                    Bundle bundle = new Bundle();
+                    bundle.putString("POST ID", myListData.getId());
+
+                    AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                    ViewPost vp = new ViewPost();
+                    vp.setArguments(bundle);
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.brosweContainer, vp).commit();
                 }
             });
             holder.menu.setOnClickListener(new View.OnClickListener() {
