@@ -26,9 +26,6 @@
                 android:resource="@xml/searchable"/>
 
         </activity>
-
-        <activity android:name=".SearchResults"></activity>
-        <activity android:name=".SearchBar"/>
         <activity android:name=".AccountOptions"></activity>
         <activity android:name=".BidAccept" />
         <activity android:name=".ViewPost" />

@@ -18,7 +18,7 @@ import java.util.List;
 
 public class Search extends AppCompatActivity
 {
-
+    private static int MAX_NUMBER_OF_POSTS = 1000000;
     private DatabaseHelper database;
     private Post[] results;
 
@@ -29,7 +29,7 @@ public class Search extends AppCompatActivity
         setContentView(R.layout.browse_results);
         database = new DatabaseHelper();
         // Get the intent, verify the action and get the query
-        results = new Post[1000000];
+        results = new Post[MAX_NUMBER_OF_POSTS];
         Intent intent = getIntent();
         if (Intent.ACTION_SEARCH.equals(intent.getAction()))
         {
