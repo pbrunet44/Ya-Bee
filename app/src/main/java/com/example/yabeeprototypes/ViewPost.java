@@ -43,6 +43,7 @@ public class ViewPost extends Fragment {
         final TextView postTitle = (TextView) view.findViewById(R.id.postTitle);
         final TextView postDescription = (TextView) view.findViewById(R.id.postDescription);
         final ImageView postImage = (ImageView) view.findViewById(R.id.postImage);
+        final TextView postClicks = view.findViewById(R.id.postClicks);
 
         final Handler timerHandler = new Handler();
         Runnable timerRunnable = new Runnable(){
@@ -59,6 +60,7 @@ public class ViewPost extends Fragment {
                         postTitle.setText(post.getTitle());
                         postDescription.setText(post.getDescription());
                         postImage.setImageBitmap(post.decodeImage());
+                        postClicks.setText("Clicks: " + post.getClicks());
                         //System.out.println(post.toString());
                         //boolean isAuctionOver = false;
                         if (post != null)

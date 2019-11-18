@@ -68,6 +68,17 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading clicks..."
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/colorTextPrimary"
+            android:id="@+id/postClicks"
+            android:textSize="15sp"
+            />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
