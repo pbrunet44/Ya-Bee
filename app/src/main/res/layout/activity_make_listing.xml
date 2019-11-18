@@ -24,15 +24,6 @@
         android:src="@drawable/add_image_icon"
         android:layout_marginBottom="10dp"/>
 
-    <Button
-        android:id="@+id/uploadPostImage"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginLeft="105dp"
-        android:layout_marginRight="105dp"
-        android:background="@drawable/rounded_button"
-        android:text="upload photo (optional)" />
-
     <Space
         android:layout_width="match_parent"
         android:layout_height="13dp" />
