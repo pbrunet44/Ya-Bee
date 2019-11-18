@@ -113,7 +113,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#bdbdbd"/>
-        <TextView
+        <!--<TextView
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:id="@+id/ratingsText"
@@ -159,7 +159,7 @@
                 android:layout_height="wrap_content"
                 android:src="@mipmap/ic_yabeereviews"/>
         </LinearLayout>
-
+-->
 
 
     </LinearLayout>

@@ -2,6 +2,8 @@ package com.example.yabeeprototypes;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -31,6 +33,7 @@ import com.squareup.picasso.Picasso;
 import org.w3c.dom.Text;
 
 import java.io.ByteArrayOutputStream;
+import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -41,13 +44,39 @@ public class Profile extends Fragment {
     private Button makePost;
     private FirebaseUser currentUser;
     private ImageView profilePicture;
+    private Button buying;
+    private Button selling;
     private final static int RESULT_LOAD_IMAGE = 1;
+    private List<Post> buy;
+    private List<Post> sell;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        final View view = inflater.inflate(R.layout.fragment_profile, container, false);
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        buying = view.findViewById(R.id.productsImBuying);
+        selling = view.findViewById(R.id.productsImSelling);
+
+        buying.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // start new intent
+                Intent intent = new Intent(getActivity(), Buying.class);
+                startActivity(intent);
+
+            }
+        });
+        selling.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // start new intent
+                Intent intent = new Intent(getActivity(), Selling.class);
+                startActivity(intent);
+
+            }
+        });
 
         TextView profileEmail = (TextView)view.findViewById(R.id.profileEmail);
         profileEmail.setText(currentUser.getEmail());
