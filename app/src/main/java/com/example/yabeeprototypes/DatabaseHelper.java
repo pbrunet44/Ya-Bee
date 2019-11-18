@@ -121,17 +121,26 @@ public class DatabaseHelper {
      */
     public ArrayList<Post> sortPostsByClicks(List<Post> posts)
     {
-        ArrayList<Post> results = new ArrayList<>(posts);
+        ArrayList<Post> results = new ArrayList<>();
+        results.addAll(posts);
         Collections.sort(results, new PostClickComparator());
+        System.out.println("Inside sortPostsByClicks:");
+//        for (Post post:results) {
+//            System.out.println(post.toString());
+//        }
         return results;
     }
 
     public ArrayList<Post> getDailyBuzz(List<Post> posts)
     {
         ArrayList<Post> sortedPosts = sortPostsByClicks(posts);
+//        System.out.println("Inside getDailyBuzz:");
+//        for (Post post:sortedPosts) {
+//            System.out.println(post.toString());
+//        }
         ArrayList<Post> results = new ArrayList<>();
         for (int i = 0; i < NUM_DAILY_BUZZ_POSTS; i++) {
-            results.add(posts.get(i));
+            results.add(sortedPosts.get(i));
         }
         return results;
     }

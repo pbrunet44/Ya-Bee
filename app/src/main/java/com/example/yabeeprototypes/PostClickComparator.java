@@ -12,11 +12,11 @@ public class PostClickComparator implements Comparator<Post> {
         }
         else if(post1.getClicks() > post2.getClicks())
         {
-            return 1;
+            return -1;
         }
         else
         {
-            return -1;
+            return 1;
         }
     }
 }

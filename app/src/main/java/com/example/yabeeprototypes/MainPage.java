@@ -13,7 +13,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 //I know it still says activity, but the main page is now a fragment
@@ -22,17 +26,39 @@ public class MainPage extends Fragment {
     //private ImageButton button;
 
 
-    private ImageView buzz1;
-    private ImageView buzz2;
+    private ImageView btnBuzz1;
+    private ImageView btnBuzz2;
+    private ImageView btnBuzz3;
+    private TextView tvBuzz1;
+    private TextView tvBuzz2;
+    private TextView tvBuzz3;
     private Button signIn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main_page, container, false);
-        buzz1 = (ImageView) view.findViewById(R.id.imgBuzz1);
-        buzz2 = (ImageView) view.findViewById(R.id.imgBuzz2);
+        btnBuzz1 = (ImageView) view.findViewById(R.id.imgBuzz1);
+        btnBuzz2 = (ImageView) view.findViewById(R.id.imgBuzz2);
+        btnBuzz3 = (ImageView) view.findViewById(R.id.imgBuzz3);
+        tvBuzz1 = view.findViewById(R.id.tvBuzz1);
+        tvBuzz2 = view.findViewById(R.id.tvBuzz2);
+        tvBuzz3 = view.findViewById(R.id.tvBuzz3);
         //signIn = (Button) view.findViewById(R.id.tvLogin);
-        buzz1.setOnClickListener(new View.OnClickListener() {
+
+        final DatabaseHelper databaseHelper = new DatabaseHelper();
+        databaseHelper.getPosts(new FirebaseCallback() {
+            @Override
+            public void onCallback(List<Post> posts) {
+                ArrayList<Post> dailyBuzz = databaseHelper.getDailyBuzz(posts);
+                btnBuzz1.setImageBitmap(dailyBuzz.get(0).decodeImage());
+                tvBuzz1.setText("#1: " + dailyBuzz.get(0).getTitle() + "\n" + dailyBuzz.get(0).getClicks() + " clicks!");
+                btnBuzz2.setImageBitmap(dailyBuzz.get(1).decodeImage());
+                tvBuzz2.setText("#2: " + dailyBuzz.get(1).getTitle() + "\n" + dailyBuzz.get(1).getClicks() + " clicks!");
+                btnBuzz3.setImageBitmap(dailyBuzz.get(2).decodeImage());
+                tvBuzz3.setText("#3: " + dailyBuzz.get(2).getTitle() + "\n" + dailyBuzz.get(2).getClicks() + " clicks!");
+            }
+        });
+        btnBuzz1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(getActivity(), "Hydroflasksksks clicked.", Toast.LENGTH_SHORT).show();
@@ -44,7 +70,7 @@ public class MainPage extends Fragment {
                         .commit();
             }
         });
-        buzz2.setOnClickListener(new View.OnClickListener() {
+        btnBuzz2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "idk", Toast.LENGTH_SHORT).show();
