@@ -13,7 +13,7 @@
     </androidx.recyclerview.widget.RecyclerView>
 
     <FrameLayout
-        android:id="@+id/BuyingContainer"
+        android:id="@+id/SellingContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
