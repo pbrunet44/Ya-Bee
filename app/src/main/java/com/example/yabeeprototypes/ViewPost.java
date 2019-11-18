@@ -89,6 +89,8 @@ public class ViewPost extends Fragment {
             public void onCallback(List<Post> posts) {
                 Post post = database.getPostByID(id, posts);
                 System.out.println(post.toString());
+                //Increment clicks while we're here
+                post.incrementClicksOnFirebase();
                 TextView currBid = view.findViewById(R.id.lowestBid);
                 DecimalFormat df = new DecimalFormat("#.##");
                 String newLowestBid = null;

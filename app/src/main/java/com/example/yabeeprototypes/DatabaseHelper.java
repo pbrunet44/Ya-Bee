@@ -9,10 +9,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DatabaseHelper {
 
+    private final int NUM_DAILY_BUZZ_POSTS = 3;
     private FirebaseDatabase database;
     public DatabaseReference databaseReference;
     private List<Post> posts;
@@ -95,8 +97,8 @@ public class DatabaseHelper {
 
     /**
      * Retrieves posts containing specified keyword in their titles
-     * @param keyword
-     * @param posts
+     * @param keyword string to search titles for
+     * @param posts List of posts
      * @return list of posts containing specified keyword in their titles
      */
     public ArrayList<Post> getPostsByTitle(String keyword, List<Post> posts)
@@ -110,6 +112,27 @@ public class DatabaseHelper {
         }
 
         return results;
+    }
+
+    /**
+     * Orders posts based on clicks
+     * @param posts List of posts
+     * @return ArrayList of posts, sorted from most to least clicks
+     */
+    public ArrayList<Post> sortPostsByClicks(List<Post> posts)
+    {
+        ArrayList<Post> results = new ArrayList<>(posts);
+        Collections.sort(results, new PostClickComparator());
+        return results;
+    }
+
+    public ArrayList<Post> getDailyBuzz(List<Post> posts)
+    {
+        ArrayList<Post> sortedPosts = sortPostsByClicks(posts);
+        ArrayList<Post> results = new ArrayList<>();
+        for (int i = 0; i < NUM_DAILY_BUZZ_POSTS; i++) {
+
+        }
     }
 
     /**

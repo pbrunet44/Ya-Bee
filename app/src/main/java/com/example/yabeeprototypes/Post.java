@@ -33,13 +33,14 @@ public class Post {
     private Date postDate;
     private long auctionTimeLeft;
     private boolean isExpired;
+    private int clicks;
 
     public Post()
     {
         super();
     }
 
-    public Post(User buyer, String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired)
+    public Post(User buyer, String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired, int clicks)
     {
         this.allBids = new ArrayList<>();
         this.setTitle(title);
@@ -54,7 +55,9 @@ public class Post {
         this.setPostDate(postDate);
         this.setExpired(isExpired);
         this.setBuyer(buyer);
+        this.setClicks(clicks);
         updateAuctionTimer(); // setting auction timer to start
+
     }
 
     private void addBidtoList(Bid bid)
@@ -125,7 +128,12 @@ public class Post {
     {
         if (this.auctionTimeLeft <= 0)
         {
-            this.isExpired = true;
+            if(this.isExpired = false)
+            {
+                this.isExpired = true;
+                DatabaseHelper databaseHelper = new DatabaseHelper();
+                databaseHelper.databaseReference.child("Posts").child(id).child("isExpired").setValue(this.isExpired);
+            }
             return "AUCTION EXPIRED";
         }
         if(this.auctionTimeLeft > 24 * 60 * 60)
@@ -250,6 +258,23 @@ public class Post {
 
     private void setExpired(boolean expired) {
         isExpired = expired;
+    }
+
+    public int getClicks()
+    {
+        return this.clicks;
+    }
+
+    private void setClicks(int clicks)
+    {
+        this.clicks = clicks;
+    }
+
+    public void incrementClicksOnFirebase()
+    {
+        this.clicks++;
+        DatabaseHelper databaseHelper = new DatabaseHelper();
+        databaseHelper.databaseReference.child("Posts").child(id).child("clicks").setValue(this.clicks);
     }
 
     public String toString()
