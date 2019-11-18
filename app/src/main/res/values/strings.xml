@@ -20,4 +20,5 @@
     <string name="Search">Search Ya-Bee</string>
     <string name="NoSelling">You have not placed any bids.</string>
     <string name="recommended">Recommended for you</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
 </resources>

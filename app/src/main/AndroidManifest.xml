@@ -12,6 +12,14 @@
         android:roundIcon="@drawable/yabeelogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <service android:name=".MessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -22,11 +30,12 @@
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
-            <meta-data android:name="android.app.searchable"
-                android:resource="@xml/searchable"/>
 
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
         </activity>
-        <activity android:name=".AccountOptions"></activity>
+        <activity android:name=".AccountOptions" />
         <activity android:name=".BidAccept" />
         <activity android:name=".ViewPost" />
         <activity
@@ -34,12 +43,12 @@
             android:label="My Profile"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MakeListing" />
-        <activity android:name=".Buying"
-            android:label="Buying">
-        </activity>
-        <activity android:name=".Selling"
-            android:label="Selling">
-        </activity>
+        <activity
+            android:name=".Buying"
+            android:label="Buying" />
+        <activity
+            android:name=".Selling"
+            android:label="Selling" />
         <activity
             android:name=".MakeAccount"
             android:label="Create an account"
@@ -53,14 +62,10 @@
             android:label="Make initial bid"
             android:parentActivityName=".ViewPost" />
         <activity android:name=".AuctionResult" />
-
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <meta-data android:name="android.app.default_searchable"
-                android:value=".Search"/>
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".Search" />
         </activity>
     </application>
 
