@@ -24,7 +24,7 @@ public class Post {
     private int auctionLength;
     private Bid lowestBid;
     private String imageEncoding;
-    private ArrayList<Bid> allBids;
+    private ArrayList<User> allBidders;
     //private Bitmap imageBitmap;
     //private Uri imageUri; // will deal with this later
     private String category;
@@ -40,9 +40,9 @@ public class Post {
         super();
     }
 
-    public Post(User buyer, String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired, int clicks)
+    public Post(ArrayList<User> allBidders, User buyer, String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired, int clicks)
     {
-        this.allBids = new ArrayList<>();
+        this.setAllBids(allBidders);
         this.setTitle(title);
         this.setMaxPrice(maxPrice);
         this.setDescription(description);
@@ -60,9 +60,37 @@ public class Post {
 
     }
 
-    private void addBidtoList(Bid bid)
+    private void setAllBids(ArrayList<User> allBidders)
     {
-        this.allBids.add(bid);
+        this.allBidders = allBidders;
+    }
+
+
+    public void addBiddertoList(User bidder)
+    {
+        if (this.allBidders == null)
+            this.allBidders = new ArrayList<>();
+        this.allBidders.add(bidder);
+        DatabaseHelper databaseHelper = new DatabaseHelper();
+        databaseHelper.updateBidders(this.id, this.allBidders);
+
+    }
+
+    public ArrayList<User> getAllBidders()
+    {
+        return this.allBidders;
+    }
+
+    public boolean alreadyBid(String uid)
+    {
+        if (this.allBidders != null && this.allBidders.size() != 0) {
+            for (User user : this.allBidders) {
+                if (user.getUid().equals(uid)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
     private void setBuyer(User buyer)
     {
@@ -277,14 +305,6 @@ public class Post {
         databaseHelper.databaseReference.child("Posts").child(id).child("clicks").setValue(this.clicks);
     }
 
-    public ArrayList<User> getAllBidders()
-    {
-        ArrayList<User> results = new ArrayList<>();
-        for (Bid bid:allBids) {
-            results.add(bid.seller);
-        }
-        return results;
-    }
 
     public String toString()
     {
