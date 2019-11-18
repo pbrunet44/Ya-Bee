@@ -139,7 +139,7 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
                 }
                 Post post = new Post(new User(FirebaseAuth.getInstance().getCurrentUser().getEmail(),
                         FirebaseAuth.getInstance().getCurrentUser().getUid()), title, maxPrice,
-                        description, numOfDays, new Bid(INITIAL_BID_PRICE, INITIAL_DESCRIPTION, INITIAL_IMAGE),
+                        description, numOfDays, new Bid(INITIAL_BID_PRICE, INITIAL_DESCRIPTION, INITIAL_IMAGE, null),
                         imageEncoding, category, condition, Long.toString(System.nanoTime()),
                         date, false, 0);
                 database.writeNewPost(post);
