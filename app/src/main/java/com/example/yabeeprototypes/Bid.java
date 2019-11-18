@@ -14,12 +14,12 @@ public class Bid
     //public String id; //do bids need unique ids since we're only keeping track of the lowest bid?
 
     public Bid() {}
-    public Bid(double price, String description, String imageEncoding)
+    public Bid(double price, String description, String imageEncoding, User newUser)
     {
         this.price = price;
         this.description = description;
         this.imageEncoding = imageEncoding;
-        this.seller = new User();
+        this.seller = newUser;
         //this.id = id;
     }
 

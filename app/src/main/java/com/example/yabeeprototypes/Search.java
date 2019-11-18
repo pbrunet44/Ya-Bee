@@ -26,7 +26,6 @@ public class Search extends AppCompatActivity
     private DatabaseHelper database;
     private RecyclerView recyclerView;
     private String query = "";
-    ArrayList<Post> p ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -35,8 +34,6 @@ public class Search extends AppCompatActivity
         setContentView(R.layout.browse_results);
         findViewById(R.id.loadingPanel).setVisibility(View.VISIBLE);
         database = new DatabaseHelper();
-        final ArrayList<Post> res = new ArrayList<>();
-        p = new ArrayList<>();
 
         // Get the intent, verify the action and get the query
         Intent intent = getIntent();
@@ -48,16 +45,10 @@ public class Search extends AppCompatActivity
                 @Override
                 public void onCallback(List<Post> posts) {
                     posts = database.getPostsByTitle(query, posts);
-                    int i = 0;
-                    for (Post p: posts)
-                    {
-                        res.add(p);
-                        i++;
-                    }
                     recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
                     recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                     recyclerView.setHasFixedSize(true);
-                    PostAdapter adapter = new PostAdapter(res);
+                    PostAdapter adapter = new PostAdapter(posts);
                     recyclerView.setAdapter(adapter);
                     findViewById(R.id.loadingPanel).setVisibility(View.GONE);
                 }

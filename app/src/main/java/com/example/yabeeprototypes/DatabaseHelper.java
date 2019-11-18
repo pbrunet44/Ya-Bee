@@ -131,8 +131,9 @@ public class DatabaseHelper {
         ArrayList<Post> sortedPosts = sortPostsByClicks(posts);
         ArrayList<Post> results = new ArrayList<>();
         for (int i = 0; i < NUM_DAILY_BUZZ_POSTS; i++) {
-
+            results.add(posts.get(i));
         }
+        return results;
     }
 
     /**
@@ -143,6 +144,58 @@ public class DatabaseHelper {
     public void updateLowestBid(String id, Bid bid) {
 
         this.databaseReference.child("Posts").child(id).child("lowestBid").setValue(bid);
+    }
+
+    /**
+     * Updates all bidders participating in auction in the database
+     * @param id
+     * @param bidders
+     */
+    public void updateBidders(String id, ArrayList<User> bidders)
+    {
+        this.databaseReference.child("Posts").child(id).child("allBids").setValue(bidders);
+    }
+
+    /**
+     * Returns a given user's posts that they've posted (used only for 'Buying' under Profile)
+     * @param  uid
+     * @param posts
+     */
+    public ArrayList<Post> getPostsByBuyer(String uid, List<Post> posts)
+    {
+        ArrayList<Post> results = new ArrayList<>();
+        for (Post post: posts)
+        {
+            if (post.getBuyer().getUid().equals(uid))
+            {
+                results.add(post);
+            }
+        }
+        return results;
+    }
+
+    /**
+     * Returns a given user's posts that they have placed bids in(used only for 'Selling' under Profile)
+     * @param  uid
+     * @param posts
+     */
+    public ArrayList<Post> getPostsBySeller(String uid, List<Post> posts)
+    {
+        ArrayList<Post> results = new ArrayList<>();
+        for (Post post: posts)
+        {
+            if (post != null) {
+                ArrayList<User> bidders = post.getAllBidders();
+                if (bidders != null) {
+                    for (User u : bidders) {
+                        if (u.getUid().equals(uid)) {
+                            results.add(post);
+                        }
+                    }
+                }
+            }
+        }
+        return results;
     }
 
 }

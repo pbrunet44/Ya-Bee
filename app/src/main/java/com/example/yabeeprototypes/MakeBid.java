@@ -18,6 +18,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.io.ByteArrayOutputStream;
 import java.text.DecimalFormat;
 import java.util.List;
@@ -27,12 +30,14 @@ public class MakeBid extends AppCompatActivity {
     private Uri imageUri = null;
     private String imageEncoding = "";
     ImageView bidImage;
+    FirebaseUser currentUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_bid);
         System.out.println("I'm MakeBid's databaseHelper!");
         final DatabaseHelper database = new DatabaseHelper();
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();
         // getting post id so we can therefore get post information
         Intent intent = getIntent();
         final String postID = intent.getStringExtra("POST ID");
@@ -68,15 +73,17 @@ public class MakeBid extends AppCompatActivity {
                     }
                     String description = ((TextView) findViewById(R.id.etBidDescription)).getText().toString();
                     double price = Double.parseDouble(((TextView) findViewById(R.id.etBidPrice)).getText().toString());
-                    Bid bid = new Bid(price, description, imageEncoding);
+                    Bid bid = new Bid(price, description, imageEncoding, new User(currentUser.getEmail(), currentUser.getUid()));
                     if (post.verifyBid(bid))
                     {
                         post.updateNewLowestBid(bid);
-
+                        if (!post.alreadyBid(currentUser.getUid()))
+                        {
+                            post.addBiddertoList(new User(currentUser.getEmail(), currentUser.getUid()));
+                        }
+                        System.out.println("I'm in MakeBid, i'm allbids, here's my size" + post.getAllBidders().size());
                         //post.getBuyer();
                         //send a notifcation to buyer that they're post has had a bid submitted
-
-
                         finish();// go back to view post after submitting bid
                     }
                     else

@@ -34,6 +34,12 @@
             android:label="My Profile"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MakeListing" />
+        <activity android:name=".Buying"
+            android:label="Buying">
+        </activity>
+        <activity android:name=".Selling"
+            android:label="Selling">
+        </activity>
         <activity
             android:name=".MakeAccount"
             android:label="Create an account"
