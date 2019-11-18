@@ -277,6 +277,15 @@ public class Post {
         databaseHelper.databaseReference.child("Posts").child(id).child("clicks").setValue(this.clicks);
     }
 
+    public ArrayList<User> getAllBidders()
+    {
+        ArrayList<User> results = new ArrayList<>();
+        for (Bid bid:allBids) {
+            results.add(bid.seller);
+        }
+        return results;
+    }
+
     public String toString()
     {
         return String.format("Title: %s\nMax price: %f\n Description: %s\n", this.title, this.maxPrice, this.description);
