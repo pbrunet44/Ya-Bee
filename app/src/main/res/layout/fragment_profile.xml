@@ -20,19 +20,19 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp" >
             <ImageView
-                android:id="@+id/profilePicture"
-                android:src="@mipmap/ic_launcher_round"
-                android:layout_toStartOf="@+id/profileEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_toLeftOf="@+id/profileEmail"
-                />
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/postImageforProfile"
+                android:maxHeight="100dp"
+                android:maxWidth="100dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                android:src="@drawable/add_image_icon"
+                android:layout_marginBottom="10dp"/>
             <TextView
                 android:id="@+id/profileEmail"
-                android:layout_marginLeft="5dp"
-                android:layout_width="250dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
@@ -41,8 +41,8 @@
                 />
             <TextView
                 android:id="@+id/satisfaction"
-                android:layout_marginLeft="5dp"
-                android:layout_width="250dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"

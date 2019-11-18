@@ -59,7 +59,6 @@ public class MakeAccount extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         System.out.println("I am currentUser in onStart(): " + currentUser);
-        //updateUI(currentUser);
     }
 
 
