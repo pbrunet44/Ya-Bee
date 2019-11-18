@@ -19,6 +19,8 @@ import java.util.List;
 
 public class ViewPost extends Fragment {
 
+    private boolean updatedClicks = false;
+
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_view_post, container, false);
         // this is needed to send post information
@@ -92,7 +94,11 @@ public class ViewPost extends Fragment {
                 Post post = database.getPostByID(id, posts);
                 System.out.println(post.toString());
                 //Increment clicks while we're here
-                post.incrementClicksOnFirebase();
+                if(!updatedClicks)
+                {
+                    post.incrementClicksOnFirebase();
+                    updatedClicks = true;
+                }
                 TextView currBid = view.findViewById(R.id.lowestBid);
                 DecimalFormat df = new DecimalFormat("#.##");
                 String newLowestBid = null;
