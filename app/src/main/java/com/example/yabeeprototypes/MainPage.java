@@ -51,11 +51,11 @@ public class MainPage extends Fragment {
             public void onCallback(List<Post> posts) {
                 ArrayList<Post> dailyBuzz = databaseHelper.getDailyBuzz(posts);
                 btnBuzz1.setImageBitmap(dailyBuzz.get(0).decodeImage());
-                tvBuzz1.setText("#1: " + dailyBuzz.get(0).getTitle() + "\n" + dailyBuzz.get(0));
+                tvBuzz1.setText("#1: " + dailyBuzz.get(0).getTitle());
                 btnBuzz2.setImageBitmap(dailyBuzz.get(1).decodeImage());
-                tvBuzz2.setText("#2: " + dailyBuzz.get(1).getTitle() + "\n" + dailyBuzz.get(1));
+                tvBuzz2.setText("#2: " + dailyBuzz.get(1).getTitle());
                 btnBuzz3.setImageBitmap(dailyBuzz.get(2).decodeImage());
-                tvBuzz3.setText("#3: " + dailyBuzz.get(2).getTitle() + "\n" + dailyBuzz.get(2));
+                tvBuzz3.setText("#3: " + dailyBuzz.get(2).getTitle());
             }
         });
         btnBuzz1.setOnClickListener(new View.OnClickListener() {
