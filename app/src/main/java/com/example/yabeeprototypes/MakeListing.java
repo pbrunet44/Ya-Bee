@@ -47,6 +47,7 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
         {
             Intent intent = new Intent(MakeListing.this, AccountOptions.class);
             startActivity(intent);
+            finish();
         }
 
     }
