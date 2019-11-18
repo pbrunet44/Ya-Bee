@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends FragmentActivity {
 
@@ -38,7 +39,7 @@ public class MainActivity extends FragmentActivity {
                             onSearchRequested();
                             break;
                         case R.id.navNotifications:
-                            selectedFragment = new Fragment();
+                            selectedFragment = new Notifications();
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
                             break;
                         case R.id.navProfile:
@@ -90,21 +91,5 @@ public class MainActivity extends FragmentActivity {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.fragmentContainer, mainPage).commit();
         }
-
-        //Trying to mess with Notifications
-//        FirebaseInstanceId.getInstance().getInstanceId()
-//                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
-//                        if(task.isSuccessful()) {
-//                            String token = task.getResult().getToken();
-//                            System.out.println("Token: " + token);
-//                        }
-//                        else {
-//                            System.out.println(task.getException().getMessage());
-//                        }
-//                    }
-//                });
-
     }
 }
