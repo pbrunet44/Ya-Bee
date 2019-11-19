@@ -49,7 +49,7 @@ public class Selling extends AppCompatActivity
                     recyclerView = (RecyclerView) findViewById(R.id.recyclerViewforSelling);
                     recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                     recyclerView.setHasFixedSize(true);
-                    PostAdapter adapter = new PostAdapter(selling);
+                    PostAdapter adapter = new PostAdapter(R.id.SellingContainer, selling);
                     recyclerView.setAdapter(adapter);
                 }
 

@@ -25,10 +25,12 @@ import java.util.List;
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
 {
     private List<Post> listData;
+    private int containerId;
 
-    public PostAdapter(List<Post> listData)
+    public PostAdapter(int containerId, List<Post> listData)
     {
         this.listData = listData;
+        this.containerId = containerId;
     }
 
     @Override
@@ -67,7 +69,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
                     AppCompatActivity activity = (AppCompatActivity) view.getContext();
                     ViewPost vp = new ViewPost();
                     vp.setArguments(bundle);
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.brosweContainer, vp).commit();
+                    // check which view
+                    activity.getSupportFragmentManager().beginTransaction().replace(containerId, vp).commit();
                 }
             });
             holder.menu.setOnClickListener(new View.OnClickListener() {
