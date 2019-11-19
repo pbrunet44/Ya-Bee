@@ -59,8 +59,6 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
         Button makePost = findViewById(R.id.collectPostInfo);
         final DatabaseHelper database = new DatabaseHelper();
         postImage = findViewById(R.id.postImage);
-        Button uploadPostImage = findViewById(R.id.uploadPostImage);
-
         // Spinner for category
         Spinner categorySpinner = (Spinner) findViewById(R.id.categoryDropdown);
         categorySpinner.setOnItemSelectedListener(this);
@@ -152,7 +150,7 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
             }
         });
 
-        uploadPostImage.setOnClickListener(new View.OnClickListener() {
+        postImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);

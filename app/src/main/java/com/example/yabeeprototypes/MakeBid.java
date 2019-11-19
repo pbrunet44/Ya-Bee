@@ -45,7 +45,7 @@ public class MakeBid extends AppCompatActivity {
 
         System.out.println("MakeBid - Post id:" + postID);
         final Button submitBid = (Button) findViewById(R.id.btnSubmit);
-        final Button uploadImage = (Button) findViewById(R.id.btnUploadImage);
+        //final Button uploadImage = (Button) findViewById(R.id.btnUploadImage);
         //final Post post = database.getPostByID(postID);
         database.getPosts(new FirebaseCallback() {
             @Override
@@ -53,7 +53,7 @@ public class MakeBid extends AppCompatActivity {
                 // find post with appropriate id
                 final Post post = database.getPostByID(postID, posts);
                 System.out.println(post.toString());
-                uploadImage.setOnClickListener(new View.OnClickListener(){
+                bidImage.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View v) {
                         Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
