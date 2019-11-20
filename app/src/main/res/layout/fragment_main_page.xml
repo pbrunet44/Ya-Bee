@@ -7,7 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimaryLightAlternate"
+        android:background="@color/colorPrimaryLight"
         android:orientation="vertical">
 
 
@@ -47,8 +47,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:gravity="center"
                         android:adjustViewBounds="true"
+                        android:gravity="center"
                         android:maxWidth="72dp"
                         android:maxHeight="72dp"
                         android:scaleType="centerCrop"
@@ -75,8 +75,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:gravity="center"
                         android:adjustViewBounds="true"
+                        android:gravity="center"
                         android:maxWidth="72dp"
                         android:maxHeight="72dp"
                         android:scaleType="centerCrop"
@@ -103,23 +103,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:gravity="center"
                         android:adjustViewBounds="true"
+                        android:gravity="center"
                         android:maxWidth="72dp"
                         android:maxHeight="72dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_sporting_goods"
-                        />
+                        android:src="@drawable/ic_sporting_goods" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:layout_gravity="center"
+                        android:gravity="center"
                         android:text="Sporting Goods"
                         android:textColor="@color/colorTextSecondary"
-                        android:textSize="20sp"
-                        />
+                        android:textSize="20sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -414,21 +412,40 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_margin="20dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:background="#000000" />
 
-        <TextView
-            android:id="@+id/tvDailyBuzz"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@color/colorPrimaryLight"
-            android:gravity="left"
-            android:paddingLeft="10dp"
-            android:paddingBottom="10dp"
-            android:text="@string/daily_buzz"
-            android:textColor="@color/colorTextPrimary"
-            android:textSize="24sp" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvDailyBuzz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryLight"
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/daily_buzz"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="30dp"
+                android:text="@string/SeeAll"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="18sp" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -551,21 +568,40 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_margin="20dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:background="#000000" />
 
-        <TextView
-            android:id="@+id/videoGamesMainPage"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@color/colorPrimaryLight"
-            android:gravity="left"
-            android:paddingLeft="10dp"
-            android:paddingBottom="3dp"
-            android:text="Video Games"
-            android:textColor="@color/colorTextPrimary"
-            android:textSize="24sp" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/videoGamesMainPage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryLight"
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingBottom="3dp"
+                android:text="Video Games"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="30dp"
+                android:text="@string/SeeAll"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="18sp" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView3"
@@ -670,21 +706,41 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_margin="20dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:background="#000000" />
 
-        <TextView
-            android:id="@+id/brandOutlet"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@color/colorPrimaryLight"
-            android:gravity="left"
-            android:paddingLeft="10dp"
-            android:paddingBottom="3dp"
-            android:text="The Brand Outlet: HQ for top names"
-            android:textColor="@color/colorTextPrimary"
-            android:textSize="24sp" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/brandOutlet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryLight"
+                android:gravity="left"
+                android:maxWidth="225dp"
+                android:paddingLeft="10dp"
+                android:paddingBottom="3dp"
+                android:text="The Brand Outlet: HQ for top names"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="30dp"
+                android:text="@string/SeeAll"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="18sp" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView4"
@@ -789,20 +845,39 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_margin="20dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:background="#000000" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@color/colorPrimaryLight"
-            android:gravity="left"
-            android:paddingLeft="10dp"
-            android:paddingBottom="3dp"
-            android:text="Party Supplies"
-            android:textColor="@color/colorTextPrimary"
-            android:textSize="24sp" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryLight"
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingBottom="3dp"
+                android:text="Party Supplies"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="30dp"
+                android:text="@string/SeeAll"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="18sp" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView5"
