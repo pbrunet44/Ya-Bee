@@ -49,8 +49,8 @@
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
                         android:gravity="center"
-                        android:maxWidth="72dp"
-                        android:maxHeight="72dp"
+                        android:maxWidth="60dp"
+                        android:maxHeight="60dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_services" />
 
@@ -77,8 +77,8 @@
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
                         android:gravity="center"
-                        android:maxWidth="72dp"
-                        android:maxHeight="72dp"
+                        android:maxWidth="60dp"
+                        android:maxHeight="60dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_textbooks" />
 
@@ -105,8 +105,8 @@
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
                         android:gravity="center"
-                        android:maxWidth="72dp"
-                        android:maxHeight="72dp"
+                        android:maxWidth="60dp"
+                        android:maxHeight="60dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_sporting_goods" />
 
@@ -132,8 +132,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
-                        android:maxWidth="72dp"
-                        android:maxHeight="72dp"
+                        android:maxWidth="60dp"
+                        android:maxHeight="60dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_videogames" />
 
@@ -158,8 +158,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
-                        android:maxWidth="72dp"
-                        android:maxHeight="72dp"
+                        android:maxWidth="60dp"
+                        android:maxHeight="60dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_book" />
 
@@ -184,8 +184,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
-                        android:maxWidth="72dp"
-                        android:maxHeight="72dp"
+                        android:maxWidth="60dp"
+                        android:maxHeight="60dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_movies" />
 
@@ -210,8 +210,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
-                        android:maxWidth="72dp"
-                        android:maxHeight="72dp"
+                        android:maxWidth="60dp"
+                        android:maxHeight="60dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_music" />
 
@@ -236,8 +236,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
-                        android:maxWidth="72dp"
-                        android:maxHeight="72dp"
+                        android:maxWidth="60dp"
+                        android:maxHeight="60dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_furniture" />
 
@@ -262,8 +262,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
-                        android:maxWidth="72dp"
-                        android:maxHeight="72dp"
+                        android:maxWidth="60dp"
+                        android:maxHeight="60dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_kitchen" />
 
@@ -288,8 +288,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
-                        android:maxWidth="72dp"
-                        android:maxHeight="72dp"
+                        android:maxWidth="60dp"
+                        android:maxHeight="60dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_sofa" />
 
@@ -314,8 +314,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
-                        android:maxWidth="72dp"
-                        android:maxHeight="72dp"
+                        android:maxWidth="60dp"
+                        android:maxHeight="60dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_shoe" />
 
@@ -340,8 +340,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
-                        android:maxWidth="72dp"
-                        android:maxHeight="72dp"
+                        android:maxWidth="60dp"
+                        android:maxHeight="60dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_smartphone" />
 
@@ -367,8 +367,8 @@
                         android:layout_gravity="center"
                         android:layout_weight="1"
                         android:adjustViewBounds="true"
-                        android:maxWidth="72dp"
-                        android:maxHeight="72dp"
+                        android:maxWidth="60dp"
+                        android:maxHeight="60dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_toys" />
 
@@ -394,8 +394,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:adjustViewBounds="true"
-                        android:maxWidth="72dp"
-                        android:maxHeight="72dp"
+                        android:maxWidth="60dp"
+                        android:maxHeight="60dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_luggage" />
 
@@ -475,8 +475,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
                     android:adjustViewBounds="true"
-                    android:maxWidth="121dp"
-                    android:maxHeight="121dp"
+                    android:maxWidth="130dp"
+                    android:maxHeight="130dp"
                     android:scaleType="centerInside"
                     android:src="@mipmap/ic_computer_networking_foreground" />
 
@@ -512,8 +512,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
                     android:adjustViewBounds="true"
-                    android:maxWidth="121dp"
-                    android:maxHeight="121dp"
+                    android:maxWidth="130dp"
+                    android:maxHeight="130dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/iphonex" />
 
@@ -549,8 +549,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
                     android:adjustViewBounds="true"
-                    android:maxWidth="121dp"
-                    android:maxHeight="121dp"
+                    android:maxWidth="130dp"
+                    android:maxHeight="130dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/lionel_trains" />
 
@@ -633,8 +633,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
                     android:adjustViewBounds="true"
-                    android:maxWidth="121dp"
-                    android:maxHeight="121dp"
+                    android:maxWidth="130dp"
+                    android:maxHeight="130dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/ps4" />
 
@@ -661,8 +661,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
                     android:adjustViewBounds="true"
-                    android:maxWidth="121dp"
-                    android:maxHeight="121dp"
+                    android:maxWidth="130dp"
+                    android:maxHeight="130dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/xboxone" />
 
@@ -689,8 +689,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
                     android:adjustViewBounds="true"
-                    android:maxWidth="121dp"
-                    android:maxHeight="121dp"
+                    android:maxWidth="130dp"
+                    android:maxHeight="130dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/wii" />
 
@@ -772,8 +772,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
                     android:adjustViewBounds="true"
-                    android:maxWidth="121dp"
-                    android:maxHeight="121dp"
+                    android:maxWidth="130dp"
+                    android:maxHeight="130dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/adidas" />
 
@@ -800,8 +800,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
                     android:adjustViewBounds="true"
-                    android:maxWidth="121dp"
-                    android:maxHeight="121dp"
+                    android:maxWidth="130dp"
+                    android:maxHeight="130dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/nike" />
 
@@ -828,8 +828,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
                     android:adjustViewBounds="true"
-                    android:maxWidth="121dp"
-                    android:maxHeight="121dp"
+                    android:maxWidth="130dp"
+                    android:maxHeight="130dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/reebok" />
 
@@ -910,8 +910,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
                     android:adjustViewBounds="true"
-                    android:maxWidth="121dp"
-                    android:maxHeight="121dp"
+                    android:maxWidth="130dp"
+                    android:maxHeight="130dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/babyshowerballoons" />
 
@@ -938,8 +938,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
                     android:adjustViewBounds="true"
-                    android:maxWidth="121dp"
-                    android:maxHeight="121dp"
+                    android:maxWidth="130dp"
+                    android:maxHeight="130dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/partyfluffyslimes" />
 
