@@ -43,6 +43,7 @@ public class ViewPost extends Fragment {
         view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.VISIBLE);
         final TextView timer = (TextView) view.findViewById(R.id.timer); // retrieving timer off the post's page
         final TextView postTitle = (TextView) view.findViewById(R.id.postTitle);
+        final TextView postCondition = (TextView) view.findViewById(R.id.postCondition);
         final TextView postDescription = (TextView) view.findViewById(R.id.postDescription);
         final ImageView postImage = (ImageView) view.findViewById(R.id.postImage);
         final TextView postClicks = view.findViewById(R.id.postClicks);
@@ -60,6 +61,7 @@ public class ViewPost extends Fragment {
                         System.out.println(post.toString());
                         view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.GONE);
                         postTitle.setText(post.getTitle());
+                        postCondition.setText(post.getCondition());
                         postDescription.setText(post.getDescription());
                         postImage.setImageBitmap(post.decodeImage());
                         postClicks.setText("Clicks: " + post.getClicks());

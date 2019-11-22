@@ -33,6 +33,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:20.0.1'
     implementation 'com.google.firebase:firebase-database:19.2.0'
     implementation 'com.google.firebase:firebase-messaging:20.0.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:recyclerview-v7:29.0.0'
