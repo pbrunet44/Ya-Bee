@@ -2,9 +2,13 @@ package com.example.yabeeprototypes;
 
 import android.content.Intent;
 import android.media.Image;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -17,6 +21,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -67,9 +74,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
                     bundle.putString("POST ID", myListData.getId());
 
                     AppCompatActivity activity = (AppCompatActivity) view.getContext();
+
+
                     ViewPost vp = new ViewPost();
                     vp.setArguments(bundle);
-                    // check which view
+                    // need loading screen while firebase is loading data
                     activity.getSupportFragmentManager().beginTransaction().replace(containerId, vp).commit();
                 }
             });
@@ -115,7 +124,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
             relativeLayout = (RelativeLayout)itemView.findViewById(R.id.relativeLayout);
         }
     }
-
 
 
 

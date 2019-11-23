@@ -14,6 +14,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.os.Handler;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.text.DecimalFormat;
 import java.util.List;
 
@@ -21,7 +24,8 @@ public class ViewPost extends Fragment {
 
     private boolean updatedClicks = false;
 
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+    public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_view_post, container, false);
         // this is needed to send post information
         // view post should also display the post's id, to make it easier to retrieve post information
@@ -40,13 +44,15 @@ public class ViewPost extends Fragment {
         final Button createBid = (Button) view.findViewById(R.id.BidButton);
 
         final DatabaseHelper database = new DatabaseHelper();
-        view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.VISIBLE);
+        //view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.VISIBLE);
         final TextView timer = (TextView) view.findViewById(R.id.timer); // retrieving timer off the post's page
         final TextView postTitle = (TextView) view.findViewById(R.id.postTitle);
         final TextView postCondition = (TextView) view.findViewById(R.id.postCondition);
         final TextView postDescription = (TextView) view.findViewById(R.id.postDescription);
         final ImageView postImage = (ImageView) view.findViewById(R.id.postImage);
         final TextView postClicks = (TextView) view.findViewById(R.id.postClicks);
+        final Button editPostButton = (Button) view.findViewById(R.id.editPostButton);
+        final FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         final Handler timerHandler = new Handler();
         Runnable timerRunnable = new Runnable(){
@@ -59,7 +65,11 @@ public class ViewPost extends Fragment {
                         //System.out.println("Do you even get here?");
                         Post post = database.getPostByID(id, posts);
                         System.out.println(post.toString());
-                        view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.GONE);
+                        //view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.GONE);
+                        if (currentUser != null && !(post.getBuyer().getUid().equals(currentUser.getUid())))
+                        {
+                            editPostButton.setVisibility(View.INVISIBLE);
+                        }
                         postTitle.setText(post.getTitle());
                         postCondition.setText(post.getCondition());
                         postDescription.setText(post.getDescription());
