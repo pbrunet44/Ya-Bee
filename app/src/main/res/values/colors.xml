@@ -7,9 +7,8 @@
 <color name="colorTextPrimary">#212121</color>
 <color name="colorTextSecondary">#757575</color>
 <color name="colorDivider">#000000</color>
+    <color name="cardBackground">#ffefc0</color>
 <color name="colorDivider2">#BDBDBD</color>
-    <color name="cardBackground">#faf0be</color>
-
     <color name="colorPrimaryLightAlternate">#FFECA5</color>
 <color name="backgroundBottomNav">#FFECD0</color>
 </resources>

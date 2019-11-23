@@ -166,22 +166,20 @@ public class Post {
         }
         if(this.auctionTimeLeft > 24 * 60 * 60)
         {
-            return ("Days: " + Long.toString(this.auctionTimeLeft / 24 / 60 / 60)
-                    + " Hours: " + Long.toString((this.auctionTimeLeft / 60 / 60) % 24));
+            return (Long.toString(this.auctionTimeLeft / 24 / 60 / 60) + " days, " + Long.toString((this.auctionTimeLeft / 60 / 60) % 24) + " hours");
         }
         else if(this.auctionTimeLeft > 60 * 60)
         {
-            return ("Hours: " + Long.toString(this.auctionTimeLeft / 60 / 60)
-                    + " Minutes: " + Long.toString((this.auctionTimeLeft / 60) % 60));
+            return (Long.toString(this.auctionTimeLeft / 60 / 60)  + " hours, "  + Long.toString((this.auctionTimeLeft / 60) % 60) + " minutes" );
         }
         else if(this.auctionTimeLeft > 60)
         {
-            return ("Minutes: " + Long.toString(this.auctionTimeLeft / 60)
-                    + " Seconds: " + Long.toString((this.auctionTimeLeft) % 60));
+            return (Long.toString(this.auctionTimeLeft / 60) + " minutes, "
+                    + Long.toString((this.auctionTimeLeft) % 60) + " seconds");
         }
         else
         {
-            return "Seconds: " + Long.toString(this.auctionTimeLeft);
+            return (Long.toString(this.auctionTimeLeft) + " seconds");
         }
         /*return (String.format("%02d", (this.auctionTimeLeft / 60 / 60))
                 + ":" + String.format("%02d", (this.auctionTimeLeft / 60) % 60)

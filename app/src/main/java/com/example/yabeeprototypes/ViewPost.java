@@ -46,7 +46,7 @@ public class ViewPost extends Fragment {
         final TextView postCondition = (TextView) view.findViewById(R.id.postCondition);
         final TextView postDescription = (TextView) view.findViewById(R.id.postDescription);
         final ImageView postImage = (ImageView) view.findViewById(R.id.postImage);
-        final TextView postClicks = view.findViewById(R.id.postClicks);
+        final TextView postClicks = (TextView) view.findViewById(R.id.postClicks);
 
         final Handler timerHandler = new Handler();
         Runnable timerRunnable = new Runnable(){
@@ -64,7 +64,7 @@ public class ViewPost extends Fragment {
                         postCondition.setText(post.getCondition());
                         postDescription.setText(post.getDescription());
                         postImage.setImageBitmap(post.decodeImage());
-                        postClicks.setText("Clicks: " + post.getClicks());
+                        postClicks.setText(String.valueOf(post.getClicks()));
                         //System.out.println(post.toString());
                         //boolean isAuctionOver = false;
                         if (post != null)
@@ -105,7 +105,7 @@ public class ViewPost extends Fragment {
                 DecimalFormat df = new DecimalFormat("#.##");
                 String newLowestBid = null;
                 if (post.getLowestBid().price == post.INITIAL_BID_PRICE)
-                    newLowestBid = "Max price: " + "$" + df.format(post.getMaxPrice()) + "\nNo bids yet!";
+                    newLowestBid = "Max price: " + "$" + df.format(post.getMaxPrice()) + " No bids yet!";
                 else
                     newLowestBid = "Current bid: $" + df.format(post.getLowestBid().price);
                 //System.out.println("Got new bid price in viewpost: " + newLowestBid);
