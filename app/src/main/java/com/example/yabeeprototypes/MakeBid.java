@@ -35,6 +35,8 @@ public class MakeBid extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_bid);
+
+
         System.out.println("I'm MakeBid's databaseHelper!");
         final DatabaseHelper database = new DatabaseHelper();
         currentUser = FirebaseAuth.getInstance().getCurrentUser();

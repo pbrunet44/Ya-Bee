@@ -72,6 +72,10 @@ public class ViewPost extends Fragment {
                         {
                             editPostButton.setVisibility(View.INVISIBLE);
                         }
+                        if (currentUser != null && (post.getBuyer().getUid().equals(currentUser.getUid())))
+                        {
+                            createBid.setVisibility(View.INVISIBLE);
+                        }
                         postTitle.setText(post.getTitle());
                         postCondition.setText(post.getCondition());
                         postDescription.setText(post.getDescription());
