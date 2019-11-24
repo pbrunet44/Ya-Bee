@@ -23,6 +23,7 @@ import java.util.List;
 public class ViewPost extends Fragment {
 
     private boolean updatedClicks = false;
+    private Post post;
 
 
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class ViewPost extends Fragment {
         final TextView postTitle = (TextView) view.findViewById(R.id.postTitle);
         final TextView postCondition = (TextView) view.findViewById(R.id.postCondition);
         final TextView postDescription = (TextView) view.findViewById(R.id.postDescription);
+        final TextView postCategory = (TextView) view.findViewById(R.id.postCategory);
         final ImageView postImage = (ImageView) view.findViewById(R.id.postImage);
         final TextView postClicks = (TextView) view.findViewById(R.id.postClicks);
         final Button editPostButton = (Button) view.findViewById(R.id.editPostButton);
@@ -63,7 +65,7 @@ public class ViewPost extends Fragment {
                     public void onCallback(List<Post> posts) {
                         // find post with appropriate id
                         //System.out.println("Do you even get here?");
-                        Post post = database.getPostByID(id, posts);
+                        post = database.getPostByID(id, posts);
                         System.out.println(post.toString());
                         //view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.GONE);
                         if (currentUser != null && !(post.getBuyer().getUid().equals(currentUser.getUid())))
@@ -74,6 +76,7 @@ public class ViewPost extends Fragment {
                         postCondition.setText(post.getCondition());
                         postDescription.setText(post.getDescription());
                         postImage.setImageBitmap(post.decodeImage());
+                        postCategory.setText(post.getCategory());
                         postClicks.setText(String.valueOf(post.getClicks()));
                         //System.out.println(post.toString());
                         //boolean isAuctionOver = false;
@@ -89,6 +92,25 @@ public class ViewPost extends Fragment {
         };
 
         timerRunnable.run();
+
+        editPostButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle postExtras = new Bundle();
+                // adding key value pairs to this bundle
+                postExtras.putString("Post ID", id);
+                //postExtras.putString("Image", post.getImageEncoding());
+                postExtras.putString("Title", post.getTitle());
+                postExtras.putString("Description", post.getDescription());
+                postExtras.putString("Category", post.getCategory());
+                postExtras.putString("Condition", post.getCondition());
+
+                Intent intent = new Intent(getActivity(), EditPost.class);
+                intent.putExtras(postExtras);
+                startActivity(intent);
+
+            }
+        });
 
         createBid.setOnClickListener(new View.OnClickListener() {
             @Override

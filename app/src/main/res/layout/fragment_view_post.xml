@@ -183,6 +183,33 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="Category:"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorTextPrimary"
+                        android:layout_marginLeft="15dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/postCategory"
+                        android:text="category"
+                        android:layout_marginLeft="185dp"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorTextPrimary"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="Views:"
                         android:textSize="18sp"
                         android:textColor="@color/colorTextPrimary"
@@ -197,6 +224,7 @@
                         android:textSize="18sp"
                         android:textColor="@color/colorTextPrimary"/>
                 </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_marginTop="5dp"
