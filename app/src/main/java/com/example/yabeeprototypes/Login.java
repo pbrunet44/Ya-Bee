@@ -49,6 +49,12 @@ public class Login extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
+
     public void loginUser(String email, String password)
     {
         progressBar.setVisibility(View.VISIBLE);
@@ -64,6 +70,7 @@ public class Login extends AppCompatActivity {
                             toast.show();
 
                             // go to home page
+                            finish();
                             Intent intent = new Intent(Login.this, MainActivity.class);
                             startActivity(intent);
                         }

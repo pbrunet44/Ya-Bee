@@ -59,4 +59,9 @@ public class Search extends AppCompatActivity
             Toast.makeText(getApplicationContext(), "Unsuccessful search. Please try again!", Toast.LENGTH_LONG).show();
         }
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
 }

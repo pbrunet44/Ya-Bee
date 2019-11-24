@@ -24,6 +24,7 @@ public class AccountOptions extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 Intent intent = new Intent(AccountOptions.this, Login.class);
                 startActivity(intent);
             }
@@ -32,13 +33,18 @@ public class AccountOptions extends AppCompatActivity {
         createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 Intent intent = new Intent(AccountOptions.this, MakeAccount.class);
                 startActivity(intent);
             }
         });
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
 
 
 

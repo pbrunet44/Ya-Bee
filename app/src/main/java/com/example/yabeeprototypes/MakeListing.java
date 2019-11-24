@@ -145,6 +145,7 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
                 Toast successToast = Toast.makeText(getApplicationContext(), "Successful post creation!", Toast.LENGTH_LONG);
                 successToast.setGravity(Gravity.TOP, 0, 0);
                 successToast.show();
+                finish();
                 Intent intent = new Intent(MakeListing.this, MainActivity.class);
                 startActivity(intent);
             }
@@ -158,6 +159,12 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
     }
 
     @Override

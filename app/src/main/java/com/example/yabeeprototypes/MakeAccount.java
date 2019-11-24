@@ -61,6 +61,11 @@ public class MakeAccount extends AppCompatActivity {
         System.out.println("I am currentUser in onStart(): " + currentUser);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
 
     // create user with email, password
     private void createAccount(String email, String password)
