@@ -17,6 +17,7 @@
             android:id="@+id/tvCategories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:gravity="left"
             android:paddingLeft="10dp"
             android:paddingTop="20dp"
@@ -29,7 +30,7 @@
             android:layout_height="match_parent"
             android:layout_margin="7dp"
             app:cardBackgroundColor="@color/colorPrimaryVeryLightAlternate"
-            app:contentPadding="5dp">
+            app:contentPadding="7dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -446,6 +447,7 @@
                 android:id="@+id/tvDailyBuzz"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:gravity="left"
                 android:paddingLeft="10dp"
                 android:paddingBottom="10dp"
@@ -457,6 +459,7 @@
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingRight="30dp"
@@ -472,7 +475,7 @@
             app:cardBackgroundColor="@color/colorPrimaryVeryLightAlternate"
             app:cardCornerRadius="2dp"
             app:cardElevation="2dp"
-            app:contentPadding="5dp">
+            app:contentPadding="7dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -616,6 +619,7 @@
                 android:id="@+id/videoGamesMainPage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:background="@color/colorPrimaryLight"
                 android:gravity="left"
                 android:paddingLeft="10dp"
@@ -628,6 +632,7 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingRight="30dp"
@@ -642,7 +647,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryLight"
             android:paddingLeft="10dp"
-            android:paddingBottom="10dp"
+            android:paddingBottom="3dp"
             android:text="@string/recommended"
             android:textSize="18sp" />
 
@@ -651,7 +656,7 @@
             android:layout_height="match_parent"
             android:layout_margin="7dp"
             app:cardBackgroundColor="@color/colorPrimaryVeryLightAlternate"
-            app:contentPadding="5dp">
+            app:contentPadding="7dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -754,6 +759,7 @@
                 android:id="@+id/brandOutlet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:background="@color/colorPrimaryLight"
                 android:gravity="left"
                 android:maxWidth="225dp"
@@ -767,6 +773,7 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingRight="30dp"
@@ -781,7 +788,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryLight"
             android:paddingLeft="10dp"
-            android:paddingBottom="10dp"
+            android:paddingBottom="3dp"
             android:text="@string/recommended"
             android:textSize="18sp" />
 
@@ -790,7 +797,7 @@
             android:layout_height="match_parent"
             android:layout_margin="7dp"
             app:cardBackgroundColor="@color/colorPrimaryVeryLightAlternate"
-            app:contentPadding="5dp">
+            app:contentPadding="7dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -892,6 +899,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:background="@color/colorPrimaryLight"
                 android:gravity="left"
                 android:paddingLeft="10dp"
@@ -904,6 +912,7 @@
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingRight="30dp"
@@ -918,7 +927,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryLight"
             android:paddingLeft="10dp"
-            android:paddingBottom="10dp"
+            android:paddingBottom="3dp"
             android:text="@string/recommended"
             android:textSize="18sp" />
 
@@ -930,7 +939,8 @@
             android:layout_marginRight="7dp"
             android:layout_marginBottom="7dp"
             android:padding="5dp"
-            app:cardBackgroundColor="@color/colorPrimaryVeryLightAlternate">
+            app:cardBackgroundColor="@color/colorPrimaryVeryLightAlternate"
+            app:contentPadding="7dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
