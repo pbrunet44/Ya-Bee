@@ -13,44 +13,56 @@
         android:background="#ffecb3"
         android:orientation="vertical"
         tools:context=".Profile">
-        <RelativeLayout
-            android:layout_marginTop="25dp"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp" >
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:id="@+id/postImageforProfile"
-                android:maxHeight="100dp"
-                android:maxWidth="100dp"
-                android:scaleType="centerCrop"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/user_profile_photo"
+                android:layout_marginTop="30dp"
                 android:layout_gravity="center"
-                android:src="@drawable/add_image_icon"
-                android:layout_marginBottom="10dp"/>
+                android:layout_width="175dp"
+                android:layout_height="175dp"
+                android:background="@drawable/circular_profile_pic"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_person_black_24dp" />
             <TextView
                 android:id="@+id/profileEmail"
-                android:layout_marginLeft="10dp"
-                android:layout_width="200dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimaryDark"
+                android:layout_gravity="center"
+                android:text="email"
+                android:layout_marginTop="15dp"
                 android:textSize="20sp"
-                android:layout_alignParentRight="true"
-                android:text="quicksell75"
+                android:textColor="@color/colorTextPrimary"
                 />
-            <TextView
-                android:id="@+id/satisfaction"
-                android:layout_marginLeft="10dp"
-                android:layout_width="200dp"
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="20sp"
-                android:layout_alignParentRight="true"
-                android:layout_below="@id/profileEmail"
-                android:text="99% positive satisfaction"
-                />
-        </RelativeLayout>
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_email_black_24dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/ic_mode_edit_black_24dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/ic_share_black_24dp"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
         <View
             android:layout_marginTop="20dp"
             android:layout_marginBottom="5dp"
@@ -64,7 +76,7 @@
             android:layout_height="40dp"
             android:background="@drawable/rounded_button"
             android:text="Create a listing"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textColor="@color/colorPrimaryDark"
             />
         <Button
@@ -74,7 +86,7 @@
             android:layout_height="40dp"
             android:background="@drawable/rounded_button"
             android:text="Buying"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textColor="@color/colorPrimaryDark"
             />
         <Button
@@ -84,7 +96,7 @@
             android:layout_height="40dp"
             android:background="@drawable/rounded_button"
             android:text="Selling"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textColor="@color/colorPrimaryDark"
             />
         <Button
@@ -94,7 +106,7 @@
             android:layout_height="40dp"
             android:background="@drawable/rounded_button"
             android:text="Reviews"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textColor="@color/colorPrimaryDark"
             />
         <Button
@@ -104,7 +116,7 @@
             android:layout_height="40dp"
             android:background="@drawable/rounded_button"
             android:text="Sign out"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textColor="@color/colorPrimaryDark"
             />
         <View
