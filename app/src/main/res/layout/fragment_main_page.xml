@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -8,14 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimaryLight"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="75dp">
 
 
         <TextView
             android:id="@+id/tvCategories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryLight"
             android:gravity="left"
             android:paddingLeft="10dp"
             android:paddingTop="20dp"
@@ -23,411 +24,428 @@
             android:textColor="@color/colorTextPrimary"
             android:textSize="24sp" />
 
-        <HorizontalScrollView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimaryLight">
+            android:layout_margin="7dp"
+            app:cardBackgroundColor="@color/colorPrimaryVeryLightAlternate"
+            app:contentPadding="5dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:isScrollContainer="false"
-                android:minWidth="2000dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <LinearLayout
+                <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:scrollbarSize="0dp">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:adjustViewBounds="true"
-                        android:gravity="center"
-                        android:maxWidth="60dp"
-                        android:maxHeight="60dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_services" />
-
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="@string/services"
-                        android:textColor="@color/colorTextSecondary"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:isScrollContainer="false"
+                        android:minWidth="2000dp"
+                        android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:adjustViewBounds="true"
-                        android:gravity="center"
-                        android:maxWidth="60dp"
-                        android:maxHeight="60dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_textbooks" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:gravity="center"
+                                android:maxWidth="60dp"
+                                android:maxHeight="60dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_services" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="@string/textbooks"
-                        android:textColor="@color/colorTextSecondary"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="@string/services"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="20sp" />
+                        </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:adjustViewBounds="true"
-                        android:gravity="center"
-                        android:maxWidth="60dp"
-                        android:maxHeight="60dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_sporting_goods" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:gravity="center"
+                                android:maxWidth="60dp"
+                                android:maxHeight="60dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_textbooks" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="Sporting Goods"
-                        android:textColor="@color/colorTextSecondary"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="@string/textbooks"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="20sp" />
+                        </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:adjustViewBounds="true"
-                        android:maxWidth="60dp"
-                        android:maxHeight="60dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_videogames" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:gravity="center"
+                                android:maxWidth="60dp"
+                                android:maxHeight="60dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_sporting_goods" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Video Games"
-                        android:textColor="@color/colorTextSecondary"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="Sporting Goods"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="20sp" />
+                        </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:adjustViewBounds="true"
-                        android:maxWidth="60dp"
-                        android:maxHeight="60dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_book" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:maxWidth="60dp"
+                                android:maxHeight="60dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_videogames" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Books"
-                        android:textColor="@color/colorTextSecondary"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Video Games"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="20sp" />
+                        </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:adjustViewBounds="true"
-                        android:maxWidth="60dp"
-                        android:maxHeight="60dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_movies" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:maxWidth="60dp"
+                                android:maxHeight="60dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_book" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Movies"
-                        android:textColor="@color/colorTextSecondary"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Books"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="20sp" />
+                        </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:adjustViewBounds="true"
-                        android:maxWidth="60dp"
-                        android:maxHeight="60dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_music" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:maxWidth="60dp"
+                                android:maxHeight="60dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_movies" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Music"
-                        android:textColor="@color/colorTextSecondary"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Movies"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="20sp" />
+                        </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:adjustViewBounds="true"
-                        android:maxWidth="60dp"
-                        android:maxHeight="60dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_furniture" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:maxWidth="60dp"
+                                android:maxHeight="60dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_music" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Furniture"
-                        android:textColor="@color/colorTextSecondary"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Music"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="20sp" />
+                        </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:adjustViewBounds="true"
-                        android:maxWidth="60dp"
-                        android:maxHeight="60dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_kitchen" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:maxWidth="60dp"
+                                android:maxHeight="60dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_furniture" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Kitchen"
-                        android:textColor="@color/colorTextSecondary"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Furniture"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="20sp" />
+                        </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:adjustViewBounds="true"
-                        android:maxWidth="60dp"
-                        android:maxHeight="60dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_sofa" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:maxWidth="60dp"
+                                android:maxHeight="60dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_kitchen" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/Home"
-                        android:textColor="@color/colorTextSecondary"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Kitchen"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="20sp" />
+                        </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:adjustViewBounds="true"
-                        android:maxWidth="60dp"
-                        android:maxHeight="60dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_shoe" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:maxWidth="60dp"
+                                android:maxHeight="60dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_sofa" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Shoes"
-                        android:textColor="@color/colorTextSecondary"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/Home"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="20sp" />
+                        </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:adjustViewBounds="true"
-                        android:maxWidth="60dp"
-                        android:maxHeight="60dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_smartphone" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:maxWidth="60dp"
+                                android:maxHeight="60dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_shoe" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Electronics"
-                        android:textColor="@color/colorTextSecondary"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Shoes"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="20sp" />
+                        </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:adjustViewBounds="true"
-                        android:maxWidth="60dp"
-                        android:maxHeight="60dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_toys" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:maxWidth="60dp"
+                                android:maxHeight="60dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_smartphone" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Toys"
-                        android:textColor="@color/colorTextSecondary"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Electronics"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="20sp" />
+                        </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:adjustViewBounds="true"
-                        android:maxWidth="60dp"
-                        android:maxHeight="60dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_luggage" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                android:maxWidth="60dp"
+                                android:maxHeight="60dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_toys" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Travel"
-                        android:textColor="@color/colorTextSecondary"
-                        android:textSize="20sp" />
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Toys"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:maxWidth="60dp"
+                                android:maxHeight="60dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_luggage" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Travel"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </HorizontalScrollView>
+
             </LinearLayout>
-        </HorizontalScrollView>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="#000000" />
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:paddingRight="10dp"
+            android:paddingBottom="7dp"
+            app:srcCompat="@drawable/ic_more_horiz_black_24dp" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimaryLight"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tvDailyBuzz"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryLight"
                 android:gravity="left"
                 android:paddingLeft="10dp"
                 android:paddingBottom="10dp"
@@ -447,131 +465,146 @@
                 android:textSize="18sp" />
         </LinearLayout>
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryLight"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_margin="7dp"
+            app:cardBackgroundColor="@color/colorPrimaryVeryLightAlternate"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"
+            app:contentPadding="5dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView2"
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="#1:"
-                    android:textSize="18sp" />
+                    android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/imgBuzz1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|left"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="130dp"
-                    android:maxHeight="130dp"
-                    android:scaleType="centerInside"
-                    android:src="@mipmap/ic_computer_networking_foreground" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tvBuzz1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:text="Textbook"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="#1:"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/imgBuzz1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|left"
+                            android:adjustViewBounds="true"
+                            android:maxWidth="150dp"
+                            android:maxHeight="135dp"
+                            android:minWidth="150dp"
+                            android:minHeight="135dp"
+                            android:scaleType="centerInside"
+                            android:src="@mipmap/ic_computer_networking_foreground" />
+
+                        <TextView
+                            android:id="@+id/tvBuzz1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text="Textbook"
+                            android:textColor="@color/colorTextSecondary"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="#2:"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/imgBuzz2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|left"
+                            android:adjustViewBounds="true"
+                            android:maxWidth="150dp"
+                            android:maxHeight="135dp"
+                            android:minWidth="150dp"
+                            android:minHeight="135dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/iphonex" />
+
+                        <TextView
+                            android:id="@+id/tvBuzz2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text="iPhone X"
+                            android:textColor="@color/colorTextSecondary"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="#3:"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/imgBuzz3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|left"
+                            android:adjustViewBounds="true"
+                            android:maxWidth="150dp"
+                            android:maxHeight="135dp"
+                            android:minWidth="150dp"
+                            android:minHeight="135dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/lionel_trains" />
+
+                        <TextView
+                            android:id="@+id/tvBuzz3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="Lionel Trains"
+                            android:textColor="@color/colorTextSecondary"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="#2:"
-                    android:textSize="18sp" />
-
-                <ImageView
-                    android:id="@+id/imgBuzz2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|left"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="130dp"
-                    android:maxHeight="130dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/iphonex" />
-
-                <TextView
-                    android:id="@+id/tvBuzz2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:text="iPhone X"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="#3:"
-                    android:textSize="18sp" />
-
-                <ImageView
-                    android:id="@+id/imgBuzz3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|left"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="130dp"
-                    android:maxHeight="130dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/lionel_trains" />
-
-                <TextView
-                    android:id="@+id/tvBuzz3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:text="Lionel Trains"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="#000000" />
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -613,103 +646,103 @@
             android:text="@string/recommended"
             android:textSize="18sp" />
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryLight"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_margin="7dp"
+            app:cardBackgroundColor="@color/colorPrimaryVeryLightAlternate"
+            app:contentPadding="5dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <ImageView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="130dp"
-                    android:maxHeight="130dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/ps4" />
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:text="Sony PS4"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="130dp"
+                        android:maxHeight="130dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ps4" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="Sony PS4"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|left"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="130dp"
-                    android:maxHeight="130dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/xboxone" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:text="Xbox One"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="130dp"
-                    android:maxHeight="130dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/wii" />
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="130dp"
+                        android:maxHeight="130dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/xboxone" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="Xbox One"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:text="Wii"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
-        </LinearLayout>
+                    android:layout_gravity="bottom|left"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="#000000" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="130dp"
+                        android:maxHeight="130dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/wii" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="Wii"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -752,103 +785,103 @@
             android:text="@string/recommended"
             android:textSize="18sp" />
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryLight"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_margin="7dp"
+            app:cardBackgroundColor="@color/colorPrimaryVeryLightAlternate"
+            app:contentPadding="5dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <ImageView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="130dp"
-                    android:maxHeight="130dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/adidas" />
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:text="Adidas"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="130dp"
+                        android:maxHeight="130dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/adidas" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="Adidas"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|left"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="130dp"
-                    android:maxHeight="130dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/nike" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:text="Nike"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="130dp"
-                    android:maxHeight="130dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/reebok" />
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="130dp"
+                        android:maxHeight="130dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/nike" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="Nike"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:text="Reebok"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
-        </LinearLayout>
+                    android:layout_gravity="bottom|left"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="#000000" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="130dp"
+                        android:maxHeight="130dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/reebok" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="Reebok"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -889,68 +922,78 @@
             android:text="@string/recommended"
             android:textSize="18sp" />
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="75dp"
-            android:background="@color/colorPrimaryLight"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginBottom="7dp"
+            android:padding="5dp"
+            app:cardBackgroundColor="@color/colorPrimaryVeryLightAlternate">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <ImageView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="130dp"
-                    android:maxHeight="130dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/babyshowerballoons" />
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:text="Baby Shower Balloons"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="130dp"
+                        android:maxHeight="130dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/babyshowerballoons" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="Baby Shower Balloons"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
 
-                <ImageView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|left"
-                    android:adjustViewBounds="true"
-                    android:maxWidth="130dp"
-                    android:maxHeight="130dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/partyfluffyslimes" />
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:text="Party Fluffy Slimes"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="20sp" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="130dp"
+                        android:maxHeight="130dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/partyfluffyslimes" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="Party Fluffy Slimes"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="20sp" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
     </LinearLayout>
 </ScrollView>
