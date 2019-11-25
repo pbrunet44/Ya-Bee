@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.os.Handler;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -43,6 +45,7 @@ public class ViewPost extends Fragment {
         final String id = i;
         System.out.println("I'm in ViewPost, here's the post ID:" + id);
         final Button createBid = (Button) view.findViewById(R.id.BidButton);
+        final Button interested = (Button) view.findViewById(R.id.interestedButton);
 
         final DatabaseHelper database = new DatabaseHelper();
         //view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.VISIBLE);
@@ -68,6 +71,10 @@ public class ViewPost extends Fragment {
                         post = database.getPostByID(id, posts);
                         System.out.println(post.toString());
                         //view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.GONE);
+                        if(currentUser == null)
+                        {
+                            interested.setVisibility(View.INVISIBLE);
+                        }
                         if (currentUser != null && !(post.getBuyer().getUid().equals(currentUser.getUid())))
                         {
                             editPostButton.setVisibility(View.INVISIBLE);
@@ -76,6 +83,7 @@ public class ViewPost extends Fragment {
                         {
                             createBid.setVisibility(View.INVISIBLE);
                         }
+
                         postTitle.setText(post.getTitle());
                         postCondition.setText(post.getCondition());
                         postDescription.setText(post.getDescription());
@@ -146,6 +154,29 @@ public class ViewPost extends Fragment {
                     newLowestBid = "Current bid: $" + df.format(post.getLowestBid().price);
                 //System.out.println("Got new bid price in viewpost: " + newLowestBid);
                 currBid.setText(newLowestBid);
+            }
+        });
+
+        interested.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                database.getUsers(new UserCallback() {
+                    @Override
+                    public void onCallback(List<User> users) {
+                        User user = database.getUserById(currentUser.getUid(), users);
+                        if (user != null) {
+                            user.addToWishlist(id);
+                            user.updateUserOnFirebase();
+                            //Toast successToast = Toast.makeText(getContext(), "Added to wishlist!", Toast.LENGTH_LONG);
+                            //successToast.setGravity(Gravity.BOTTOM, 0, 0);
+                            //successToast.show();
+                        } else {
+                            //Toast userNotFoundToast = Toast.makeText(getContext(), "Error finding user in database", Toast.LENGTH_LONG);
+                            //userNotFoundToast.setGravity(Gravity.BOTTOM, 0, 0);
+                            //userNotFoundToast.show();
+                        }
+                    }
+                });
             }
         });
 

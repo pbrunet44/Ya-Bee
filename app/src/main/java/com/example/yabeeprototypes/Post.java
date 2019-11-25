@@ -1,12 +1,8 @@
 package com.example.yabeeprototypes;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.provider.ContactsContract;
 import android.util.Base64;
 
-import com.google.firebase.database.Exclude;
-
-import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -25,6 +21,7 @@ public class Post {
     private Bid lowestBid;
     private String imageEncoding;
     private ArrayList<User> allBidders;
+    private ArrayList<Notification> notifications;
     //private Bitmap imageBitmap;
     //private Uri imageUri; // will deal with this later
     private String category;
@@ -40,8 +37,9 @@ public class Post {
         super();
     }
 
-    public Post(ArrayList<User> allBidders, User buyer, String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired, int clicks)
+    public Post(ArrayList<Notification> notifications, ArrayList<User> allBidders, User buyer, String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired, int clicks)
     {
+        this.setNotifications(notifications);
         this.setAllBids(allBidders);
         this.setTitle(title);
         this.setMaxPrice(maxPrice);
@@ -60,11 +58,24 @@ public class Post {
 
     }
 
+    private void setNotifications(ArrayList<Notification> notifications)
+    {
+        this.notifications = notifications;
+    }
+
     private void setAllBids(ArrayList<User> allBidders)
     {
         this.allBidders = allBidders;
     }
 
+    public void addNotification(Notification notification)
+    {
+        if (this.notifications == null)
+            this.notifications = new ArrayList<>();
+        this.notifications.add(notification);
+        DatabaseHelper databaseHelper = new DatabaseHelper();
+        databaseHelper.updateNotifications(this.id, notifications);
+    }
 
     public void addBiddertoList(User bidder)
     {
@@ -79,6 +90,11 @@ public class Post {
     public ArrayList<User> getAllBidders()
     {
         return this.allBidders;
+    }
+
+    public ArrayList<Notification> getNotifications()
+    {
+        return this.notifications;
     }
 
     public boolean alreadyBid(String uid)

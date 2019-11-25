@@ -3,6 +3,8 @@ package com.example.yabeeprototypes;
 
 import androidx.annotation.NonNull;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -10,6 +12,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 public class DatabaseHelper {
@@ -18,17 +21,65 @@ public class DatabaseHelper {
     private FirebaseDatabase database;
     public DatabaseReference databaseReference;
     private List<Post> posts;
+    private List<User> users;
 
     public DatabaseHelper()
     {
         this.database = FirebaseDatabase.getInstance();
         this.databaseReference = this.database.getReference();
         this.posts = new ArrayList<>(); //Holds current state of database
+        this.users = new ArrayList<>();
     }
 
     public void writeNewPost(Post post)
     {
         this.databaseReference.child("Posts").child(post.getId()).setValue(post);
+    }
+
+    public void getUsers(final UserCallback userCallback)
+    {
+        this.databaseReference.child("Users").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                users.clear();
+                for(DataSnapshot snapshot: dataSnapshot.getChildren())
+                {
+                    User user = snapshot.getValue(User.class);
+                    users.add(user);
+                    System.out.println(user.getEmail() + ", " + user.getUid());
+                }
+                userCallback.onCallback(users);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                System.out.println("ERROR: data not read!");
+            }
+        });
+    }
+
+    public User getUserByEmail(String email, List<User> users)
+    {
+        for(User user: users)
+        {
+            if(user.getEmail().equals(email))
+            {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public User getUserById(String id, List<User> users)
+    {
+        for(User user: users)
+        {
+            if(user.getUid().equals(id))
+            {
+                return user;
+            }
+        }
+        return null;
     }
 
     /**
@@ -170,7 +221,6 @@ public class DatabaseHelper {
         this.databaseReference.child("Posts").child(postId).child("category").setValue(category);
     }
 
-
     /**
      * Updates post's lowest bid in the database
      * @param id
@@ -191,6 +241,12 @@ public class DatabaseHelper {
         this.databaseReference.child("Posts").child(id).child("allBids").setValue(bidders);
     }
 
+    public void updateNotifications(String id, ArrayList<Notification> notifications)
+    {
+        this.databaseReference.child("Posts").child(id).child("notifications").setValue(notifications);
+    }
+
+
     /**
      * Returns a given user's posts that they've posted (used only for 'Buying' under Profile)
      * @param  uid
@@ -204,6 +260,23 @@ public class DatabaseHelper {
             if (post.getBuyer().getUid().equals(uid))
             {
                 results.add(post);
+            }
+        }
+        return results;
+    }
+
+    public ArrayList<Notification> getNotificationsByUser(String uid, List<Post> posts)
+    {
+        ArrayList<Notification> results = new ArrayList<>();
+        for (Post post: posts)
+        {
+            if(post.getNotifications() != null)
+            for(Notification notification : post.getNotifications())
+            {
+                if (notification.getReceivingUser().getUid().equals(uid))
+                {
+                    results.add(notification);
+                }
             }
         }
         return results;

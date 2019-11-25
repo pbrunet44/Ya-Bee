@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.List;
+
 
 public class Login extends AppCompatActivity {
 
@@ -55,7 +57,7 @@ public class Login extends AppCompatActivity {
         this.finish();
     }
 
-    public void loginUser(String email, String password)
+    public void loginUser(final String email, String password)
     {
         progressBar.setVisibility(View.VISIBLE);
         mAuth.signInWithEmailAndPassword(email, password)
@@ -68,6 +70,18 @@ public class Login extends AppCompatActivity {
                             Toast toast = Toast.makeText(getApplicationContext(), "Successfully logged in", Toast.LENGTH_LONG);
                             toast.setGravity(Gravity.TOP, 0, 0);
                             toast.show();
+                            //Register user for wishlists
+                            final DatabaseHelper databaseHelper = new DatabaseHelper();
+                            databaseHelper.getUsers(new UserCallback() {
+                                @Override
+                                public void onCallback(List<User> users) {
+                                    User user = databaseHelper.getUserByEmail(email, users);
+                                    if(user == null)
+                                    {
+                                        databaseHelper.databaseReference.child("Users").child(mAuth.getUid()).setValue(new User(email, mAuth.getUid()));
+                                    }
+                                }
+                            });
 
                             // go to home page
                             finish();
