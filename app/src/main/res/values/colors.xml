@@ -10,5 +10,7 @@
     <color name="cardBackground">#ffefc0</color>
 <color name="colorDivider2">#BDBDBD</color>
     <color name="colorPrimaryLightAlternate">#FFECA5</color>
+<color name="colorPrimaryVeryLight">#FFF8E1</color>
+<color name="colorPrimaryVeryLightAlternate">#FFF2CA</color>
 <color name="backgroundBottomNav">#FFECD0</color>
 </resources>
