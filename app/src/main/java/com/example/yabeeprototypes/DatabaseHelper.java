@@ -147,6 +147,32 @@ public class DatabaseHelper {
         return results;
     }
 
+    public void updateTitle(String postId, String title)
+    {
+        this.databaseReference.child("Posts").child(postId).child("title").setValue(title);
+    }
+
+    public void updateDescription(String postId, String description)
+    {
+        this.databaseReference.child("Posts").child(postId).child("description").setValue(description);
+    }
+
+    public void updateImage(String postId, String imageEncoding)
+    {
+        this.databaseReference.child("Posts").child(postId).child("imageEncoding").setValue(imageEncoding);
+    }
+
+    public void updateCondtion(String postId, String condition)
+    {
+        this.databaseReference.child("Posts").child(postId).child("condition").setValue(condition);
+    }
+
+    public void updateCategory(String postId, String category)
+    {
+        this.databaseReference.child("Posts").child(postId).child("category").setValue(category);
+    }
+
+
     /**
      * Updates post's lowest bid in the database
      * @param id

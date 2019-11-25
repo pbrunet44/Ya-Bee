@@ -39,6 +39,8 @@
         <activity
             android:name=".Buying"
             android:label="Buying" />
+        <activity android:name=".EditPost"
+            android:label="Edit"/>
         <activity
             android:name=".Selling"
             android:label="Selling" />

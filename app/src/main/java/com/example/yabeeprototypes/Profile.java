@@ -81,23 +81,6 @@ public class Profile extends Fragment {
         TextView profileEmail = (TextView)view.findViewById(R.id.profileEmail);
         profileEmail.setText(currentUser.getEmail());
 
-        profilePicture = view.findViewById(R.id.postImageforProfile);
-//        Picasso.get().setLoggingEnabled(true);
-//        Picasso.get()
-//                .load(currentUser.getPhotoUrl())
-//                .resize(100, 100)
-//                .centerCrop()
-//                .into(profilePicture);
-//
-//        System.out.println("Here is the image url:" + currentUser.getPhotoUrl());
-//        profilePicture.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-//                startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE);
-//            }
-//        });
-
 
         Button signOff = (Button) view.findViewById(R.id.signOutButton);
         signOff.setOnClickListener(new View.OnClickListener() {
@@ -120,32 +103,5 @@ public class Profile extends Fragment {
 
         return view;
     }
-
-//    @Override
-//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if(requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null)
-//        {
-//            Uri selectedImage = data.getData();
-//            imageUri = selectedImage;
-//            profilePicture.setImageURI(selectedImage);
-//
-//            // update user profile
-//            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-//                    .setPhotoUri(selectedImage)
-//                    .build();
-//
-//            currentUser.updateProfile(profileUpdates)
-//                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<Void> task) {
-//                            if (task.isSuccessful())
-//                                System.out.println("Profile picture successfully uploaded!");
-//                            else
-//                                System.out.println("Profile picture not successfully uploaded!");
-//                        }
-//                    });
-//        }
-//    }
 
 }
