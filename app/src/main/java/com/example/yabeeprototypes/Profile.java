@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -20,6 +23,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,17 +37,20 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import org.w3c.dom.Text;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
 
 public class Profile extends Fragment {
 
+    public static int GET_FROM_GALLERY = 3;
     private Uri imageUri = null;
     private String imageEncoding = "";
     private Button makePost;
     private FirebaseUser currentUser;
-    private ImageView profilePicture;
+    private ImageButton profilePicture;
     private Button buying;
     private Button selling;
     private final static int RESULT_LOAD_IMAGE = 1;
@@ -58,6 +65,7 @@ public class Profile extends Fragment {
 
         buying = view.findViewById(R.id.productsImBuying);
         selling = view.findViewById(R.id.productsImSelling);
+        profilePicture = view.findViewById(R.id.user_profile_photo);
 
         buying.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +83,19 @@ public class Profile extends Fragment {
                 Intent intent = new Intent(getActivity(), Selling.class);
                 startActivity(intent);
 
+            }
+        });
+
+        profilePicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivityForResult(
+                        new Intent(
+                                Intent.ACTION_PICK,
+                                android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI
+                        ),
+                        GET_FROM_GALLERY
+                );
             }
         });
 
@@ -103,5 +124,8 @@ public class Profile extends Fragment {
 
         return view;
     }
+    
+
 
 }
+
