@@ -1,8 +1,6 @@
 package com.example.yabeeprototypes;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -94,8 +92,8 @@ public class MakeBid extends AppCompatActivity {
                         {
                             if(/*!u.getUid().equals(currentUser.getUid())*/ true) //gonna change this lol
                             {
-                                Prompt prompt = new Prompt("bid", u);
-                                post.addPrompts(prompt);
+                                Notification notification = new Notification("BID", u);
+                                post.addNotification(notification);
                             }
                         }
 

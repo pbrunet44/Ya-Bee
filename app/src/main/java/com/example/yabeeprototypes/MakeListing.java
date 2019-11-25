@@ -19,9 +19,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.core.graphics.drawable.RoundedBitmapDrawable;
-
-import com.google.common.io.ByteArrayDataInput;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.ByteArrayOutputStream;
@@ -136,7 +133,7 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
                     imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
                     imageEncoding = Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT);
                 }
-                Post post = new Post(new ArrayList<Prompt>(), new ArrayList<User>(), new User(FirebaseAuth.getInstance().getCurrentUser().getEmail(),
+                Post post = new Post(new ArrayList<Notification>(), new ArrayList<User>(), new User(FirebaseAuth.getInstance().getCurrentUser().getEmail(),
                         FirebaseAuth.getInstance().getCurrentUser().getUid()), title, maxPrice,
                         description, numOfDays, new Bid(INITIAL_BID_PRICE, INITIAL_DESCRIPTION, INITIAL_IMAGE, null),
                         imageEncoding, category, condition, Long.toString(System.nanoTime()),

@@ -193,9 +193,9 @@ public class DatabaseHelper {
         this.databaseReference.child("Posts").child(id).child("allBids").setValue(bidders);
     }
 
-    public void updatePrompts(String id, ArrayList<Prompt> prompts)
+    public void updateNotifications(String id, ArrayList<Notification> notifications)
     {
-        this.databaseReference.child("Posts").child(id).child("prompts").setValue(prompts);
+        this.databaseReference.child("Posts").child(id).child("notifications").setValue(notifications);
     }
 
 
@@ -217,17 +217,17 @@ public class DatabaseHelper {
         return results;
     }
 
-    public ArrayList<Prompt> getPromptsByUser(String uid, List<Post> posts)
+    public ArrayList<Notification> getNotificationsByUser(String uid, List<Post> posts)
     {
-        ArrayList<Prompt> results = new ArrayList<>();
+        ArrayList<Notification> results = new ArrayList<>();
         for (Post post: posts)
         {
-            if(post.getPrompts() != null)
-            for(Prompt prompt: post.getPrompts())
+            if(post.getNotifications() != null)
+            for(Notification notification : post.getNotifications())
             {
-                if (prompt.getReceivingUser().getUid().equals(uid))
+                if (notification.getReceivingUser().getUid().equals(uid))
                 {
-                    results.add(prompt);
+                    results.add(notification);
                 }
             }
         }

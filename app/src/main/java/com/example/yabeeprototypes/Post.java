@@ -1,13 +1,8 @@
 package com.example.yabeeprototypes;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.provider.ContactsContract;
 import android.util.Base64;
 
-import com.google.firebase.database.Exclude;
-
-import java.io.ByteArrayInputStream;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -26,7 +21,7 @@ public class Post {
     private Bid lowestBid;
     private String imageEncoding;
     private ArrayList<User> allBidders;
-    private ArrayList<Prompt> prompts;
+    private ArrayList<Notification> notifications;
     //private Bitmap imageBitmap;
     //private Uri imageUri; // will deal with this later
     private String category;
@@ -42,9 +37,9 @@ public class Post {
         super();
     }
 
-    public Post(ArrayList<Prompt> prompts, ArrayList<User> allBidders, User buyer, String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired, int clicks)
+    public Post(ArrayList<Notification> notifications, ArrayList<User> allBidders, User buyer, String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired, int clicks)
     {
-        this.setPrompts(prompts);
+        this.setNotifications(notifications);
         this.setAllBids(allBidders);
         this.setTitle(title);
         this.setMaxPrice(maxPrice);
@@ -63,9 +58,9 @@ public class Post {
 
     }
 
-    private void setPrompts(ArrayList<Prompt> prompts)
+    private void setNotifications(ArrayList<Notification> notifications)
     {
-        this.prompts = prompts;
+        this.notifications = notifications;
     }
 
     private void setAllBids(ArrayList<User> allBidders)
@@ -73,13 +68,13 @@ public class Post {
         this.allBidders = allBidders;
     }
 
-    public void addPrompts(Prompt prompt)
+    public void addNotification(Notification notification)
     {
-        if (this.prompts == null)
-            this.prompts = new ArrayList<>();
-        this.prompts.add(prompt);
+        if (this.notifications == null)
+            this.notifications = new ArrayList<>();
+        this.notifications.add(notification);
         DatabaseHelper databaseHelper = new DatabaseHelper();
-        databaseHelper.updatePrompts(this.id, prompts);
+        databaseHelper.updateNotifications(this.id, notifications);
     }
 
     public void addBiddertoList(User bidder)
@@ -97,9 +92,9 @@ public class Post {
         return this.allBidders;
     }
 
-    public ArrayList<Prompt> getPrompts()
+    public ArrayList<Notification> getNotifications()
     {
-        return this.prompts;
+        return this.notifications;
     }
 
     public boolean alreadyBid(String uid)

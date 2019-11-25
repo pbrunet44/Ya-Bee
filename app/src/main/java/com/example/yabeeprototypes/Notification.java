@@ -1,13 +1,13 @@
 package com.example.yabeeprototypes;
 
 
-public class Prompt {
+public class Notification {
 
     private String typeofNotification;
     private User receivingUser;
 
-    public Prompt() {}
-    public Prompt(String type, User user) {
+    public Notification() {}
+    public Notification(String type, User user) {
         setTypeofNotification(type);
         setReceivingUser(user);
     }
@@ -18,9 +18,13 @@ public class Prompt {
 
     public String getNotificationMessage()
     {
-        if(this.getTypeofNotification().equals("bid"))
+        if(this.getTypeofNotification().equals("BID"))
         {
-            return "The current bid has been outbid!";
+            return "New current bid!";
+        }
+        else if(this.getTypeofNotification().equals("EXPIRED"))
+        {
+            return "Auction has expired!";
         }
         return "";
     }

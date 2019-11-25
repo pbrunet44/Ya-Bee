@@ -1,11 +1,9 @@
 package com.example.yabeeprototypes;
 
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +24,7 @@ public class Notifications extends Fragment {
     private DatabaseHelper database;
     private FirebaseUser currentUser;
     private RecyclerView recyclerView;
-    ArrayList<Prompt> notifcations;
+    ArrayList<Notification> notifcations;
     ArrayList<Post> selling;
 
     private TextView textView;
@@ -45,7 +42,7 @@ public class Notifications extends Fragment {
         database.getPosts(new FirebaseCallback() {
             @Override
             public void onCallback(List<Post> posts) {
-                notifcations = database.getPromptsByUser(currentUser.getUid(), posts);
+                notifcations = database.getNotificationsByUser(currentUser.getUid(), posts);
                 if(notifcations.isEmpty())
                 {
                     Toast.makeText(getContext(), "my name is jon ramos", Toast.LENGTH_SHORT).show();
