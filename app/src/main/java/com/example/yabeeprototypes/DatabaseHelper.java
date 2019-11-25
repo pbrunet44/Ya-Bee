@@ -3,6 +3,8 @@ package com.example.yabeeprototypes;
 
 import androidx.annotation.NonNull;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -10,6 +12,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 public class DatabaseHelper {
@@ -18,12 +21,14 @@ public class DatabaseHelper {
     private FirebaseDatabase database;
     public DatabaseReference databaseReference;
     private List<Post> posts;
+    private List<User> users;
 
     public DatabaseHelper()
     {
         this.database = FirebaseDatabase.getInstance();
         this.databaseReference = this.database.getReference();
         this.posts = new ArrayList<>(); //Holds current state of database
+        this.users = new ArrayList<>();
     }
 
     public void writeNewPost(Post post)
@@ -31,7 +36,51 @@ public class DatabaseHelper {
         this.databaseReference.child("Posts").child(post.getId()).setValue(post);
     }
 
+    public void getUsers(final UserCallback userCallback)
+    {
+        this.databaseReference.child("Users").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                users.clear();
+                for(DataSnapshot snapshot: dataSnapshot.getChildren())
+                {
+                    User user = snapshot.getValue(User.class);
+                    users.add(user);
+                    System.out.println(user.getEmail() + ", " + user.getUid());
+                }
+                userCallback.onCallback(users);
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                System.out.println("ERROR: data not read!");
+            }
+        });
+    }
+
+    public User getUserByEmail(String email, List<User> users)
+    {
+        for(User user: users)
+        {
+            if(user.getEmail().equals(email))
+            {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public User getUserById(String id, List<User> users)
+    {
+        for(User user: users)
+        {
+            if(user.getUid().equals(id))
+            {
+                return user;
+            }
+        }
+        return null;
+    }
 
     /**
      * Retrieves all posts from the Firebase realtime database and passes it to firebaseCallback
@@ -171,7 +220,6 @@ public class DatabaseHelper {
     {
         this.databaseReference.child("Posts").child(postId).child("category").setValue(category);
     }
-
 
     /**
      * Updates post's lowest bid in the database

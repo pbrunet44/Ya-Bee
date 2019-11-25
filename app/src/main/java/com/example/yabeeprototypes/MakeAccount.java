@@ -20,6 +20,8 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.List;
+
 
 public class MakeAccount extends AppCompatActivity {
 
@@ -68,7 +70,7 @@ public class MakeAccount extends AppCompatActivity {
     }
 
     // create user with email, password
-    private void createAccount(String email, String password)
+    private void createAccount(final String email, String password)
     {
         if (validateForm()) {
             mAuth.createUserWithEmailAndPassword(email, password)
@@ -83,6 +85,18 @@ public class MakeAccount extends AppCompatActivity {
                                     System.out.println("User is null");
                                 else {
                                     System.out.println("User's email:" + user.getEmail());
+                                    //Register user for wishlists
+                                    final DatabaseHelper databaseHelper = new DatabaseHelper();
+                                    databaseHelper.getUsers(new UserCallback() {
+                                        @Override
+                                        public void onCallback(List<User> users) {
+                                            User user = databaseHelper.getUserByEmail(email, users);
+                                            if(user == null)
+                                            {
+                                                databaseHelper.databaseReference.child("Users").child(mAuth.getUid()).setValue(new User(email, mAuth.getUid()));
+                                            }
+                                        }
+                                    });
                                 }
                                 Toast accountSuccessToast = Toast.makeText(getApplicationContext(), "Account creation successful.", Toast.LENGTH_SHORT);
                                 accountSuccessToast.show();
