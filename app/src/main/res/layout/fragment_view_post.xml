@@ -107,7 +107,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/interested_rounded_button"
-            android:text="♡ Interested"
+            android:text="♡ Add to Wishlist"
             android:textSize="18sp"
             android:textColor="@color/colorTextPrimary"
             android:layout_marginLeft="20dp"
