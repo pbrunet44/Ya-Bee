@@ -16,6 +16,15 @@ public class Prompt {
         this.typeofNotification = typeofNotification;
     }
 
+    public String getNotificationMessage()
+    {
+        if(this.getTypeofNotification().equals("bid"))
+        {
+            return "The current bid has been outbid!";
+        }
+        return "";
+    }
+
     public String getTypeofNotification() {
         return typeofNotification;
     }

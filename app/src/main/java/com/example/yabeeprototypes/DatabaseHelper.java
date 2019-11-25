@@ -31,6 +31,8 @@ public class DatabaseHelper {
         this.databaseReference.child("Posts").child(post.getId()).setValue(post);
     }
 
+
+
     /**
      * Retrieves all posts from the Firebase realtime database and passes it to firebaseCallback
      * @param firebaseCallback
@@ -165,6 +167,12 @@ public class DatabaseHelper {
         this.databaseReference.child("Posts").child(id).child("allBids").setValue(bidders);
     }
 
+    public void updatePrompts(String id, ArrayList<Prompt> prompts)
+    {
+        this.databaseReference.child("Posts").child(id).child("prompts").setValue(prompts);
+    }
+
+
     /**
      * Returns a given user's posts that they've posted (used only for 'Buying' under Profile)
      * @param  uid
@@ -178,6 +186,23 @@ public class DatabaseHelper {
             if (post.getBuyer().getUid().equals(uid))
             {
                 results.add(post);
+            }
+        }
+        return results;
+    }
+
+    public ArrayList<Prompt> getPromptsByUser(String uid, List<Post> posts)
+    {
+        ArrayList<Prompt> results = new ArrayList<>();
+        for (Post post: posts)
+        {
+            if(post.getPrompts() != null)
+            for(Prompt prompt: post.getPrompts())
+            {
+                if (prompt.getReceivingUser().getUid().equals(uid))
+                {
+                    results.add(prompt);
+                }
             }
         }
         return results;

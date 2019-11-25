@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.io.ByteArrayOutputStream;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MakeBid extends AppCompatActivity {
@@ -31,6 +32,7 @@ public class MakeBid extends AppCompatActivity {
     private String imageEncoding = "";
     ImageView bidImage;
     FirebaseUser currentUser;
+    ArrayList<User> allBidders;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,10 +79,24 @@ public class MakeBid extends AppCompatActivity {
                     if (post.verifyBid(bid))
                     {
                         post.updateNewLowestBid(bid);
+
                         if (!post.alreadyBid(currentUser.getUid()))
                         {
                             post.addBiddertoList(new User(currentUser.getEmail(), currentUser.getUid()));
                         }
+
+                        allBidders = new ArrayList<>();
+                        allBidders = post.getAllBidders();
+
+                        for(User u: allBidders)
+                        {
+                            if(/*!u.getUid().equals(currentUser.getUid())*/ true) //gonna change this lol
+                            {
+                                Prompt prompt = new Prompt("bid", u);
+                                post.addPrompts(prompt);
+                            }
+                        }
+
                         System.out.println("I'm in MakeBid, i'm allbids, here's my size" + post.getAllBidders().size());
                         //post.getBuyer();
                         //send a notifcation to buyer that they're post has had a bid submitted

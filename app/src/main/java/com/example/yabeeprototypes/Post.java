@@ -7,6 +7,7 @@ import android.util.Base64;
 import com.google.firebase.database.Exclude;
 
 import java.io.ByteArrayInputStream;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -25,6 +26,7 @@ public class Post {
     private Bid lowestBid;
     private String imageEncoding;
     private ArrayList<User> allBidders;
+    private ArrayList<Prompt> prompts;
     //private Bitmap imageBitmap;
     //private Uri imageUri; // will deal with this later
     private String category;
@@ -40,8 +42,9 @@ public class Post {
         super();
     }
 
-    public Post(ArrayList<User> allBidders, User buyer, String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired, int clicks)
+    public Post(ArrayList<Prompt> prompts, ArrayList<User> allBidders, User buyer, String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired, int clicks)
     {
+        this.setPrompts(prompts);
         this.setAllBids(allBidders);
         this.setTitle(title);
         this.setMaxPrice(maxPrice);
@@ -60,11 +63,24 @@ public class Post {
 
     }
 
+    private void setPrompts(ArrayList<Prompt> prompts)
+    {
+        this.prompts = prompts;
+    }
+
     private void setAllBids(ArrayList<User> allBidders)
     {
         this.allBidders = allBidders;
     }
 
+    public void addPrompts(Prompt prompt)
+    {
+        if (this.prompts == null)
+            this.prompts = new ArrayList<>();
+        this.prompts.add(prompt);
+        DatabaseHelper databaseHelper = new DatabaseHelper();
+        databaseHelper.updatePrompts(this.id, prompts);
+    }
 
     public void addBiddertoList(User bidder)
     {
@@ -79,6 +95,11 @@ public class Post {
     public ArrayList<User> getAllBidders()
     {
         return this.allBidders;
+    }
+
+    public ArrayList<Prompt> getPrompts()
+    {
+        return this.prompts;
     }
 
     public boolean alreadyBid(String uid)
