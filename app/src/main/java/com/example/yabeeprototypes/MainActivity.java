@@ -39,8 +39,22 @@ public class MainActivity extends FragmentActivity {
                             onSearchRequested();
                             break;
                         case R.id.navNotifications:
-                            selectedFragment = new Notifications();
-                            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
+//                            selectedFragment = new Notifications();
+//                            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
+//                            break;
+                            if (currentUser == null) // no one signed in
+                            {
+                                // show account options page
+                                System.out.println("The user is not signed in.");
+                                Intent intent = new Intent(getApplicationContext(), AccountOptions.class);
+                                startActivity(intent);
+                            }
+                            else // signed in
+                            {
+                                System.out.println("The user is signed in. Here is their email: " + currentUser.getEmail());
+                                selectedFragment = new Notifications();
+                                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
+                            }
                             break;
                         case R.id.navProfile:
                             if (currentUser == null) // no one signed in
