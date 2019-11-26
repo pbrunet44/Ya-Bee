@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,7 +23,7 @@ public class Notifications extends Fragment {
     private DatabaseHelper database;
     private FirebaseUser currentUser;
     private RecyclerView recyclerView;
-    ArrayList<Notification> notifcations;
+    ArrayList<Notification> notifications;
     ArrayList<Post> selling;
 
     private TextView textView;
@@ -35,22 +34,22 @@ public class Notifications extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_notifications, container, false);
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        final DatabaseHelper database = new DatabaseHelper();
+        database = new DatabaseHelper();
 
-        notifcations = new ArrayList<>();
+        notifications = new ArrayList<>();
 
         database.getPosts(new FirebaseCallback() {
             @Override
             public void onCallback(List<Post> posts) {
-                notifcations = database.getNotificationsByUser(currentUser.getUid(), posts);
-                if(notifcations.isEmpty())
+                notifications = database.getNotificationsByUser(currentUser.getUid(), posts);
+                if(notifications.isEmpty())
                 {
-                    Toast.makeText(getContext(), "my name is jon ramos", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(), "my name is jon ramos", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(getContext(), "I'm jo ramos!", Toast.LENGTH_SHORT).show();
-                    textView = (TextView)view.findViewById(R.id.testez);
-                    textView.setText(notifcations.get(0).getNotificationMessage());
+                    //Toast.makeText(getContext(), "I'm jo ramos!", Toast.LENGTH_SHORT).show();
+                    textView = (TextView) view.findViewById(R.id.testez);
+                    textView.setText(notifications.get(0).getNotificationMessage());
                 }
             }
         });
