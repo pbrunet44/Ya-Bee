@@ -54,6 +54,7 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_listing);
         Button makePost = findViewById(R.id.collectPostInfo);
+        Button previewPost = findViewById(R.id.previewPost);
         final DatabaseHelper database = new DatabaseHelper();
         postImage = findViewById(R.id.postImage);
         // Spinner for category
@@ -153,6 +154,39 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
             public void onClick(View v) {
                 Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE);
+            }
+        });
+
+        previewPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle postExtras = new Bundle();
+                // adding key value pairs to this bundle
+                //postExtras.putString("Image", post.getImageEncoding());
+                postExtras.putString("Title", ((TextView)findViewById(R.id.titleEntry)).getText().toString());
+                postExtras.putString("Description", ((TextView)findViewById(R.id.descEntry)).getText().toString());
+                postExtras.putString("Category", ((Spinner)findViewById(R.id.categoryDropdown)).getSelectedItem().toString());
+                postExtras.putString("Condition", ((Spinner)findViewById(R.id.itemCondition)).getSelectedItem().toString());
+                postExtras.putString("Timer", ((Spinner)findViewById(R.id.auction_duration)).getSelectedItem().toString() + ", 0 hours");
+                if(imageUri != null)
+                {
+                    Bitmap imageBitmap = ((BitmapDrawable) postImage.getDrawable()).getBitmap();
+                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                    imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+                    imageEncoding = Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT);
+                }
+                postExtras.putString("ImageEncoding", imageEncoding);
+                if(((TextView)findViewById(R.id.yourPrice)).getText().toString().equals(""))
+                {
+                    postExtras.putDouble("MaxPrice", 0.0);
+                }
+                else
+                {
+                    postExtras.putDouble("MaxPrice", Double.parseDouble(((TextView)findViewById(R.id.yourPrice)).getText().toString()));
+                }
+                Intent intent = new Intent(getApplicationContext(), PreviewPost.class);
+                intent.putExtras(postExtras);
+                startActivity(intent);
             }
         });
 

@@ -223,11 +223,28 @@
         android:layout_marginLeft="100dp"
         android:layout_marginRight="100dp"
         android:background="@drawable/rounded_button"
-        android:text="add post" />
+        android:text="add post"
+        android:textStyle="bold"/>
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="20dp" />
+
+    <Button
+        android:id="@+id/previewPost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:background="@drawable/rounded_button"
+        android:text="preview post"
+        android:textStyle="bold"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+
 
 </LinearLayout>
 </ScrollView>
