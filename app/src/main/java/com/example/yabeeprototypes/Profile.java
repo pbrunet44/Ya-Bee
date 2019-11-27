@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,7 +51,6 @@ public class Profile extends Fragment {
     private String imageEncoding = "";
     private Button makePost;
     private FirebaseUser currentUser;
-    private ImageButton profilePicture;
     private Button wishlist;
     private Button buying;
     private Button selling;
@@ -65,7 +65,7 @@ public class Profile extends Fragment {
         wishlist = view.findViewById(R.id.productsInWishlist);
         buying = view.findViewById(R.id.productsImBuying);
         selling = view.findViewById(R.id.productsImSelling);
-        profilePicture = view.findViewById(R.id.user_profile_photo);
+
 
         buying.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,18 +86,6 @@ public class Profile extends Fragment {
             }
         });
 
-        profilePicture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivityForResult(
-                        new Intent(
-                                Intent.ACTION_PICK,
-                                android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI
-                        ),
-                        GET_FROM_GALLERY
-                );
-            }
-        });
 
         wishlist.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,7 +121,6 @@ public class Profile extends Fragment {
 
         return view;
     }
-
 
 
 }
