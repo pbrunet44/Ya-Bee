@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.os.Handler;
 import android.widget.Toast;
@@ -59,6 +60,7 @@ public class ViewPost extends Fragment {
         final ImageView postImage = (ImageView) view.findViewById(R.id.postImage);
         final TextView postClicks = (TextView) view.findViewById(R.id.postClicks);
         final Button editPostButton = (Button) view.findViewById(R.id.editPostButton);
+        final LinearLayout conditionDisplay = (LinearLayout) view.findViewById(R.id.conditionDisplay);
         final FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         final Handler timerHandler = new Handler();
@@ -85,9 +87,15 @@ public class ViewPost extends Fragment {
                         {
                             createBid.setVisibility(View.INVISIBLE);
                         }
-
                         postTitle.setText(post.getTitle());
-                        postCondition.setText(post.getCondition());
+                        if(post.getCondition().equals("N/A"))
+                        {
+                            conditionDisplay.setVisibility(View.INVISIBLE);
+                        }
+                        else
+                        {
+                            postCondition.setText(post.getCondition());
+                        }
                         postDescription.setText(post.getDescription());
                         postImage.setImageBitmap(post.decodeImage());
                         postCategory.setText(post.getCategory());
@@ -185,10 +193,9 @@ public class ViewPost extends Fragment {
             }
         });
 
-
-
         return view;
 
     }
+
 
 }

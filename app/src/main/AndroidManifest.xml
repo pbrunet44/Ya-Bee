@@ -41,6 +41,7 @@
             android:label="My Profile"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MakeListing" />
+        <activity android:name=".PreviewPost" />
         <activity
             android:name=".Buying"
             android:label="Buying" />
