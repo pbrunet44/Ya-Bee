@@ -90,7 +90,7 @@ public class MakeBid extends AppCompatActivity {
 
                         for(User u: allBidders)
                         {
-                            if(/*!u.getUid().equals(currentUser.getUid())*/ true) //gonna change this lol
+                            if(!u.getUid().equals(currentUser.getUid())) //gonna change this lol
                             {
                                 Notification notification = new Notification("BID", u);
                                 post.addNotification(notification);

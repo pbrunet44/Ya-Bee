@@ -49,7 +49,7 @@ public class Notifications extends Fragment {
                 else {
                     //Toast.makeText(getContext(), "I'm jo ramos!", Toast.LENGTH_SHORT).show();
                     textView = (TextView) view.findViewById(R.id.testez);
-                    textView.setText(notifications.get(0).getNotificationMessage());
+                    textView.setText(notifications.get(notifications.size()-1).getNotificationMessage());
                 }
             }
         });

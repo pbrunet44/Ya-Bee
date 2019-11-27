@@ -177,6 +177,14 @@ public class Post {
                 this.isExpired = true;
                 DatabaseHelper databaseHelper = new DatabaseHelper();
                 databaseHelper.databaseReference.child("Posts").child(id).child("isExpired").setValue(this.isExpired);
+                if(this.allBidders != null)
+                {
+                    for(User u: this.allBidders)
+                    {
+                        Notification notification = new Notification("EXPIRED", u);
+                        this.addNotification(notification);
+                    }
+                }
             }
             return "AUCTION EXPIRED";
         }
