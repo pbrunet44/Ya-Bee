@@ -20,12 +20,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ViewPost extends Fragment {
 
     private boolean updatedClicks = false;
     private Post post;
+    private User user;
 
 
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -105,6 +107,32 @@ public class ViewPost extends Fragment {
 
         timerRunnable.run();
 
+        interested.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                database.getUsers(new UserCallback() {
+                    @Override
+                    public void onCallback(List<User> users) {
+                        user = database.getUserById(currentUser.getUid(), users);
+                        System.out.println("Do i get here?");
+                    }
+                });
+                if (user != null) {
+                    System.out.println("Size of wishlist before: " + user.getWishlist().size());
+                    Toast success = user.addToWishlist(post) ? Toast.makeText(getContext(), "Added to wishlist.", Toast.LENGTH_SHORT) : Toast.makeText(getContext(), "Already in wishlist.", Toast.LENGTH_SHORT);
+                    success.show();
+                    database.updateUserOnFirebase(user);
+                } else {
+                    User newUser = new User(currentUser.getEmail(), currentUser.getUid(), new ArrayList<Post>());
+                    newUser.addToWishlist(post);
+                    database.updateUserOnFirebase(newUser);
+                    Toast invalidBid = Toast.makeText(getContext(), "New user who's never made a wishlist, success", Toast.LENGTH_LONG);
+                    invalidBid.setGravity(Gravity.TOP, 0, 0);
+                    invalidBid.show();
+                }
+            }
+        });
+
         editPostButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -157,28 +185,7 @@ public class ViewPost extends Fragment {
             }
         });
 
-        interested.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                database.getUsers(new UserCallback() {
-                    @Override
-                    public void onCallback(List<User> users) {
-                        User user = database.getUserById(currentUser.getUid(), users);
-                        if (user != null) {
-                            user.addToWishlist(id);
-                            user.updateUserOnFirebase();
-                            //Toast successToast = Toast.makeText(getContext(), "Added to wishlist!", Toast.LENGTH_LONG);
-                            //successToast.setGravity(Gravity.BOTTOM, 0, 0);
-                            //successToast.show();
-                        } else {
-                            //Toast userNotFoundToast = Toast.makeText(getContext(), "Error finding user in database", Toast.LENGTH_LONG);
-                            //userNotFoundToast.setGravity(Gravity.BOTTOM, 0, 0);
-                            //userNotFoundToast.show();
-                        }
-                    }
-                });
-            }
-        });
+
 
         return view;
 

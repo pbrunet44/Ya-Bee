@@ -51,18 +51,18 @@ public class Profile extends Fragment {
     private Button makePost;
     private FirebaseUser currentUser;
     private ImageButton profilePicture;
+    private Button wishlist;
     private Button buying;
     private Button selling;
     private final static int RESULT_LOAD_IMAGE = 1;
-    private List<Post> buy;
-    private List<Post> sell;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         final View view = inflater.inflate(R.layout.fragment_profile, container, false);
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
-
+        wishlist = view.findViewById(R.id.productsInWishlist);
         buying = view.findViewById(R.id.productsImBuying);
         selling = view.findViewById(R.id.productsImSelling);
         profilePicture = view.findViewById(R.id.user_profile_photo);
@@ -99,6 +99,15 @@ public class Profile extends Fragment {
             }
         });
 
+        wishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // start intent
+                Intent intent = new Intent(getActivity(), Wishlist.class);
+                startActivity(intent);
+            }
+        });
+
         TextView profileEmail = (TextView)view.findViewById(R.id.profileEmail);
         profileEmail.setText(currentUser.getEmail());
 
@@ -124,7 +133,7 @@ public class Profile extends Fragment {
 
         return view;
     }
-    
+
 
 
 }

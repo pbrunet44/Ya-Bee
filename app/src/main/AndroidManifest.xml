@@ -33,6 +33,7 @@
                 android:resource="@xml/searchable" />
         </activity>
         <activity android:name=".AccountOptions" />
+        <activity android:name=".Wishlist"/>
         <activity android:name=".BidAccept" />
         <activity android:name=".ViewPost" />
         <activity

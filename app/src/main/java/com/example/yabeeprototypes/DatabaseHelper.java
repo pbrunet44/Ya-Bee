@@ -46,7 +46,7 @@ public class DatabaseHelper {
                 {
                     User user = snapshot.getValue(User.class);
                     users.add(user);
-                    System.out.println(user.getEmail() + ", " + user.getUid());
+                    System.out.println("I'm" + user.getEmail() + ", " + user.getUid());
                 }
                 userCallback.onCallback(users);
             }
@@ -96,7 +96,7 @@ public class DatabaseHelper {
                 {
                     Post post = snapshot.getValue(Post.class);
                     posts.add(post);
-                    System.out.println(post.getTitle() +  ", " + post.getDescription()); //Commented out since it gets in the way of debugging querying posts
+                    //System.out.println(post.getTitle() +  ", " + post.getDescription()); //Commented out since it gets in the way of debugging querying posts
                 }
                 firebaseCallback.onCallback(posts);
             }
@@ -107,6 +107,12 @@ public class DatabaseHelper {
             }
         });
     }
+
+    public void updateUserOnFirebase(User user)
+    {
+        this.databaseReference.child("Users").child(user.getUid()).setValue(user);
+    }
+
 
     /**
      * Retrieves a specific post based on id by searching through posts
@@ -127,6 +133,7 @@ public class DatabaseHelper {
         }
         return result;
     }
+
 
     /**
      * Retrieves posts from specified category

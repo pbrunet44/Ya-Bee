@@ -7,7 +7,7 @@ public class User {
 
     private String email = null;
     private String uid = null;
-    private ArrayList<String> wishlist = new ArrayList<>();
+    private ArrayList<Post> wishlist = new ArrayList<>();
 
     public User() {}
 
@@ -17,7 +17,7 @@ public class User {
         setUid(userID);
     }
 
-    public User(String email, String userID, ArrayList<String> wishlist)
+    public User(String email, String userID, ArrayList<Post> wishlist)
     {
         setEmail(email);
         setUid(userID);
@@ -40,43 +40,44 @@ public class User {
         this.uid = uid;
     }
 
-    public ArrayList<String> getWishlist()
+    public ArrayList<Post> getWishlist()
     {
         return this.wishlist;
     }
 
-    public void setWishlist(ArrayList<String> postIds)
+    public void setWishlist(ArrayList<Post> postIds)
     {
         this.wishlist = postIds;
     }
 
-    public void addAllToWishlist(ArrayList<String> postIds)
+    public void addAllToWishlist(ArrayList<Post> post)
     {
-        this.wishlist.addAll(postIds);
+        this.wishlist.addAll(post);
     }
 
-    public void addToWishlist(String postId)
+    public boolean addToWishlist(Post post)
     {
-        if(!this.wishlist.contains(postId))
+        for (Post p: this.wishlist)
         {
-            this.wishlist.add(postId);
+            if (p.getId().equals(post.getId()))
+            {
+                return false;
+            }
         }
+        this.wishlist.add(post);
+        return true;
     }
 
     public void clearWishlist(){
         this.wishlist.clear();
     }
 
-    public void removeFromWishlist(String postId)
+    public void removeFromWishlist(Post post)
     {
-        this.wishlist.remove(postId);
+        this.wishlist.remove(post);
     }
 
-    public void updateUserOnFirebase()
-    {
-        DatabaseHelper databaseHelper = new DatabaseHelper();
-        databaseHelper.databaseReference.child("Users").child(this.uid).setValue(this);
-    }
+
 
 
 }
