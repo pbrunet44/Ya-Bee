@@ -506,15 +506,11 @@
 
                         <ImageView
                             android:id="@+id/imgBuzz1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="150dp"
+                            android:layout_height="135dp"
                             android:layout_gravity="bottom|left"
                             android:adjustViewBounds="true"
-                            android:maxWidth="150dp"
-                            android:maxHeight="135dp"
-                            android:minWidth="150dp"
-                            android:minHeight="135dp"
-                            android:scaleType="centerInside"
+                            android:scaleType="fitStart"
                             android:src="@mipmap/ic_computer_networking_foreground" />
 
                         <TextView
@@ -545,15 +541,11 @@
 
                         <ImageView
                             android:id="@+id/imgBuzz2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="150dp"
+                            android:layout_height="135dp"
                             android:layout_gravity="bottom|left"
                             android:adjustViewBounds="true"
-                            android:maxWidth="150dp"
-                            android:maxHeight="135dp"
-                            android:minWidth="150dp"
-                            android:minHeight="135dp"
-                            android:scaleType="centerInside"
+                            android:scaleType="fitStart"
                             android:src="@drawable/iphonex" />
 
                         <TextView
@@ -584,15 +576,11 @@
 
                         <ImageView
                             android:id="@+id/imgBuzz3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="150dp"
+                            android:layout_height="135dp"
                             android:layout_gravity="bottom|left"
                             android:adjustViewBounds="true"
-                            android:maxWidth="150dp"
-                            android:maxHeight="135dp"
-                            android:minWidth="150dp"
-                            android:minHeight="135dp"
-                            android:scaleType="centerInside"
+                            android:scaleType="fitStart"
                             android:src="@drawable/lionel_trains" />
 
                         <TextView
@@ -673,13 +661,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:layout_height="135dp"
                         android:layout_gravity="bottom|left"
                         android:adjustViewBounds="true"
-                        android:maxWidth="130dp"
-                        android:maxHeight="130dp"
-                        android:scaleType="centerInside"
+                        android:scaleType="fitStart"
                         android:src="@drawable/ps4" />
 
                     <TextView
@@ -701,13 +687,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:layout_height="135dp"
                         android:layout_gravity="bottom|left"
                         android:adjustViewBounds="true"
-                        android:maxWidth="130dp"
-                        android:maxHeight="130dp"
-                        android:scaleType="centerInside"
+                        android:scaleType="fitStart"
                         android:src="@drawable/xboxone" />
 
                     <TextView
@@ -729,13 +713,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:layout_height="135dp"
                         android:layout_gravity="bottom|left"
                         android:adjustViewBounds="true"
-                        android:maxWidth="130dp"
-                        android:maxHeight="130dp"
-                        android:scaleType="centerInside"
+                        android:scaleType="fitStart"
                         android:src="@drawable/wii" />
 
                     <TextView
@@ -814,13 +796,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:layout_height="135dp"
                         android:layout_gravity="bottom|left"
                         android:adjustViewBounds="true"
-                        android:maxWidth="130dp"
-                        android:maxHeight="130dp"
-                        android:scaleType="centerInside"
+                        android:scaleType="fitStart"
                         android:src="@drawable/adidas" />
 
                     <TextView
@@ -842,13 +822,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:layout_height="135dp"
                         android:layout_gravity="bottom|left"
                         android:adjustViewBounds="true"
-                        android:maxWidth="130dp"
-                        android:maxHeight="130dp"
-                        android:scaleType="centerInside"
+                        android:scaleType="fitStart"
                         android:src="@drawable/nike" />
 
                     <TextView
@@ -870,13 +848,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:layout_height="135dp"
                         android:layout_gravity="bottom|left"
                         android:adjustViewBounds="true"
-                        android:maxWidth="130dp"
-                        android:maxHeight="130dp"
-                        android:scaleType="centerInside"
+                        android:scaleType="fitStart"
                         android:src="@drawable/reebok" />
 
                     <TextView
@@ -957,13 +933,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:layout_height="135dp"
                         android:layout_gravity="bottom|left"
                         android:adjustViewBounds="true"
-                        android:maxWidth="130dp"
-                        android:maxHeight="130dp"
-                        android:scaleType="centerInside"
+                        android:scaleType="fitStart"
                         android:src="@drawable/babyshowerballoons" />
 
                     <TextView
@@ -985,13 +959,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:layout_height="135dp"
                         android:layout_gravity="bottom|left"
                         android:adjustViewBounds="true"
-                        android:maxWidth="130dp"
-                        android:maxHeight="130dp"
-                        android:scaleType="centerInside"
+                        android:scaleType="fitStart"
                         android:src="@drawable/partyfluffyslimes" />
 
                     <TextView
