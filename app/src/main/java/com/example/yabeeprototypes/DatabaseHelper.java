@@ -38,7 +38,7 @@ public class DatabaseHelper {
 
     public void getUsers(final UserCallback userCallback)
     {
-        this.databaseReference.child("Users").addValueEventListener(new ValueEventListener() {
+        this.databaseReference.child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 users.clear();
@@ -81,6 +81,7 @@ public class DatabaseHelper {
         }
         return null;
     }
+
 
     /**
      * Retrieves all posts from the Firebase realtime database and passes it to firebaseCallback

@@ -30,7 +30,37 @@ public class Wishlist extends AppCompatActivity
         database = new DatabaseHelper();
         wishlist = new ArrayList<>();
         final FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
+
         database.getUsers(new UserCallback() {
+            @Override
+            public void onCallback(List<User> users) {
+                final User user = database.getUserById(currentUser.getUid(), users);
+                    database.getPosts(new FirebaseCallback() {
+                        @Override
+                        public void onCallback(List<Post> posts) {
+                            for (String postId: user.getWishlist())
+                            {
+                                wishlist.add(database.getPostByID(postId, posts));
+                            }
+                            System.out.println("Here is the size of the user's wishlist: " + wishlist.size());
+                            recyclerView = (RecyclerView) findViewById(R.id.recyclerViewforWishlist);
+                            recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                            recyclerView.setHasFixedSize(true);
+                            PostAdapter adapter = new PostAdapter(R.id.WishlistContainer, wishlist);
+                            recyclerView.setAdapter(adapter);
+
+                            findViewById(R.id.loadingPanelforWishlist).setVisibility(View.GONE);
+                        }
+                    });
+                }
+
+        });
+
+
+
+
+ /*       database.getUsers(new UserCallback() {
             @Override
             public void onCallback(List<User> users) {
                 User user = database.getUserById(currentUser.getUid(), users);
@@ -45,7 +75,7 @@ public class Wishlist extends AppCompatActivity
 
                 findViewById(R.id.loadingPanelforWishlist).setVisibility(View.GONE);
             }
-        });
+        });*/
 
 
     }

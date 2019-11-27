@@ -7,7 +7,7 @@ public class User {
 
     private String email = null;
     private String uid = null;
-    private ArrayList<Post> wishlist = new ArrayList<>();
+    private ArrayList<String> wishlist = new ArrayList<>();
 
     public User() {}
 
@@ -17,7 +17,7 @@ public class User {
         setUid(userID);
     }
 
-    public User(String email, String userID, ArrayList<Post> wishlist)
+    public User(String email, String userID, ArrayList<String> wishlist)
     {
         setEmail(email);
         setUid(userID);
@@ -40,31 +40,31 @@ public class User {
         this.uid = uid;
     }
 
-    public ArrayList<Post> getWishlist()
+    public ArrayList<String> getWishlist()
     {
         return this.wishlist;
     }
 
-    public void setWishlist(ArrayList<Post> postIds)
+    public void setWishlist(ArrayList<String> postIds)
     {
         this.wishlist = postIds;
     }
 
-    public void addAllToWishlist(ArrayList<Post> post)
+    public void addAllToWishlist(ArrayList<String> post)
     {
         this.wishlist.addAll(post);
     }
 
-    public boolean addToWishlist(Post post)
+    public boolean addToWishlist(String postId)
     {
-        for (Post p: this.wishlist)
+        for (String pid: this.wishlist)
         {
-            if (p.getId().equals(post.getId()))
+            if (pid.equals(postId))
             {
                 return false;
             }
         }
-        this.wishlist.add(post);
+        this.wishlist.add(postId);
         return true;
     }
 

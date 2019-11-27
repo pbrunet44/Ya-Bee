@@ -123,21 +123,23 @@ public class ViewPost extends Fragment {
                     public void onCallback(List<User> users) {
                         user = database.getUserById(currentUser.getUid(), users);
                         System.out.println("Do i get here?");
+
+                        if (user != null) {
+                            System.out.println("Size of wishlist before: " + user.getWishlist().size());
+                            Toast success = user.addToWishlist(post.getId()) ? Toast.makeText(getContext(), "Added to wishlist.", Toast.LENGTH_SHORT) : Toast.makeText(getContext(), "Already in wishlist.", Toast.LENGTH_SHORT);
+                            success.show();
+                            database.updateUserOnFirebase(user);
+                        } else {
+                            User newUser = new User(currentUser.getEmail(), currentUser.getUid(), new ArrayList<String>());
+                            newUser.addToWishlist(post.getId());
+                            database.updateUserOnFirebase(newUser);
+                            Toast invalidBid = Toast.makeText(getContext(), "New user who's never made a wishlist, success", Toast.LENGTH_LONG);
+                            invalidBid.setGravity(Gravity.TOP, 0, 0);
+                            invalidBid.show();
+                        }
                     }
                 });
-                if (user != null) {
-                    System.out.println("Size of wishlist before: " + user.getWishlist().size());
-                    Toast success = user.addToWishlist(post) ? Toast.makeText(getContext(), "Added to wishlist.", Toast.LENGTH_SHORT) : Toast.makeText(getContext(), "Already in wishlist.", Toast.LENGTH_SHORT);
-                    success.show();
-                    database.updateUserOnFirebase(user);
-                } else {
-                    User newUser = new User(currentUser.getEmail(), currentUser.getUid(), new ArrayList<Post>());
-                    newUser.addToWishlist(post);
-                    database.updateUserOnFirebase(newUser);
-                    Toast invalidBid = Toast.makeText(getContext(), "New user who's never made a wishlist, success", Toast.LENGTH_LONG);
-                    invalidBid.setGravity(Gravity.TOP, 0, 0);
-                    invalidBid.show();
-                }
+                
             }
         });
 
