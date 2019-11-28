@@ -47,7 +47,7 @@ public class Wishlist extends AppCompatActivity
                             recyclerView = (RecyclerView) findViewById(R.id.recyclerViewforWishlist);
                             recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                             recyclerView.setHasFixedSize(true);
-                            PostAdapter adapter = new PostAdapter(R.id.WishlistContainer, wishlist);
+                            PostAdapter adapter = new PostAdapter(R.layout.wishlist_item, R.id.WishlistContainer, wishlist);
                             recyclerView.setAdapter(adapter);
 
                             findViewById(R.id.loadingPanelforWishlist).setVisibility(View.GONE);

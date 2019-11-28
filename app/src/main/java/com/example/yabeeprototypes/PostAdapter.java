@@ -33,9 +33,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
 {
     private List<Post> listData;
     private int containerId;
+    private int layout;
 
-    public PostAdapter(int containerId, List<Post> listData)
+    public PostAdapter(int layout, int containerId, List<Post> listData)
     {
+        this.layout = layout;
         this.listData = listData;
         this.containerId = containerId;
     }
@@ -43,7 +45,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View listItem= layoutInflater.inflate(R.layout.list_item, parent, false);
+        View listItem= layoutInflater.inflate(this.layout, parent, false);
         ViewHolder viewHolder = new ViewHolder(listItem);
         return viewHolder;
     }
@@ -58,6 +60,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
             holder.imageView.setImageBitmap(listData.get(position).decodeImage());
             holder.timeLeft.setText(listData.get(position).getAuctionTimer());
             holder.condition.setText(listData.get(position).getCondition());
+
 
             if (listData.get(position).getLowestBid().price == listData.get(position).INITIAL_BID_PRICE)
                 bid = "No bids placed yet!";
@@ -82,15 +85,43 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
                     activity.getSupportFragmentManager().beginTransaction().replace(containerId, vp).commit();
                 }
             });
-            holder.menu.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    PopupMenu popupMenu = new PopupMenu(v.getContext(), v);
-                    MenuInflater inflater = popupMenu.getMenuInflater();
-                    inflater.inflate(R.menu.item, popupMenu.getMenu());
-                    popupMenu.show();
-                }
-            });
+            if (holder.menu != null) {
+                holder.menu.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        PopupMenu popupMenu = new PopupMenu(v.getContext(), v);
+                        MenuInflater inflater = popupMenu.getMenuInflater();
+                        inflater.inflate(R.menu.item, popupMenu.getMenu());
+                        popupMenu.show();
+                    }
+                });
+            }
+            if (holder.clear != null) {
+                holder.clear.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // remove from arraylist
+                        final Post post = listData.get(position);
+                        listData.remove(post);
+                        notifyItemRemoved(position);
+                        notifyItemRangeChanged(position, listData.size());
+                        // get current user
+                        // find user
+                        // remove element from the wishlist
+                        // update wishlist on firebase
+                        final FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+                        final DatabaseHelper databaseHelper = new DatabaseHelper();
+                        databaseHelper.getUsers(new UserCallback() {
+                            @Override
+                            public void onCallback(List<User> users) {
+                                User user = databaseHelper.getUserById(currentUser.getUid(), users);
+                                user.getWishlist().remove(post.getId());
+                                databaseHelper.updateUserOnFirebase(user);
+                            }
+                        });
+                    }
+                });
+            }
         }
         else
         {
@@ -112,6 +143,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
         public TextView bid;
         public TextView timeLeft;
         public ImageButton menu;
+        public ImageButton clear;
         public RelativeLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
@@ -121,6 +153,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
             this.bid = (TextView) itemView.findViewById(R.id.bidPrice);
             this.timeLeft = (TextView) itemView.findViewById(R.id.timeLeft);
             this.menu = (ImageButton) itemView.findViewById(R.id.item_menu);
+            this.clear = (ImageButton) itemView.findViewById(R.id.item_clear);
             relativeLayout = (RelativeLayout)itemView.findViewById(R.id.relativeLayout);
         }
     }

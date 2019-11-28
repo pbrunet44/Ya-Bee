@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:paddingLeft="16dp"
+    android:background="@drawable/border"
+    android:id="@+id/relativeLayout"
+    android:paddingRight="16dp" >
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_toStartOf="@+id/profileEmail"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="9dp"
+        android:scaleType="centerCrop"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/textView"
+        />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="20sp"
+        android:text="Title"
+        android:layout_alignParentRight="true"
+        />
+    <TextView
+        android:id="@+id/condition"
+        android:layout_marginLeft="5dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorTextSecondary"
+        android:text="Condition"
+        android:textSize="18sp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/textView"
+        android:layout_marginBottom="15dp"
+        />
+    <TextView
+        android:id="@+id/bidPrice"
+        android:layout_marginLeft="5dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        android:text="Bid price"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/condition"
+        android:layout_marginBottom="10dp"
+        />
+    <TextView
+        android:id="@+id/timeLeft"
+        android:layout_marginLeft="5dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="20sp"
+        android:text="Time left"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/bidPrice"
+        android:layout_marginBottom="5dp"
+        />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimaryLight"
+        android:src="@drawable/ic_clear_black_24dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/item_clear"
+        />
+
+
+</RelativeLayout>
+
+
+

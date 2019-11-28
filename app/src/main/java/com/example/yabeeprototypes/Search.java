@@ -48,7 +48,7 @@ public class Search extends AppCompatActivity
                     recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
                     recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                     recyclerView.setHasFixedSize(true);
-                    PostAdapter adapter = new PostAdapter(R.id.brosweContainer, posts);
+                    PostAdapter adapter = new PostAdapter(R.layout.list_item, R.id.brosweContainer, posts);
                     recyclerView.setAdapter(adapter);
                     findViewById(R.id.loadingPanel).setVisibility(View.GONE);
                 }
