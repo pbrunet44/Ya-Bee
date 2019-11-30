@@ -40,7 +40,7 @@ public class Post {
     public Post(ArrayList<Notification> notifications, ArrayList<User> allBidders, User buyer, String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired, int clicks)
     {
         this.setNotifications(notifications);
-        this.setAllBids(allBidders);
+        this.setAllBidders(allBidders);
         this.setTitle(title);
         this.setMaxPrice(maxPrice);
         this.setDescription(description);
@@ -63,7 +63,7 @@ public class Post {
         this.notifications = notifications;
     }
 
-    private void setAllBids(ArrayList<User> allBidders)
+    private void setAllBidders(ArrayList<User> allBidders)
     {
         this.allBidders = allBidders;
     }
@@ -79,8 +79,9 @@ public class Post {
 
     public void addBiddertoList(User bidder)
     {
-        if (this.allBidders == null)
+        if (this.allBidders == null) {
             this.allBidders = new ArrayList<>();
+        }
         this.allBidders.add(bidder);
         DatabaseHelper databaseHelper = new DatabaseHelper();
         databaseHelper.updateBidders(this.id, this.allBidders);
