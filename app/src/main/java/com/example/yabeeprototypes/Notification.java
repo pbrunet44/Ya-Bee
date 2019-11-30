@@ -7,6 +7,7 @@ public class Notification {
     private User receivingUser;
 
     public Notification() {}
+
     public Notification(String type, User user) {
         setTypeofNotification(type);
         setReceivingUser(user);

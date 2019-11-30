@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingLeft="16dp"
+    android:background="@drawable/border"
+    android:id="@+id/relativeLayout"
+    android:paddingRight="20dp" >
+    <ImageView
+        android:id="@+id/notification_icon"
+        android:layout_marginTop="9dp"
+        android:padding="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_notifications_black_24dp"/>
+    <TextView
+        android:layout_toRightOf="@id/notification_icon"
+        android:layout_toEndOf="@id/notification_icon"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notification"
+        android:id="@+id/notification_message"
+        android:textSize="18sp"
+        android:textColor="@color/colorTextPrimary"
+        />
+
+
+</RelativeLayout>
+
+
+

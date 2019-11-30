@@ -79,7 +79,6 @@ public class MakeBid extends AppCompatActivity {
                     Bid bid = new Bid(price, description, imageEncoding, new User(currentUser.getEmail(), currentUser.getUid()));
                     if (post.verifyBid(bid))
                     {
-                        ArrayList<User> check = post.getAllBidders();
                         post.updateNewLowestBid(bid);
 
                         if (!post.alreadyBid(currentUser.getUid()))
@@ -87,7 +86,7 @@ public class MakeBid extends AppCompatActivity {
                             post.addBiddertoList(new User(currentUser.getEmail(), currentUser.getUid()));
                         }
 
-                     /*   bidders = new ArrayList<>();
+                        bidders = new ArrayList<>();
                         bidders = post.getAllBidders();
 
                         for(User u: bidders)
@@ -97,7 +96,7 @@ public class MakeBid extends AppCompatActivity {
                                 Notification notification = new Notification("BID", u);
                                 post.addNotification(notification);
                             }
-                        }*/
+                        }
 
                         System.out.println("I'm in MakeBid, i'm allbids, here's my size" + post.getAllBidders().size());
                         //post.getBuyer();
