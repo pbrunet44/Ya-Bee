@@ -62,7 +62,6 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
                 viewPost.setArguments(bundle);
 
                 activity.getSupportFragmentManager().beginTransaction().replace(containerId, viewPost).commit();
-
             }
         });
     }
