@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:paddingLeft="16dp"
+    android:background="@drawable/border"
+    android:id="@+id/relativeLayout"
+    android:paddingRight="16dp" >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:layout_toStartOf="@+id/profileEmail"
+        android:layout_toLeftOf="@+id/textView"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:text="Title"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/notification"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="10dp"
+        android:text="NotificationMessage"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/bidPrice"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/condition"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="10dp"
+        android:text="Bid price"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/timeLeft"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bidPrice"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Time left"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="20sp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimaryLight"
+        android:src="@android:drawable/arrow_down_float"
+        android:layout_alignParentRight="true"
+        android:id="@+id/item_menu"
+        />
+
+
+</RelativeLayout>
+
+
+

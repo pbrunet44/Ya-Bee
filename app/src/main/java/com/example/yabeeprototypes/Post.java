@@ -182,7 +182,7 @@ public class Post {
                 {
                     for(User u: this.allBidders)
                     {
-                        Notification notification = new Notification("EXPIRED", u);
+                        Notification notification = new Notification("EXPIRED", u, this.id);
                         this.addNotification(notification);
                     }
                 }
