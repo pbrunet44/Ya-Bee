@@ -13,4 +13,5 @@
 <color name="colorPrimaryVeryLight">#FFF8E1</color>
 <color name="colorPrimaryVeryLightAlternate">#FFF2CA</color>
 <color name="backgroundBottomNav">#FFECD0</color>
+<color name="colorWhite">#FFFFFF</color>
 </resources>
