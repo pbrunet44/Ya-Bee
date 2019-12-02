@@ -271,7 +271,7 @@ public class Post {
     }
 
     public String getId() {
-        return id;
+        return this.id;
     }
 
     private void setCondition(String condition)

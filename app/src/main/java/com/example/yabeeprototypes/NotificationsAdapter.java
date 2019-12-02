@@ -17,7 +17,6 @@ import java.util.List;
 public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdapter.ViewHolder>
 {
     private List<Notification> listData;
-    private int layout;
     private int containerId;
 
     public NotificationsAdapter(List<Notification> listData, int containerId)
@@ -37,7 +36,7 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         final Notification myListData = listData.get(position);
-        if (listData.get(position) != null)
+        if (myListData != null)
         {
             String message = listData.get(position).getNotificationMessage();
             System.out.println(message);
@@ -54,7 +53,6 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 bundle.putString("POST ID", myListData.getPostID());
-                Toast.makeText(v.getContext(), "my name is jon ramos", Toast.LENGTH_SHORT).show();
 
                 FragmentActivity activity = (FragmentActivity) v.getContext();
 
@@ -76,7 +74,7 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
         public ViewHolder(View itemView) {
             super(itemView);
             this.textView = (TextView) itemView.findViewById(R.id.notification_message);
-            relativeLayout = (RelativeLayout)itemView.findViewById(R.id.relativeLayout);
+            this.relativeLayout = (RelativeLayout)itemView.findViewById(R.id.relativeLayout);
         }
     }
 

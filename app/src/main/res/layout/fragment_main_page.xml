@@ -614,7 +614,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimaryLight"
             android:orientation="horizontal">
 
             <TextView
@@ -622,7 +621,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@color/colorPrimaryLight"
                 android:gravity="left"
                 android:paddingLeft="10dp"
                 android:paddingBottom="3dp"
@@ -647,7 +645,6 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryLight"
             android:paddingLeft="10dp"
             android:paddingBottom="3dp"
             android:text="@string/recommended"
@@ -748,7 +745,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimaryLight"
             android:orientation="horizontal">
 
             <TextView
@@ -756,7 +752,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@color/colorPrimaryLight"
                 android:gravity="left"
                 android:maxWidth="225dp"
                 android:paddingLeft="10dp"
@@ -782,7 +777,6 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryLight"
             android:paddingLeft="10dp"
             android:paddingBottom="3dp"
             android:text="@string/recommended"
@@ -883,14 +877,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimaryLight"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@color/colorPrimaryLight"
                 android:gravity="left"
                 android:paddingLeft="10dp"
                 android:paddingBottom="3dp"
@@ -915,7 +907,6 @@
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryLight"
             android:paddingLeft="10dp"
             android:paddingBottom="3dp"
             android:text="@string/recommended"

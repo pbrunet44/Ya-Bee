@@ -16,6 +16,10 @@
         android:roundIcon="@drawable/yabeelogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:hardwareAccelerated="true">
+        <meta-data android:name="android.app.default_searchable"
+            android:value=".SearchableActivity" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +27,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Search">
+        <activity android:name=".Search"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
