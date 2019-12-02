@@ -107,7 +107,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/rounded_button"
-            android:text="Wishlist"
+            android:text="Watchings"
             android:textSize="20sp"
             android:textColor="@color/colorPrimaryDark"
             />
