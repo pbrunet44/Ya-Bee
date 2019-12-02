@@ -1,6 +1,7 @@
 package com.example.yabeeprototypes;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,15 +53,21 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle = new Bundle();
-                bundle.putString("POST ID", myListData.getPostID());
+                if(myListData.getTypeofNotification().equals("BID")) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("POST ID", myListData.getPostID());
 
-                FragmentActivity activity = (FragmentActivity) v.getContext();
+                    FragmentActivity activity = (FragmentActivity) v.getContext();
 
-                ViewPost viewPost = new ViewPost();
-                viewPost.setArguments(bundle);
+                    ViewPost viewPost = new ViewPost();
+                    viewPost.setArguments(bundle);
 
-                activity.getSupportFragmentManager().beginTransaction().replace(containerId, viewPost).commit();
+                    activity.getSupportFragmentManager().beginTransaction().replace(containerId, viewPost).commit();
+                }
+                else if (myListData.getTypeofNotification().equals("TINDER")) {
+                    Intent i = new Intent(v.getContext(), BidAccept.class);
+                    v.getContext().startActivity(i);
+                }
             }
         });
     }

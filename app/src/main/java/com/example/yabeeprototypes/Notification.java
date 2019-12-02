@@ -31,17 +31,21 @@ public class Notification {
     {
         if(this.getTypeofNotification().equals("BID"))
         {
-            return "New current bid!";
+            return "You've been outbid! Tap to bid lower.";
         }
         else if(this.getTypeofNotification().equals("EXPIRED"))
         {
             return "Auction has expired!";
         }
+        else if(this.getTypeofNotification().equals("TINDER"))
+        {
+            return "New bid on your post! Tap to view.";
+        }
         return "";
     }
 
     public String getTypeofNotification() {
-        return typeofNotification;
+        return this.typeofNotification;
     }
 
     public void setReceivingUser(User user) {
@@ -49,6 +53,6 @@ public class Notification {
     }
 
     public User getReceivingUser() {
-        return receivingUser;
+        return this.receivingUser;
     }
 }
