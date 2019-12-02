@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,20 +35,20 @@ public class MainPage extends Fragment {
     private TextView tvBuzz3;
     private Button signIn;
 
-    private ImageView services;
-    private ImageView textbooks;
-    private ImageView sportingGoods;
-    private ImageView videoGames;
-    private ImageView books;
-    private ImageView movies;
-    private ImageView music;
-    private ImageView furniture;
-    private ImageView kitchen;
-    private ImageView home;
-    private ImageView shoes;
-    private ImageView electronics;
-    private ImageView toys;
-    private ImageView travel;
+    private LinearLayout services;
+    private LinearLayout textbooks;
+    private LinearLayout sportingGoods;
+    private LinearLayout videoGames;
+    private LinearLayout books;
+    private LinearLayout movies;
+    private LinearLayout music;
+    private LinearLayout furniture;
+    private LinearLayout kitchen;
+    private LinearLayout home;
+    private LinearLayout shoes;
+    private LinearLayout electronics;
+    private LinearLayout toys;
+    private LinearLayout travel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -60,20 +61,20 @@ public class MainPage extends Fragment {
         tvBuzz3 = view.findViewById(R.id.tvBuzz3);
         //signIn = (Button) view.findViewById(R.id.tvLogin);
 
-        services = (ImageView) view.findViewById(R.id.servicesImage);
-        textbooks = (ImageView) view.findViewById(R.id.textbookImage);
-        sportingGoods = (ImageView) view.findViewById(R.id.sportingGoodsImage);
-        videoGames = (ImageView) view.findViewById(R.id.videoGamesImage);
-        books = (ImageView) view.findViewById(R.id.booksImage);
-        movies = (ImageView) view.findViewById(R.id.moviesImage);
-        music = (ImageView) view.findViewById(R.id.musicImage);
-        furniture = (ImageView) view.findViewById(R.id.furnitureImage);
-        kitchen = (ImageView) view.findViewById(R.id.kitchenImage);
-        home = (ImageView) view.findViewById(R.id.homeImage);
-        shoes = (ImageView) view.findViewById(R.id.shoesImage);
-        electronics = (ImageView) view.findViewById(R.id.electronicsImage);
-        toys = (ImageView) view.findViewById(R.id.toysImage);
-        travel = (ImageView) view.findViewById(R.id.travelImage);
+        services = (LinearLayout) view.findViewById(R.id.servicesImage);
+        textbooks = (LinearLayout) view.findViewById(R.id.textbookImage);
+        sportingGoods = (LinearLayout) view.findViewById(R.id.sportingGoodsImage);
+        videoGames = (LinearLayout) view.findViewById(R.id.videoGamesImage);
+        books = (LinearLayout) view.findViewById(R.id.booksImage);
+        movies = (LinearLayout) view.findViewById(R.id.moviesImage);
+        music = (LinearLayout) view.findViewById(R.id.musicImage);
+        furniture = (LinearLayout) view.findViewById(R.id.furnitureImage);
+        kitchen = (LinearLayout) view.findViewById(R.id.kitchenImage);
+        home = (LinearLayout) view.findViewById(R.id.homeImage);
+        shoes = (LinearLayout) view.findViewById(R.id.shoesImage);
+        electronics = (LinearLayout) view.findViewById(R.id.electronicsImage);
+        toys = (LinearLayout) view.findViewById(R.id.toysImage);
+        travel = (LinearLayout) view.findViewById(R.id.travelImage);
 
         final DatabaseHelper databaseHelper = new DatabaseHelper();
         databaseHelper.getPosts(new FirebaseCallback() {
