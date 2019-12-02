@@ -58,6 +58,7 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/servicesImage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -86,6 +87,7 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/textbookImage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -114,6 +116,7 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/sportingGoodsImage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -142,6 +145,7 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/videoGamesImage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -168,6 +172,7 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/booksImage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -194,6 +199,7 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/moviesImage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -220,6 +226,7 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/musicImage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -246,6 +253,7 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/furnitureImage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -272,6 +280,7 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/kitchenImage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -298,6 +307,7 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/homeImage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -324,6 +334,7 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/shoesImage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -350,6 +361,7 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/electronicsImage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -376,6 +388,7 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/toysImage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -404,6 +417,7 @@
                             android:orientation="vertical">
 
                             <ImageView
+                                android:id="@+id/travelImage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"

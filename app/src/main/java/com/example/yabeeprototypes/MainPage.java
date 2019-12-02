@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +26,6 @@ import java.util.List;
 public class MainPage extends Fragment {
     //private ImageButton button;
 
-
     private ImageView btnBuzz1;
     private ImageView btnBuzz2;
     private ImageView btnBuzz3;
@@ -33,6 +33,21 @@ public class MainPage extends Fragment {
     private TextView tvBuzz2;
     private TextView tvBuzz3;
     private Button signIn;
+
+    private ImageView services;
+    private ImageView textbooks;
+    private ImageView sportingGoods;
+    private ImageView videoGames;
+    private ImageView books;
+    private ImageView movies;
+    private ImageView music;
+    private ImageView furniture;
+    private ImageView kitchen;
+    private ImageView home;
+    private ImageView shoes;
+    private ImageView electronics;
+    private ImageView toys;
+    private ImageView travel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -44,6 +59,21 @@ public class MainPage extends Fragment {
         tvBuzz2 = view.findViewById(R.id.tvBuzz2);
         tvBuzz3 = view.findViewById(R.id.tvBuzz3);
         //signIn = (Button) view.findViewById(R.id.tvLogin);
+
+        services = (ImageView) view.findViewById(R.id.servicesImage);
+        textbooks = (ImageView) view.findViewById(R.id.textbookImage);
+        sportingGoods = (ImageView) view.findViewById(R.id.sportingGoodsImage);
+        videoGames = (ImageView) view.findViewById(R.id.videoGamesImage);
+        books = (ImageView) view.findViewById(R.id.booksImage);
+        movies = (ImageView) view.findViewById(R.id.moviesImage);
+        music = (ImageView) view.findViewById(R.id.musicImage);
+        furniture = (ImageView) view.findViewById(R.id.furnitureImage);
+        kitchen = (ImageView) view.findViewById(R.id.kitchenImage);
+        home = (ImageView) view.findViewById(R.id.homeImage);
+        shoes = (ImageView) view.findViewById(R.id.shoesImage);
+        electronics = (ImageView) view.findViewById(R.id.electronicsImage);
+        toys = (ImageView) view.findViewById(R.id.toysImage);
+        travel = (ImageView) view.findViewById(R.id.travelImage);
 
         final DatabaseHelper databaseHelper = new DatabaseHelper();
         databaseHelper.getPosts(new FirebaseCallback() {
@@ -76,6 +106,10 @@ public class MainPage extends Fragment {
                 Toast.makeText(getActivity(), "idk", Toast.LENGTH_SHORT).show();
             }
         });
+
+
+
+
         /*signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

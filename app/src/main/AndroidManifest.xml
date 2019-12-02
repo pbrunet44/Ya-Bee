@@ -10,12 +10,12 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@drawable/yabeelogo"
         android:label="@string/app_name"
         android:roundIcon="@drawable/yabeelogo"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:hardwareAccelerated="true">
+        android:theme="@style/AppTheme">
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,7 +33,7 @@
                 android:resource="@xml/searchable" />
         </activity>
         <activity android:name=".AccountOptions" />
-        <activity android:name=".Wishlist"/>
+        <activity android:name=".Wishlist" />
         <activity android:name=".BidAccept" />
         <activity android:name=".ViewPost" />
         <activity
@@ -45,8 +45,9 @@
         <activity
             android:name=".Buying"
             android:label="Buying" />
-        <activity android:name=".EditPost"
-            android:label="Edit"/>
+        <activity
+            android:name=".EditPost"
+            android:label="Edit" />
         <activity
             android:name=".Selling"
             android:label="Selling" />
