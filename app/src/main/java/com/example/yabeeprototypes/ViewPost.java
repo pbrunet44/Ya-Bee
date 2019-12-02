@@ -119,7 +119,7 @@ public class ViewPost extends Fragment {
 
         timerRunnable.run();
 
-        /*postBuyer.setOnClickListener(new View.OnClickListener() {
+        postBuyer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle profileExtras = new Bundle();
@@ -130,10 +130,9 @@ public class ViewPost extends Fragment {
 
                 Profile buyerProfile = new Profile();
                 buyerProfile.setArguments(profileExtras);
-
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.viewPostContainer, buyerProfile).commit();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.brosweContainer, buyerProfile).addToBackStack(null).commit();
             }
-        });*/
+        });
 
         interested.setOnClickListener(new View.OnClickListener() {
             @Override
