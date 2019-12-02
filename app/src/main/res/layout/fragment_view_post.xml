@@ -28,6 +28,7 @@
 <!--                android:textColor="@color/colorTextPrimary"-->
 <!--                android:textSize="18sp"/>-->
 <!--        </RelativeLayout>-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -43,6 +44,12 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp"
             app:cardBackgroundColor="@color/cardBackground">
+                <FrameLayout
+                    android:id="@+id/viewPostContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </FrameLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -63,6 +70,16 @@
                     android:text="Post title"
                     android:textStyle="bold"
                     android:textSize="22dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/colorTextPrimary"
+                    android:padding="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/postBuyer"
+                    android:text="Requested by USERNAME"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
                     android:layout_gravity="center"
                     android:textColor="@color/colorTextPrimary"
                     android:padding="5dp"/>

@@ -42,6 +42,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
+import android.content.Intent;
+
 import static android.app.Activity.RESULT_OK;
 
 public class Profile extends Fragment {
@@ -65,7 +67,29 @@ public class Profile extends Fragment {
         wishlist = view.findViewById(R.id.productsInWishlist);
         buying = view.findViewById(R.id.productsImBuying);
         selling = view.findViewById(R.id.productsImSelling);
+        makePost = (Button) view.findViewById(R.id.makePost);
+        Button signOff = (Button) view.findViewById(R.id.signOutButton);
+        ImageView editIcon = view.findViewById(R.id.editIcon);
+        ImageView emailIcon = view.findViewById(R.id.emailIcon);
 
+        Bundle bundle = getArguments();
+        String email = currentUser.getEmail();
+        String uid = currentUser.getUid();
+        if (bundle != null)
+        {
+            email = this.getArguments().getString("Email");
+            uid = this.getArguments().getString("UserID");
+        }
+
+        if(!currentUser.getUid().equals(uid))
+        {
+            buying.setVisibility(View.INVISIBLE);
+            selling.setVisibility(View.INVISIBLE);
+            wishlist.setVisibility(View.INVISIBLE);
+            makePost.setVisibility(View.INVISIBLE);
+            signOff.setVisibility(View.INVISIBLE);
+            editIcon.setVisibility(View.INVISIBLE);
+        }
 
         buying.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,10 +121,9 @@ public class Profile extends Fragment {
         });
 
         TextView profileEmail = (TextView)view.findViewById(R.id.profileEmail);
-        profileEmail.setText(currentUser.getEmail());
+        profileEmail.setText(email);
 
 
-        Button signOff = (Button) view.findViewById(R.id.signOutButton);
         signOff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,7 +133,6 @@ public class Profile extends Fragment {
             }
         });
 
-        makePost = (Button) view.findViewById(R.id.makePost);
         makePost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

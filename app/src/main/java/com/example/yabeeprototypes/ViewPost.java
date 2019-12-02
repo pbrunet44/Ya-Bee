@@ -3,6 +3,9 @@ package com.example.yabeeprototypes;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -62,7 +65,7 @@ public class ViewPost extends Fragment {
         final Button editPostButton = (Button) view.findViewById(R.id.editPostButton);
         final LinearLayout conditionDisplay = (LinearLayout) view.findViewById(R.id.conditionDisplay);
         final FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-
+        final TextView postBuyer = (TextView) view.findViewById(R.id.postBuyer);
         final Handler timerHandler = new Handler();
         Runnable timerRunnable = new Runnable(){
             @Override
@@ -100,6 +103,7 @@ public class ViewPost extends Fragment {
                         postImage.setImageBitmap(post.decodeImage());
                         postCategory.setText(post.getCategory());
                         postClicks.setText(String.valueOf(post.getClicks()));
+                        postBuyer.setText("Posted by " + post.getBuyer().getEmail());
                         //System.out.println(post.toString());
                         //boolean isAuctionOver = false;
                         if (post != null)
@@ -114,6 +118,28 @@ public class ViewPost extends Fragment {
         };
 
         timerRunnable.run();
+
+        /*postBuyer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle profileExtras = new Bundle();
+                profileExtras.putString("Email", post.getBuyer().getEmail());
+                profileExtras.putString("UserID", post.getBuyer().getUid());
+
+                FragmentActivity activity = (FragmentActivity) v.getContext();
+
+                Profile buyerProfile = new Profile();
+                buyerProfile.setArguments(profileExtras);
+
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.viewPostContainer, buyerProfile).commit();
+
+
+//                FragmentManager fragmentManager  = getFragmentManager();
+//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                fragmentTransaction.replace(R.layout.fragment_profile, buyerProfile);
+//                fragmentTransaction.commit();
+            }
+        });*/
 
         interested.setOnClickListener(new View.OnClickListener() {
             @Override
