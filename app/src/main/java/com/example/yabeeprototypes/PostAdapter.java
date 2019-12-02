@@ -20,6 +20,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -76,7 +78,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
                     Bundle bundle = new Bundle();
                     bundle.putString("POST ID", myListData.getId());
 
-                    AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                    FragmentActivity activity = (FragmentActivity) view.getContext();
 
 
                     ViewPost vp = new ViewPost();

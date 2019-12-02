@@ -5,12 +5,22 @@ public class Notification {
 
     private String typeofNotification;
     private User receivingUser;
+    private String postID;
 
     public Notification() {}
 
-    public Notification(String type, User user) {
+    public Notification(String type, User user, String postID) {
         setTypeofNotification(type);
         setReceivingUser(user);
+        setPostID(postID);
+    }
+
+    public void setPostID(String postID) {
+        this.postID = postID;
+    }
+
+    public String getPostID() {
+        return this.postID;
     }
 
     public void setTypeofNotification(String typeofNotification) {

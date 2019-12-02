@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -51,11 +52,12 @@ public class Notifications extends Fragment {
                     Toast.makeText(getContext(), "my name is jon ramos", Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    Collections.reverse(notifications);
                     //Toast.makeText(getContext(), "I'm jo ramos!", Toast.LENGTH_SHORT).show();
                     recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewforNotifications);
                     recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                     recyclerView.setHasFixedSize(true);
-                    NotificationsAdapter adapter = new NotificationsAdapter(notifications);
+                    NotificationsAdapter adapter = new NotificationsAdapter(notifications, R.id.NotificationsContainer);
                     recyclerView.setAdapter(adapter);
                 }
 
