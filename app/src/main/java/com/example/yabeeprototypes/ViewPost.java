@@ -103,7 +103,7 @@ public class ViewPost extends Fragment {
                         postImage.setImageBitmap(post.decodeImage());
                         postCategory.setText(post.getCategory());
                         postClicks.setText(String.valueOf(post.getClicks()));
-                        postBuyer.setText("Posted by " + post.getBuyer().getEmail());
+                        postBuyer.setText(post.getBuyer().getEmail());
                         //System.out.println(post.toString());
                         //boolean isAuctionOver = false;
                         if (post != null)
@@ -132,12 +132,6 @@ public class ViewPost extends Fragment {
                 buyerProfile.setArguments(profileExtras);
 
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.viewPostContainer, buyerProfile).commit();
-
-
-//                FragmentManager fragmentManager  = getFragmentManager();
-//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                fragmentTransaction.replace(R.layout.fragment_profile, buyerProfile);
-//                fragmentTransaction.commit();
             }
         });*/
 

@@ -84,7 +84,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
                     ViewPost vp = new ViewPost();
                     vp.setArguments(bundle);
                     // need loading screen while firebase is loading data
-                    activity.getSupportFragmentManager().beginTransaction().replace(containerId, vp).commit();
+                    activity.getSupportFragmentManager().beginTransaction().replace(containerId, vp).addToBackStack(null).commit();
                 }
             });
             if (holder.menu != null) {
