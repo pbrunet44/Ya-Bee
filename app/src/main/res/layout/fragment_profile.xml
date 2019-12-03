@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="16dp"
@@ -101,16 +101,16 @@
             android:textSize="20sp"
             android:textColor="@color/colorPrimaryDark"
             />
+
         <Button
             android:id="@+id/productsInWishlist"
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/rounded_button"
-            android:text="Watchings"
-            android:textSize="20sp"
+            android:text="Watching"
             android:textColor="@color/colorPrimaryDark"
-            />
+            android:textSize="20sp" />
         <Button
             android:layout_marginTop="10dp"
             android:id="@+id/productReviews"
