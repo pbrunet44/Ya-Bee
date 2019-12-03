@@ -24,7 +24,7 @@ import java.util.List;
 
 //I know it still says activity, but the main page is now a fragment
 
-public class MainPage extends Fragment {
+public class MainPage extends Fragment implements View.OnClickListener {
     //private ImageButton button;
 
     private ImageView btnBuzz1;
@@ -59,7 +59,6 @@ public class MainPage extends Fragment {
         tvBuzz1 = view.findViewById(R.id.tvBuzz1);
         tvBuzz2 = view.findViewById(R.id.tvBuzz2);
         tvBuzz3 = view.findViewById(R.id.tvBuzz3);
-        //signIn = (Button) view.findViewById(R.id.tvLogin);
 
         services = (LinearLayout) view.findViewById(R.id.servicesImage);
         textbooks = (LinearLayout) view.findViewById(R.id.textbookImage);
@@ -75,6 +74,22 @@ public class MainPage extends Fragment {
         electronics = (LinearLayout) view.findViewById(R.id.electronicsImage);
         toys = (LinearLayout) view.findViewById(R.id.toysImage);
         travel = (LinearLayout) view.findViewById(R.id.travelImage);
+
+        services.setOnClickListener(this);
+        textbooks.setOnClickListener(this);
+        sportingGoods.setOnClickListener(this);
+        videoGames.setOnClickListener(this);
+        books.setOnClickListener(this);
+        movies.setOnClickListener(this);
+        music.setOnClickListener(this);
+        furniture.setOnClickListener(this);
+        kitchen.setOnClickListener(this);
+        home.setOnClickListener(this);
+        shoes.setOnClickListener(this);
+        electronics.setOnClickListener(this);
+        toys.setOnClickListener(this);
+        travel.setOnClickListener(this);
+
 
         final DatabaseHelper databaseHelper = new DatabaseHelper();
         databaseHelper.getPosts(new FirebaseCallback() {
@@ -121,67 +136,60 @@ public class MainPage extends Fragment {
         return view;
     }
 
-/*    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-
-    public void goToBrowse(View view)
-    {
-        Intent intent = new Intent(this, Browse.class);
-        startActivity(intent);
-    }
-
-    public void goToLogin(View view)
-    {
-        Intent intent = new Intent(this, Login.class);
-        startActivity(intent);
-    }
-
-    public void goToSignUp(View view)
-    {
-        Intent intent = new Intent(this, MakeAccount.class);
-        startActivity(intent);
-    }*/
-}
-
-
-/*package com.example.yabeeprototypes;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-
-import android.os.Bundle;
-
-
-//This is the Main Activity that adds the Main Page fragment
-
-public class MainPage extends AppCompatActivity {
-
-    private SectionsStatePagerAdapter mSectionsStatePagerAdapter;
-    private ViewPager mViewPager;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate((savedInstanceState));
-        setContentView(R.layout.fragment_viewpager);
+    public void onClick(View v)
+    {
+        String category = "";
+        switch(v.getId())
+        {
+            case R.id.servicesImage:
+                category = "Services";
+                break;
+            case R.id.textbookImage:
+                category = "Textbooks";
+                break;
+            case R.id.sportingGoodsImage:
+                category = "Sporting Goods";
+                break;
+            case R.id.videoGamesImage:
+                category = "Video Games";
+                break;
+            case R.id.booksImage:
+                category = "Books";
+                break;
+            case R.id.moviesImage:
+                category = "Movies";
+                break;
+            case R.id.musicImage:
+                category = "Music";
+                break;
+            case R.id.furnitureImage:
+                category = "Furniture";
+                break;
+            case R.id.kitchenImage:
+                category = "Kitchen";
+                break;
+            case R.id.homeImage:
+                category = "Home";
+                break;
+            case R.id.shoesImage:
+                category = "Shoes";
+                break;
+            case R.id.electronicsImage:
+                category = "Electronics";
+                break;
+            case R.id.toysImage:
+                category = "Toys";
+                break;
+            case R.id.travelImage:
+                category = "Travel";
+                break;
+        }
+        Bundle bundle = new Bundle();
+        bundle.putString("Category", category);
 
-        mSectionsStatePagerAdapter = new SectionsStatePagerAdapter(getSupportFragmentManager());
-        mViewPager = (ViewPager) findViewById(R.id.container);
-
-        setupViewPager(mViewPager);
+        Intent intent = new Intent(getContext(), Categories.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
-
-    private void setupViewPager(ViewPager viewPager) {
-        SectionsStatePagerAdapter adapter = new SectionsStatePagerAdapter(getSupportFragmentManager());
-
-        adapter.addFragment(new MainActivity(), "MainActivity");
-        adapter.addFragment(new ViewPost(), "ViewPost");
-        viewPager.setAdapter(adapter);
-    }
-
-    public void setViewPager(int fragmentNumber) {
-        mViewPager.setCurrentItem(fragmentNumber);
-    }
-
-}*/
+}

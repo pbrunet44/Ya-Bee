@@ -40,6 +40,7 @@
         <activity android:name=".AccountOptions" />
         <activity android:name=".Wishlist" />
         <activity android:name=".BidAccept" />
+        <activity android:name=".Categories"/>
         <activity android:name=".ViewPost" />
         <activity
             android:name=".Profile"
