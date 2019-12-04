@@ -81,6 +81,22 @@ public class MakeBid extends AppCompatActivity {
                     {
                         post.updateNewLowestBid(bid);
 
+                        Notification tinder = new Notification("TINDER", post.getBuyer(), post.getId());
+                        post.addNotification(tinder);
+
+                        /*
+                        Bid acceptance and how it will work:
+                        1.  buyer gets notification ("New bid on your post! Tap to view.")
+                        2.  bid gets added to bid pending acceptance arraylist that will probably be tied to post.
+                        3.  tinder notification for buyer takes them to a recyclerview of all the bids
+                            that have not been accepted yet.
+                        4.  buyer will scroll through recyclerview of bids and click on each one to accept or decline them.
+                        5.  Declined bid simply popped from arraylist of pending acceptance. Notification
+                            sends to seller ("Bid declined by buyer! Tap to view post.")
+                        6.  Accepted bid updated as new lowest bid. Notifcation sends to seller ("Bid accepted by buyer! You are the current bid.")
+                        */
+
+
                         if (!post.alreadyBid(currentUser.getUid()))
                         {
                             post.addBiddertoList(new User(currentUser.getEmail(), currentUser.getUid()));
@@ -97,9 +113,6 @@ public class MakeBid extends AppCompatActivity {
                                 post.addNotification(notification);
                             }
                         }
-
-                        Notification tinder = new Notification("TINDER", post.getBuyer(), post.getId());
-                        post.addNotification(tinder);
 
                         System.out.println("I'm in MakeBid, i'm allbids, here's my size" + post.getAllBidders().size());
                         //post.getBuyer();
