@@ -134,7 +134,7 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
                     imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
                     imageEncoding = Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT);
                 }
-                Post post = new Post(new ArrayList<Notification>(), new ArrayList<User>(), new User(FirebaseAuth.getInstance().getCurrentUser().getEmail(),
+                Post post = new Post(new ArrayList<Bid>(), new ArrayList<Notification>(), new ArrayList<User>(), new User(FirebaseAuth.getInstance().getCurrentUser().getEmail(),
                         FirebaseAuth.getInstance().getCurrentUser().getUid()), title, maxPrice,
                         description, numOfDays, new Bid(INITIAL_BID_PRICE, INITIAL_DESCRIPTION, INITIAL_IMAGE, null),
                         imageEncoding, category, condition, Long.toString(System.nanoTime()),

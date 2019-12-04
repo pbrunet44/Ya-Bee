@@ -79,17 +79,19 @@ public class MakeBid extends AppCompatActivity {
                     Bid bid = new Bid(price, description, imageEncoding, new User(currentUser.getEmail(), currentUser.getUid()));
                     if (post.verifyBid(bid))
                     {
-                        post.updateNewLowestBid(bid);
+                        //post.updateNewLowestBid(bid);
 
                         Notification tinder = new Notification("TINDER", post.getBuyer(), post.getId());
                         post.addNotification(tinder);
+
+                        post.addToBidPendingAcceptance(bid);
 
                         /*
                         Bid acceptance and how it will work:
                         1.  buyer gets tinder notification ("New bid on your post! Tap to view.")
                         2.  bid gets added to a "bid pending acceptance arraylist" that will probably be tied to the post.
-                        3.  tinder notification for buyer takes them to a recyclerview of all the bids
-                            pending acceptance from the post.
+                        3.  tinder notification for buyer takes them to the post. On the post there will be a button that
+                            takes the user to a recycler view of all the bids pending acceptance from the post.
                         4.  buyer will scroll through recyclerview of bids pending acceptance and click on each one to accept or decline them.
                         4a. declining bid will take user back to recyclerview of bids pending acceptance
                         4b. accepting bid will take user back to view post

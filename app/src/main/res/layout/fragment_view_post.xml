@@ -121,17 +121,31 @@
                     />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/pendingBidsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pending Bids"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp"
+            />
+
         <Button
             android:id="@+id/BidButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_button"
-            android:text="Place Selling Bid"
-            android:textSize="18sp"
-            android:textColor="@color/colorTextPrimary"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            />
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button"
+            android:text="Place Selling Bid"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp" />
+
         <Button
             android:id="@+id/interestedButton"
             android:layout_marginTop="10dp"

@@ -53,7 +53,7 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(myListData.getTypeofNotification().equals("BID")) {
+                if(myListData.getTypeofNotification().equals("BID") || myListData.getTypeofNotification().equals("TINDER")) {
                     Bundle bundle = new Bundle();
                     bundle.putString("POST ID", myListData.getPostID());
 
@@ -63,10 +63,6 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
                     viewPost.setArguments(bundle);
 
                     activity.getSupportFragmentManager().beginTransaction().replace(containerId, viewPost).commit();
-                }
-                else if (myListData.getTypeofNotification().equals("TINDER")) {
-                    Intent i = new Intent(v.getContext(), BidAccept.class);
-                    v.getContext().startActivity(i);
                 }
             }
         });
