@@ -63,6 +63,7 @@ public class ViewPost extends Fragment {
         final ImageView postImage = (ImageView) view.findViewById(R.id.postImage);
         final TextView postClicks = (TextView) view.findViewById(R.id.postClicks);
         final Button editPostButton = (Button) view.findViewById(R.id.editPostButton);
+        final Button pendingBidsButton = (Button) view.findViewById(R.id.pendingBidsButton);
         final LinearLayout conditionDisplay = (LinearLayout) view.findViewById(R.id.conditionDisplay);
         final FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         final TextView postBuyer = (TextView) view.findViewById(R.id.postBuyer);
@@ -80,20 +81,21 @@ public class ViewPost extends Fragment {
                         //view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.GONE);
                         if(currentUser == null)
                         {
-                            interested.setVisibility(View.INVISIBLE);
+                            interested.setVisibility(View.GONE);
                         }
                         if (currentUser != null && !(post.getBuyer().getUid().equals(currentUser.getUid())))
                         {
-                            editPostButton.setVisibility(View.INVISIBLE);
+                            editPostButton.setVisibility(View.GONE);
+                            pendingBidsButton.setVisibility(View.GONE);
                         }
                         if (currentUser != null && (post.getBuyer().getUid().equals(currentUser.getUid())))
                         {
-                            createBid.setVisibility(View.INVISIBLE);
+                            createBid.setVisibility(View.GONE);
                         }
                         postTitle.setText(post.getTitle());
                         if(post.getCondition().equals("N/A"))
                         {
-                            conditionDisplay.setVisibility(View.INVISIBLE);
+                            conditionDisplay.setVisibility(View.GONE);
                         }
                         else
                         {

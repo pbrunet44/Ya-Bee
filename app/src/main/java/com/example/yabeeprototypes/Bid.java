@@ -11,6 +11,8 @@ public class Bid
     public String imageEncoding;
     public User seller;
 
+    private boolean bidAccepted;
+
     //public String id; //do bids need unique ids since we're only keeping track of the lowest bid?
 
     public Bid() {}
@@ -20,6 +22,7 @@ public class Bid
         this.description = description;
         this.imageEncoding = imageEncoding;
         this.seller = newUser;
+        this.bidAccepted = false;
         //this.id = id;
     }
 
@@ -33,6 +36,12 @@ public class Bid
         return BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
     }
 
+    public boolean isAccepted() {
+        return this.bidAccepted;
+    }
 
+    public void setBidAccepted(boolean accepted) {
+        this.bidAccepted = true;
+    }
 
 }

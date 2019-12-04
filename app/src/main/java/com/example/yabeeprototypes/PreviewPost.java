@@ -12,8 +12,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.text.DecimalFormat;
 
 import static android.graphics.BitmapFactory.decodeByteArray;
@@ -22,7 +20,7 @@ public class PreviewPost extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.preview_post);
+        setContentView(R.layout.activity_preview_post);
         ImageView previewImage = findViewById(R.id.postImagePreview);
         TextView previewTitle = findViewById(R.id.postTitlePreview);
         TextView previewPrice = findViewById(R.id.lowestBidPreview);

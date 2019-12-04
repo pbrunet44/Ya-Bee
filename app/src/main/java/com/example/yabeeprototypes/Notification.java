@@ -29,19 +29,28 @@ public class Notification {
 
     public String getNotificationMessage()
     {
+        String message = "";
         if(this.getTypeofNotification().equals("BID"))
         {
-            return "You've been outbid! Tap to bid lower.";
+            message = "You've been outbid! Tap to bid lower.";
         }
         else if(this.getTypeofNotification().equals("EXPIRED"))
         {
-            return "Auction has expired!";
+            message = "Auction has expired!";
         }
         else if(this.getTypeofNotification().equals("TINDER"))
         {
-            return "New bid on your post! Tap to view.";
+            message = "New bid on your post! Tap to view.";
         }
-        return "";
+        else if(this.getTypeofNotification().equals("BID DECLINED"))
+        {
+            message = "Bid declined by buyer! Tap to view post.";
+        }
+        else if(this.getTypeofNotification().equals("BID ACCEPTED"))
+        {
+            message = "Bid accepted by buyer! You are the current bid." ;
+        }
+        return message;
     }
 
     public String getTypeofNotification() {

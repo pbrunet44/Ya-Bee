@@ -253,6 +253,11 @@ public class DatabaseHelper {
         this.databaseReference.child("Posts").child(id).child("notifications").setValue(notifications);
     }
 
+    public void updateBidsPendingAcceptance(String id, ArrayList<Bid> bidsPendingAcceptance)
+    {
+        this.databaseReference.child("Posts").child(id).child("notifications").setValue(bidsPendingAcceptance);
+    }
+
 
     /**
      * Returns a given user's posts that they've posted (used only for 'Buying' under Profile)

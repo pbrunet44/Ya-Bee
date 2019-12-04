@@ -1,6 +1,7 @@
 package com.example.yabeeprototypes;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.provider.ContactsContract;
 import android.util.Base64;
 
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class Post {
     private String imageEncoding;
     private ArrayList<User> allBidders;
     private ArrayList<Notification> notifications;
+    private ArrayList<Bid> bidsPendingAcceptance;
     //private Bitmap imageBitmap;
     //private Uri imageUri; // will deal with this later
     private String category;
@@ -37,8 +39,9 @@ public class Post {
         super();
     }
 
-    public Post(ArrayList<Notification> notifications, ArrayList<User> allBidders, User buyer, String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired, int clicks)
+    public Post(ArrayList<Bid> bidsPendingAcceptance, ArrayList<Notification> notifications, ArrayList<User> allBidders, User buyer, String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired, int clicks)
     {
+
         this.setNotifications(notifications);
         this.setAllBidders(allBidders);
         this.setTitle(title);
@@ -58,14 +61,43 @@ public class Post {
 
     }
 
-    private void setNotifications(ArrayList<Notification> notifications)
+    public void setBidsPendingAcceptance(ArrayList<Bid> bidsPendingAcceptance)
+    {
+        this.bidsPendingAcceptance = bidsPendingAcceptance;
+    }
+
+    public ArrayList<Bid> getBidsPendingAcceptance()
+    {
+        return this.bidsPendingAcceptance;
+    }
+
+    public void setNotifications(ArrayList<Notification> notifications)
     {
         this.notifications = notifications;
     }
 
-    private void setAllBidders(ArrayList<User> allBidders)
+    public void setAllBidders(ArrayList<User> allBidders)
     {
         this.allBidders = allBidders;
+    }
+
+    public void addToBidPendingAcceptance(Bid bid)
+    {
+        if(this.bidsPendingAcceptance == null)
+            this.bidsPendingAcceptance = new ArrayList<>();
+        this.bidsPendingAcceptance.add(bid);
+        DatabaseHelper databaseHelper = new DatabaseHelper();
+        databaseHelper.updateBidsPendingAcceptance(this.id, this.bidsPendingAcceptance);
+    }
+
+    public void removeFromBidPendingAcceptance(Bid bid)
+    {
+        if(this.bidsPendingAcceptance != null)
+        {
+            this.bidsPendingAcceptance.remove(bid);
+        }
+        DatabaseHelper databaseHelper = new DatabaseHelper();
+        databaseHelper.updateBidsPendingAcceptance(this.id, this.bidsPendingAcceptance);
     }
 
     public void addNotification(Notification notification)
@@ -74,7 +106,7 @@ public class Post {
             this.notifications = new ArrayList<>();
         this.notifications.add(notification);
         DatabaseHelper databaseHelper = new DatabaseHelper();
-        databaseHelper.updateNotifications(this.id, notifications);
+        databaseHelper.updateNotifications(this.id, this.notifications);
     }
 
     public void addBiddertoList(User bidder)
