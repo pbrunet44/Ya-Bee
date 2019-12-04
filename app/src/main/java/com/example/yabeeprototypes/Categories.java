@@ -21,7 +21,7 @@ public class Categories extends AppCompatActivity
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.category_items);
+        setContentView(R.layout.items_category);
 
         findViewById(R.id.loadingPanelforCategories).setVisibility(View.VISIBLE);
 
