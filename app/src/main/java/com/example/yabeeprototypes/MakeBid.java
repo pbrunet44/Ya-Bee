@@ -86,11 +86,13 @@ public class MakeBid extends AppCompatActivity {
 
                         /*
                         Bid acceptance and how it will work:
-                        1.  buyer gets notification ("New bid on your post! Tap to view.")
-                        2.  bid gets added to bid pending acceptance arraylist that will probably be tied to post.
+                        1.  buyer gets tinder notification ("New bid on your post! Tap to view.")
+                        2.  bid gets added to a "bid pending acceptance arraylist" that will probably be tied to the post.
                         3.  tinder notification for buyer takes them to a recyclerview of all the bids
-                            that have not been accepted yet.
-                        4.  buyer will scroll through recyclerview of bids and click on each one to accept or decline them.
+                            pending acceptance from the post.
+                        4.  buyer will scroll through recyclerview of bids pending acceptance and click on each one to accept or decline them.
+                        4a. declining bid will take user back to recyclerview of bids pending acceptance
+                        4b. accepting bid will take user back to view post
                         5.  Declined bid simply popped from arraylist of pending acceptance. Notification
                             sends to seller ("Bid declined by buyer! Tap to view post.")
                         6.  Accepted bid updated as new lowest bid. Notifcation sends to seller ("Bid accepted by buyer! You are the current bid.")
