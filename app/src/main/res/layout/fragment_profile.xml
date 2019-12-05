@@ -123,8 +123,19 @@
             />
         <Button
             android:layout_marginTop="10dp"
-            android:id="@+id/signOutButton"
+            android:id="@+id/review_user"
             android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/rounded_button"
+            android:text="Give a review"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimaryDark"
+            />
+        <Button
+            android:layout_marginTop="100dp"
+            android:id="@+id/signOutButton"
+            android:layout_gravity="center"
+            android:layout_width="150dp"
             android:layout_height="40dp"
             android:background="@drawable/rounded_button"
             android:text="Sign out"
@@ -133,7 +144,7 @@
             />
         <View
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="150dp"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#bdbdbd"/>

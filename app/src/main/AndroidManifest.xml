@@ -16,8 +16,12 @@
         android:roundIcon="@drawable/yabeelogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data android:name="android.app.default_searchable"
+        <activity android:name=".ReviewUser"></activity>
+
+        <meta-data
+            android:name="android.app.default_searchable"
             android:value=".SearchableActivity" />
+
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,11 +29,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Search"
+        <activity
+            android:name=".Search"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
@@ -37,7 +43,7 @@
         <activity android:name=".AccountOptions" />
         <activity android:name=".Wishlist" />
         <activity android:name=".BidAccept" />
-        <activity android:name=".Categories"/>
+        <activity android:name=".Categories" />
         <activity android:name=".ViewPost" />
         <activity
             android:name=".Profile"

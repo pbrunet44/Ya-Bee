@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimaryLight"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ReviewUser">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Title"
+            android:textColor="#212121"
+            android:textSize="24sp" />
+        <EditText
+            android:id="@+id/review_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:inputType="text"
+            android:background="@drawable/rounded_spinner"
+            android:padding="8dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Description"
+            android:textColor="#212121"
+            android:textSize="24sp" />
+        <EditText
+            android:id="@+id/description_review"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:background="@drawable/rounded_spinner"
+            android:padding="8dp"/>
+
+        <RatingBar
+            android:layout_marginTop="35dp"
+            android:layout_gravity="center"
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            android:id="@+id/submitReview"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:background="@drawable/rounded_button"
+            android:text="Submit"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimaryDark"
+            />
+
+
+    </LinearLayout>
+</ScrollView>

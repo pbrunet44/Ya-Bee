@@ -91,7 +91,7 @@
                         android:textStyle="bold"
                         android:textSize="20dp"
                         android:layout_gravity="center"
-                        android:textColor="#0000FF"
+                        android:textColor="@color/colorTextSecondary"
                         android:padding="5dp"
                         android:gravity="center"/>
 

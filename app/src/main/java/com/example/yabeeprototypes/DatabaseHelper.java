@@ -17,7 +17,7 @@ import java.util.List;
 
 public class DatabaseHelper {
 
-    private final int NUM_DAILY_BUZZ_POSTS = 3;
+    private final int NUM_DAILY_BUZZ_POSTS = 10;
     private FirebaseDatabase database;
     public DatabaseReference databaseReference;
     private List<Post> posts;
@@ -113,6 +113,34 @@ public class DatabaseHelper {
         this.databaseReference.child("Users").child(user.getUid()).setValue(user);
     }
 
+    public void getReviews(final ReviewCallback reviewCallback)
+    {
+        final ArrayList<Review> reviews = new ArrayList<>();
+        this.databaseReference.child("Reviews").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+            {
+                for (DataSnapshot snapshot: dataSnapshot.getChildren())
+                {
+                    Review r = snapshot.getValue(Review.class);
+                    reviews.add(r);
+                }
+                reviewCallback.onCallback(reviews);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError)
+            {
+                System.out.println("ERROR: data not read!");
+            }
+        });
+    }
+
+    public void addReview(Review r)
+    {
+        System.out.println(r.toString());
+        this.databaseReference.child("Reviews").child(r.getReviewedId()).push().setValue(r);
+    }
 
     /**
      * Retrieves a specific post based on id by searching through posts

@@ -57,6 +57,7 @@ public class Profile extends Fragment {
     private Button buying;
     private Button selling;
     private final static int RESULT_LOAD_IMAGE = 1;
+    private String uId;
 
 
     @Override
@@ -71,6 +72,8 @@ public class Profile extends Fragment {
         Button signOff = (Button) view.findViewById(R.id.signOutButton);
         ImageView editIcon = view.findViewById(R.id.editIcon);
         ImageView emailIcon = view.findViewById(R.id.emailIcon);
+        Button reviews = view.findViewById(R.id.productReviews);
+        Button giveAReview = view.findViewById(R.id.review_user);
 
         Bundle bundle = getArguments();
         String email = currentUser.getEmail();
@@ -79,6 +82,7 @@ public class Profile extends Fragment {
         {
             email = this.getArguments().getString("Email");
             uid = this.getArguments().getString("UserID");
+            uId = uid;
         }
 
         if(!currentUser.getUid().equals(uid))
@@ -89,7 +93,13 @@ public class Profile extends Fragment {
             makePost.setVisibility(View.INVISIBLE);
             signOff.setVisibility(View.INVISIBLE);
             editIcon.setVisibility(View.INVISIBLE);
+            reviews.setVisibility(View.INVISIBLE);
         }
+        if (currentUser.getUid().equals(uid))
+        {
+            giveAReview.setVisibility(View.INVISIBLE);
+        }
+
 
         buying.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +148,15 @@ public class Profile extends Fragment {
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(), MakeListing.class);
                 startActivity(i);
+            }
+        });
+
+        giveAReview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ReviewUser.class);
+                intent.putExtra("uid", uId);
+                startActivity(intent);
             }
         });
 
