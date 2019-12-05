@@ -120,6 +120,14 @@ public class Profile extends Fragment {
             }
         });
 
+        reviews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ViewUserReviews.class);
+                startActivity(intent);
+            }
+        });
+
 
         wishlist.setOnClickListener(new View.OnClickListener() {
             @Override

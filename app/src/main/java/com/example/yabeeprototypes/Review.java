@@ -10,6 +10,7 @@ public class Review
     private String reviewedId;
     private String posterId;
 
+    public Review () {}
     public Review(String rTitle, String rDescription, float rRating, String rId, String pId)
     {
         setTitle(rTitle);

@@ -16,7 +16,8 @@
         android:roundIcon="@drawable/yabeelogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ReviewUser"></activity>
+        <activity android:name=".ViewUserReviews"></activity>
+        <activity android:name=".ReviewUser" />
 
         <meta-data
             android:name="android.app.default_searchable"

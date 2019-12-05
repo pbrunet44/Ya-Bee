@@ -123,6 +123,8 @@ public class DatabaseHelper {
                 for (DataSnapshot snapshot: dataSnapshot.getChildren())
                 {
                     Review r = snapshot.getValue(Review.class);
+                    if (r != null)
+                        System.out.println(r.toString());
                     reviews.add(r);
                 }
                 reviewCallback.onCallback(reviews);
