@@ -16,7 +16,8 @@
         android:roundIcon="@drawable/yabeelogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewUserReviews"></activity>
+        <activity android:name=".PendingBids"></activity>
+        <activity android:name=".ViewUserReviews" />
         <activity android:name=".ReviewUser" />
 
         <meta-data

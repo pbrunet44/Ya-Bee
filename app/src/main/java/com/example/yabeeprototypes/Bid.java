@@ -6,24 +6,58 @@ import android.util.Base64;
 
 public class Bid
 {
-    public double price = 0.00;
-    public String description;
-    public String imageEncoding;
-    public User seller;
-
-    private boolean bidAccepted;
+    private double price = 0.00;
+    private String description;
+    private String imageEncoding;
+    private User seller;
 
     //public String id; //do bids need unique ids since we're only keeping track of the lowest bid?
 
     public Bid() {}
     public Bid(double price, String description, String imageEncoding, User newUser)
     {
-        this.price = price;
-        this.description = description;
-        this.imageEncoding = imageEncoding;
-        this.seller = newUser;
-        this.bidAccepted = false;
+        setPrice(price);
+        setDescription(description);
+        setImageEncoding(imageEncoding);
+        setSeller(newUser);
         //this.id = id;
+    }
+
+    public void setPrice(double price)
+    {
+        this.price = price;
+    }
+
+    public double getPrice()
+    {
+        return this.price;
+    }
+
+    public void setDescription(String description)
+    {
+        this.description = description;
+    }
+
+    public String getDescription()
+    {
+        return this.description;
+    }
+
+    public void setImageEncoding(String imageEncoding) {
+        this.imageEncoding = imageEncoding;
+    }
+
+    public String getImageEncoding() {
+        return imageEncoding;
+    }
+
+    public void setSeller(User seller)
+    {
+        this.seller = seller;
+    }
+
+    public User getSeller() {
+        return seller;
     }
 
     /**
@@ -34,14 +68,6 @@ public class Bid
     {
         byte[] decoded = Base64.decode(this.imageEncoding.getBytes(), Base64.DEFAULT);
         return BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
-    }
-
-    public boolean isAccepted() {
-        return this.bidAccepted;
-    }
-
-    public void setBidAccepted(boolean accepted) {
-        this.bidAccepted = true;
     }
 
 }

@@ -95,9 +95,10 @@ public class MakeBid extends AppCompatActivity {
                         4.  buyer will scroll through recyclerview of bids pending acceptance and click on each one to accept or decline them.
                         4a. declining bid will take user back to recyclerview of bids pending acceptance
                         4b. accepting bid will take user back to view post
-                        5.  Declined bid simply popped from arraylist of pending acceptance. Notification
+                        5.  Declined bid simply removed from arraylist of pending acceptance. Notification
                             sends to seller ("Bid declined by buyer! Tap to view post.")
-                        6.  Accepted bid updated as new lowest bid. Notifcation sends to seller ("Bid accepted by buyer! You are the current bid.")
+                        6.  Accepted bid updated as new lowest bid, then removed from arraylist of pending acceptance.
+                            Notifcation sends to seller ("Bid accepted by buyer! You are the current bid.")
                         */
 
 
@@ -111,7 +112,7 @@ public class MakeBid extends AppCompatActivity {
 
                         for(User u: bidders)
                         {
-                            if(!u.getUid().equals(currentUser.getUid())) //gonna change this lol
+                            if(!u.getUid().equals(currentUser.getUid()))
                             {
                                 Notification notification = new Notification("BID", u, post.getId());
                                 post.addNotification(notification);
@@ -127,7 +128,7 @@ public class MakeBid extends AppCompatActivity {
                     {
                         // prompt a toast telling user to enter a valid bid
                         DecimalFormat df = new DecimalFormat("#.##");
-                        String currBidPrice = df.format(post.getLowestBid().price);
+                        String currBidPrice = df.format(post.getLowestBid().getPrice());
                         String toastText = "The current bid is $" + currBidPrice + ". Please bid lower.";
                         Toast invalidBid = Toast.makeText(getApplicationContext(), toastText, Toast.LENGTH_LONG);
                         invalidBid.setGravity(Gravity.TOP, 0, 0);

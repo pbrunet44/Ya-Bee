@@ -41,7 +41,7 @@ public class Post {
 
     public Post(ArrayList<Bid> bidsPendingAcceptance, ArrayList<Notification> notifications, ArrayList<User> allBidders, User buyer, String title, double maxPrice, String description, int auctionLength, Bid lowestBid, String imageEncoding, String category, String condition, String id, Date postDate, boolean isExpired, int clicks)
     {
-
+        this.setBidsPendingAcceptance(bidsPendingAcceptance);
         this.setNotifications(notifications);
         this.setAllBidders(allBidders);
         this.setTitle(title);
@@ -92,9 +92,15 @@ public class Post {
 
     public void removeFromBidPendingAcceptance(Bid bid)
     {
-        if(this.bidsPendingAcceptance != null)
+        if(this.bidsPendingAcceptance != null && this.bidsPendingAcceptance.size() > 0)
         {
-            this.bidsPendingAcceptance.remove(bid);
+            for(Bid b: this.bidsPendingAcceptance)
+            {
+                if(b.getDescription().equals(bid.getDescription()))
+                {
+                    this.bidsPendingAcceptance.remove(b);
+                }
+            }
         }
         DatabaseHelper databaseHelper = new DatabaseHelper();
         databaseHelper.updateBidsPendingAcceptance(this.id, this.bidsPendingAcceptance);
@@ -166,7 +172,7 @@ public class Post {
         // if it is lower, allow bid i.e. let lowest bid become current price and return true
         // else refuse, and prompt user to enter an appropriate bid and return false;
         boolean accept = false;
-        if (this.lowestBid == null || Double.compare(newBid.price, this.lowestBid.price) < 0)
+        if (this.lowestBid == null || Double.compare(newBid.getPrice(), this.lowestBid.getPrice()) < 0)
             accept = true; // if lowest bid > bid, accept
         // anything else will not be accepted
         return accept;

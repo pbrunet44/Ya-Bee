@@ -285,7 +285,7 @@ public class DatabaseHelper {
 
     public void updateBidsPendingAcceptance(String id, ArrayList<Bid> bidsPendingAcceptance)
     {
-        this.databaseReference.child("Posts").child(id).child("notifications").setValue(bidsPendingAcceptance);
+        this.databaseReference.child("Posts").child(id).child("bidsPendingAcceptance").setValue(bidsPendingAcceptance);
     }
 
 

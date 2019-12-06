@@ -65,10 +65,10 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
             holder.condition.setText(listData.get(position).getCondition());
 
 
-            if (listData.get(position).getLowestBid().price == listData.get(position).INITIAL_BID_PRICE)
+            if (listData.get(position).getLowestBid().getPrice() == listData.get(position).INITIAL_BID_PRICE)
                 bid = "No bids placed yet!";
             else
-                bid = "$" + df.format(listData.get(position).getLowestBid().price);
+                bid = "$" + df.format(listData.get(position).getLowestBid().getPrice());
 
             holder.bid.setText(bid);
             holder.relativeLayout.setOnClickListener(new View.OnClickListener() {

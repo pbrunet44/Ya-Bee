@@ -192,6 +192,15 @@ public class ViewPost extends Fragment {
             }
         });
 
+        pendingBidsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), PendingBids.class);
+                intent.putExtra("POST ID", id);
+                startActivity(intent);
+            }
+        });
+
         // now get new bid price
         database.getPosts(new FirebaseCallback() {
             @Override
@@ -207,10 +216,10 @@ public class ViewPost extends Fragment {
                 TextView currBid = view.findViewById(R.id.lowestBid);
                 DecimalFormat df = new DecimalFormat("#.##");
                 String newLowestBid = null;
-                if (post.getLowestBid().price == post.INITIAL_BID_PRICE)
+                if (post.getLowestBid().getPrice() == post.INITIAL_BID_PRICE)
                     newLowestBid = "Max price: " + "$" + df.format(post.getMaxPrice()) + " No bids yet!";
                 else
-                    newLowestBid = "Current bid: $" + df.format(post.getLowestBid().price);
+                    newLowestBid = "Current bid: $" + df.format(post.getLowestBid().getPrice());
                 //System.out.println("Got new bid price in viewpost: " + newLowestBid);
                 currBid.setText(newLowestBid);
             }

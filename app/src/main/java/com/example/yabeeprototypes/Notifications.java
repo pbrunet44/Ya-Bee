@@ -47,9 +47,9 @@ public class Notifications extends Fragment {
             @Override
             public void onCallback(List<Post> posts) {
                 notifications = database.getNotificationsByUser(currentUser.getUid(), posts);
-                if(notifications.isEmpty())
+                if(notifications == null || notifications.isEmpty())
                 {
-                    Toast.makeText(getContext(), "my name is jon ramos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "No notifications to show.", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     Collections.reverse(notifications);
