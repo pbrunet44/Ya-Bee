@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -57,6 +58,8 @@ public class BidAccept extends AppCompatActivity {
         bidImage = (ImageView) findViewById(R.id.bidPhoto);
         askingBid = (TextView) findViewById(R.id.askingBid);
         submissionDesc = (TextView) findViewById(R.id.sellerDescription);
+        accept = (Button) findViewById(R.id.yeaSure);
+        decline = (Button) findViewById(R.id.noDice);
 
         dummyBid = b.getDouble("BID PRICE");
         description = b.getString("BID DESC");
@@ -70,6 +73,20 @@ public class BidAccept extends AppCompatActivity {
         bidImage.setImageBitmap(bid.decodeImage());
         askingBid.setText("Bid: $" + dummyBid);
         submissionDesc.setText(description);
+
+        accept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                acceptBid();
+            }
+        });
+
+        decline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                declineBid();
+            }
+        });
 
         gestureObject = new GestureDetectorCompat(this, new LearnGesture());
     }
@@ -85,34 +102,52 @@ public class BidAccept extends AppCompatActivity {
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             if(e2.getX() > e1.getX()) {
                 //left to right swipe
-
                 //Intent intense = new Intent(BidAccept.this, ItemsBuying.class);
-
-                Toast.makeText(getApplicationContext(), "Bid Accepted", Toast.LENGTH_LONG).show();
-                databaseHelper.getPosts(new FirebaseCallback() {
-                    @Override
-                    public void onCallback(List<Post> posts) {
-                        post = databaseHelper.getPostByID(postID, posts);
-                        post.removeFromBidPendingAcceptance(bid);
-                        post.updateNewLowestBid(bid);
-                        finish();
-                    }
-                });
                 //startActivity(intense);
+
+                acceptBid();
             }
 
             else if(e2.getX() < e1.getX()) {
                 //right to left
-
                 //Intent intents = new Intent(BidAccept.this, ItemsBuying.class);
-                Toast.makeText(getApplicationContext(), "Bid Declined", Toast.LENGTH_LONG).show();
                 //startActivity(intents);
+
+                declineBid();
             }
-            //buttons don't do anything lol
             return true;
         }
     }
 
+    private void acceptBid()
+    {
+        Toast.makeText(getApplicationContext(), "Bid Accepted", Toast.LENGTH_LONG).show();
+        databaseHelper.getPosts(new FirebaseCallback() {
+            @Override
+            public void onCallback(List<Post> posts) {
+                post = databaseHelper.getPostByID(postID, posts);
+                post.removeFromBidPendingAcceptance(bid);
+                post.updateNewLowestBid(bid);
+//                Notification notification = new Notification("BID ACCEPTED", bid.getSeller(), postID);
+//                post.addNotification(notification);
+                finish();
+            }
+        });
+    }
 
+    private void declineBid()
+    {
+        Toast.makeText(getApplicationContext(), "Bid Declined", Toast.LENGTH_LONG).show();
+        databaseHelper.getPosts(new FirebaseCallback() {
+            @Override
+            public void onCallback(List<Post> posts) {
+                post = databaseHelper.getPostByID(postID, posts);
+                post.removeFromBidPendingAcceptance(bid);
+//                Notification notification = new Notification("BID DECLINED", bid.getSeller(), postID);
+//                post.addNotification(notification);
+                finish();
+            }
+        });
+    }
 
 }
