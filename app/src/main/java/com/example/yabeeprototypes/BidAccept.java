@@ -29,6 +29,7 @@ public class BidAccept extends AppCompatActivity {
 
     private String uID;
     private String uEmail;
+    private User seller;
 
     private Post post;
     private String postID;
@@ -67,8 +68,9 @@ public class BidAccept extends AppCompatActivity {
         uID = b.getString("USER ID");
         uEmail = b.getString("USER EMAIL");
         postID = b.getString("POST ID");
+        seller = new User(uEmail, uID);
 
-        bid = new Bid(dummyBid, description, imageEncoded, new User(uID, uEmail));
+        bid = new Bid(dummyBid, description, imageEncoded, seller);
 
         bidImage.setImageBitmap(bid.decodeImage());
         askingBid.setText("Bid: $" + dummyBid);
@@ -128,8 +130,8 @@ public class BidAccept extends AppCompatActivity {
                 post = databaseHelper.getPostByID(postID, posts);
                 post.removeFromBidPendingAcceptance(bid);
                 post.updateNewLowestBid(bid);
-//                Notification notification = new Notification("BID ACCEPTED", bid.getSeller(), postID);
-//                post.addNotification(notification);
+//                Notification notification = new Notification("BID ACCEPTED", seller, postID);
+////                post.addNotification(notification);
                 finish();
             }
         });
@@ -143,7 +145,7 @@ public class BidAccept extends AppCompatActivity {
             public void onCallback(List<Post> posts) {
                 post = databaseHelper.getPostByID(postID, posts);
                 post.removeFromBidPendingAcceptance(bid);
-//                Notification notification = new Notification("BID DECLINED", bid.getSeller(), postID);
+//                Notification notification = new Notification("BID DECLINED", seller, postID);
 //                post.addNotification(notification);
                 finish();
             }

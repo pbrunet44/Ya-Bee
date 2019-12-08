@@ -56,7 +56,7 @@ public class PendingBids extends AppCompatActivity {
                             b.putString("BID DESC", bidsPendingAcceptance.get(0).getDescription());
                             b.putString("IMAGE STRING", bidsPendingAcceptance.get(0).getImageEncoding());
                             b.putString("USER ID", bidsPendingAcceptance.get(0).getSeller().getUid());
-                            b.putString("USER EMAIL", bidsPendingAcceptance.get(0).getSeller().getUid());
+                            b.putString("USER EMAIL", bidsPendingAcceptance.get(0).getSeller().getEmail());
                             b.putString("POST ID", postID);
                             intense.putExtras(b);
                             startActivity(intense);
