@@ -38,6 +38,7 @@ public class ViewPost extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_view_post, container, false);
         // this is needed to send post information
         // view post should also display the post's id, to make it easier to retrieve post information
+        view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.VISIBLE);
         Bundle b = getArguments();
         String i = "";
         if (b != null) {
@@ -113,11 +114,13 @@ public class ViewPost extends Fragment {
                             post.updateAuctionTimer();
                             timer.setText(post.getAuctionTimer()); // setting timer to time remaining
                         }
+                        view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.GONE);
                     }
                 });
                 timerHandler.postDelayed(this, 500);
             }
         };
+
 
         timerRunnable.run();
 

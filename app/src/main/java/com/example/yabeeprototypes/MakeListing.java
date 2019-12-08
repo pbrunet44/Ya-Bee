@@ -8,6 +8,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Base64;
 import android.view.Gravity;
 import android.view.View;
@@ -35,6 +36,15 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
     private String imageEncoding = "";
     static final String INITIAL_DESCRIPTION = "";
 
+    private TextView title;
+    private TextView description;
+    private Spinner category;
+    private Spinner condition;
+    private Spinner durationOfAuction;
+    private TextView maxPrice;
+
+
+
     ImageView postImage;
 
     @Override
@@ -56,6 +66,15 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
         Button makePost = findViewById(R.id.collectPostInfo);
         Button previewPost = findViewById(R.id.previewPost);
         final DatabaseHelper database = new DatabaseHelper();
+
+        title = (TextView)findViewById(R.id.titleEntry);
+        description = (TextView)findViewById(R.id.descEntry);
+        category =(Spinner)findViewById(R.id.categoryDropdown);
+        condition = (Spinner)findViewById(R.id.itemCondition);
+        durationOfAuction = (Spinner)findViewById(R.id.auction_duration);
+        maxPrice = (TextView)findViewById(R.id.yourPrice);
+
+
         postImage = findViewById(R.id.postImage);
         // Spinner for category
         Spinner categorySpinner = (Spinner) findViewById(R.id.categoryDropdown);
@@ -114,38 +133,45 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
         makePost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String title = ((TextView)findViewById(R.id.titleEntry)).getText().toString();
-                String description = ((TextView)findViewById(R.id.descEntry)).getText().toString();
-                String category = ((Spinner)findViewById(R.id.categoryDropdown)).getSelectedItem().toString();
-                String condition = ((Spinner)findViewById(R.id.itemCondition)).getSelectedItem().toString();
-                String durationOfAuction = ((Spinner)findViewById(R.id.auction_duration)).getSelectedItem().toString();
-                double maxPrice = Double.parseDouble(((TextView)findViewById(R.id.yourPrice)).getText().toString());
-                //int auctionLength = Integer.parseInt(((TextView)findViewById(R.id.durationOfAuction)).getText().toString());
-                // will take care of image url later that's why it's null
-                // split auction length string into number + " days"
-                String[] durationArray = durationOfAuction.split(" ");
-                int numOfDays = Integer.parseInt(durationArray[0]);
-                System.out.println("Here's the number of days the auction is going to last:" + numOfDays);
-                Date date = new Date();
-                if(imageUri != null)
+                if (isValid())
                 {
-                    Bitmap imageBitmap = ((BitmapDrawable) postImage.getDrawable()).getBitmap();
-                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                    imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
-                    imageEncoding = Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT);
+                    String title = ((TextView)findViewById(R.id.titleEntry)).getText().toString();
+                    String description = ((TextView)findViewById(R.id.descEntry)).getText().toString();
+                    String category = ((Spinner)findViewById(R.id.categoryDropdown)).getSelectedItem().toString();
+                    String condition = ((Spinner)findViewById(R.id.itemCondition)).getSelectedItem().toString();
+                    String durationOfAuction = ((Spinner)findViewById(R.id.auction_duration)).getSelectedItem().toString();
+                    double maxPrice = Double.parseDouble(((TextView)findViewById(R.id.yourPrice)).getText().toString());
+                    //int auctionLength = Integer.parseInt(((TextView)findViewById(R.id.durationOfAuction)).getText().toString());
+                    // will take care of image url later that's why it's null
+                    // split auction length string into number + " days"
+                    String[] durationArray = durationOfAuction.split(" ");
+                    int numOfDays = Integer.parseInt(durationArray[0]);
+                    System.out.println("Here's the number of days the auction is going to last:" + numOfDays);
+                    Date date = new Date();
+                    if(imageUri != null)
+                    {
+                        Bitmap imageBitmap = ((BitmapDrawable) postImage.getDrawable()).getBitmap();
+                        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                        imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+                        imageEncoding = Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT);
+                    }
+                    Post post = new Post(new ArrayList<Bid>(), new ArrayList<Notification>(), new ArrayList<User>(), new User(FirebaseAuth.getInstance().getCurrentUser().getEmail(),
+                            FirebaseAuth.getInstance().getCurrentUser().getUid()), title, maxPrice,
+                            description, numOfDays, new Bid(INITIAL_BID_PRICE, INITIAL_DESCRIPTION, INITIAL_IMAGE, null),
+                            imageEncoding, category, condition, Long.toString(System.nanoTime()),
+                            date, false, 0);
+                    database.writeNewPost(post);
+                    Toast successToast = Toast.makeText(getApplicationContext(), "Successful post creation!", Toast.LENGTH_LONG);
+                    successToast.setGravity(Gravity.TOP, 0, 0);
+                    successToast.show();
+                    finish();
+                    Intent intent = new Intent(MakeListing.this, MainActivity.class);
+                    startActivity(intent);
                 }
-                Post post = new Post(new ArrayList<Bid>(), new ArrayList<Notification>(), new ArrayList<User>(), new User(FirebaseAuth.getInstance().getCurrentUser().getEmail(),
-                        FirebaseAuth.getInstance().getCurrentUser().getUid()), title, maxPrice,
-                        description, numOfDays, new Bid(INITIAL_BID_PRICE, INITIAL_DESCRIPTION, INITIAL_IMAGE, null),
-                        imageEncoding, category, condition, Long.toString(System.nanoTime()),
-                        date, false, 0);
-                database.writeNewPost(post);
-                Toast successToast = Toast.makeText(getApplicationContext(), "Successful post creation!", Toast.LENGTH_LONG);
-                successToast.setGravity(Gravity.TOP, 0, 0);
-                successToast.show();
-                finish();
-                Intent intent = new Intent(MakeListing.this, MainActivity.class);
-                startActivity(intent);
+                else
+                {
+                    printToastMessage();
+                }
             }
         });
 
@@ -184,9 +210,16 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
                 {
                     postExtras.putDouble("MaxPrice", Double.parseDouble(((TextView)findViewById(R.id.yourPrice)).getText().toString()));
                 }
-                Intent intent = new Intent(getApplicationContext(), PreviewPost.class);
-                intent.putExtras(postExtras);
-                startActivity(intent);
+                if (isValid())
+                {
+                    Intent intent = new Intent(getApplicationContext(), PreviewPost.class);
+                    intent.putExtras(postExtras);
+                    startActivity(intent);
+                }
+                else
+                {
+                    printToastMessage();
+                }
             }
         });
 
@@ -196,6 +229,40 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
     public void onBackPressed() {
         super.onBackPressed();
         this.finish();
+    }
+
+    // checks if the user has filled out all the necessary attributes of the form
+    public boolean isValid()
+    {
+        if (postImage == null)
+            return false;
+        if (title == null || TextUtils.isEmpty(title.getText()))
+            return false;
+        if (category.getSelectedItem() == null || TextUtils.isEmpty(category.getSelectedItem().toString()))
+            return false;
+        if (condition.getSelectedItem() == null || TextUtils.isEmpty(condition.getSelectedItem().toString()))
+            return false;
+        if (durationOfAuction.getSelectedItem() ==  null ||TextUtils.isEmpty(durationOfAuction.getSelectedItem().toString()))
+            return false;
+        if (maxPrice == null || TextUtils.isEmpty(maxPrice.getText()))
+            return false;
+        return true;
+    }
+
+    public void printToastMessage()
+    {
+        if (postImage == null)
+            Toast.makeText(getApplicationContext(), "Please select an image.", Toast.LENGTH_SHORT).show();
+        if (title == null || TextUtils.isEmpty(title.getText()))
+            Toast.makeText(getApplicationContext(), "Please input a title.", Toast.LENGTH_SHORT).show();
+        if (category.getSelectedItem() == null || TextUtils.isEmpty(category.getSelectedItem().toString()))
+            Toast.makeText(getApplicationContext(), "Please select a category.", Toast.LENGTH_SHORT).show();
+        if (condition.getSelectedItem() == null || TextUtils.isEmpty(condition.getSelectedItem().toString()))
+            Toast.makeText(getApplicationContext(), "Please select the item's condition.", Toast.LENGTH_SHORT).show();
+        if (durationOfAuction.getSelectedItem() ==  null ||TextUtils.isEmpty(durationOfAuction.getSelectedItem().toString()))
+            Toast.makeText(getApplicationContext(), "Please select the auction duration.", Toast.LENGTH_SHORT).show();
+        if (maxPrice == null || TextUtils.isEmpty(maxPrice.getText()))
+            Toast.makeText(getApplicationContext(), "Please input the maximum price you are willing to pay for the item.", Toast.LENGTH_SHORT).show();
     }
 
     @Override

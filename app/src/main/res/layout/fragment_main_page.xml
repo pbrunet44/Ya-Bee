@@ -11,14 +11,26 @@
         android:background="@color/colorPrimaryLight"
         android:orientation="vertical"
         android:paddingBottom="75dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1000dp"
+            android:gravity="center"
+            android:id="@+id/loadingPanelforMainPage">
 
-
+            <ProgressBar
+                android:id="@+id/load"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="300dp"
+                android:outlineAmbientShadowColor="@color/colorPrimaryLight"
+                android:indeterminate="true" />
+        </RelativeLayout>
         <TextView
             android:id="@+id/tvCategories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:gravity="left"
+            android:layout_gravity="center"
             android:paddingLeft="10dp"
             android:paddingTop="20dp"
             android:text="@string/categories"
@@ -462,7 +474,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:gravity="left"
+                android:layout_gravity="center"
                 android:paddingLeft="10dp"
                 android:paddingBottom="10dp"
                 android:text="@string/daily_buzz"
@@ -522,7 +534,7 @@
                             android:id="@+id/tvBuzz1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="left"
+                            android:layout_gravity="center"
                             android:text="Textbook"
                             android:textColor="@color/colorTextSecondary"
                             android:textSize="20sp" />
@@ -561,7 +573,7 @@
                             android:id="@+id/tvBuzz2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="left"
+                            android:layout_gravity="center"
                             android:text="iPhone X"
                             android:textColor="@color/colorTextSecondary"
                             android:textSize="20sp" />
@@ -605,7 +617,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:gravity="left"
+                            android:layout_gravity="center"
                             android:text="Lionel Trains"
                             android:textColor="@color/colorTextSecondary"
                             android:textSize="20sp" />
@@ -618,7 +630,36 @@
                     android:layout_marginLeft="6dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" />
+                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|top"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgBuzz4"
+                            android:layout_width="178dp"
+                            android:layout_height="160dp"
+                            android:layout_gravity="center|top"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginRight="6dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/iphonex" />
+
+                        <TextView
+                            android:id="@+id/tvBuzz4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="iPhone X"
+                            android:textColor="@color/colorTextSecondary"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </TableRow>
 
             <TableRow
@@ -630,7 +671,36 @@
                     android:layout_height="211dp"
                     android:layout_marginLeft="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" />
+                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|top"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgBuzz5"
+                            android:layout_width="178dp"
+                            android:layout_height="160dp"
+                            android:layout_gravity="center|top"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginRight="6dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/iphonex" />
+
+                        <TextView
+                            android:id="@+id/tvBuzz5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="iPhone X"
+                            android:textColor="@color/colorTextSecondary"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="190dp"
@@ -638,7 +708,36 @@
                     android:layout_marginLeft="6dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" />
+                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|top"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgBuzz6"
+                            android:layout_width="178dp"
+                            android:layout_height="160dp"
+                            android:layout_gravity="center|top"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginRight="6dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/iphonex" />
+
+                        <TextView
+                            android:id="@+id/tvBuzz6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="iPhone X"
+                            android:textColor="@color/colorTextSecondary"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </TableRow>
 
             <TableRow
@@ -650,7 +749,36 @@
                     android:layout_height="211dp"
                     android:layout_marginLeft="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" />
+                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|top"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgBuzz7"
+                            android:layout_width="178dp"
+                            android:layout_height="160dp"
+                            android:layout_gravity="center|top"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginRight="6dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/iphonex" />
+
+                        <TextView
+                            android:id="@+id/tvBuzz7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="iPhone X"
+                            android:textColor="@color/colorTextSecondary"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="190dp"
@@ -658,7 +786,36 @@
                     android:layout_marginLeft="6dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" />
+                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|top"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgBuzz8"
+                            android:layout_width="178dp"
+                            android:layout_height="160dp"
+                            android:layout_gravity="center|top"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginRight="6dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/iphonex" />
+
+                        <TextView
+                            android:id="@+id/tvBuzz8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="iPhone X"
+                            android:textColor="@color/colorTextSecondary"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </TableRow>
 
             <TableRow
@@ -670,7 +827,36 @@
                     android:layout_height="211dp"
                     android:layout_marginLeft="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" />
+                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|top"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgBuzz9"
+                            android:layout_width="178dp"
+                            android:layout_height="160dp"
+                            android:layout_gravity="center|top"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginRight="6dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/iphonex" />
+
+                        <TextView
+                            android:id="@+id/tvBuzz9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="iPhone X"
+                            android:textColor="@color/colorTextSecondary"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="190dp"
@@ -678,11 +864,40 @@
                     android:layout_marginLeft="6dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" />
+                    app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|top"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgBuzz10"
+                            android:layout_width="178dp"
+                            android:layout_height="160dp"
+                            android:layout_gravity="center|top"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginRight="6dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/iphonex" />
+
+                        <TextView
+                            android:id="@+id/tvBuzz10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="iPhone X"
+                            android:textColor="@color/colorTextSecondary"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </TableRow>
         </TableLayout>
 
-        <LinearLayout
+<!--        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
@@ -692,7 +907,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:gravity="left"
+                android:layout_gravity="center"
                 android:paddingLeft="10dp"
                 android:paddingBottom="3dp"
                 android:text="Video Games"
@@ -753,7 +968,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
+                        android:layout_gravity="center"
                         android:text="Sony PS4"
                         android:textColor="@color/colorTextSecondary"
                         android:textSize="20sp" />
@@ -779,7 +994,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
+                        android:layout_gravity="center"
                         android:text="Xbox One"
                         android:textColor="@color/colorTextSecondary"
                         android:textSize="20sp" />
@@ -805,7 +1020,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
+                        android:layout_gravity="center"
                         android:text="Wii"
                         android:textColor="@color/colorTextSecondary"
                         android:textSize="20sp" />
@@ -823,7 +1038,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:gravity="left"
+                android:layout_gravity="center"
                 android:maxWidth="225dp"
                 android:paddingLeft="10dp"
                 android:paddingBottom="3dp"
@@ -885,7 +1100,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
+                        android:layout_gravity="center"
                         android:text="Adidas"
                         android:textColor="@color/colorTextSecondary"
                         android:textSize="20sp" />
@@ -911,7 +1126,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
+                        android:layout_gravity="center"
                         android:text="Nike"
                         android:textColor="@color/colorTextSecondary"
                         android:textSize="20sp" />
@@ -937,7 +1152,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
+                        android:layout_gravity="center"
                         android:text="Reebok"
                         android:textColor="@color/colorTextSecondary"
                         android:textSize="20sp" />
@@ -954,7 +1169,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:gravity="left"
+                android:layout_gravity="center"
                 android:paddingLeft="10dp"
                 android:paddingBottom="3dp"
                 android:text="Party Supplies"
@@ -1019,7 +1234,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
+                        android:layout_gravity="center"
                         android:text="Baby Shower Balloons"
                         android:textColor="@color/colorTextSecondary"
                         android:textSize="20sp" />
@@ -1045,13 +1260,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
+                        android:layout_gravity="center"
                         android:text="Party Fluffy Slimes"
                         android:textColor="@color/colorTextSecondary"
                         android:textSize="20sp" />
                 </LinearLayout>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>-->
 
     </LinearLayout>
 </ScrollView>
