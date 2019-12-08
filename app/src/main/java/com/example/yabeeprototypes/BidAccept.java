@@ -86,6 +86,7 @@ public class BidAccept extends AppCompatActivity {
         postID = b.getString("POST ID");
         seller = new User(uEmail, uID);
         String fileName = b.getString("FILE NAME");
+
         try {
             bitmap = BitmapFactory.decodeStream(getApplicationContext().openFileInput(fileName));
         } catch (FileNotFoundException e) {

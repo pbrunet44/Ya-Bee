@@ -106,14 +106,14 @@ public class BidAdapter extends RecyclerView.Adapter<BidAdapter.ViewHolder>
         }
     }
 
+    //sending image to BidAccept activity
     private String createImageFromBitmap(Bitmap bitmap, AppCompatActivity activity) {
-        String fileName = "myImage"; //no .png or .jpg needed
+        String fileName = "bidAcceptImage";
         try {
             ByteArrayOutputStream bytes = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
             FileOutputStream fo = activity.openFileOutput(fileName, Context.MODE_PRIVATE);
             fo.write(bytes.toByteArray());
-            // remember close file output
             fo.close();
         } catch (Exception e) {
             e.printStackTrace();
