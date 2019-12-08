@@ -26,7 +26,7 @@ public class Notifications extends Fragment {
     private DatabaseHelper database;
     private FirebaseUser currentUser;
     private RecyclerView recyclerView;
-    ArrayList<Notification> notifications;
+    private ArrayList<Notification> notifications;
     ArrayList<Post> selling;
 
     private TextView textView;

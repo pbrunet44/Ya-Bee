@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="175dp"
+    android:paddingLeft="16dp"
+    android:background="@drawable/border"
+    android:id="@+id/relativeLayoutForPendingBids"
+    android:paddingRight="20dp" >
+    <ImageView
+        android:id="@+id/pendingBidImage"
+        android:layout_marginTop="9dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp" />
+    <TextView
+        android:layout_toRightOf="@id/pendingBidImage"
+        android:layout_toEndOf="@id/pendingBidImage"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bid Price"
+        android:id="@+id/pendingBidPrice"
+        android:textSize="18sp"
+        android:textColor="@color/colorTextPrimary"
+        />
+    <TextView
+        android:layout_toRightOf="@id/pendingBidImage"
+        android:layout_toEndOf="@id/pendingBidImage"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="65dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bid Description"
+        android:id="@+id/pendingBidDescription"
+        android:textSize="18sp"
+        android:textColor="@color/colorTextPrimary"
+        />
+
+
+</RelativeLayout>
+
+
+

@@ -1,6 +1,8 @@
 package com.example.yabeeprototypes;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,11 +22,12 @@ public class PendingBids extends AppCompatActivity {
     private String postID;
     private DatabaseHelper databaseHelper;
     private ArrayList<Bid> bidsPendingAcceptance;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pending_bids);
+        setContentView(R.layout.items_pendingbids);
 
         test = findViewById(R.id.testez);
 
@@ -46,24 +49,30 @@ public class PendingBids extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "No bids to accept.", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    test.setText(bidsPendingAcceptance.get(0).getDescription());
-                    test.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent intense = new Intent(getApplicationContext(), BidAccept.class);
-                            Bundle b = new Bundle();
-                            b.putDouble("BID PRICE", bidsPendingAcceptance.get(0).getPrice());
-                            b.putString("BID DESC", bidsPendingAcceptance.get(0).getDescription());
-                            b.putString("IMAGE STRING", bidsPendingAcceptance.get(0).getImageEncoding());
-                            b.putString("USER ID", bidsPendingAcceptance.get(0).getSeller().getUid());
-                            b.putString("USER EMAIL", bidsPendingAcceptance.get(0).getSeller().getEmail());
-                            b.putString("POST ID", postID);
-                            intense.putExtras(b);
-                            startActivity(intense);
-                            finish();
-                        }
-                    });
+                    recyclerView = (RecyclerView) findViewById(R.id.recyclerViewForPendingBids);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    recyclerView.setHasFixedSize(true);
+                    BidAdapter adapter = new BidAdapter(bidsPendingAcceptance, R.id.pendingBidsContainer, postID);
+                    recyclerView.setAdapter(adapter);
+//                    test.setText(bidsPendingAcceptance.get(0).getDescription());
+//                    test.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            Intent intense = new Intent(getApplicationContext(), BidAccept.class);
+//                            Bundle b = new Bundle();
+//                            b.putDouble("BID PRICE", bidsPendingAcceptance.get(0).getPrice());
+//                            b.putString("BID DESC", bidsPendingAcceptance.get(0).getDescription());
+//                            b.putString("IMAGE STRING", bidsPendingAcceptance.get(0).getImageEncoding());
+//                            b.putString("USER ID", bidsPendingAcceptance.get(0).getSeller().getUid());
+//                            b.putString("USER EMAIL", bidsPendingAcceptance.get(0).getSeller().getEmail());
+//                            b.putString("POST ID", postID);
+//                            intense.putExtras(b);
+//                            startActivity(intense);
+//                            finish();
+//                        }
+//                    });
                 }
+                findViewById(R.id.loadingPanelforPendingBids).setVisibility(View.GONE);
             }
         });
 

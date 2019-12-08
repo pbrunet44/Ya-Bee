@@ -2,6 +2,7 @@ package com.example.yabeeprototypes;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GestureDetectorCompat;
+import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -50,7 +51,7 @@ public class BidAccept extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bid_accept);
-
+        System.out.println(description);
         databaseHelper = new DatabaseHelper();
 
         Intent jonRamos = getIntent();
@@ -131,7 +132,7 @@ public class BidAccept extends AppCompatActivity {
                 post.removeFromBidPendingAcceptance(bid);
                 post.updateNewLowestBid(bid);
 //                Notification notification = new Notification("BID ACCEPTED", seller, postID);
-////                post.addNotification(notification);
+//                post.addNotification(notification);
                 finish();
             }
         });
@@ -150,6 +151,20 @@ public class BidAccept extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void backToViewPost()
+    {
+        Bundle bundle = new Bundle();
+        bundle.putString("POST ID", postID);
+
+        FragmentActivity activity = (FragmentActivity) getApplicationContext();
+
+
+        ViewPost vp = new ViewPost();
+        vp.setArguments(bundle);
+        // need loading screen while firebase is loading data
+        //activity.getSupportFragmentManager().beginTransaction().replace(containerId, vp).addToBackStack(null).commit();
     }
 
 }

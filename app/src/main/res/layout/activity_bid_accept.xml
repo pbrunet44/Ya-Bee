@@ -22,35 +22,62 @@
 
     <ImageView
         android:id="@+id/bidPhoto"
-        android:layout_width="match_parent"
-        android:layout_height="205dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
         app:srcCompat="@mipmap/ic_launcher" />
 
-    <TextView
-        android:id="@+id/askingBid"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:textSize="30sp" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/rounded_spinner"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/askingBid"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:textColor="@color/colorTextPrimary"
+            android:padding="8dp"
+            android:textSize="30sp" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/askingDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         android:text="Description:"
         android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/sellerDescription"
-        android:layout_width="match_parent"
-        android:layout_height="156dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:maxLines="9"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_spinner"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        >
+
+        <TextView
+            android:id="@+id/sellerDescription"
+            android:layout_width="match_parent"
+            android:layout_height="156dp"
+
+            android:ems="10"
+            android:gravity="start|top"
+            android:maxLines="9"
+            android:textColor="@color/colorTextPrimary"
+            android:padding="8dp"
+            android:textSize="18sp" />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -61,7 +88,7 @@
             android:id="@+id/noDice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginRight="1dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_button"
@@ -71,8 +98,8 @@
             android:id="@+id/yeaSure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="1dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_button"
             android:text="YES" />
