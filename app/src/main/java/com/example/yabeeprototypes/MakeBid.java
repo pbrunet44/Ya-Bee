@@ -100,11 +100,10 @@ public class MakeBid extends AppCompatActivity {
                             Notifcation sends to seller ("Bid accepted by buyer! You are the current bid.")
                         */
 
-
-                        if (!post.alreadyBid(currentUser.getUid()))
-                        {
-                            post.addBiddertoList(new User(currentUser.getEmail(), currentUser.getUid()));
-                        }
+//                        if (!post.alreadyBid(currentUser.getUid()))
+//                        {
+//                            post.addBiddertoList(new User(currentUser.getEmail(), currentUser.getUid()));
+//                        }
 
 //                        bidders = new ArrayList<>();
 //                        bidders = post.getAllBidders();

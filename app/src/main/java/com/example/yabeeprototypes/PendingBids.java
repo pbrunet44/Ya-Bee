@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,14 +23,17 @@ public class PendingBids extends AppCompatActivity {
     private static int MAX_NUMBER_OF_PENDING_BIDS = 1000000;
     private TextView test;
     private String postID;
+    private Post post;
     private DatabaseHelper databaseHelper;
     private ArrayList<Bid> bidsPendingAcceptance;
     private RecyclerView recyclerView;
+    private FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.items_pendingbids);
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         test = findViewById(R.id.testez);
 
@@ -43,10 +49,12 @@ public class PendingBids extends AppCompatActivity {
         databaseHelper.getPosts(new FirebaseCallback() {
             @Override
             public void onCallback(List<Post> posts) {
-                bidsPendingAcceptance = databaseHelper.getPostByID(postID, posts).getBidsPendingAcceptance();
+                post = databaseHelper.getPostByID(postID, posts);
+                bidsPendingAcceptance = post.getBidsPendingAcceptance();
                 if(bidsPendingAcceptance == null || bidsPendingAcceptance.isEmpty())
                 {
-                    Toast.makeText(getApplicationContext(), "No bids to accept.", Toast.LENGTH_SHORT).show();
+                    if(currentUser.getUid().equals(post.getBuyer().getUid()))
+                        Toast.makeText(getApplicationContext(), "No bids to accept.", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     recyclerView = (RecyclerView) findViewById(R.id.recyclerViewForPendingBids);

@@ -176,6 +176,10 @@ public class BidAccept extends AppCompatActivity {
                             post.addNotification(notification);
                         }
                     }
+                    if (!post.alreadyBid(seller.getUid()))
+                    {
+                        post.addBiddertoList(seller);
+                    }
                     post.addNotification(new Notification("BID ACCEPTED", seller, postID));
                     count++;
                 }

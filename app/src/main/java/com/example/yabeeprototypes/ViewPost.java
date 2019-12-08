@@ -79,6 +79,7 @@ public class ViewPost extends Fragment {
                 if(currentUser == null)
                 {
                     interested.setVisibility(View.GONE);
+                    pendingBidsButton.setVisibility(View.GONE);
                 }
                 if (currentUser != null && !(post.getBuyer().getUid().equals(currentUser.getUid())))
                 {
