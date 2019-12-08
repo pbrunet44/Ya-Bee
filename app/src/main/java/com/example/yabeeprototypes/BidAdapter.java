@@ -1,7 +1,9 @@
 package com.example.yabeeprototypes;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class BidAdapter extends RecyclerView.Adapter<BidAdapter.ViewHolder>
@@ -43,12 +48,13 @@ public class BidAdapter extends RecyclerView.Adapter<BidAdapter.ViewHolder>
         final Bid myListData = listData.get(position);
         if (myListData != null)
         {
-            String price = "$" + listData.get(position).getPrice();
+            String price = "$" + new DecimalFormat("#.##").format(listData.get(position).getPrice());
             String description = listData.get(position).getDescription();
             System.out.println(description);
             holder.bidPrice.setText(price);
             holder.bidDescription.setText(description);
             holder.bidPhoto.setImageBitmap(listData.get(position).decodeImage());
+            holder.bidUser.setText(listData.get(position).getSeller().getEmail());
         }
         else
         {
@@ -67,10 +73,10 @@ public class BidAdapter extends RecyclerView.Adapter<BidAdapter.ViewHolder>
 
                     b.putDouble("BID PRICE", myListData.getPrice());
                     b.putString("BID DESC", myListData.getDescription());
-                    b.putString("IMAGE STRING", myListData.getImageEncoding());
                     b.putString("USER ID", myListData.getSeller().getUid());
                     b.putString("USER EMAIL", myListData.getSeller().getEmail());
                     b.putString("POST ID", postID);
+                    b.putString("FILE NAME", createImageFromBitmap(myListData.decodeImage(), activity));
 
                     intense.putExtras(b);
                     activity.startActivity(intense);
@@ -88,6 +94,7 @@ public class BidAdapter extends RecyclerView.Adapter<BidAdapter.ViewHolder>
         public TextView bidPrice;
         public TextView bidDescription;
         public ImageView bidPhoto;
+        public TextView bidUser;
         public RelativeLayout relativeLayoutForPendingBids;
         public ViewHolder(View itemView) {
             super(itemView);
@@ -95,9 +102,25 @@ public class BidAdapter extends RecyclerView.Adapter<BidAdapter.ViewHolder>
             this.bidDescription = (TextView) itemView.findViewById(R.id.pendingBidDescription);
             this.relativeLayoutForPendingBids = (RelativeLayout) itemView.findViewById(R.id.relativeLayoutForPendingBids);
             this.bidPhoto = (ImageView) itemView.findViewById(R.id.pendingBidImage);
+            this.bidUser = (TextView) itemView.findViewById(R.id.pendingBidUser);
         }
     }
 
+    private String createImageFromBitmap(Bitmap bitmap, AppCompatActivity activity) {
+        String fileName = "myImage"; //no .png or .jpg needed
+        try {
+            ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+            FileOutputStream fo = activity.openFileOutput(fileName, Context.MODE_PRIVATE);
+            fo.write(bytes.toByteArray());
+            // remember close file output
+            fo.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            fileName = null;
+        }
+        return fileName;
+    }
 
 
 }

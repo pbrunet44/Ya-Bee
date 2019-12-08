@@ -30,7 +30,6 @@ public class MakeBid extends AppCompatActivity {
     private String imageEncoding = "";
     ImageView bidImage;
     FirebaseUser currentUser;
-    ArrayList<User> bidders;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,17 +106,17 @@ public class MakeBid extends AppCompatActivity {
                             post.addBiddertoList(new User(currentUser.getEmail(), currentUser.getUid()));
                         }
 
-                        bidders = new ArrayList<>();
-                        bidders = post.getAllBidders();
-
-                        for(User u: bidders)
-                        {
-                            if(!u.getUid().equals(currentUser.getUid()))
-                            {
-                                Notification notification = new Notification("BID", u, post.getId());
-                                post.addNotification(notification);
-                            }
-                        }
+//                        bidders = new ArrayList<>();
+//                        bidders = post.getAllBidders();
+//
+//                        for(User u: bidders)
+//                        {
+//                            if(!u.getUid().equals(currentUser.getUid()))
+//                            {
+//                                Notification notification = new Notification("BID", u, post.getId());
+//                                post.addNotification(notification);
+//                            }
+//                        }
 
                         System.out.println("I'm in MakeBid, i'm allbids, here's my size" + post.getAllBidders().size());
                         //post.getBuyer();

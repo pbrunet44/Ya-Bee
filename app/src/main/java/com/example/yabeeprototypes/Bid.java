@@ -66,7 +66,7 @@ public class Bid
      */
     public Bitmap decodeImage()
     {
-        byte[] decoded = Base64.decode(this.imageEncoding.getBytes(), Base64.DEFAULT);
+        byte[] decoded = Base64.decode(getImageEncoding().getBytes(), Base64.DEFAULT);
         return BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
     }
 

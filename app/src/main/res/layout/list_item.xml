@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="175dp"
     android:paddingLeft="16dp"
     android:background="@drawable/border"
     android:id="@+id/relativeLayout"
@@ -9,8 +9,8 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_toStartOf="@+id/profileEmail"
-        android:layout_width="200dp"
-        android:layout_height="180dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginTop="9dp"
         android:scaleType="centerCrop"
         android:layout_alignParentLeft="true"
@@ -19,8 +19,10 @@
         />
     <TextView
         android:id="@+id/textView"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_toEndOf="@id/imageView"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:textColor="@color/colorTextSecondary"
@@ -30,7 +32,9 @@
         />
     <TextView
         android:id="@+id/condition"
-        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_toEndOf="@id/imageView"
+        android:layout_marginLeft="20dp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:textColor="@color/colorTextSecondary"
@@ -42,7 +46,9 @@
         />
     <TextView
         android:id="@+id/bidPrice"
-        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_toEndOf="@id/imageView"
+        android:layout_marginLeft="20dp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimaryDark"
@@ -54,7 +60,9 @@
         />
     <TextView
         android:id="@+id/timeLeft"
-        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_toEndOf="@id/imageView"
+        android:layout_marginLeft="20dp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:textColor="@color/colorTextSecondary"

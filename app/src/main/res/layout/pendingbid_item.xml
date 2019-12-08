@@ -36,6 +36,19 @@
         android:textColor="@color/colorTextPrimary"
         />
 
+    <TextView
+        android:id="@+id/pendingBidUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="140dp"
+        android:layout_toEndOf="@id/pendingBidImage"
+        android:layout_toRightOf="@id/pendingBidImage"
+        android:text="Seller Email"
+        android:textColor="@color/colorTextSecondary"
+        android:textStyle="bold"
+        android:textSize="13sp" />
+
 
 </RelativeLayout>
 
