@@ -35,14 +35,14 @@ public class MainActivity extends FragmentActivity {
                     switch(menuItem.getItemId()) {
                         case R.id.navHome:
                             selectedFragment = new MainPage();
-                            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).addToBackStack(null).commit();
                             break;
                         case R.id.navSearch:
                             onSearchRequested();
                             break;
                         case R.id.navNotifications:
 //                            selectedFragment = new Notifications();
-//                            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
+//                            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).addToBackStack(null).commit();
 //                            break;
                             if (currentUser == null) // no one signed in
                             {
@@ -55,7 +55,7 @@ public class MainActivity extends FragmentActivity {
                             {
                                 System.out.println("The user is signed in. Here is their email: " + currentUser.getEmail());
                                 selectedFragment = new Notifications();
-                                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
+                                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).addToBackStack(null).commit();
                             }
                             break;
                         case R.id.navProfile:
@@ -70,7 +70,7 @@ public class MainActivity extends FragmentActivity {
                             {
                                 System.out.println("The user is signed in. Here is their email: " + currentUser.getEmail());
                                 selectedFragment = new Profile();
-                                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
+                                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).addToBackStack(null).commit();
                             }
                             break;
                         case R.id.navMakeListing:
