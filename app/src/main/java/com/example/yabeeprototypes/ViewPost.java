@@ -123,11 +123,7 @@ public class ViewPost extends Fragment {
                     post.updateAuctionTimer();
                     timer.setText(post.getAuctionTimer()); // setting timer to time remaining
                 }
-                if (!visible)
-                {
-                    visible = true;
-                    view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.GONE);
-                }
+
                 timerHandler.postDelayed(this, 1000);
             }
         };
@@ -236,6 +232,11 @@ public class ViewPost extends Fragment {
                     newLowestBid = "Current bid: $" + df.format(post.getLowestBid().getPrice());
                 //System.out.println("Got new bid price in viewpost: " + newLowestBid);
                 currBid.setText(newLowestBid);
+                if (!visible)
+                {
+                    visible = true;
+                    view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.GONE);
+                }
             }
         });
 
