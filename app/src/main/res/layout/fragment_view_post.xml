@@ -27,6 +27,7 @@
                 android:indeterminate="true"
                 android:outlineAmbientShadowColor="@color/colorPrimaryLight" />
         </RelativeLayout>
+
             <FrameLayout
             android:id="@+id/viewPostContainer"
             android:layout_width="match_parent"

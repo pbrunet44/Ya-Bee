@@ -76,8 +76,14 @@ public class Profile extends Fragment {
         Button giveAReview = view.findViewById(R.id.review_user);
 
         Bundle bundle = getArguments();
-        String email = currentUser.getEmail();
-        String uid = currentUser.getUid();
+        String email = "";
+        String uid = "";
+        if(currentUser != null)
+        {
+            email = currentUser.getEmail();
+            uid = currentUser.getUid();
+        }
+
         if (bundle != null)
         {
             email = this.getArguments().getString("Email");
@@ -85,7 +91,12 @@ public class Profile extends Fragment {
             uId = uid;
         }
 
-        if(!currentUser.getUid().equals(uid))
+        if (currentUser == null || currentUser.getUid().equals(uid))
+        {
+            giveAReview.setVisibility(View.INVISIBLE);
+        }
+
+        if(currentUser == null || !currentUser.getUid().equals(uid))
         {
             buying.setVisibility(View.INVISIBLE);
             selling.setVisibility(View.INVISIBLE);
@@ -95,10 +106,7 @@ public class Profile extends Fragment {
             editIcon.setVisibility(View.INVISIBLE);
             reviews.setVisibility(View.INVISIBLE);
         }
-        if (currentUser.getUid().equals(uid))
-        {
-            giveAReview.setVisibility(View.INVISIBLE);
-        }
+
 
 
         buying.setOnClickListener(new View.OnClickListener() {
