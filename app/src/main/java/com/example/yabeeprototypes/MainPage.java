@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -18,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -398,8 +401,16 @@ public class MainPage extends Fragment implements View.OnClickListener {
     {
         if (post != null)
         {
-            picture.setImageBitmap(post.decodeImage());
+            picture.setImageBitmap(compressBitmap(post.decodeImage()));
             title.setText(post.getTitle());
         }
+    }
+
+    private Bitmap compressBitmap(Bitmap bitmap)
+    {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG,25, stream);
+        byte[] byteArray = stream.toByteArray();
+        return BitmapFactory.decodeByteArray(byteArray,0,byteArray.length);
     }
 }
