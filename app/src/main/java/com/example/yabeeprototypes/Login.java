@@ -91,6 +91,7 @@ public class Login extends AppCompatActivity {
                         else
                         {
                             // prompt them to re-try
+                            progressBar.setVisibility(View.INVISIBLE);
                             Toast toast = Toast.makeText(getApplicationContext(), "Unsuccessful login attempt, ", Toast.LENGTH_LONG);
                             toast.setGravity(Gravity.TOP, 0, 0);
                             toast.show();

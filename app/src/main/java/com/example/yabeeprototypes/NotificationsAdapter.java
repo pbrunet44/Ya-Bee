@@ -38,6 +38,7 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         final Notification myListData = listData.get(position);
+
         if (myListData != null)
         {
             String message = listData.get(position).getNotificationMessage();
@@ -53,15 +54,26 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(myListData.getTypeofNotification().equals("BID") || myListData.getTypeofNotification().equals("TINDER")) {
-                    Bundle bundle = new Bundle();
-                    bundle.putString("POST ID", myListData.getPostID());
+                if(myListData != null) {
+                    final String postID = myListData.getPostID();
+
+                    final DatabaseHelper databaseHelper = new DatabaseHelper();
+                    databaseHelper.getPosts(new FirebaseCallback() {
+                        @Override
+                        public void onCallback(List<Post> posts) {
+                            Post post;
+                            post = databaseHelper.getPostByID(postID, posts);
+                            post.removeNotification(myListData);
+                        }
+                    });
 
                     FragmentActivity activity = (FragmentActivity) v.getContext();
 
+                    Bundle bundle = new Bundle();
+                    bundle.putString("POST ID", postID);
+
                     ViewPost viewPost = new ViewPost();
                     viewPost.setArguments(bundle);
-
                     activity.getSupportFragmentManager().beginTransaction().replace(containerId, viewPost).commit();
                 }
             }

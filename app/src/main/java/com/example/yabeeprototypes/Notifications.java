@@ -47,7 +47,11 @@ public class Notifications extends Fragment {
             @Override
             public void onCallback(List<Post> posts) {
                 notifications = database.getNotificationsByUser(currentUser.getUid(), posts);
-                if(notifications == null || notifications.isEmpty())
+                if(notifications == null)
+                {
+                    Toast.makeText(getContext(), "No notifications to show.", Toast.LENGTH_SHORT).show();
+                }
+                else if(notifications.isEmpty())
                 {
                     Toast.makeText(getContext(), "No notifications to show.", Toast.LENGTH_SHORT).show();
                 }
