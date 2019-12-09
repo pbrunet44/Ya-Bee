@@ -47,22 +47,21 @@ public class Notifications extends Fragment {
             @Override
             public void onCallback(List<Post> posts) {
                 notifications = database.getNotificationsByUser(currentUser.getUid(), posts);
-                if(notifications == null)
-                {
+                try {
+                    if (notifications == null || notifications.isEmpty()) {
+                        Toast.makeText(getContext(), "No notifications to show.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Collections.reverse(notifications);
+                        //Toast.makeText(getContext(), "I'm jo ramos!", Toast.LENGTH_SHORT).show();
+                        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewforNotifications);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                        recyclerView.setHasFixedSize(true);
+                        NotificationsAdapter adapter = new NotificationsAdapter(notifications, R.id.NotificationsContainer);
+                        recyclerView.setAdapter(adapter);
+                    }
+                } catch (NullPointerException e) {
+                    System.out.println("Kept getting a NullPointerException and I didn't like it");
                     Toast.makeText(getContext(), "No notifications to show.", Toast.LENGTH_SHORT).show();
-                }
-                else if(notifications.isEmpty())
-                {
-                    Toast.makeText(getContext(), "No notifications to show.", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    Collections.reverse(notifications);
-                    //Toast.makeText(getContext(), "I'm jo ramos!", Toast.LENGTH_SHORT).show();
-                    recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewforNotifications);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-                    recyclerView.setHasFixedSize(true);
-                    NotificationsAdapter adapter = new NotificationsAdapter(notifications, R.id.NotificationsContainer);
-                    recyclerView.setAdapter(adapter);
                 }
 
                 view.findViewById(R.id.loadingPanelforNotifications).setVisibility(View.GONE);
