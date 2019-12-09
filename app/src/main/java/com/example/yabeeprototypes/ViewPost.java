@@ -116,51 +116,6 @@ public class ViewPost extends Fragment {
         Runnable timerRunnable = new Runnable(){
             @Override
             public void run() {
-                /*database.getPosts(new FirebaseCallback() {
-                    @Override
-                    public void onCallback(List<Post> posts) {
-                        // find post with appropriate id
-                        //System.out.println("Do you even get here?");
-                        post = database.getPostByID(id, posts);
-                        System.out.println(post.toString());
-                        //view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.GONE);
-                        if(currentUser == null)
-                        {
-                            interested.setVisibility(View.GONE);
-                        }
-                        if (currentUser != null && !(post.getBuyer().getUid().equals(currentUser.getUid())))
-                        {
-                            editPostButton.setVisibility(View.GONE);
-                            pendingBidsButton.setVisibility(View.GONE);
-                        }
-                        if (currentUser != null && (post.getBuyer().getUid().equals(currentUser.getUid())))
-                        {
-                            createBid.setVisibility(View.GONE);
-                        }
-                        postTitle.setText(post.getTitle());
-                        if(post.getCondition().equals("N/A"))
-                        {
-                            conditionDisplay.setVisibility(View.GONE);
-                        }
-                        else
-                        {
-                            postCondition.setText(post.getCondition());
-                        }
-                        postDescription.setText(post.getDescription());
-                        postImage.setImageBitmap(post.decodeImage());
-                        postCategory.setText(post.getCategory());
-                        postClicks.setText(String.valueOf(post.getClicks()));
-                        postBuyer.setText(post.getBuyer().getEmail());
-                        //System.out.println(post.toString());
-                        //boolean isAuctionOver = false;
-                        if (post != null)
-                        {
-                            post.updateAuctionTimer();
-                            timer.setText(post.getAuctionTimer()); // setting timer to time remaining
-                        }
-                        view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.GONE);
-                    }
-                });*/
                 if (post != null)
                 {
                     post.updateAuctionTimer();

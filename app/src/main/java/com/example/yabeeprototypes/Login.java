@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,6 +27,7 @@ public class Login extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText email;
     private EditText password;
+    private TextView createAccount;
 
     private ProgressBar progressBar;
 
@@ -36,6 +38,15 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         progressBar = (ProgressBar) findViewById(R.id.loadingCircle);
+        createAccount = ((TextView) findViewById(R.id.createAnAccountText));
+
+        createAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MakeAccount.class);
+                startActivity(intent);
+            }
+        });
         progressBar.setVisibility(View.INVISIBLE);
 
         mAuth = FirebaseAuth.getInstance();
