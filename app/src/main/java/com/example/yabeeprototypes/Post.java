@@ -92,15 +92,22 @@ public class Post {
 
     public void removeFromBidPendingAcceptance(Bid bid)
     {
+        Bid remove = new Bid();
         if(this.bidsPendingAcceptance != null && this.bidsPendingAcceptance.size() > 0)
         {
             for(Bid b: this.bidsPendingAcceptance)
             {
-                if(b.getDescription().equals(bid.getDescription()))
+                if(b.getDescription().equals(bid.getDescription()) && (b.getPrice() == bid.getPrice()))
                 {
-                    this.bidsPendingAcceptance.remove(b);
+                    remove = b;
                 }
             }
+        }
+        try {
+            this.bidsPendingAcceptance.remove(remove);
+        } catch (NullPointerException e)
+        {
+            System.out.println("Bid is null.");
         }
         DatabaseHelper databaseHelper = new DatabaseHelper();
         databaseHelper.updateBidsPendingAcceptance(this.id, this.bidsPendingAcceptance);

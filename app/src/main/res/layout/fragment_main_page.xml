@@ -11,19 +11,20 @@
         android:background="@color/colorPrimaryLight"
         android:orientation="vertical"
         android:paddingBottom="75dp">
+
         <RelativeLayout
+            android:id="@+id/loadingPanelforMainPage"
             android:layout_width="match_parent"
             android:layout_height="1000dp"
-            android:gravity="center"
-            android:id="@+id/loadingPanelforMainPage">
+            android:gravity="center">
 
             <ProgressBar
                 android:id="@+id/load"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="300dp"
-                android:outlineAmbientShadowColor="@color/colorPrimaryLight"
-                android:indeterminate="true" />
+                android:indeterminate="true"
+                android:outlineAmbientShadowColor="@color/colorPrimaryLight" />
         </RelativeLayout>
         <TextView
             android:id="@+id/tvCategories"
@@ -479,7 +480,7 @@
                 android:text="@string/daily_buzz"
                 android:textColor="@color/colorTextPrimary"
                 android:textSize="24sp" />
-
+            
         </LinearLayout>
 
         <TableLayout
@@ -489,7 +490,8 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                >
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="190dp"
