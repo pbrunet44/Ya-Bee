@@ -122,6 +122,29 @@ public class Post {
         databaseHelper.updateNotifications(this.id, this.notifications);
     }
 
+    public void removeNotification(Notification notification)
+    {
+        Notification remove = new Notification();
+        if(this.notifications != null && this.notifications.size() > 0)
+        {
+            for(Notification n: this.notifications)
+            {
+                if(n.getTypeofNotification().equals(notification.getTypeofNotification()))
+                    if(n.getPostID().equals(notification.getPostID()))
+                        if(n.getReceivingUser().getUid().equals(notification.getReceivingUser().getUid()))
+                            remove = n;
+            }
+            try {
+                this.notifications.remove(remove);
+            } catch (NullPointerException e)
+            {
+                System.out.println("Notification is null.");
+            }
+            DatabaseHelper databaseHelper = new DatabaseHelper();
+            databaseHelper.updateNotifications(this.id, this.notifications);
+        }
+    }
+
     public void addBiddertoList(User bidder)
     {
         if (this.allBidders == null) {
