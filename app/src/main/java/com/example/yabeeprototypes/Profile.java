@@ -93,18 +93,18 @@ public class Profile extends Fragment {
 
         if (currentUser == null || currentUser.getUid().equals(uid))
         {
-            giveAReview.setVisibility(View.INVISIBLE);
+            giveAReview.setVisibility(View.GONE);
         }
 
         if(currentUser == null || !currentUser.getUid().equals(uid))
         {
-            buying.setVisibility(View.INVISIBLE);
-            selling.setVisibility(View.INVISIBLE);
-            wishlist.setVisibility(View.INVISIBLE);
-            makePost.setVisibility(View.INVISIBLE);
-            signOff.setVisibility(View.INVISIBLE);
-            editIcon.setVisibility(View.INVISIBLE);
-            reviews.setVisibility(View.INVISIBLE);
+            buying.setVisibility(View.GONE);
+            selling.setVisibility(View.GONE);
+            wishlist.setVisibility(View.GONE);
+            makePost.setVisibility(View.GONE);
+            signOff.setVisibility(View.GONE);
+            editIcon.setVisibility(View.GONE);
+            reviews.setVisibility(View.GONE);
         }
 
 
