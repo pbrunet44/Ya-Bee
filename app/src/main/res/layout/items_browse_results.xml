@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight">
+
     <androidx.recyclerview.widget.RecyclerView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical"
+        android:layout_marginTop="6dp"
         android:background="@color/colorPrimaryLight"
-        android:id="@+id/recyclerView">
-    </androidx.recyclerview.widget.RecyclerView>
+        android:scrollbars="vertical"></androidx.recyclerview.widget.RecyclerView>
 
     <FrameLayout
         android:id="@+id/brosweContainer"
@@ -20,18 +21,18 @@
     </FrameLayout>
 
     <RelativeLayout
+        android:id="@+id/loadingPanel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:id="@+id/loadingPanel">
+        android:gravity="center">
 
         <ProgressBar
             android:id="@+id/load"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="12dp"
-            android:outlineAmbientShadowColor="@color/colorPrimaryLight"
-            android:indeterminate="true" />
+            android:indeterminate="true"
+            android:outlineAmbientShadowColor="@color/colorPrimaryLight" />
     </RelativeLayout>
 
 

@@ -1,79 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="175dp"
-    android:paddingLeft="16dp"
-    android:background="@drawable/border"
-    android:id="@+id/relativeLayout"
-    android:paddingRight="16dp" >
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_toStartOf="@+id/profileEmail"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="9dp"
-        android:scaleType="centerCrop"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/textView"
-        />
-    <TextView
-        android:id="@+id/textView"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_width="215dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorTextSecondary"
-        android:textSize="20sp"
-        android:text="Title"
-        android:layout_alignParentRight="true"
-        />
-    <TextView
-        android:id="@+id/condition"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorTextSecondary"
-        android:text="Condition"
-        android:textSize="18sp"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/textView"
-        android:layout_marginBottom="5dp"
-        />
-    <TextView
-        android:id="@+id/bidPrice"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        android:text="Bid price"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/condition"
-        android:layout_marginBottom="10dp"
-        />
-    <TextView
-        android:id="@+id/timeLeft"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorTextSecondary"
-        android:textSize="20sp"
-        android:text="Time left"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/bidPrice"
-        android:layout_marginBottom="5dp"
-        />
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorPrimaryLight"
-        android:src="@android:drawable/arrow_down_float"
-        android:layout_alignParentRight="true"
-        android:id="@+id/item_menu"
-        />
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryLight"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="6dp"
+        app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="181dp"
+            android:paddingLeft="9dp"
+            android:paddingRight="9dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="9dp"
+                android:layout_toStartOf="@+id/profileEmail"
+                android:layout_toLeftOf="@+id/textView"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="194dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
+                android:text="Title"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/condition"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="5dp"
+                android:text="Condition"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/bidPrice"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/condition"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
+                android:text="Bid price"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/timeLeft"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bidPrice"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="5dp"
+                android:text="Time left"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/item_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimaryVeryLight"
+                android:src="@android:drawable/arrow_down_float" />
 
 
-</RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
 
 
 
