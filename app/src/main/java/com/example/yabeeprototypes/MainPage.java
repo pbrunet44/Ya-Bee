@@ -179,28 +179,6 @@ public class MainPage extends Fragment implements View.OnClickListener {
         btnBuzz9.setOnClickListener(this);
         btnBuzz10.setOnClickListener(this);
 
-
-
-
-//        btnBuzz1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //Toast.makeText(getActivity(), "Hydroflasksksks clicked.", Toast.LENGTH_SHORT).show();
-//
-//                ViewPost nextFrag = new ViewPost();
-//                getActivity().getSupportFragmentManager().beginTransaction()
-//                        .replace(R.id.fragmentContainer, nextFrag)
-//                        .addToBackStack(null)
-//                        .commit();
-//            }
-//        });
-//        btnBuzz2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(getActivity(), "idk", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
         return view;
     }
 
@@ -313,6 +291,7 @@ public class MainPage extends Fragment implements View.OnClickListener {
                 break;
             case R.id.imgBuzz1:
                 bundle.putString("POST ID", postIDs.get(0));
+                bundle.putInt("container", R.id.fragmentContainer);
                 viewPost.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, viewPost)
@@ -321,6 +300,7 @@ public class MainPage extends Fragment implements View.OnClickListener {
                 break;
             case R.id.imgBuzz2:
                 bundle.putString("POST ID", postIDs.get(1));
+                bundle.putInt("container", R.id.fragmentContainer);
                 viewPost.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, viewPost)
@@ -329,6 +309,7 @@ public class MainPage extends Fragment implements View.OnClickListener {
                 break;
             case R.id.imgBuzz3:
                 bundle.putString("POST ID", postIDs.get(2));
+                bundle.putInt("container", R.id.fragmentContainer);
                 viewPost.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, viewPost)
@@ -337,6 +318,7 @@ public class MainPage extends Fragment implements View.OnClickListener {
                 break;
             case R.id.imgBuzz4:
                 bundle.putString("POST ID", postIDs.get(3));
+                bundle.putInt("container", R.id.fragmentContainer);
                 viewPost.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, viewPost)
@@ -345,6 +327,7 @@ public class MainPage extends Fragment implements View.OnClickListener {
                 break;
             case R.id.imgBuzz5:
                 bundle.putString("POST ID", postIDs.get(4));
+                bundle.putInt("container", R.id.fragmentContainer);
                 viewPost.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, viewPost)
@@ -353,6 +336,7 @@ public class MainPage extends Fragment implements View.OnClickListener {
                 break;
             case R.id.imgBuzz6:
                 bundle.putString("POST ID", postIDs.get(5));
+                bundle.putInt("container", R.id.fragmentContainer);
                 viewPost.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, viewPost)
@@ -361,6 +345,7 @@ public class MainPage extends Fragment implements View.OnClickListener {
                 break;
             case R.id.imgBuzz7:
                 bundle.putString("POST ID", postIDs.get(6));
+                bundle.putInt("container", R.id.fragmentContainer);
                 viewPost.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, viewPost)
@@ -369,6 +354,7 @@ public class MainPage extends Fragment implements View.OnClickListener {
                 break;
             case R.id.imgBuzz8:
                 bundle.putString("POST ID", postIDs.get(7));
+                bundle.putInt("container", R.id.fragmentContainer);
                 viewPost.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, viewPost)
@@ -377,6 +363,7 @@ public class MainPage extends Fragment implements View.OnClickListener {
                 break;
             case R.id.imgBuzz9:
                 bundle.putString("POST ID", postIDs.get(8));
+                bundle.putInt("container", R.id.fragmentContainer);
                 viewPost.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, viewPost)
@@ -385,6 +372,7 @@ public class MainPage extends Fragment implements View.OnClickListener {
                 break;
             case R.id.imgBuzz10:
                 bundle.putString("POST ID", postIDs.get(9));
+                bundle.putInt("container", R.id.fragmentContainer);
                 viewPost.setArguments(bundle);
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainer, viewPost)

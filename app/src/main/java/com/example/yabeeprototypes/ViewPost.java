@@ -32,6 +32,8 @@ public class ViewPost extends Fragment {
     private boolean updatedClicks = false;
     private Post post;
     private User user;
+    // for profile
+    private int containerId;
 
 
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -42,6 +44,8 @@ public class ViewPost extends Fragment {
         Bundle b = getArguments();
         String i = "";
         if (b != null) {
+            containerId = getArguments().getInt("container");
+            System.out.println("Here is container id" + containerId);
             i = getArguments().getString("POST ID");
             System.out.println(i);
         }
@@ -179,7 +183,8 @@ public class ViewPost extends Fragment {
 
                 Profile buyerProfile = new Profile();
                 buyerProfile.setArguments(profileExtras);
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.brosweContainer, buyerProfile).addToBackStack(null).commit();
+                activity.getSupportFragmentManager().beginTransaction().replace(containerId, buyerProfile).addToBackStack(null).commit();
+                //activity.getSupportFragmentManager().beginTransaction().replace(R.id.brosweContainer, buyerProfile).addToBackStack(null).commit();
             }
         });
 

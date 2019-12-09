@@ -78,6 +78,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
                     // start view post activity, send post information
                     Bundle bundle = new Bundle();
                     bundle.putString("POST ID", myListData.getId());
+                    bundle.putInt("container", containerId);
 
                     FragmentActivity activity = (FragmentActivity) view.getContext();
 
