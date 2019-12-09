@@ -61,7 +61,7 @@ public class Notifications extends Fragment {
                     }
                 } catch (NullPointerException e) {
                     System.out.println("Kept getting a NullPointerException and I didn't like it");
-                    Toast.makeText(getContext(), "No notifications to show.", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getContext(), "No notifications to show.", Toast.LENGTH_SHORT).show();
                 }
 
                 view.findViewById(R.id.loadingPanelforNotifications).setVisibility(View.GONE);
