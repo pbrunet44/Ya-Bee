@@ -92,16 +92,18 @@ public class Post {
 
     public void removeFromBidPendingAcceptance(Bid bid)
     {
+        Bid remove = new Bid();
         if(this.bidsPendingAcceptance != null && this.bidsPendingAcceptance.size() > 0)
         {
             for(Bid b: this.bidsPendingAcceptance)
             {
-                if(b.getDescription().equals(bid.getDescription()))
+                if(b.getDescription().equals(bid.getDescription()) && (b.getPrice() == bid.getPrice()))
                 {
-                    this.bidsPendingAcceptance.remove(b);
+                    remove = b;
                 }
             }
         }
+        this.bidsPendingAcceptance.remove(remove);
         DatabaseHelper databaseHelper = new DatabaseHelper();
         databaseHelper.updateBidsPendingAcceptance(this.id, this.bidsPendingAcceptance);
     }
