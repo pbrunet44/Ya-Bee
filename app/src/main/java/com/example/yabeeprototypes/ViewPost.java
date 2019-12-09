@@ -35,6 +35,8 @@ public class ViewPost extends Fragment {
     // for profile
     private int containerId;
 
+    private boolean visible = false;
+
 
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_view_post, container, false);
@@ -166,6 +168,11 @@ public class ViewPost extends Fragment {
                     post.updateAuctionTimer();
                     timer.setText(post.getAuctionTimer()); // setting timer to time remaining
                 }
+                if (!visible)
+                {
+                    visible = true;
+                    view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.GONE);
+                }
                 timerHandler.postDelayed(this, 1000);
             }
         };
@@ -277,8 +284,6 @@ public class ViewPost extends Fragment {
             }
         });
 
-
-        view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.GONE);
         return view;
 
     }

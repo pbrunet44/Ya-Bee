@@ -50,6 +50,10 @@ public class Notification {
         {
             message = "Bid accepted by buyer. You are the current bid! Tap to view post." ;
         }
+        else if(this.getTypeofNotification().equals("WINNER"))
+        {
+            message = "You've won the auction!";
+        }
         return message;
     }
 
