@@ -450,18 +450,17 @@
                     </LinearLayout>
                 </HorizontalScrollView>
 
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:paddingRight="10dp"
+                    app:srcCompat="@drawable/ic_more_horiz_black_24dp" />
+
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:paddingRight="10dp"
-            android:paddingBottom="7dp"
-            app:srcCompat="@drawable/ic_more_horiz_black_24dp" />
 
 
         <LinearLayout
@@ -473,25 +472,14 @@
                 android:id="@+id/tvDailyBuzz"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="10dp"
                 android:paddingLeft="10dp"
                 android:paddingBottom="10dp"
                 android:text="@string/daily_buzz"
                 android:textColor="@color/colorTextPrimary"
                 android:textSize="24sp" />
 
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:paddingRight="30dp"
-                android:text="@string/SeeAll"
-                android:textColor="@color/colorTextPrimary"
-                android:textSize="18sp" />
         </LinearLayout>
 
         <TableLayout
@@ -505,7 +493,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="190dp"
-                    android:layout_height="211dp"
+                    android:layout_height="217dp"
                     android:layout_marginLeft="12dp"
                     android:layout_marginTop="6dp"
                     android:layout_marginBottom="6dp"
@@ -535,6 +523,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:paddingLeft="6dp"
+                            android:paddingRight="6dp"
+                            android:paddingBottom="6dp"
                             android:text="Textbook"
                             android:textColor="@color/colorTextSecondary"
                             android:textSize="20sp" />
@@ -543,7 +534,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="190dp"
-                    android:layout_height="211dp"
+                    android:layout_height="217dp"
                     android:layout_marginLeft="6dp"
                     android:layout_marginTop="6dp"
                     android:layout_marginRight="12dp"
@@ -574,6 +565,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:paddingLeft="6dp"
+                            android:paddingRight="6dp"
+                            android:paddingBottom="6dp"
                             android:text="iPhone X"
                             android:textColor="@color/colorTextSecondary"
                             android:textSize="20sp" />
@@ -588,7 +582,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="190dp"
-                    android:layout_height="211dp"
+                    android:layout_height="217dp"
                     android:layout_marginLeft="12dp"
                     android:layout_marginBottom="6dp"
                     app:cardBackgroundColor="@color/colorPrimaryVeryLight">
@@ -616,8 +610,11 @@
                             android:id="@+id/tvBuzz3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:paddingLeft="6dp"
+                            android:paddingRight="6dp"
+                            android:paddingBottom="6dp"
                             android:text="Lionel Trains"
                             android:textColor="@color/colorTextSecondary"
                             android:textSize="20sp" />
@@ -626,11 +623,12 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="190dp"
-                    android:layout_height="211dp"
+                    android:layout_height="217dp"
                     android:layout_marginLeft="6dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" >
+                    app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -655,6 +653,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:paddingLeft="6dp"
+                            android:paddingRight="6dp"
+                            android:paddingBottom="6dp"
                             android:text="iPhone X"
                             android:textColor="@color/colorTextSecondary"
                             android:textSize="20sp" />
@@ -668,10 +669,11 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="190dp"
-                    android:layout_height="211dp"
+                    android:layout_height="217dp"
                     android:layout_marginLeft="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" >
+                    app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -696,6 +698,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:paddingLeft="6dp"
+                            android:paddingRight="6dp"
+                            android:paddingBottom="6dp"
                             android:text="iPhone X"
                             android:textColor="@color/colorTextSecondary"
                             android:textSize="20sp" />
@@ -704,11 +709,12 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="190dp"
-                    android:layout_height="211dp"
+                    android:layout_height="217dp"
                     android:layout_marginLeft="6dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" >
+                    app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -733,6 +739,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:paddingLeft="6dp"
+                            android:paddingRight="6dp"
+                            android:paddingBottom="6dp"
                             android:text="iPhone X"
                             android:textColor="@color/colorTextSecondary"
                             android:textSize="20sp" />
@@ -746,10 +755,11 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="190dp"
-                    android:layout_height="211dp"
+                    android:layout_height="217dp"
                     android:layout_marginLeft="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" >
+                    app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -774,6 +784,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:paddingLeft="6dp"
+                            android:paddingRight="6dp"
+                            android:paddingBottom="6dp"
                             android:text="iPhone X"
                             android:textColor="@color/colorTextSecondary"
                             android:textSize="20sp" />
@@ -782,11 +795,12 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="190dp"
-                    android:layout_height="211dp"
+                    android:layout_height="217dp"
                     android:layout_marginLeft="6dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" >
+                    app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -811,6 +825,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:paddingLeft="6dp"
+                            android:paddingRight="6dp"
+                            android:paddingBottom="6dp"
                             android:text="iPhone X"
                             android:textColor="@color/colorTextSecondary"
                             android:textSize="20sp" />
@@ -824,10 +841,11 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="190dp"
-                    android:layout_height="211dp"
+                    android:layout_height="217dp"
                     android:layout_marginLeft="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight" >
+                    app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -852,6 +870,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:paddingLeft="6dp"
+                            android:paddingRight="6dp"
+                            android:paddingBottom="6dp"
                             android:text="iPhone X"
                             android:textColor="@color/colorTextSecondary"
                             android:textSize="20sp" />
@@ -860,11 +881,12 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="190dp"
-                    android:layout_height="211dp"
+                    android:layout_height="217dp"
                     android:layout_marginLeft="6dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="6dp"
                     app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -889,9 +911,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:paddingLeft="6dp"
+                            android:paddingRight="6dp"
                             android:text="iPhone X"
                             android:textColor="@color/colorTextSecondary"
-                            android:textSize="20sp" />
+                            android:textSize="20sp"
+                            android:paddingBottom="6dp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </TableRow>
