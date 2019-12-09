@@ -103,7 +103,12 @@ public class Post {
                 }
             }
         }
-        this.bidsPendingAcceptance.remove(remove);
+        try {
+            this.bidsPendingAcceptance.remove(remove);
+        } catch (NullPointerException e)
+        {
+            System.out.println("Bid is null.");
+        }
         DatabaseHelper databaseHelper = new DatabaseHelper();
         databaseHelper.updateBidsPendingAcceptance(this.id, this.bidsPendingAcceptance);
     }
