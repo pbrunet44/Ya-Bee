@@ -32,7 +32,7 @@ public class Notification {
         String message = "";
         if(this.getTypeofNotification().equals("BID"))
         {
-            message = "You've been outbid! Tap to bid lower.";
+            message = "New current bid! Tap to view.";
         }
         else if(this.getTypeofNotification().equals("EXPIRED"))
         {
