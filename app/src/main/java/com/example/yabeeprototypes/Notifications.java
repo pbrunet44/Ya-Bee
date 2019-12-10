@@ -27,10 +27,6 @@ public class Notifications extends Fragment {
     private FirebaseUser currentUser;
     private RecyclerView recyclerView;
     private ArrayList<Notification> notifications;
-    ArrayList<Post> selling;
-
-    private TextView textView;
-
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 

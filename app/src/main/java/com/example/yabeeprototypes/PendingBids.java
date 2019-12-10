@@ -21,7 +21,6 @@ import java.util.List;
 public class PendingBids extends AppCompatActivity {
 
     private static int MAX_NUMBER_OF_PENDING_BIDS = 1000000;
-    private TextView test;
     private String postID;
     private Post post;
     private DatabaseHelper databaseHelper;
@@ -34,9 +33,6 @@ public class PendingBids extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.items_pendingbids);
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
-
-        test = findViewById(R.id.testez);
-
         Intent intent = getIntent();
         postID = intent.getStringExtra("POST ID");
 
@@ -62,23 +58,6 @@ public class PendingBids extends AppCompatActivity {
                     recyclerView.setHasFixedSize(true);
                     BidAdapter adapter = new BidAdapter(bidsPendingAcceptance, R.id.pendingBidsContainer, postID);
                     recyclerView.setAdapter(adapter);
-//                    test.setText(bidsPendingAcceptance.get(0).getDescription());
-//                    test.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            Intent intense = new Intent(getApplicationContext(), BidAccept.class);
-//                            Bundle b = new Bundle();
-//                            b.putDouble("BID PRICE", bidsPendingAcceptance.get(0).getPrice());
-//                            b.putString("BID DESC", bidsPendingAcceptance.get(0).getDescription());
-//                            b.putString("IMAGE STRING", bidsPendingAcceptance.get(0).getImageEncoding());
-//                            b.putString("USER ID", bidsPendingAcceptance.get(0).getSeller().getUid());
-//                            b.putString("USER EMAIL", bidsPendingAcceptance.get(0).getSeller().getEmail());
-//                            b.putString("POST ID", postID);
-//                            intense.putExtras(b);
-//                            startActivity(intense);
-//                            finish();
-//                        }
-//                    });
                 }
                 findViewById(R.id.loadingPanelforPendingBids).setVisibility(View.GONE);
             }
