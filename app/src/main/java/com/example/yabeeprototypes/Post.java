@@ -92,23 +92,34 @@ public class Post {
 
     public void removeFromBidPendingAcceptance(Bid bid)
     {
-        Bid remove = new Bid();
-        if(this.bidsPendingAcceptance != null && this.bidsPendingAcceptance.size() > 0)
-        {
-            for(Bid b: this.bidsPendingAcceptance)
+        if(this.bidsPendingAcceptance != null && this.bidsPendingAcceptance.size() > 0) {
+
+            for (int i = this.bidsPendingAcceptance.size() - 1; i >= 0; i--)
             {
-                if(b.getDescription().equals(bid.getDescription()) && (b.getPrice() == bid.getPrice()))
-                {
-                    remove = b;
-                }
+                Bid b = this.bidsPendingAcceptance.get(i);
+                if (b.getDescription().equals(bid.getDescription()))
+                    if (b.getPrice() == bid.getPrice())
+                        if (b.getSeller().getUid().equals(bid.getSeller().getUid()))
+                            this.bidsPendingAcceptance.remove(b);
             }
         }
-        try {
-            this.bidsPendingAcceptance.remove(remove);
-        } catch (NullPointerException e)
-        {
-            System.out.println("Bid is null.");
-        }
+//        Bid remove = new Bid();
+//        if(this.bidsPendingAcceptance != null && this.bidsPendingAcceptance.size() > 0)
+//        {
+//            for(Bid b: this.bidsPendingAcceptance)
+//            {
+//                if(b.getDescription().equals(bid.getDescription()) && (b.getPrice() == bid.getPrice()))
+//                {
+//                    remove = b;
+//                }
+//            }
+//        }
+//        try {
+//            this.bidsPendingAcceptance.remove(remove);
+//        } catch (NullPointerException e)
+//        {
+//            System.out.println("Bid is null.");
+//        }
         DatabaseHelper databaseHelper = new DatabaseHelper();
         databaseHelper.updateBidsPendingAcceptance(this.id, this.bidsPendingAcceptance);
     }
@@ -124,28 +135,37 @@ public class Post {
 
     public void removeNotification(Notification notification)
     {
-        Notification remove = new Notification();
+
         if(this.notifications != null && this.notifications.size() > 0)
         {
-            for(Notification n: this.notifications)
+            for(int i = this.notifications.size() - 1; i >= 0; i--)
             {
+                Notification n = this.notifications.get(i);
                 if(n.getTypeofNotification().equals(notification.getTypeofNotification()))
                     if(n.getPostID().equals(notification.getPostID()))
                         if(n.getReceivingUser().getUid().equals(notification.getReceivingUser().getUid()))
-                            remove = n;
+                            this.notifications.remove(n);
             }
-            try {
-                this.notifications.remove(remove);
-            } catch (NullPointerException e)
-            {
-                System.out.println("Notification is null.");
-            }
+//        Notification remove = new Notification();
+//            for(Notification n: this.notifications)
+//            {
+//                if(n.getTypeofNotification().equals(notification.getTypeofNotification()))
+//                    if(n.getPostID().equals(notification.getPostID()))
+//                        if(n.getReceivingUser().getUid().equals(notification.getReceivingUser().getUid()))
+//                            remove = n;
+//            }
+//            try {
+//                this.notifications.remove(remove);
+//            } catch (NullPointerException e)
+//            {
+//                System.out.println("Notification is null.");
+//            }
             DatabaseHelper databaseHelper = new DatabaseHelper();
             databaseHelper.updateNotifications(this.id, this.notifications);
         }
     }
 
-    public void addBiddertoList(User bidder)
+    public void addBidderToList(User bidder)
     {
         if (this.allBidders == null) {
             this.allBidders = new ArrayList<>();

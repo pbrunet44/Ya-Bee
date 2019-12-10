@@ -248,7 +248,7 @@ public class DatabaseHelper {
         this.databaseReference.child("Posts").child(postId).child("imageEncoding").setValue(imageEncoding);
     }
 
-    public void updateCondtion(String postId, String condition)
+    public void updateCondition(String postId, String condition)
     {
         this.databaseReference.child("Posts").child(postId).child("condition").setValue(condition);
     }

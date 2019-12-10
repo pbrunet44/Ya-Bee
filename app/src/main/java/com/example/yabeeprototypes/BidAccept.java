@@ -2,12 +2,10 @@ package com.example.yabeeprototypes;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GestureDetectorCompat;
-import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.GestureDetector;
@@ -178,7 +176,7 @@ public class BidAccept extends AppCompatActivity {
                     }
                     if (!post.alreadyBid(seller.getUid()))
                     {
-                        post.addBiddertoList(seller);
+                        post.addBidderToList(seller);
                     }
                     post.addNotification(new Notification("BID ACCEPTED", seller, postID));
                     count++;

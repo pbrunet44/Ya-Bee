@@ -116,7 +116,7 @@ public class EditPost extends Activity implements AdapterView.OnItemSelectedList
                 }
                 if (!editCondition.getSelectedItem().toString().equals(condition))
                 {
-                    database.updateCondtion(postId, editCondition.getSelectedItem().toString());
+                    database.updateCondition(postId, editCondition.getSelectedItem().toString());
                 }
                 Toast.makeText(getApplicationContext(), "Successfully updated!", Toast.LENGTH_LONG).show();
                 //database.updateImage(postId, image);

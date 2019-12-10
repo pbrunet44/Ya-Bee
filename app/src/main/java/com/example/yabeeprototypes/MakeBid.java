@@ -102,7 +102,7 @@ public class MakeBid extends AppCompatActivity {
 
 //                        if (!post.alreadyBid(currentUser.getUid()))
 //                        {
-//                            post.addBiddertoList(new User(currentUser.getEmail(), currentUser.getUid()));
+//                            post.addBidderToList(new User(currentUser.getEmail(), currentUser.getUid()));
 //                        }
 
 //                        bidders = new ArrayList<>();
