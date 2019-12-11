@@ -92,7 +92,7 @@
                                 android:layout_gravity="center"
                                 android:gravity="center"
                                 android:text="@string/services"
-                                android:textColor="@color/colorTextSecondary"
+                                android:textColor="@color/colorTextPrimary"
                                 android:textSize="20sp" />
                         </LinearLayout>
 
@@ -121,7 +121,7 @@
                                 android:layout_gravity="center"
                                 android:gravity="center"
                                 android:text="@string/textbooks"
-                                android:textColor="@color/colorTextSecondary"
+                                android:textColor="@color/colorTextPrimary"
                                 android:textSize="20sp" />
                         </LinearLayout>
 
@@ -150,7 +150,7 @@
                                 android:layout_gravity="center"
                                 android:gravity="center"
                                 android:text="Sporting Goods"
-                                android:textColor="@color/colorTextSecondary"
+                                android:textColor="@color/colorTextPrimary"
                                 android:textSize="20sp" />
                         </LinearLayout>
 
@@ -177,7 +177,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="Video Games"
-                                android:textColor="@color/colorTextSecondary"
+                                android:textColor="@color/colorTextPrimary"
                                 android:textSize="20sp" />
                         </LinearLayout>
 
@@ -204,7 +204,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="Books"
-                                android:textColor="@color/colorTextSecondary"
+                                android:textColor="@color/colorTextPrimary"
                                 android:textSize="20sp" />
                         </LinearLayout>
 
@@ -231,7 +231,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="Movies"
-                                android:textColor="@color/colorTextSecondary"
+                                android:textColor="@color/colorTextPrimary"
                                 android:textSize="20sp" />
                         </LinearLayout>
 
@@ -258,7 +258,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="Music"
-                                android:textColor="@color/colorTextSecondary"
+                                android:textColor="@color/colorTextPrimary"
                                 android:textSize="20sp" />
                         </LinearLayout>
 
@@ -285,7 +285,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="Furniture"
-                                android:textColor="@color/colorTextSecondary"
+                                android:textColor="@color/colorTextPrimary"
                                 android:textSize="20sp" />
                         </LinearLayout>
 
@@ -312,7 +312,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="Kitchen"
-                                android:textColor="@color/colorTextSecondary"
+                                android:textColor="@color/colorTextPrimary"
                                 android:textSize="20sp" />
                         </LinearLayout>
 
@@ -339,7 +339,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="@string/Home"
-                                android:textColor="@color/colorTextSecondary"
+                                android:textColor="@color/colorTextPrimary"
                                 android:textSize="20sp" />
                         </LinearLayout>
 
@@ -366,7 +366,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="Shoes"
-                                android:textColor="@color/colorTextSecondary"
+                                android:textColor="@color/colorTextPrimary"
                                 android:textSize="20sp" />
                         </LinearLayout>
 
@@ -393,7 +393,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="Electronics"
-                                android:textColor="@color/colorTextSecondary"
+                                android:textColor="@color/colorTextPrimary"
                                 android:textSize="20sp" />
                         </LinearLayout>
 
@@ -422,7 +422,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="Toys"
-                                android:textColor="@color/colorTextSecondary"
+                                android:textColor="@color/colorTextPrimary"
                                 android:textSize="20sp" />
                         </LinearLayout>
 
@@ -449,7 +449,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="Travel"
-                                android:textColor="@color/colorTextSecondary"
+                                android:textColor="@color/colorTextPrimary"
                                 android:textSize="20sp" />
                         </LinearLayout>
                     </LinearLayout>
@@ -533,7 +533,7 @@
                             android:paddingRight="6dp"
                             android:paddingBottom="6dp"
                             android:text="Textbook"
-                            android:textColor="@color/colorTextSecondary"
+                            android:textColor="@color/colorTextPrimary"
                             android:textSize="20sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -575,7 +575,7 @@
                             android:paddingRight="6dp"
                             android:paddingBottom="6dp"
                             android:text="iPhone X"
-                            android:textColor="@color/colorTextSecondary"
+                            android:textColor="@color/colorTextPrimary"
                             android:textSize="20sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -622,7 +622,7 @@
                             android:paddingRight="6dp"
                             android:paddingBottom="6dp"
                             android:text="Lionel Trains"
-                            android:textColor="@color/colorTextSecondary"
+                            android:textColor="@color/colorTextPrimary"
                             android:textSize="20sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -663,7 +663,7 @@
                             android:paddingRight="6dp"
                             android:paddingBottom="6dp"
                             android:text="iPhone X"
-                            android:textColor="@color/colorTextSecondary"
+                            android:textColor="@color/colorTextPrimary"
                             android:textSize="20sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -708,7 +708,7 @@
                             android:paddingRight="6dp"
                             android:paddingBottom="6dp"
                             android:text="iPhone X"
-                            android:textColor="@color/colorTextSecondary"
+                            android:textColor="@color/colorTextPrimary"
                             android:textSize="20sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -749,7 +749,7 @@
                             android:paddingRight="6dp"
                             android:paddingBottom="6dp"
                             android:text="iPhone X"
-                            android:textColor="@color/colorTextSecondary"
+                            android:textColor="@color/colorTextPrimary"
                             android:textSize="20sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -794,7 +794,7 @@
                             android:paddingRight="6dp"
                             android:paddingBottom="6dp"
                             android:text="iPhone X"
-                            android:textColor="@color/colorTextSecondary"
+                            android:textColor="@color/colorTextPrimary"
                             android:textSize="20sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -835,7 +835,7 @@
                             android:paddingRight="6dp"
                             android:paddingBottom="6dp"
                             android:text="iPhone X"
-                            android:textColor="@color/colorTextSecondary"
+                            android:textColor="@color/colorTextPrimary"
                             android:textSize="20sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -880,7 +880,7 @@
                             android:paddingRight="6dp"
                             android:paddingBottom="6dp"
                             android:text="iPhone X"
-                            android:textColor="@color/colorTextSecondary"
+                            android:textColor="@color/colorTextPrimary"
                             android:textSize="20sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -919,10 +919,10 @@
                             android:layout_gravity="center"
                             android:paddingLeft="6dp"
                             android:paddingRight="6dp"
+                            android:paddingBottom="6dp"
                             android:text="iPhone X"
-                            android:textColor="@color/colorTextSecondary"
-                            android:textSize="20sp"
-                            android:paddingBottom="6dp" />
+                            android:textColor="@color/colorTextPrimary"
+                            android:textSize="20sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </TableRow>
