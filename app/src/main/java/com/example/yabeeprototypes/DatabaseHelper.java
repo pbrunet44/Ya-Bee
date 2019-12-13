@@ -339,6 +339,7 @@ public class DatabaseHelper {
                 if (bidders != null) {
                     for (User u : bidders) {
                         if (u.getUid().equals(uid)) {
+                            System.out.println("Here's the post id to debug selling: " + post.getId());
                             results.add(post);
                         }
                     }
