@@ -68,8 +68,8 @@ public class BidAccept extends AppCompatActivity {
         databaseHelper = new DatabaseHelper();
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        Intent jonRamos = getIntent();
-        Bundle b = jonRamos.getExtras();
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
 
         bidImage = (ImageView) findViewById(R.id.bidPhoto);
         askingBid = (TextView) findViewById(R.id.askingBid);
@@ -85,13 +85,20 @@ public class BidAccept extends AppCompatActivity {
         seller = new User(uEmail, uID);
         String fileName = b.getString("FILE NAME");
 
+
+
         try {
             bitmap = BitmapFactory.decodeStream(getApplicationContext().openFileInput(fileName));
         } catch (FileNotFoundException e) {
             System.out.println("Zoinks");
+        } catch (NullPointerException npe) {
+            System.out.println("No image was input");
         }
 
-        bid = new Bid(dummyBid, description, encodeImage(bitmap), seller);
+        if (bitmap != null)
+            bid = new Bid(dummyBid, description, encodeImage(bitmap), seller);
+        else
+            bid = new Bid(dummyBid, description, null, seller);
 
         //bidImage.setImageBitmap(bid.decodeImage());
         databaseHelper.getPosts(new FirebaseCallback() {
@@ -160,24 +167,23 @@ public class BidAccept extends AppCompatActivity {
                 post = databaseHelper.getPostByID(postID, posts);
                 post.removeFromBidPendingAcceptance(bid);
                 post.updateNewLowestBid(bid);
-
-                allBidders = new ArrayList<>();
                 allBidders = post.getAllBidders();
 
                 if(count < 1)
                 {
-                    for(User u: allBidders)
-                    {
-                        if(!u.getUid().equals(seller.getUid()))
-                        {
-                            Notification notification = new Notification("BID", u, post.getId());
-                            post.addNotification(notification);
-                        }
-                    }
                     if (!post.alreadyBid(seller.getUid()))
                     {
                         post.addBidderToList(seller);
                     }
+                    if (allBidders == null || allBidders.isEmpty()) {
+                        for (User u : allBidders) {
+                            if (!u.getUid().equals(seller.getUid())) {
+                                Notification notification = new Notification("BID", u, post.getId());
+                                post.addNotification(notification);
+                            }
+                        }
+                    }
+
                     post.addNotification(new Notification("BID ACCEPTED", seller, postID));
                     count++;
                 }
