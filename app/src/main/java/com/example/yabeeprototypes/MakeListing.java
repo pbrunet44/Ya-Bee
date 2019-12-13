@@ -1,7 +1,9 @@
 package com.example.yabeeprototypes;
 
 
+import android.accounts.Account;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -20,9 +22,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -196,12 +201,14 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
                 postExtras.putString("Timer", ((Spinner)findViewById(R.id.auction_duration)).getSelectedItem().toString() + ", 0 hours");
                 if(imageUri != null)
                 {
+                    Activity activity = (Activity) v.getContext();
                     Bitmap imageBitmap = ((BitmapDrawable) postImage.getDrawable()).getBitmap();
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                     imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
                     imageEncoding = Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT);
+                    postExtras.putString("FileName", createImageFromBitmap(imageBitmap, activity));
                 }
-                postExtras.putString("ImageEncoding", imageEncoding);
+                //postExtras.putString("ImageEncoding", imageEncoding);
                 if(((TextView)findViewById(R.id.yourPrice)).getText().toString().equals(""))
                 {
                     postExtras.putDouble("MaxPrice", 0.0);
@@ -284,6 +291,21 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
     }
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
+    }
+    //sending image to next activity
+    private String createImageFromBitmap(Bitmap bitmap, Activity activity) {
+        String fileName = "previewPostImage";
+        try {
+            ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+            FileOutputStream fo = activity.openFileOutput(fileName, Context.MODE_PRIVATE);
+            fo.write(bytes.toByteArray());
+            fo.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            fileName = null;
+        }
+        return fileName;
     }
 
 }

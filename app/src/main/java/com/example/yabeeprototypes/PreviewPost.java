@@ -12,11 +12,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.io.FileNotFoundException;
 import java.text.DecimalFormat;
 
 import static android.graphics.BitmapFactory.decodeByteArray;
 
 public class PreviewPost extends Activity {
+
+    private Bitmap bitmap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +40,18 @@ public class PreviewPost extends Activity {
         // get bundle from intent
         Bundle extras = intent.getExtras();
 
-        byte[] decoded = Base64.decode(extras.getString("ImageEncoding").getBytes(), Base64.DEFAULT);
-        Bitmap bitmap = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
+//        byte[] decoded = Base64.decode(extras.getString("ImageEncoding").getBytes(), Base64.DEFAULT);
+//        Bitmap bitmap = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
+
+        String fileName = extras.getString("FileName");
+        if(fileName != null) {
+            try {
+                bitmap = BitmapFactory.decodeStream(getApplicationContext().openFileInput(fileName));
+            } catch (FileNotFoundException e) {
+                System.out.println("Zoinks");
+            }
+        }
+
         previewImage.setImageBitmap(bitmap);
         previewTitle.setText(extras.getString("Title"));
         DecimalFormat df = new DecimalFormat("#.##");
