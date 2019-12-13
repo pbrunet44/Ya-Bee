@@ -272,6 +272,14 @@ public class Post {
                     {
                         Notification notification = new Notification("EXPIRED", u, this.id);
                         this.addNotification(notification);
+                        if(u.getUid().equals(this.getLowestBid().getSeller().getUid()))
+                        {
+                            this.addNotification(new Notification("WINNER", this.getLowestBid().getSeller(), this.id));
+                        }
+                        else
+                        {
+                            this.addNotification(new Notification("HAHA LOSER", u, this.id));
+                        }
                     }
                 }
             }
