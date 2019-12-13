@@ -76,9 +76,18 @@ public class MakeBid extends AppCompatActivity {
                     String description = ((TextView) findViewById(R.id.etBidDescription)).getText().toString();
                     double price = Double.parseDouble(((TextView) findViewById(R.id.etBidPrice)).getText().toString());
                     Bid bid = new Bid(price, description, imageEncoding, new User(currentUser.getEmail(), currentUser.getUid()));
+
+                    boolean bidInAllBidders = false;
                     if (post.verifyBid(bid))
                     {
-                        if (post.getAllBidders() != null && post.getAllBidders().contains(bid.getSeller())) // means it's accepted
+                        for(User u: post.getAllBidders())
+                        {
+                            if(u.getUid().equals(bid.getSeller().getUid()))
+                            {
+                                bidInAllBidders = true;
+                            }
+                        }
+                        if (bidInAllBidders) // means it's accepted
                         {
                             post.updateNewLowestBid(bid);
                             Notification tinder = new Notification("TINDER", post.getBuyer(), post.getId());
@@ -88,7 +97,6 @@ public class MakeBid extends AppCompatActivity {
 
                             Notification tinder = new Notification("TINDER", post.getBuyer(), post.getId());
                             post.addNotification(tinder);
-
                             post.addToBidPendingAcceptance(bid);
                         }
 
