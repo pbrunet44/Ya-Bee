@@ -78,12 +78,18 @@ public class MakeBid extends AppCompatActivity {
                     Bid bid = new Bid(price, description, imageEncoding, new User(currentUser.getEmail(), currentUser.getUid()));
                     if (post.verifyBid(bid))
                     {
-                        //post.updateNewLowestBid(bid);
+                        post.addBidderToList(new User(currentUser.getEmail(), currentUser.getUid()));
+                        if (post.getBidsPendingAcceptance() == null || !post.getBidsPendingAcceptance().contains(bid)) // means it's accepted
+                        {
+                            post.updateNewLowestBid(bid);
+                        }
+                        else {
 
-                        Notification tinder = new Notification("TINDER", post.getBuyer(), post.getId());
-                        post.addNotification(tinder);
+                            Notification tinder = new Notification("TINDER", post.getBuyer(), post.getId());
+                            post.addNotification(tinder);
 
-                        post.addToBidPendingAcceptance(bid);
+                            post.addToBidPendingAcceptance(bid);
+                        }
 
                         /*
                         Bid acceptance and how it will work:
@@ -117,7 +123,7 @@ public class MakeBid extends AppCompatActivity {
 //                            }
 //                        }
 
-                        System.out.println("I'm in MakeBid, i'm allbids, here's my size" + post.getAllBidders().size());
+                        //System.out.println("I'm in MakeBid, i'm allbids, here's my size" + post.getAllBidders().size());
                         //post.getBuyer();
                         //send a notifcation to buyer that they're post has had a bid submitted
                         finish();// go back to view post after submitting bid
