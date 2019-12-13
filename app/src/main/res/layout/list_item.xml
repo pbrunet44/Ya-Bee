@@ -76,16 +76,6 @@
                 android:textColor="@color/colorTextSecondary"
                 android:textSize="20sp" />
 
-            <ImageButton
-                android:id="@+id/item_menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorPrimaryVeryLight"
-                android:src="@android:drawable/arrow_down_float" />
-
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

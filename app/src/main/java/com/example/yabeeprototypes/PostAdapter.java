@@ -156,7 +156,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
             this.condition = (TextView) itemView.findViewById(R.id.condition);
             this.bid = (TextView) itemView.findViewById(R.id.bidPrice);
             this.timeLeft = (TextView) itemView.findViewById(R.id.timeLeft);
-            this.menu = (ImageButton) itemView.findViewById(R.id.item_menu);
+            //this.menu = (ImageButton) itemView.findViewById(R.id.item_menu);
             this.clear = (ImageButton) itemView.findViewById(R.id.item_clear);
             relativeLayout = (RelativeLayout)itemView.findViewById(R.id.relativeLayout);
         }

@@ -78,11 +78,11 @@ public class MakeBid extends AppCompatActivity {
                     Bid bid = new Bid(price, description, imageEncoding, new User(currentUser.getEmail(), currentUser.getUid()));
                     if (post.verifyBid(bid))
                     {
-                        if (post.getAllBidders() != null && !post.getAllBidders().contains(new User(currentUser.getEmail(), currentUser.getUid())))
-                            post.addBidderToList(new User(currentUser.getEmail(), currentUser.getUid()));
-                        if (post.getBidsPendingAcceptance() == null || !post.getBidsPendingAcceptance().contains(bid)) // means it's accepted
+                        if (post.getAllBidders() != null && post.getAllBidders().contains(bid.getSeller())) // means it's accepted
                         {
                             post.updateNewLowestBid(bid);
+                            Notification tinder = new Notification("TINDER", post.getBuyer(), post.getId());
+                            post.addNotification(tinder);
                         }
                         else {
 
