@@ -70,8 +70,8 @@ public class Profile extends Fragment {
         selling = view.findViewById(R.id.productsImSelling);
         makePost = (Button) view.findViewById(R.id.makePost);
         Button signOff = (Button) view.findViewById(R.id.signOutButton);
-        ImageView editIcon = view.findViewById(R.id.editIcon);
-        ImageView emailIcon = view.findViewById(R.id.emailIcon);
+        //ImageView editIcon = view.findViewById(R.id.editIcon);
+        //ImageView emailIcon = view.findViewById(R.id.emailIcon);
         Button reviews = view.findViewById(R.id.productReviews);
         Button giveAReview = view.findViewById(R.id.review_user);
 
@@ -103,7 +103,7 @@ public class Profile extends Fragment {
             wishlist.setVisibility(View.GONE);
             makePost.setVisibility(View.GONE);
             signOff.setVisibility(View.GONE);
-            editIcon.setVisibility(View.GONE);
+            //editIcon.setVisibility(View.GONE);
             reviews.setVisibility(View.GONE);
         }
 
