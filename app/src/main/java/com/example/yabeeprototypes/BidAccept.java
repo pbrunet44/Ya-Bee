@@ -175,7 +175,7 @@ public class BidAccept extends AppCompatActivity {
                     {
                         post.addBidderToList(seller);
                     }
-                    if (allBidders != null || !allBidders.isEmpty()) {
+                    if (allBidders != null && !allBidders.isEmpty()) {
                         for (User u : allBidders) {
                             if (!u.getUid().equals(seller.getUid())) {
                                 Notification notification = new Notification("BID", u, post.getId());

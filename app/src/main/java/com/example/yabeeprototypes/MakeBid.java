@@ -80,11 +80,11 @@ public class MakeBid extends AppCompatActivity {
                     boolean bidInAllBidders = false;
                     if (post.verifyBid(bid))
                     {
-                        for(User u: post.getAllBidders())
-                        {
-                            if(u.getUid().equals(bid.getSeller().getUid()))
-                            {
-                                bidInAllBidders = true;
+                        if(post.getAllBidders() != null) {
+                            for (User u : post.getAllBidders()) {
+                                if (u.getUid().equals(bid.getSeller().getUid())) {
+                                    bidInAllBidders = true;
+                                }
                             }
                         }
                         if (bidInAllBidders) // means it's accepted
