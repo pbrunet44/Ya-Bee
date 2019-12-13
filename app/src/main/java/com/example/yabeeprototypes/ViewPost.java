@@ -232,11 +232,7 @@ public class ViewPost extends Fragment {
                     newLowestBid = "Current bid: $" + df.format(post.getLowestBid().getPrice());
                 //System.out.println("Got new bid price in viewpost: " + newLowestBid);
                 currBid.setText(newLowestBid);
-                if (!visible)
-                {
-                    visible = true;
-                    view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.GONE);
-                }
+                view.findViewById(R.id.loadingPanelforViewPost).setVisibility(View.GONE);
             }
         });
 
