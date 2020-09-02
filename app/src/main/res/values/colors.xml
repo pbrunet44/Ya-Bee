@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+<!--  Ya-Bee colors  -->
 <color name="colorPrimary">#FFC107</color>
 <color name="colorPrimaryDark">#212121</color>
 <color name="colorAccent">#FF9800</color>
@@ -14,4 +16,12 @@
 <color name="colorPrimaryVeryLightAlternate">#FFF2CA</color>
 <color name="backgroundBottomNav">#FFECD0</color>
 <color name="colorWhite">#FFFFFF</color>
+
+
+<!-- ListUp colors   -->
+    <color name="colorSubmit">#5698EE</color>
+    <color name="colorSubmitOutline">#6998EE</color>
+    <color name="colorWindowBackground">#F5F5F5</color>
+    <color name="colorCardBackground">#FCFCFC</color>
+
 </resources>
