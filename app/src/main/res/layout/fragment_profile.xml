@@ -1,137 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/myCoordinatorLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
-    <LinearLayout
+    android:layout_alignParentTop="true"
+    android:layout_height="match_parent">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="16dp"
+        android:fillViewport="true">
 
-        android:paddingRight="16dp"
-        android:background="@color/colorPrimaryLight"
-        android:orientation="vertical"
-        tools:context=".Profile">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/user_profile_photo"
-                android:layout_marginTop="30dp"
-                android:layout_gravity="center"
-                android:layout_width="175dp"
-                android:layout_height="175dp"
-                android:background="@drawable/circular_profile_pic"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_person_black_24dp" />
-            <TextView
-                android:id="@+id/profileEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="email"
-                android:layout_marginTop="15dp"
-                android:textSize="20sp"
-                android:textColor="@color/colorTextPrimary"
-                />
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryLight"
+
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            tools:context=".Profile">
+
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/user_profile_photo"
+                    android:layout_width="175dp"
+                    android:layout_height="175dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/circular_profile_pic"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_person_black_24dp" />
+
+                <TextView
+                    android:id="@+id/profileEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:text="email"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="#bdbdbd" />
+
+            <Button
+                android:id="@+id/makePost"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_button"
+                android:text="Create a listing"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/productsImBuying"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_button"
+                android:text="Buying"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/productsImSelling"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_button"
+                android:text="Selling"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/productsInWishlist"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_button"
+                android:text="Watching"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/productReviews"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_button"
+                android:text="Reviews"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/review_user"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_button"
+                android:text="Give a review"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/signOutButton"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/rounded_button"
+                android:text="Sign out"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="150dp"
+                android:background="#bdbdbd" />
 
         </LinearLayout>
-
-        <View
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#bdbdbd"/>
-        <Button
-            android:id="@+id/makePost"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/rounded_button"
-            android:text="Create a listing"
-            android:textSize="20sp"
-            android:textColor="@color/colorPrimaryDark"
-            />
-        <Button
-            android:id="@+id/productsImBuying"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/rounded_button"
-            android:text="Buying"
-            android:textSize="20sp"
-            android:textColor="@color/colorPrimaryDark"
-            />
-        <Button
-            android:layout_marginTop="10dp"
-            android:id="@+id/productsImSelling"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/rounded_button"
-            android:text="Selling"
-            android:textSize="20sp"
-            android:textColor="@color/colorPrimaryDark"
-            />
-
-        <Button
-            android:id="@+id/productsInWishlist"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_button"
-            android:text="Watching"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp" />
-        <Button
-            android:layout_marginTop="10dp"
-            android:id="@+id/productReviews"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/rounded_button"
-            android:text="Reviews"
-            android:textSize="20sp"
-            android:textColor="@color/colorPrimaryDark"
-            />
-        <Button
-            android:layout_marginTop="10dp"
-            android:id="@+id/review_user"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/rounded_button"
-            android:text="Give a review"
-            android:textSize="20sp"
-            android:textColor="@color/colorPrimaryDark"
-            />
-        <Button
-            android:layout_marginTop="100dp"
-            android:id="@+id/signOutButton"
-            android:layout_gravity="center"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:background="@drawable/rounded_button"
-            android:text="Sign out"
-            android:textSize="20sp"
-            android:textColor="@color/colorPrimaryDark"
-            />
-        <View
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="150dp"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#bdbdbd"/>
-
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

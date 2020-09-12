@@ -139,6 +139,26 @@ public class MakeAccount extends AppCompatActivity {
                             });
                             Toast accountSuccessToast = Toast.makeText(getApplicationContext(), "Account creation successful.", Toast.LENGTH_SHORT);
                             accountSuccessToast.show();
+                            // after successful account creation, send verification email
+                            FirebaseUser newUser = mAuth.getInstance().getCurrentUser();
+                            newUser.sendEmailVerification()
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (!task.isSuccessful()) {
+                                                String errorMessage = "";
+                                                try {
+                                                    throw task.getException();
+                                                }
+                                                catch(Exception e)
+                                                {
+                                                    errorMessage = e.toString();
+                                                }
+                                                Toast verificationToast = Toast.makeText(getApplicationContext(), "Error sending verification email: " + errorMessage, Toast.LENGTH_SHORT);
+                                                verificationToast.show();
+                                            }
+                                        }
+                                    });
                             finish();
                         } else {
                             String errorMessage = "";

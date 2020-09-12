@@ -31,4 +31,6 @@
     <string name="make_account_password_hint">Password</string>
     <string name="make_account_confirm_password_hint">Confirm password</string>
     <string name="make_account_button_text">Finish</string>
+
+    <string name="profile_account_verification_text">Please verify your account. Check your email for the verification email.</string>
 </resources>
