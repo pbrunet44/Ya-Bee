@@ -46,7 +46,6 @@ public class DatabaseHelper {
                 {
                     User user = snapshot.getValue(User.class);
                     users.add(user);
-                    System.out.println("I'm" + user.getEmail() + ", " + user.getUid());
                 }
                 userCallback.onCallback(users);
             }
