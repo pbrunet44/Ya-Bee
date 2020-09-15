@@ -28,6 +28,7 @@ public class Login extends AppCompatActivity {
     private EditText email;
     private EditText password;
     private TextView createAccount;
+    private TextView forgotPassword;
 
     private ProgressBar progressBar;
 
@@ -39,6 +40,7 @@ public class Login extends AppCompatActivity {
 
         progressBar = (ProgressBar) findViewById(R.id.loadingCircle);
         createAccount = ((TextView) findViewById(R.id.createAnAccountText));
+        forgotPassword = ((TextView) findViewById(R.id.forgotPasswordText));
 
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +49,16 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ForgotPassword.class);
+                startActivity(intent);
+            }
+        });
+
+
         progressBar.setVisibility(View.INVISIBLE);
 
         mAuth = FirebaseAuth.getInstance();
