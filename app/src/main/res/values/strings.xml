@@ -8,7 +8,7 @@
     <string name="go">GO</string>
     <string name="search">Search&#8230;</string>
     <string name="categories">Categories</string>
-    <string name="login">Login</string>
+    <string name="login">Sign-in</string>
     <string name="my_profile">My Profile</string>
     <string name="daily_buzz">Daily Buzz</string>
     <string name="textbooks">Textbooks</string>
@@ -22,4 +22,6 @@
     <string name="recommended">Recommended for you</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="SeeAll">See all ></string>
+    <string name="forgotPassword">Forgot password?</string>
+
 </resources>
