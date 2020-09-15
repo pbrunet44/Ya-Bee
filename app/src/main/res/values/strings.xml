@@ -22,7 +22,6 @@
     <string name="recommended">Recommended for you</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="SeeAll">See all ></string>
-
     <string name="make_account_greeting">Let\'s Get Started!</string>
     <string name="make_account_title">Create an account to start buying and selling.</string>
     <string name="make_account_name_hint">Name</string>
@@ -32,4 +31,6 @@
     <string name="make_account_confirm_password_hint">Confirm password</string>
     <string name="make_account_button_text">Finish</string>
     <string name="forgotPassword">Forgot password?</string>
+    <string name="profile_account_verification_text">Please verify your account. Check your email for the verification email.</string>
+
 </resources>

@@ -1,6 +1,7 @@
 package com.example.yabeeprototypes;
 
 import androidx.annotation.NonNull;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,6 +21,7 @@ import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +32,8 @@ import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
@@ -58,6 +62,7 @@ public class Profile extends Fragment {
     private Button selling;
     private final static int RESULT_LOAD_IMAGE = 1;
     private String uId;
+    private Snackbar verifiedSnackbar;
 
 
     @Override
@@ -70,10 +75,11 @@ public class Profile extends Fragment {
         selling = view.findViewById(R.id.productsImSelling);
         makePost = (Button) view.findViewById(R.id.makePost);
         Button signOff = (Button) view.findViewById(R.id.signOutButton);
-        //ImageView editIcon = view.findViewById(R.id.editIcon);
-        //ImageView emailIcon = view.findViewById(R.id.emailIcon);
         Button reviews = view.findViewById(R.id.productReviews);
         Button giveAReview = view.findViewById(R.id.review_user);
+        // pop-up message displayed to user to verify their email
+        verifiedSnackbar = Snackbar.make(view.findViewById(R.id.myCoordinatorLayout), R.string.profile_account_verification_text, Snackbar.LENGTH_SHORT);
+
 
         Bundle bundle = getArguments();
         String email = "";
@@ -82,6 +88,17 @@ public class Profile extends Fragment {
         {
             email = currentUser.getEmail();
             uid = currentUser.getUid();
+            boolean verified = currentUser.isEmailVerified();
+            // check if user's account is verified
+            if (!verified)
+            {
+                View snackbarView = verifiedSnackbar.getView();
+                CoordinatorLayout.LayoutParams params=(CoordinatorLayout.LayoutParams)snackbarView.getLayoutParams();
+                params.gravity = Gravity.TOP;
+                view.setLayoutParams(params);
+                verifiedSnackbar.setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_FADE);
+                verifiedSnackbar.show();
+            }
         }
 
         if (bundle != null)
