@@ -49,8 +49,8 @@
             android:ems="10"
             android:inputType="numberDecimal"
             android:padding="8dp"
-            android:textColorHint="@color/colorTextSecondary"
-            android:background="@drawable/rounded_spinner"/>
+            android:textColorHint="@color/colorPrimaryDark"
+            android:background="@drawable/text_background"/>
 
         <TextView
             android:id="@+id/tvBidDescription"
@@ -70,8 +70,8 @@
             android:inputType="textPersonName"
             android:layout_gravity="center"
             android:padding="8dp"
-            android:textColorHint="@color/colorTextSecondary"
-            android:background="@drawable/rounded_spinner"/>
+            android:textColorHint="@color/colorPrimaryDark"
+            android:background="@drawable/text_background"/>
 
         <Button
             android:id="@+id/btnSubmit"

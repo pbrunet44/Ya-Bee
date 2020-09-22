@@ -45,7 +45,7 @@
         android:layout_toEndOf="@id/pendingBidImage"
         android:layout_toRightOf="@id/pendingBidImage"
         android:text="Seller Email"
-        android:textColor="@color/colorTextSecondary"
+        android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
         android:textSize="13sp" />
 

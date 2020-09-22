@@ -84,7 +84,7 @@
                         android:textStyle="bold"
                         android:textSize="20dp"
                         android:layout_gravity="center"
-                        android:textColor="@color/colorTextSecondary"
+                        android:textColor="@color/colorPrimaryDark"
                         android:padding="5dp"
                         android:gravity="center"/>
 

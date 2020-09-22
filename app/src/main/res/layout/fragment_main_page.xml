@@ -46,7 +46,7 @@
             android:layout_marginTop="7dp"
             android:layout_marginRight="12dp"
             android:layout_marginBottom="5dp"
-            app:cardBackgroundColor="@color/colorPrimaryVeryLight"
+            app:cardBackgroundColor="@color/colorPrimaryLight"
             app:contentPadding="7dp">
 
             <LinearLayout
@@ -503,7 +503,7 @@
                     android:layout_marginLeft="12dp"
                     android:layout_marginTop="6dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+                    app:cardBackgroundColor="@color/colorPrimaryLight">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -545,7 +545,7 @@
                     android:layout_marginTop="6dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+                    app:cardBackgroundColor="@color/colorPrimaryLight">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -591,7 +591,7 @@
                     android:layout_height="217dp"
                     android:layout_marginLeft="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+                    app:cardBackgroundColor="@color/colorPrimaryLight">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -633,7 +633,7 @@
                     android:layout_marginLeft="6dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+                    app:cardBackgroundColor="@color/colorPrimaryLight">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -678,7 +678,7 @@
                     android:layout_height="217dp"
                     android:layout_marginLeft="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+                    app:cardBackgroundColor="@color/colorPrimaryLight">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -719,7 +719,7 @@
                     android:layout_marginLeft="6dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+                    app:cardBackgroundColor="@color/colorPrimaryLight">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -764,7 +764,7 @@
                     android:layout_height="217dp"
                     android:layout_marginLeft="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+                    app:cardBackgroundColor="@color/colorPrimaryLight">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -805,7 +805,7 @@
                     android:layout_marginLeft="6dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+                    app:cardBackgroundColor="@color/colorPrimaryLight">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -850,7 +850,7 @@
                     android:layout_height="217dp"
                     android:layout_marginLeft="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+                    app:cardBackgroundColor="@color/colorPrimaryLight">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -891,7 +891,7 @@
                     android:layout_marginLeft="6dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="6dp"
-                    app:cardBackgroundColor="@color/colorPrimaryVeryLight">
+                    app:cardBackgroundColor="@color/colorPrimaryLight">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -971,7 +971,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="7dp"
-            app:cardBackgroundColor="@color/colorPrimaryVeryLightAlternate"
+            app:cardBackgroundColor="@color/colorPrimaryLightAlternate"
             app:contentPadding="7dp">
 
             <LinearLayout
@@ -1103,7 +1103,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="7dp"
-            app:cardBackgroundColor="@color/colorPrimaryVeryLightAlternate"
+            app:cardBackgroundColor="@color/colorPrimaryLightAlternate"
             app:contentPadding="7dp">
 
             <LinearLayout
@@ -1237,7 +1237,7 @@
             android:layout_marginRight="7dp"
             android:layout_marginBottom="7dp"
             android:padding="5dp"
-            app:cardBackgroundColor="@color/colorPrimaryVeryLightAlternate"
+            app:cardBackgroundColor="@color/colorPrimaryLightAlternate"
             app:contentPadding="7dp">
 
             <LinearLayout

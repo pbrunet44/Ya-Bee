@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-<!--  Ya-Bee colors  -->
-<color name="colorPrimary">#FFC107</color>
-<color name="colorPrimaryDark">#212121</color>
-<color name="colorAccent">#FF9800</color>
-<color name="colorPrimaryLight">#FFECB3</color>
-<color name="colorTextPrimary">#212121</color>
-<color name="colorTextSecondary">#757575</color>
-<color name="colorDivider">#000000</color>
-    <color name="cardBackground">#ffefc0</color>
-<color name="colorDivider2">#BDBDBD</color>
+    <color name="colorPrimary">#4ECDC4</color>
+    <color name="colorPrimaryDark">#292F36</color>
+    <color name="colorAccent">#FFE66D</color>
+    <color name="colorPrimaryLight">#FCFCFC</color>
+    <color name="colorTextPrimary">#212121</color>
+    <color name="colorDivider">#000000</color>
+    <color name="cardBackground">#fffff0</color>
+    <color name="colorDivider2">#BDBDBD</color>
     <color name="colorPrimaryLightAlternate">#FFECA5</color>
-<color name="colorPrimaryVeryLight">#FFF8E1</color>
-<color name="colorPrimaryVeryLightAlternate">#FFF2CA</color>
-<color name="backgroundBottomNav">#FFECD0</color>
-<color name="colorWhite">#FFFFFF</color>
-
-
-<!-- ListUp colors   -->
-    <color name="colorSubmit">#5698EE</color>
-    <color name="colorSubmitOutline">#6998EE</color>
+    <color name="colorPrimaryVeryLight">#FFF8E1</color>
+    <color name="colorPrimaryVeryLightAlternate">#FFF2CA</color>
+    <color name="backgroundBottomNav">#F5F5F5</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorSubmit">#FF6B6B</color>
+    <color name="colorSubmitOutline">#FF6B66</color>
     <color name="colorWindowBackground">#F5F5F5</color>
     <color name="colorCardBackground">#FCFCFC</color>
 
