@@ -128,7 +128,6 @@ public class MainPage extends Fragment implements View.OnClickListener {
         toys.setOnClickListener(this);
         travel.setOnClickListener(this);
 
-
         final DatabaseHelper databaseHelper = new DatabaseHelper();
         databaseHelper.getPosts(new FirebaseCallback() {
             @Override

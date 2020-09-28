@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -21,10 +22,14 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends FragmentActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
+    private DatabaseHelper databaseHelper;
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -32,6 +37,7 @@ public class MainActivity extends FragmentActivity {
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                     Fragment selectedFragment = null;
                     currentUser = mAuth.getCurrentUser();
+
                     switch(menuItem.getItemId()) {
                         case R.id.navHome:
                             selectedFragment = new MainPage();
@@ -90,6 +96,44 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
+
+        databaseHelper = new DatabaseHelper();
+
+        databaseHelper.getUsers(new UserCallback() {
+            @Override
+            public void onCallback(List<User> users) {
+                ArrayList<User> allUsers = databaseHelper.getAllUsers(users);
+                for (User user: allUsers) {
+                    FirebaseMessaging.getInstance().unsubscribeFromTopic(user.getUid())
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    String msg = "Unsubscribed from all Notifications";
+                                    if (!task.isSuccessful()) {
+                                        msg = "Unsucessfull";
+                                    }
+                                    System.out.println(msg + " to notifications");
+                                    //Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                }
+                if (currentUser != null) {
+                    FirebaseMessaging.getInstance().subscribeToTopic(currentUser.getUid())
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    String msg = "Subscribed to Notifications for user: " + currentUser.getEmail();
+                                    if (!task.isSuccessful()) {
+                                        msg = "Unsucessfull";
+                                    }
+                                    System.out.println(msg);
+                                    //Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                }
+            }
+        });
 
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
