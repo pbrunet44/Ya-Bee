@@ -19,7 +19,7 @@ exports.sendNotification = functions.database.ref('/Posts/{postId}/notifications
     console.log(receivingUser);
     console.log(newNotification.notificationMessage);
     
-    var messageBody = "Tap to view post.";
+    var messageBody = "Tap to view.";
     if (newNotification.typeofNotification === "WINNER" || 
     newNotification.typeofNotification === "HAHA LOSER") {
         messageBody = "Auction is over!"
