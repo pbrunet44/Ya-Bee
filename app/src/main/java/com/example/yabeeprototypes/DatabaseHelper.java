@@ -57,6 +57,10 @@ public class DatabaseHelper {
         });
     }
 
+    public ArrayList<User> getAllUsers(List<User> users) {
+        return new ArrayList<>(users);
+    }
+
     public User getUserByEmail(String email, List<User> users)
     {
         for(User user: users)

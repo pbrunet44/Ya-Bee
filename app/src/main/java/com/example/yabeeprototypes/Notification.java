@@ -32,7 +32,7 @@ public class Notification {
         String message = "";
         if(this.getTypeofNotification().equals("BID"))
         {
-            message = "New current bid! Tap to view post.";
+            message = "New current bid!";
         }
         else if(this.getTypeofNotification().equals("EXPIRED"))
         {
@@ -40,15 +40,15 @@ public class Notification {
         }
         else if(this.getTypeofNotification().equals("TINDER"))
         {
-            message = "New bid on your post! Tap to view post.";
+            message = "New bid on your post!";
         }
         else if(this.getTypeofNotification().equals("BID DECLINED"))
         {
-            message = "Bid declined by buyer. Tap to view post.";
+            message = "Bid declined by buyer.";
         }
         else if(this.getTypeofNotification().equals("BID ACCEPTED"))
         {
-            message = "Bid accepted by buyer. You are the current bid! Tap to view post." ;
+            message = "Bid accepted by buyer. You are the current bid!" ;
         }
         else if(this.getTypeofNotification().equals("WINNER"))
         {
