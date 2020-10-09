@@ -156,8 +156,21 @@ public class MakeListing extends Activity implements AdapterView.OnItemSelectedL
                     if(imageUri != null)
                     {
                         Bitmap imageBitmap = ((BitmapDrawable) postImage.getDrawable()).getBitmap();
+                        final int maxSize = 560;
+                        int outWidth;
+                        int outHeight;
+                        int inWidth = imageBitmap.getWidth();
+                        int inHeight = imageBitmap.getHeight();
+                        if(inWidth > inHeight){
+                            outWidth = maxSize;
+                            outHeight = (inHeight * maxSize) / inWidth;
+                        } else {
+                            outHeight = maxSize;
+                            outWidth = (inWidth * maxSize) / inHeight;
+                        }
+                        Bitmap resizedBitmap = Bitmap.createScaledBitmap(imageBitmap, outWidth, outHeight, true);
                         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                        imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+                        resizedBitmap.compress(Bitmap.CompressFormat.JPEG, 40, byteArrayOutputStream);
                         imageEncoding = Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT);
                     }
                     Post post = new Post(new ArrayList<Bid>(), new ArrayList<Notification>(), new ArrayList<User>(), new User(FirebaseAuth.getInstance().getCurrentUser().getEmail(),

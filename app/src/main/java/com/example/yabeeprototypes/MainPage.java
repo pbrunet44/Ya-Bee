@@ -1,5 +1,6 @@
 package com.example.yabeeprototypes;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -7,9 +8,11 @@ import androidx.fragment.app.Fragment;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +22,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -66,6 +75,9 @@ public class MainPage extends Fragment implements View.OnClickListener {
     private LinearLayout electronics;
     private LinearLayout toys;
     private LinearLayout travel;
+
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
 
     private List<String> postIDs = new ArrayList<>();
 
@@ -128,6 +140,9 @@ public class MainPage extends Fragment implements View.OnClickListener {
         toys.setOnClickListener(this);
         travel.setOnClickListener(this);
 
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
+
         final DatabaseHelper databaseHelper = new DatabaseHelper();
         databaseHelper.getPosts(new FirebaseCallback() {
             @Override
@@ -177,6 +192,41 @@ public class MainPage extends Fragment implements View.OnClickListener {
         btnBuzz8.setOnClickListener(this);
         btnBuzz9.setOnClickListener(this);
         btnBuzz10.setOnClickListener(this);
+
+        databaseHelper.getUsers(new UserCallback() {
+            @Override
+            public void onCallback(List<User> users) {
+                ArrayList<User> allUsers = databaseHelper.getAllUsers(users);
+                for (User user: allUsers) {
+                    FirebaseMessaging.getInstance().unsubscribeFromTopic(user.getUid())
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    String msg = "Unsubscribed from all Notifications";
+                                    if (!task.isSuccessful()) {
+                                        msg = "Unsucessfull";
+                                    }
+                                    System.out.println(msg + " to notifications");
+                                    //Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                }
+                if (currentUser != null) {
+                    FirebaseMessaging.getInstance().subscribeToTopic(currentUser.getUid())
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    String msg = "Subscribed to Notifications for user: " + currentUser.getEmail();
+                                    if (!task.isSuccessful()) {
+                                        msg = "Unsucessfull";
+                                    }
+                                    System.out.println(msg);
+                                    //Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                }
+            }
+        });
 
         return view;
     }
@@ -395,9 +445,23 @@ public class MainPage extends Fragment implements View.OnClickListener {
 
     private Bitmap compressBitmap(Bitmap bitmap)
     {
+        final int maxSize = 200;
+        int outWidth;
+        int outHeight;
+        int inWidth = bitmap.getWidth();
+        int inHeight = bitmap.getHeight();
+        if(inWidth > inHeight){
+            outWidth = maxSize;
+            outHeight = (inHeight * maxSize) / inWidth;
+        } else {
+            outHeight = maxSize;
+            outWidth = (inWidth * maxSize) / inHeight;
+        }
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(bitmap, outWidth, outHeight, true);
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG,25, stream);
+        resizedBitmap.compress(Bitmap.CompressFormat.JPEG, 40, stream);
         byte[] byteArray = stream.toByteArray();
         return BitmapFactory.decodeByteArray(byteArray,0,byteArray.length);
     }
+
 }
