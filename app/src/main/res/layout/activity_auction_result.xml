@@ -8,53 +8,55 @@
     android:orientation="vertical"
     tools:context=".AuctionResult">
 
-
     <TextView
-        android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="120dp"
-        android:text="Nintendo 64"
-        android:textSize="50sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
         android:text="Congratulations!"
-        android:textSize="36sp"
-        android:textStyle="bold" />
+        android:textSize="30dp"
+        android:layout_marginTop="30sp"
+        />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/purchasingFrom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="20dp"
-        android:text="You won the auction."
-        android:textColor="@color/colorAccent"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:layout_marginTop="30sp"
+        android:layout_gravity="center"
+        android:text="Thank you for purchasing from ..."
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/auctionItemTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25sp"
+        android:layout_gravity="center"
+        android:text="Title"
+        android:textSize="20dp" />
 
     <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="30dp"
-        android:src="@mipmap/ic_computer_networking" />
-
-    <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/auctionImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="30dp"
-        android:text="Winning Bid: $90.00"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:layout_gravity="center"
+        android:layout_marginTop="50sp"
+        />
+
+    <TextView
+        android:id="@+id/auctionPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:text="$89.95" />
+
+    <Button android:id="@+id/paypal_button"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Pay with Paypal"
+        android:layout_gravity="center"
+        android:layout_marginTop="30sp"
+        />
+
 </androidx.appcompat.widget.LinearLayoutCompat>

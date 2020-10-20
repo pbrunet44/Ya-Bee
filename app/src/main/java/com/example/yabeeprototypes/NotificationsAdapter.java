@@ -20,6 +20,7 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
 {
     private List<Notification> listData;
     private int containerId;
+    private Post post;
 
     public NotificationsAdapter(List<Notification> listData, int containerId)
     {
@@ -61,7 +62,6 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
                     databaseHelper.getPosts(new FirebaseCallback() {
                         @Override
                         public void onCallback(List<Post> posts) {
-                            Post post;
                             post = databaseHelper.getPostByID(postID, posts);
                             post.removeNotification(myListData);
                         }
@@ -69,12 +69,22 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
 
                     FragmentActivity activity = (FragmentActivity) v.getContext();
 
-                    Bundle bundle = new Bundle();
-                    bundle.putString("POST ID", postID);
+                    // if auction expired, and they won
+                    if (post.getAuctionTimer().equals("AUCTION EXPIRED"))
+                    {
+                        Intent intent = new Intent(v.getContext(), AuctionResult.class);
+                        intent.putExtra("postID", postID);
+                        v.getContext().startActivity(intent);
+                        ((FragmentActivity) v.getContext()).finish();
+                    }
+                    else {
+                        Bundle bundle = new Bundle();
+                        bundle.putString("POST ID", postID);
 
-                    ViewPost viewPost = new ViewPost();
-                    viewPost.setArguments(bundle);
-                    activity.getSupportFragmentManager().beginTransaction().replace(containerId, viewPost).commit();
+                        ViewPost viewPost = new ViewPost();
+                        viewPost.setArguments(bundle);
+                        activity.getSupportFragmentManager().beginTransaction().replace(containerId, viewPost).commit();
+                    }
                 }
             }
         });
