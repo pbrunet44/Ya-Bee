@@ -112,21 +112,22 @@ public class ViewPost extends Fragment {
                 postCategory.setText(post.getCategory());
                 postClicks.setText(String.valueOf(post.getClicks()));
                 postBuyer.setText(post.getBuyer().getEmail());
+                timer.setText(post.getAuctionTimer());
             }
         });
 
-        Runnable timerRunnable = new Runnable(){
-            @Override
-            public void run() {
-                if (post != null)
-                {
-                    post.updateAuctionTimer();
-                    timer.setText(post.getAuctionTimer()); // setting timer to time remaining
-                }
-
-                timerHandler.postDelayed(this, 1000);
-            }
-        };
+//        Runnable timerRunnable = new Runnable(){
+//            @Override
+//            public void run() {
+//                if (post != null)
+//                {
+//                    //post.updateAuctionTimer();
+//                    timer.setText(post.getAuctionTimer()); // setting timer to time remaining
+//                }
+//
+//                timerHandler.postDelayed(this, 1000);
+//            }
+//        };
 
         //timerRunnable.run();
 

@@ -103,23 +103,6 @@ public class Post {
                             this.bidsPendingAcceptance.remove(b);
             }
         }
-//        Bid remove = new Bid();
-//        if(this.bidsPendingAcceptance != null && this.bidsPendingAcceptance.size() > 0)
-//        {
-//            for(Bid b: this.bidsPendingAcceptance)
-//            {
-//                if(b.getDescription().equals(bid.getDescription()) && (b.getPrice() == bid.getPrice()))
-//                {
-//                    remove = b;
-//                }
-//            }
-//        }
-//        try {
-//            this.bidsPendingAcceptance.remove(remove);
-//        } catch (NullPointerException e)
-//        {
-//            System.out.println("Bid is null.");
-//        }
         DatabaseHelper databaseHelper = new DatabaseHelper();
         databaseHelper.updateBidsPendingAcceptance(this.id, this.bidsPendingAcceptance);
     }
@@ -146,20 +129,6 @@ public class Post {
                         if(n.getReceivingUser().getUid().equals(notification.getReceivingUser().getUid()))
                             this.notifications.remove(n);
             }
-//        Notification remove = new Notification();
-//            for(Notification n: this.notifications)
-//            {
-//                if(n.getTypeofNotification().equals(notification.getTypeofNotification()))
-//                    if(n.getPostID().equals(notification.getPostID()))
-//                        if(n.getReceivingUser().getUid().equals(notification.getReceivingUser().getUid()))
-//                            remove = n;
-//            }
-//            try {
-//                this.notifications.remove(remove);
-//            } catch (NullPointerException e)
-//            {
-//                System.out.println("Notification is null.");
-//            }
             DatabaseHelper databaseHelper = new DatabaseHelper();
             databaseHelper.updateNotifications(this.id, this.notifications);
         }
@@ -259,30 +228,8 @@ public class Post {
      */
     public String getAuctionTimer()
     {
-        if (this.auctionTimeLeft <= 0)
-        {
-            if(this.isExpired = false)
-            {
-                this.isExpired = true;
-                DatabaseHelper databaseHelper = new DatabaseHelper();
-                databaseHelper.databaseReference.child("Posts").child(id).child("isExpired").setValue(this.isExpired);
-                if(this.allBidders != null)
-                {
-                    for(User u: this.allBidders)
-                    {
-                        Notification notification = new Notification("EXPIRED", u, this.id);
-                        this.addNotification(notification);
-                        if(u.getUid().equals(this.getLowestBid().getSeller().getUid()))
-                        {
-                            this.addNotification(new Notification("WINNER", this.getLowestBid().getSeller(), this.id));
-                        }
-                        else
-                        {
-                            this.addNotification(new Notification("HAHA LOSER", u, this.id));
-                        }
-                    }
-                }
-            }
+        if (this.auctionTimeLeft <= 0) {
+            this.isExpired = true;
             return "AUCTION EXPIRED";
         }
         if(this.auctionTimeLeft > 24 * 60 * 60)

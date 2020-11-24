@@ -60,7 +60,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>
             DecimalFormat df = new DecimalFormat("#.##");
             holder.textView.setText(listData.get(position).getTitle());
             holder.imageView.setImageBitmap(listData.get(position).decodeImage());
-            listData.get(position).updateAuctionTimer();
+            //listData.get(position).updateAuctionTimer();
             holder.timeLeft.setText(listData.get(position).getAuctionTimer());
             holder.condition.setText(listData.get(position).getCondition());
 
