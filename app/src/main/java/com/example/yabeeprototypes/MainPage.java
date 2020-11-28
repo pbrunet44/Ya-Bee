@@ -109,7 +109,6 @@ public class MainPage extends Fragment implements View.OnClickListener {
         tvBuzz10 = view.findViewById(R.id.tvBuzz10);
 
 
-
         services = (LinearLayout) view.findViewById(R.id.servicesImage);
         textbooks = (LinearLayout) view.findViewById(R.id.textbookImage);
         sportingGoods = (LinearLayout) view.findViewById(R.id.sportingGoodsImage);

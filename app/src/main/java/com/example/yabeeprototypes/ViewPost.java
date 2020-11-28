@@ -128,7 +128,7 @@ public class ViewPost extends Fragment {
             }
         };
 
-        timerRunnable.run();
+        //timerRunnable.run();
 
         postBuyer.setOnClickListener(new View.OnClickListener() {
             @Override
