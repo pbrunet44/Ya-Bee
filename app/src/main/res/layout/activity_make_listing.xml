@@ -50,7 +50,7 @@
         android:layout_marginRight="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:background="@drawable/rounded_spinner"
+        android:background="@drawable/text_background"
         android:padding="8dp"
         />
 
@@ -75,7 +75,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:background="@drawable/rounded_spinner"
+        android:background="@drawable/text_background"
         android:padding="8dp"/>
 
     <Space
@@ -96,7 +96,7 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_spinner"
+        android:background="@drawable/text_background"
         android:padding="8dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
@@ -147,7 +147,7 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_spinner"
+        android:background="@drawable/text_background"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginEnd="20dp"
@@ -177,7 +177,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/rounded_spinner">
+        android:background="@drawable/text_background">
 
         <Spinner
             android:id="@+id/itemCondition"
@@ -203,7 +203,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/rounded_spinner">
+        android:background="@drawable/text_background">
 
         <Spinner
             android:id="@+id/auction_duration"
